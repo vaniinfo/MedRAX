@@ -140,7 +140,8 @@ class EvidenceValidator:
     FINDING_ALIASES = {
         "pneumothorax": ("pneumothorax",),
         "pleural effusion": ("pleural effusion", "effusion"),
-        "cardiomegaly": ("cardiomegaly", "enlarged heart", "cardiac silhouette"),
+        "cardiomegaly": ("cardiomegaly", "enlarged heart", "cardiac silhouette",
+                         "cardiomediastinal silhouette", "heart size"),
         "pulmonary edema": ("pulmonary edema", "edema"),
         "nodule": ("nodule",),
         "mass": ("mass",),
@@ -196,6 +197,13 @@ class EvidenceValidator:
     # discount it was ignored. It is computed here instead of requested.
     _NEGATION_CUES = ("no ", "without ", "no evidence of ", "free of ", "negative for ",
                       "absence of ", "not identified", "no definite")
+    # Negations that FOLLOW the finding. "the cardiomediastinal silhouette is normal"
+    # denies cardiomegaly without using any of the cues above, and a backward-only scan
+    # missed it -- the report then read as asserting the finding its own FINDINGS
+    # section had denied.
+    _NORMALITY_CUES = ("is normal", "are normal", "is unremarkable", "are unremarkable",
+                       "within normal limits", "is within normal", "normal in size",
+                       "is not enlarged", "are not enlarged")
 
     @classmethod
     def _text_stance(cls, text: str, focus: Optional[str]) -> Optional[Dict[str, Any]]:
@@ -211,7 +219,7 @@ class EvidenceValidator:
         # on the first hit always reported the FINDINGS stance and silently discarded
         # the other -- on effusion_CXR2046 it called the report a negation when the
         # IMPRESSION said "small right pleural effusion".
-        hits = []
+        hits, spans = [], []
         for alias in aliases:
             start = 0
             while True:
@@ -225,16 +233,26 @@ class EvidenceValidator:
                 window_start = max(0, index - 60)
                 clause_start = max(body.rfind(ch, window_start, index) + 1
                                    for ch in ".;:")
-                negated = any(cue in body[max(clause_start, window_start):index]
-                              for cue in cls._NEGATION_CUES)
+                before = body[max(clause_start, window_start):index]
+                clause_end = min([e for e in (body.find(ch, index) for ch in ".;:")
+                                  if e >= 0] or [len(body)])
+                after = body[index + len(alias):clause_end]
+                negated = (any(cue in before for cue in cls._NEGATION_CUES)
+                           or any(cue in after for cue in cls._NORMALITY_CUES))
                 words = body[window_start:index + len(alias) + 20].split()
                 if window_start > 0 and len(words) > 1:
                     words = words[1:]
-                hits.append({"alias": alias, "negated": negated,
-                             "quote": " ".join(words).strip()})
+                span = (index, index + len(alias))
+                # Skip a match that overlaps one already recorded, so "effusion" does
+                # not double-count inside "pleural effusion". Do NOT stop after the
+                # first alias: a report can deny the finding under one name
+                # ("the cardiomediastinal silhouette is normal") and assert it under
+                # another ("mild cardiomegaly"), and breaking early hid that.
+                if not any(span[0] < e and s < span[1] for s, e in spans):
+                    spans.append(span)
+                    hits.append({"alias": alias, "negated": negated,
+                                 "quote": " ".join(words).strip()})
                 start = index + len(alias)
-            if hits:
-                break  # longest matching alias wins; do not double-count "effusion"
 
         if not hits:
             return {"mentioned": None, "stance": "SILENT", "quote": ""}
@@ -281,10 +299,15 @@ class EvidenceValidator:
 
         # Refuting evidence that can be computed without a model: this tool's own
         # numbers pointing the other way, and any value that is really a coin flip.
+        # PATCH: a probability in the dead zone is ABSENCE of evidence, not evidence
+        # against. Listing it as refuting pushed the Director toward negative verdicts
+        # on exactly the borderline cases where it should stay neutral.
         refuting = []
-        for label, p in uninformative:
-            refuting.append(f"{label}={p:.3f} is inside the {DEAD_ZONE[0]}-{DEAD_ZONE[1]} "
-                            "dead zone: no opinion, must not be counted as a vote")
+        uninformative_notes = [
+            f"{label}={p:.3f} is inside the {DEAD_ZONE[0]}-{DEAD_ZONE[1]} dead zone: "
+            "no opinion either way, do not count it as a vote in either direction"
+            for label, p in uninformative
+        ]
         stance = None
         if not probs and isinstance(payload, str):
             stance = self._text_stance(payload, focus)
@@ -319,6 +342,7 @@ class EvidenceValidator:
                               for l, p in probs],
             "supportive_evidence": supports,
             "refuting_evidence": refuting,
+            "uninformative_notes": uninformative_notes,
             "focus": focus,
             "confidence_ceiling": self._ceiling(relevant),
         }
@@ -397,6 +421,15 @@ class EvidenceValidator:
                          "image, with their location. If you cannot identify any, write "
                          "'none visible' -- do not describe what such signs would look like "
                          "in general, and do not say that visual assessment is needed.")
+            # PATCH: "none visible" from a generalist reader is not evidence against a
+            # specialist. Without this the Director downgraded correct findings to Low
+            # purely because it could not see a mild or subtle sign itself, which is
+            # expected: it is not trained on radiology and the specialists are.
+            lines.append("If you write 'none visible', that is a limit of your own general "
+                         "vision, NOT evidence against the finding. You are not a "
+                         "radiology-trained model and the specialist tools are. Do not "
+                         "lower your confidence or your conclusion because you personally "
+                         "could not see a subtle sign.")
         lines.append("</validation>")
         return "\n".join(lines)
 
@@ -426,6 +459,10 @@ class EvidenceValidator:
         lines.append("  REFUTING EVIDENCE:")
         for item in record["refuting_evidence"]:
             lines.append(f"      {item}")
+        if record.get("uninformative_notes"):
+            lines.append("  NO OPINION (absence of evidence, not evidence against):")
+            for item in record["uninformative_notes"]:
+                lines.append(f"      {item}")
         lines.append(f"  CONFIDENCE (computed ceiling): {record['confidence_ceiling']}")
         return "\n".join(lines)
 
