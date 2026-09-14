@@ -210,8 +210,12 @@ class EvidenceValidator:
                 continue
             window = body[max(0, index - 60):index]
             negated = any(cue in window for cue in cls._NEGATION_CUES)
+            start = max(0, index - 60)
+            words = body[start:index + len(alias) + 20].split()
+            if start > 0 and len(words) > 1:
+                words = words[1:]      # drop the partial word at the front
             return {"mentioned": alias, "stance": "NEGATES" if negated else "ASSERTS",
-                    "quote": body[max(0, index - 60):index + len(alias) + 20].strip()}
+                    "quote": " ".join(words).strip()}
         return {"mentioned": None, "stance": "SILENT", "quote": ""}
 
     def assess(self, call: Dict[str, Any], result: Any,
@@ -249,9 +253,6 @@ class EvidenceValidator:
         for label, p in uninformative:
             refuting.append(f"{label}={p:.3f} is inside the {DEAD_ZONE[0]}-{DEAD_ZONE[1]} "
                             "dead zone: no opinion, must not be counted as a vote")
-        if not refuting:
-            refuting.append("none computed from this tool's output")
-
         stance = None
         if not probs and isinstance(payload, str):
             stance = self._text_stance(payload, focus)
@@ -261,6 +262,10 @@ class EvidenceValidator:
                     "probability and cannot be validated. Stock negations of this form "
                     "appear in most generated reports regardless of the image; do not let "
                     "it outweigh a specialist reporting a high probability"))
+
+        # fallback last, so it never sits beside a computed item
+        if not refuting:
+            refuting.append("none computed from this tool's output")
 
         return {
             "tool": name,
@@ -345,8 +350,10 @@ class EvidenceValidator:
             lines.append(f"Visual assessment by validator: {record['supportive_evidence']}")
         else:
             lines.append("Visual assessment: not performed by this validator. You can see "
-                         "the X-ray yourself -- report the specific radiographic signs you "
-                         "observe, with location.")
+                         "the X-ray yourself. Report ONLY signs you actually observe in this "
+                         "image, with their location. If you cannot identify any, write "
+                         "'none visible' -- do not describe what such signs would look like "
+                         "in general, and do not say that visual assessment is needed.")
         lines.append("</validation>")
         return "\n".join(lines)
 
