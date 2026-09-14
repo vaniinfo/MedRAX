@@ -115,6 +115,22 @@ class Agent:
         self.tools = {t.name: t for t in tools}
         self.model = model.bind_tools(tools)
 
+    @staticmethod
+    def _last_user_text(state: AgentState) -> str:
+        """Most recent human-authored text, used to infer which finding is in question."""
+        for message in reversed(state.get("messages", [])):
+            if getattr(message, "type", None) != "human":
+                continue
+            content = message.content
+            if isinstance(content, str):
+                return content
+            if isinstance(content, list):
+                parts = [c.get("text", "") for c in content
+                         if isinstance(c, dict) and c.get("type") == "text"]
+                if any(parts):
+                    return " ".join(parts)
+        return ""
+
     def _write_log(self, text: str) -> None:
         """Append to the readable session transcript. Never raises."""
         if not self.log_tools:
@@ -200,7 +216,10 @@ class Agent:
             # PATCH: forced validation -- a function call, not an instruction.
             if self.validator is not None:
                 try:
-                    record = self.validator.assess(call, result)
+                    focus = self.validator.infer_focus(
+                        call.get("args", {}) or {}, self._last_user_text(state)
+                    )
+                    record = self.validator.assess(call, result, focus=focus)
                     self.pending_validations.append(self.validator.render_for_model(record))
                     self.pending_records.append(record)
                     self._write_log(

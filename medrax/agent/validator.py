@@ -131,7 +131,62 @@ class EvidenceValidator:
 
     # ---------------------------------------------------------------- entry point
 
-    def assess(self, call: Dict[str, Any], result: Any) -> Dict[str, Any]:
+    # Findings this validator can recognise in a question. Maps a canonical name to
+    # the substrings that identify it in either a question or a classifier label.
+    FINDING_ALIASES = {
+        "pneumothorax": ("pneumothorax",),
+        "pleural effusion": ("pleural effusion", "effusion"),
+        "cardiomegaly": ("cardiomegaly", "enlarged heart", "cardiac silhouette"),
+        "pulmonary edema": ("pulmonary edema", "edema"),
+        "nodule": ("nodule",),
+        "mass": ("mass",),
+        "lung opacity": ("lung opacity", "opacity"),
+        "consolidation": ("consolidation",),
+        "atelectasis": ("atelectasis",),
+        "pneumonia": ("pneumonia",),
+        "fracture": ("fracture",),
+        "emphysema": ("emphysema",),
+        "fibrosis": ("fibrosis",),
+        "hernia": ("hernia",),
+        "infiltration": ("infiltration",),
+        "pleural thickening": ("pleural thickening",),
+        "lung lesion": ("lung lesion",),
+    }
+
+    @staticmethod
+    def _normalise(text: str) -> str:
+        return " ".join(str(text).lower().replace("_", " ").split())
+
+    @classmethod
+    def infer_focus(cls, args: Dict[str, Any], fallback_text: str = "") -> Optional[str]:
+        """Which finding is this call about? Prefer the tool's own prompt, else the
+        user's question. Returns a canonical finding name, or None if unrecognised."""
+        for source in (args.get("prompt", ""), fallback_text):
+            haystack = cls._normalise(source)
+            if not haystack:
+                continue
+            hits = [(name, alias) for name, aliases in cls.FINDING_ALIASES.items()
+                    for alias in aliases if alias in haystack]
+            if hits:
+                # longest alias wins: "pleural effusion" beats "effusion"
+                return max(hits, key=lambda pair: len(pair[1]))[0]
+        return None
+
+    @classmethod
+    def _is_relevant(cls, label: str, focus: Optional[str]) -> bool:
+        """Does this probability bear on the finding being asked about?"""
+        if focus is None:
+            return True  # nothing to filter against
+        normalised = cls._normalise(label)
+        if normalised.startswith("p(yes)"):
+            return True  # the VQA tool was asked the question directly
+        for alias in cls.FINDING_ALIASES.get(focus, ()):
+            if alias in normalised or normalised in alias:
+                return True
+        return False
+
+    def assess(self, call: Dict[str, Any], result: Any,
+               focus: Optional[str] = None) -> Dict[str, Any]:
         """Build the validation record for one tool call. Always runs; cannot be skipped.
 
         Returns a dict so the same assessment can be rendered two ways: a compact block
@@ -143,8 +198,13 @@ class EvidenceValidator:
         payload = result[0] if isinstance(result, tuple) and result else result
         claim = str(payload)[:400]
 
+        # PATCH: only probabilities bearing on the finding in question may drive the
+        # ceiling. Previously the max margin over all 18 classifier outputs was used,
+        # so an irrelevant Cardiomegaly=0.006 forced a High ceiling on a pneumothorax
+        # question -- which suppressed the hedging that the un-validated run produced.
+        relevant = [(l, p) for l, p in probs if self._is_relevant(l, focus)]
         informative, uninformative = [], []
-        for label, p in probs:
+        for label, p in relevant:
             (uninformative if self._is_uninformative(p) else informative).append((label, p))
 
         supports = self._visual_assessment(args, claim) if self.describe else (
@@ -164,14 +224,16 @@ class EvidenceValidator:
             "tool": name,
             "args": args,
             "raw_output": claim,
-            "conclusion": self._conclusion(name, payload, informative, probs),
+            "conclusion": self._conclusion(name, payload, informative, relevant),
             "probabilities": [{"label": l, "value": round(p, 4),
+                               "relevant": self._is_relevant(l, focus),
                                "informative": not self._is_uninformative(p),
                                "supports": None if self._is_uninformative(p) else ("YES" if p > 0.5 else "NO")}
                               for l, p in probs],
             "supportive_evidence": supports,
             "refuting_evidence": refuting,
-            "confidence_ceiling": self._ceiling(probs),
+            "focus": focus,
+            "confidence_ceiling": self._ceiling(relevant),
         }
 
     @staticmethod
@@ -197,22 +259,35 @@ class EvidenceValidator:
                         f"{undecided} value(s) in the dead zone")
             return (f"{name} reports nothing above 0.50; "
                     f"{undecided} value(s) in the dead zone")
+        if probs_all:
+            # Relevant values exist but all sit in the dead zone.
+            listed = ", ".join(f"{l}={p:.3f}" for l, p in probs_all[:3])
+            return f"{name} is undecided on this finding ({listed})"
         text = " ".join(str(payload).split())
         return f"{name} returned text, no probability: {text[:160]}"
 
     @staticmethod
     def render_for_model(record: Dict[str, Any]) -> str:
         """Compact block injected into the model's next turn."""
-        lines = [f"<validation tool=\"{record['tool']}\">",
+        focus = record.get("focus")
+        header = f" finding=\"{focus}\"" if focus else ""
+        lines = [f"<validation tool=\"{record['tool']}\"{header}>",
                  "Computed from the tool output (not a model judgement):"]
-        if record["probabilities"]:
-            for pr in record["probabilities"]:
+        # Show only probabilities bearing on the finding asked about. Listing all 18
+        # classifier outputs buries the relevant one in noise.
+        shown = [pr for pr in record["probabilities"] if pr.get("relevant", True)]
+        hidden = len(record["probabilities"]) - len(shown)
+        if shown:
+            for pr in shown:
                 verdict = (f"informative, supports {pr['supports']}" if pr["informative"]
                            else "UNINFORMATIVE - near 0.5, expresses no opinion, "
                                 "do not count as a vote")
                 lines.append(f"  {pr['label']} = {pr['value']:.3f} -> {verdict}")
         else:
-            lines.append("  no probabilities reported by this tool")
+            lines.append("  this tool reported no probability about "
+                         + (focus or "the finding in question"))
+        if hidden:
+            lines.append(f"  ({hidden} other value(s) omitted: unrelated to {focus})")
         lines.append(f"  confidence ceiling: {record['confidence_ceiling']} "
                      f"(you may report lower, never higher)")
         lines.append(f"Visual assessment of the image: {record['supportive_evidence']}")
@@ -226,11 +301,14 @@ class EvidenceValidator:
                  f"  ARGS: {record['args']}",
                  f"  RAW OUTPUT: {record['raw_output'][:300]}",
                  f"  CONCLUSION: {record['conclusion']}"]
+        if record.get("focus"):
+            lines.append(f"  FINDING IN QUESTION: {record['focus']}")
         if record["probabilities"]:
-            lines.append("  PROBABILITIES:")
+            lines.append("  PROBABILITIES (* = bears on the finding in question):")
             for pr in record["probabilities"]:
                 tag = f"supports {pr['supports']}" if pr["informative"] else "UNINFORMATIVE (dead zone)"
-                lines.append(f"      {pr['label']} = {pr['value']:.4f}  [{tag}]")
+                star = "*" if pr.get("relevant", True) else " "
+                lines.append(f"    {star} {pr['label']} = {pr['value']:.4f}  [{tag}]")
         else:
             lines.append("  PROBABILITIES: none reported by this tool")
         lines.append(f"  SUPPORTIVE EVIDENCE: {record['supportive_evidence']}")
