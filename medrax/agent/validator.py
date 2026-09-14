@@ -189,6 +189,31 @@ class EvidenceValidator:
                 return True
         return False
 
+    # Stock negations. A generated report says "no pleural effusion or pneumothorax"
+    # in almost every normal study; it is template filler, not an observation about
+    # this image. Measured: that sentence overrode a specialist reporting 0.995 on two
+    # separate true-positive pneumothorax cases, because the prompt's instruction to
+    # discount it was ignored. It is computed here instead of requested.
+    _NEGATION_CUES = ("no ", "without ", "no evidence of ", "free of ", "negative for ",
+                      "absence of ", "not identified", "no definite")
+
+    @classmethod
+    def _text_stance(cls, text: str, focus: Optional[str]) -> Optional[Dict[str, Any]]:
+        """Does this report assert or negate the finding? None if it is not mentioned."""
+        if not focus:
+            return None
+        body = cls._normalise(text)
+        aliases = cls.FINDING_ALIASES.get(focus, (focus,))
+        for alias in aliases:
+            index = body.find(alias)
+            if index < 0:
+                continue
+            window = body[max(0, index - 60):index]
+            negated = any(cue in window for cue in cls._NEGATION_CUES)
+            return {"mentioned": alias, "stance": "NEGATES" if negated else "ASSERTS",
+                    "quote": body[max(0, index - 60):index + len(alias) + 20].strip()}
+        return {"mentioned": None, "stance": "SILENT", "quote": ""}
+
     def assess(self, call: Dict[str, Any], result: Any,
                focus: Optional[str] = None) -> Dict[str, Any]:
         """Build the validation record for one tool call. Always runs; cannot be skipped.
@@ -227,8 +252,19 @@ class EvidenceValidator:
         if not refuting:
             refuting.append("none computed from this tool's output")
 
+        stance = None
+        if not probs and isinstance(payload, str):
+            stance = self._text_stance(payload, focus)
+            if stance and stance["stance"] == "NEGATES":
+                refuting.insert(0, (
+                    f"this tool NEGATES {focus} (\"{stance['quote']}\") but reports no "
+                    "probability and cannot be validated. Stock negations of this form "
+                    "appear in most generated reports regardless of the image; do not let "
+                    "it outweigh a specialist reporting a high probability"))
+
         return {
             "tool": name,
+            "text_stance": stance,
             "args": args,
             "raw_output": claim,
             "conclusion": self._conclusion(name, payload, informative, relevant),
@@ -295,6 +331,14 @@ class EvidenceValidator:
                          + (focus or "the finding in question"))
         if hidden:
             lines.append(f"  ({hidden} other value(s) omitted: unrelated to {focus})")
+        stance = record.get("text_stance")
+        if stance and stance["stance"] != "SILENT":
+            lines.append(f"  this tool's text {stance['stance']} {record.get('focus')}: "
+                         f"\"{stance['quote']}\"")
+            if stance["stance"] == "NEGATES":
+                lines.append("  -> UNVALIDATED NEGATION: no probability accompanies it, and "
+                             "this phrasing is boilerplate in most generated reports. It must "
+                             "not outweigh a specialist reporting a high probability.")
         lines.append(f"  confidence ceiling: {record['confidence_ceiling']} "
                      f"(you may report lower, never higher)")
         if record.get("supportive_evidence"):
@@ -323,6 +367,9 @@ class EvidenceValidator:
                 lines.append(f"    {star} {pr['label']} = {pr['value']:.4f}  [{tag}]")
         else:
             lines.append("  PROBABILITIES: none reported by this tool")
+        stance = record.get("text_stance")
+        if stance and stance["stance"] != "SILENT":
+            lines.append(f"  TEXT STANCE: {stance['stance']} -> \"{stance['quote']}\"")
         lines.append("  SUPPORTIVE EVIDENCE: " + (
             record["supportive_evidence"] or "(validator did not assess; Director reports "
                                              "this from the image itself)"))
