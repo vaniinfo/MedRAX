@@ -16,6 +16,7 @@ is actually needed for: describing what is visible in the image.
 """
 
 import base64
+import numbers
 from typing import Any, Dict, List, Optional, Tuple
 
 from langchain_core.language_models import BaseLanguageModel
@@ -57,13 +58,34 @@ class EvidenceValidator:
         if not isinstance(payload, dict):
             return []
         found: List[Tuple[str, float]] = []
-        if isinstance(payload.get("confidence"), (int, float)):
+        confidence = EvidenceValidator._as_probability(payload.get("confidence"))
+        if confidence is not None:
             answer = str(payload.get("response", "")).strip()
-            found.append((f"P(yes) [answered {answer!r}]", float(payload["confidence"])))
+            found.append((f"P(yes) [answered {answer!r}]", confidence))
         for key, value in payload.items():
-            if key != "confidence" and isinstance(value, float) and 0.0 <= value <= 1.0:
-                found.append((key, float(value)))
+            if key == "confidence":
+                continue
+            probability = EvidenceValidator._as_probability(value)
+            if probability is not None:
+                found.append((key, probability))
         return found
+
+    @staticmethod
+    def _as_probability(value: Any) -> Optional[float]:
+        """Coerce a value to a probability, or None.
+
+        PATCH: must not use isinstance(value, float). torchxrayvision returns
+        numpy.float32, for which that test is False -- which silently meant the
+        classifier's probabilities were never parsed and the dead-zone rule never
+        applied to the one tool it was written for.
+        """
+        if isinstance(value, bool) or not isinstance(value, numbers.Real):
+            return None
+        try:
+            as_float = float(value)
+        except (TypeError, ValueError):
+            return None
+        return as_float if 0.0 <= as_float <= 1.0 else None
 
     @staticmethod
     def _is_uninformative(p: float) -> bool:
@@ -109,26 +131,115 @@ class EvidenceValidator:
 
     # ---------------------------------------------------------------- entry point
 
-    def validate(self, call: Dict[str, Any], result: Any) -> str:
-        """Return a validation block for one tool call. Always runs; cannot be skipped."""
+    def assess(self, call: Dict[str, Any], result: Any) -> Dict[str, Any]:
+        """Build the validation record for one tool call. Always runs; cannot be skipped.
+
+        Returns a dict so the same assessment can be rendered two ways: a compact block
+        for the model, and a readable block for the log.
+        """
         name = call.get("name", "unknown_tool")
         args = call.get("args", {}) or {}
         probs = self._probabilities(result)
+        payload = result[0] if isinstance(result, tuple) and result else result
+        claim = str(payload)[:400]
 
-        lines = [f"<validation tool=\"{name}\">", "Computed from the tool output (not a model judgement):"]
-        if probs:
-            for label, p in probs:
-                if self._is_uninformative(p):
-                    verdict = "UNINFORMATIVE - near 0.5, expresses no opinion, do not count as a vote"
-                else:
-                    verdict = f"informative, supports {'YES' if p > 0.5 else 'NO'}"
-                lines.append(f"  {label} = {p:.3f} -> {verdict}")
+        informative, uninformative = [], []
+        for label, p in probs:
+            (uninformative if self._is_uninformative(p) else informative).append((label, p))
+
+        supports = self._visual_assessment(args, claim) if self.describe else (
+            "not assessed (LLM visual assessment disabled; set MEDRAX_VALIDATE_DESCRIBE=1)"
+        )
+
+        # Refuting evidence that can be computed without a model: this tool's own
+        # numbers pointing the other way, and any value that is really a coin flip.
+        refuting = []
+        for label, p in uninformative:
+            refuting.append(f"{label}={p:.3f} is inside the {DEAD_ZONE[0]}-{DEAD_ZONE[1]} "
+                            "dead zone: no opinion, must not be counted as a vote")
+        if not refuting:
+            refuting.append("none computed from this tool's output")
+
+        return {
+            "tool": name,
+            "args": args,
+            "raw_output": claim,
+            "conclusion": self._conclusion(name, payload, informative, probs),
+            "probabilities": [{"label": l, "value": round(p, 4),
+                               "informative": not self._is_uninformative(p),
+                               "supports": None if self._is_uninformative(p) else ("YES" if p > 0.5 else "NO")}
+                              for l, p in probs],
+            "supportive_evidence": supports,
+            "refuting_evidence": refuting,
+            "confidence_ceiling": self._ceiling(probs),
+        }
+
+    @staticmethod
+    def _conclusion(name: str, payload: Any, informative: List[Tuple[str, float]],
+                    probs_all: List[Tuple[str, float]]) -> str:
+        """One-line restatement of what this tool actually claimed."""
+        if isinstance(payload, dict) and "response" in payload:
+            answer = str(payload["response"]).strip()
+            if informative:
+                return f"{name} answered {answer!r} ({informative[0][0]}={informative[0][1]:.3f})"
+            return f"{name} answered {answer!r}"
+        if informative:
+            # A multi-label classifier has no single "conclusion"; picking the value
+            # furthest from 0.5 just surfaces whatever is most confidently absent.
+            # Report what it calls present, and how much of it is undecided.
+            positives = sorted(((l, p) for l, p in informative if p > 0.5),
+                               key=lambda kv: -kv[1])
+            undecided = sum(1 for _, p in probs_all if EvidenceValidator._is_uninformative(p))
+            if positives:
+                listed = ", ".join(f"{l}={p:.2f}" for l, p in positives[:4])
+                more = f" (+{len(positives) - 4} more)" if len(positives) > 4 else ""
+                return (f"{name} reports present: {listed}{more}; "
+                        f"{undecided} value(s) in the dead zone")
+            return (f"{name} reports nothing above 0.50; "
+                    f"{undecided} value(s) in the dead zone")
+        text = " ".join(str(payload).split())
+        return f"{name} returned text, no probability: {text[:160]}"
+
+    @staticmethod
+    def render_for_model(record: Dict[str, Any]) -> str:
+        """Compact block injected into the model's next turn."""
+        lines = [f"<validation tool=\"{record['tool']}\">",
+                 "Computed from the tool output (not a model judgement):"]
+        if record["probabilities"]:
+            for pr in record["probabilities"]:
+                verdict = (f"informative, supports {pr['supports']}" if pr["informative"]
+                           else "UNINFORMATIVE - near 0.5, expresses no opinion, "
+                                "do not count as a vote")
+                lines.append(f"  {pr['label']} = {pr['value']:.3f} -> {verdict}")
         else:
             lines.append("  no probabilities reported by this tool")
-        lines.append(f"  confidence ceiling: {self._ceiling(probs)} "
+        lines.append(f"  confidence ceiling: {record['confidence_ceiling']} "
                      f"(you may report lower, never higher)")
-
-        claim = str(result[0] if isinstance(result, tuple) and result else result)[:400]
-        lines.append(f"Visual assessment of the image: {self._visual_assessment(args, claim)}")
+        lines.append(f"Visual assessment of the image: {record['supportive_evidence']}")
         lines.append("</validation>")
         return "\n".join(lines)
+
+    @staticmethod
+    def render_for_log(record: Dict[str, Any]) -> str:
+        """Human-readable block written to logs/session_*.log."""
+        lines = [f"  TOOL: {record['tool']}",
+                 f"  ARGS: {record['args']}",
+                 f"  RAW OUTPUT: {record['raw_output'][:300]}",
+                 f"  CONCLUSION: {record['conclusion']}"]
+        if record["probabilities"]:
+            lines.append("  PROBABILITIES:")
+            for pr in record["probabilities"]:
+                tag = f"supports {pr['supports']}" if pr["informative"] else "UNINFORMATIVE (dead zone)"
+                lines.append(f"      {pr['label']} = {pr['value']:.4f}  [{tag}]")
+        else:
+            lines.append("  PROBABILITIES: none reported by this tool")
+        lines.append(f"  SUPPORTIVE EVIDENCE: {record['supportive_evidence']}")
+        lines.append("  REFUTING EVIDENCE:")
+        for item in record["refuting_evidence"]:
+            lines.append(f"      {item}")
+        lines.append(f"  CONFIDENCE (computed ceiling): {record['confidence_ceiling']}")
+        return "\n".join(lines)
+
+    def validate(self, call: Dict[str, Any], result: Any) -> str:
+        """Back-compatible helper: assess and render for the model."""
+        return self.render_for_model(self.assess(call, result))

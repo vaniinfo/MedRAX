@@ -89,10 +89,17 @@ class Agent:
         # (arXiv:2510.21324); the arithmetic half is computed rather than prompted.
         self.validator = validator
         self.pending_validations: List[str] = []
+        self.pending_records: List[Dict[str, Any]] = []
 
         if self.log_tools:
             self.log_path = Path(log_dir or "logs")
             self.log_path.mkdir(exist_ok=True)
+            # PATCH: a readable running transcript alongside the per-turn JSON. The JSON
+            # is for machines; this is for reading why a conclusion was reached.
+            self.session_log = self.log_path / (
+                f"session_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+            )
+            self._write_log(f"=== MedRAX session started {datetime.now().isoformat()} ===")
 
         # Define the agent workflow
         workflow = StateGraph(AgentState)
@@ -107,6 +114,16 @@ class Agent:
         self.workflow = workflow.compile(checkpointer=checkpointer)
         self.tools = {t.name: t for t in tools}
         self.model = model.bind_tools(tools)
+
+    def _write_log(self, text: str) -> None:
+        """Append to the readable session transcript. Never raises."""
+        if not self.log_tools:
+            return
+        try:
+            with open(self.session_log, "a") as handle:
+                handle.write(text.rstrip() + "\n")
+        except Exception:
+            pass
 
     def process_request(self, state: AgentState) -> Dict[str, List[AnyMessage]]:
         """
@@ -131,7 +148,19 @@ class Agent:
                 "\n\n" + "\n\n".join(self.pending_validations)
             ))]
             self.pending_validations = []
+            self.pending_records = []
         response = self.model.invoke(messages)
+
+        # PATCH: record what the orchestrator concluded, so it can be compared against
+        # what each tool actually reported above it in the same log.
+        stamp = datetime.now().strftime("%H:%M:%S")
+        if getattr(response, "tool_calls", None):
+            names = ", ".join(tc["name"] for tc in response.tool_calls)
+            self._write_log(f"\n[{stamp}] DIRECTOR -> calling tools: {names}")
+            for tc in response.tool_calls:
+                self._write_log(f"      {tc['name']}({tc['args']})")
+        if response.content:
+            self._write_log(f"\n[{stamp}] DIRECTOR ANSWER\n{response.content}")
         return {"messages": [response]}
 
     def has_tool_calls(self, state: AgentState) -> bool:
@@ -171,11 +200,24 @@ class Agent:
             # PATCH: forced validation -- a function call, not an instruction.
             if self.validator is not None:
                 try:
-                    self.pending_validations.append(self.validator.validate(call, result))
+                    record = self.validator.assess(call, result)
+                    self.pending_validations.append(self.validator.render_for_model(record))
+                    self.pending_records.append(record)
+                    self._write_log(
+                        f"\n[{datetime.now().strftime('%H:%M:%S')}] TOOL VALIDATION\n"
+                        + self.validator.render_for_log(record)
+                    )
                 except Exception as exc:
                     self.pending_validations.append(
                         f"<validation tool=\"{call['name']}\">failed: {exc}</validation>"
                     )
+                    self._write_log(f"  VALIDATION FAILED for {call['name']}: {exc}")
+            else:
+                self._write_log(
+                    f"\n[{datetime.now().strftime('%H:%M:%S')}] TOOL {call['name']} "
+                    f"(validation disabled)\n  ARGS: {call['args']}\n"
+                    f"  RAW OUTPUT: {str(result)[:300]}"
+                )
 
             results.append(
                 ToolMessage(
@@ -213,6 +255,11 @@ class Agent:
                 "content": call.content,
                 "timestamp": datetime.now().isoformat(),
             }
+            # PATCH: attach the validation record for this tool, if one was produced
+            for record in self.pending_records:
+                if record.get("tool") == call.name:
+                    log_entry["validation"] = record
+                    break
             logs.append(log_entry)
 
         with open(filename, "w") as f:
