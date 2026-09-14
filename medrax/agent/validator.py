@@ -96,7 +96,11 @@ class EvidenceValidator:
         """Confidence ceiling, computed -- never the model's self-assessment."""
         live = [p for _, p in probs if not cls._is_uninformative(p)]
         if not probs:
-            return "Medium"  # no numbers reported; nothing to cap on
+            # A text-returning tool (the report generator) yields nothing measurable.
+            # Reporting "Medium" implied a computed judgement that does not exist, and
+            # this is the tool that fabricates most -- invented prior studies, devices
+            # and contralateral findings all pass through here unchecked.
+            return "not computable (no probabilities; this tool is unvalidated)"
         if not live:
             return "Low"  # every number is a coin flip
         margin = max(abs(p - 0.5) for p in live) * 2
@@ -196,7 +200,7 @@ class EvidenceValidator:
         args = call.get("args", {}) or {}
         probs = self._probabilities(result)
         payload = result[0] if isinstance(result, tuple) and result else result
-        claim = str(payload)[:400]
+        claim = str(payload)[:2000]
 
         # PATCH: only probabilities bearing on the finding in question may drive the
         # ceiling. Previously the max margin over all 18 classifier outputs was used,
@@ -255,13 +259,13 @@ class EvidenceValidator:
             positives = sorted(((l, p) for l, p in informative if p > 0.5),
                                key=lambda kv: -kv[1])
             undecided = sum(1 for _, p in probs_all if EvidenceValidator._is_uninformative(p))
+            suffix = (f"; {undecided} of {len(probs_all)} relevant value(s) undecided"
+                      if undecided else "")
             if positives:
                 listed = ", ".join(f"{l}={p:.2f}" for l, p in positives[:4])
                 more = f" (+{len(positives) - 4} more)" if len(positives) > 4 else ""
-                return (f"{name} reports present: {listed}{more}; "
-                        f"{undecided} value(s) in the dead zone")
-            return (f"{name} reports nothing above 0.50; "
-                    f"{undecided} value(s) in the dead zone")
+                return f"{name} reports present: {listed}{more}{suffix}"
+            return f"{name} reports nothing above 0.50 for this finding{suffix}"
         if probs_all:
             # Relevant values exist but all sit in the dead zone.
             listed = ", ".join(f"{l}={p:.3f}" for l, p in probs_all[:3])
@@ -307,7 +311,7 @@ class EvidenceValidator:
         """Human-readable block written to logs/session_*.log."""
         lines = [f"  TOOL: {record['tool']}",
                  f"  ARGS: {record['args']}",
-                 f"  RAW OUTPUT: {record['raw_output'][:300]}",
+                 f"  RAW OUTPUT: {record['raw_output']}",
                  f"  CONCLUSION: {record['conclusion']}"]
         if record.get("focus"):
             lines.append(f"  FINDING IN QUESTION: {record['focus']}")
