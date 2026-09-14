@@ -2,6 +2,7 @@ import os
 import warnings
 from typing import *
 from dotenv import load_dotenv
+import torch  # PATCH: added for automatic device selection (see select_device below)
 from transformers import logging
 
 from langgraph.checkpoint.memory import MemorySaver
@@ -15,6 +16,20 @@ from medrax.utils import *
 warnings.filterwarnings("ignore")
 logging.set_verbosity_error()
 _ = load_dotenv()
+
+
+# PATCH: added helper. Upstream hardcodes device="cuda"; this picks the best
+# available backend so the project also runs on Apple Silicon (mps) and CPU-only
+# machines. Override with the MEDRAX_DEVICE env var, e.g. MEDRAX_DEVICE=cpu.
+def select_device() -> str:
+    """Return the best available torch device: cuda > mps > cpu."""
+    if forced := os.getenv("MEDRAX_DEVICE"):
+        return forced
+    if torch.cuda.is_available():
+        return "cuda"
+    if torch.backends.mps.is_available():
+        return "mps"
+    return "cpu"
 
 
 def initialize_agent(
@@ -45,7 +60,18 @@ def initialize_agent(
         Tuple[Agent, Dict[str, BaseTool]]: Initialized agent and dictionary of tool instances
     """
     prompts = load_prompts_from_file(prompt_file)
-    prompt = prompts["MEDICAL_ASSISTANT"]
+    # PATCH: the prompt section is now selectable. MEDICAL_ASSISTANT_EDV adds the
+    # evidence-driven validation protocol from CXRAgent (arXiv:2510.21324): consult
+    # >=2 tools of different architectures, quote their numbers verbatim, and assign
+    # a confidence anchored to tool agreement. It is the default because it beat the
+    # original prompt on both cases tested so far -- correctly Medium rather than
+    # High on a borderline case, and refusing a non-radiograph without calling any
+    # tool. That is only two cases; revert with MEDRAX_PROMPT=MEDICAL_ASSISTANT.
+    prompt_key = os.getenv("MEDRAX_PROMPT", "MEDICAL_ASSISTANT_EDV")
+    if prompt_key not in prompts:
+        raise KeyError(f"{prompt_key!r} not in {prompt_file}; found {list(prompts)}")
+    print(f"Using system prompt: {prompt_key}")
+    prompt = prompts[prompt_key]
 
     all_tools = {
         "ChestXRayClassifierTool": lambda: ChestXRayClassifierTool(device=device),
@@ -116,12 +142,19 @@ if __name__ == "__main__":
     if base_url := os.getenv("OPENAI_BASE_URL"):
         openai_kwargs["base_url"] = base_url
 
+    # PATCH: resolve the weights directory and compute device at runtime instead of
+    # hardcoding "/model-weights" (root-owned on macOS) and "cuda".
+    model_dir = os.getenv("MEDRAX_MODEL_DIR", os.path.expanduser("~/model-weights"))
+    os.makedirs(model_dir, exist_ok=True)
+    device = select_device()
+    print(f"Using device: {device} | model_dir: {model_dir}")
+
     agent, tools_dict = initialize_agent(
         "medrax/docs/system_prompts.txt",
         tools_to_use=selected_tools,
-        model_dir="/model-weights",  # Change this to the path of the model weights
+        model_dir=model_dir,  # PATCH: was "/model-weights"; set MEDRAX_MODEL_DIR to override
         temp_dir="temp",  # Change this to the path of the temporary directory
-        device="cuda",  # Change this to the device you want to use
+        device=device,  # PATCH: was "cuda"; auto-detected, set MEDRAX_DEVICE to override
         model="gpt-4o",  # Change this to the model you want to use, e.g. gpt-4o-mini
         temperature=0.7,
         top_p=0.95,
@@ -129,4 +162,10 @@ if __name__ == "__main__":
     )
     demo = create_demo(agent, tools_dict)
 
-    demo.launch(server_name="0.0.0.0", server_port=8585, share=True)
+    # PATCH: share=True opens a public gradio.live tunnel to this machine; default
+    # to local-only. Set MEDRAX_SHARE=1 to restore the upstream public-link behaviour.
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=8585,
+        share=os.getenv("MEDRAX_SHARE", "0") == "1",
+    )

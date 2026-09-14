@@ -172,3 +172,9 @@ logs/
 temp/
 
 .gradio/
+
+# PATCH: locally downloaded Open-i / Indiana University sample images
+data/indiana_samples/
+
+# Local investigation notes - not for commit
+docs/vqa-investigation.md
