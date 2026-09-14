@@ -1,5 +1,6 @@
 import json
 import operator
+import os
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import datetime
@@ -117,24 +118,46 @@ class Agent:
 
     @staticmethod
     def _last_user_text(state: AgentState) -> str:
-        """Most recent human-authored text, used to infer which finding is in question."""
-        for message in reversed(state.get("messages", [])):
-            if getattr(message, "type", None) != "human":
+        """Most recent human-authored text, used to infer which finding is in question.
+
+        PATCH: must handle raw dicts as well as Message objects. AgentState reduces
+        messages with operator.add rather than LangGraph's add_messages, so the dicts
+        that interface.py appends are never converted -- an earlier version checked
+        only `message.type` and therefore always returned "", which silently disabled
+        the relevance filter for every tool that does not carry the question in its
+        own arguments (i.e. everything except the VQA tool).
+        """
+        for message in reversed(state.get("messages", []) or []):
+            if isinstance(message, dict):
+                role, content = message.get("role"), message.get("content")
+            else:
+                role, content = getattr(message, "type", None), getattr(message, "content", None)
+            if role not in ("user", "human"):
                 continue
-            content = message.content
             if isinstance(content, str):
-                return content
-            if isinstance(content, list):
-                parts = [c.get("text", "") for c in content
-                         if isinstance(c, dict) and c.get("type") == "text"]
-                if any(parts):
-                    return " ".join(parts)
+                text = content
+            elif isinstance(content, list):
+                text = " ".join(part.get("text", "") for part in content
+                                if isinstance(part, dict) and part.get("type") == "text")
+            else:
+                text = ""
+            text = text.strip()
+            # skip the bare "image_path: ..." message interface.py sends alongside
+            if text and not text.startswith("image_path:"):
+                return text
         return ""
 
     def _write_log(self, text: str) -> None:
-        """Append to the readable session transcript. Never raises."""
+        """Append to the readable session transcript, and echo to the console.
+
+        PATCH: echoing is on by default -- the point of these blocks is to watch the
+        reasoning as it happens in the terminal running main.py. Set
+        MEDRAX_LOG_CONSOLE=0 to keep them in the file only.
+        """
         if not self.log_tools:
             return
+        if os.getenv("MEDRAX_LOG_CONSOLE", "1") == "1":
+            print(text, flush=True)
         try:
             with open(self.session_log, "a") as handle:
                 handle.write(text.rstrip() + "\n")
