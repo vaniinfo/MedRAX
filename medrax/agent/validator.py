@@ -207,9 +207,12 @@ class EvidenceValidator:
         for label, p in relevant:
             (uninformative if self._is_uninformative(p) else informative).append((label, p))
 
-        supports = self._visual_assessment(args, claim) if self.describe else (
-            "not assessed (LLM visual assessment disabled; set MEDRAX_VALIDATE_DESCRIBE=1)"
-        )
+        # PATCH: when the validator does not run its own visual pass, say nothing about
+        # it being "disabled". The Director reads that as "I cannot look" and stops
+        # reporting visible signs -- but it can see the image perfectly well, since
+        # interface.py sends it as base64 on every message. None here means "the
+        # Director does this itself", not "nobody does it".
+        supports = self._visual_assessment(args, claim) if self.describe else None
 
         # Refuting evidence that can be computed without a model: this tool's own
         # numbers pointing the other way, and any value that is really a coin flip.
@@ -290,7 +293,12 @@ class EvidenceValidator:
             lines.append(f"  ({hidden} other value(s) omitted: unrelated to {focus})")
         lines.append(f"  confidence ceiling: {record['confidence_ceiling']} "
                      f"(you may report lower, never higher)")
-        lines.append(f"Visual assessment of the image: {record['supportive_evidence']}")
+        if record.get("supportive_evidence"):
+            lines.append(f"Visual assessment by validator: {record['supportive_evidence']}")
+        else:
+            lines.append("Visual assessment: not performed by this validator. You can see "
+                         "the X-ray yourself -- report the specific radiographic signs you "
+                         "observe, with location.")
         lines.append("</validation>")
         return "\n".join(lines)
 
@@ -311,7 +319,9 @@ class EvidenceValidator:
                 lines.append(f"    {star} {pr['label']} = {pr['value']:.4f}  [{tag}]")
         else:
             lines.append("  PROBABILITIES: none reported by this tool")
-        lines.append(f"  SUPPORTIVE EVIDENCE: {record['supportive_evidence']}")
+        lines.append("  SUPPORTIVE EVIDENCE: " + (
+            record["supportive_evidence"] or "(validator did not assess; Director reports "
+                                             "this from the image itself)"))
         lines.append("  REFUTING EVIDENCE:")
         for item in record["refuting_evidence"]:
             lines.append(f"      {item}")
