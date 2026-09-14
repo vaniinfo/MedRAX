@@ -6,7 +6,7 @@ from datetime import datetime
 from typing import List, Dict, Any, TypedDict, Annotated, Optional
 
 from langgraph.graph import StateGraph, END
-from langchain_core.messages import AnyMessage, SystemMessage, ToolMessage
+from langchain_core.messages import AnyMessage, HumanMessage, SystemMessage, ToolMessage
 from langchain_core.language_models import BaseLanguageModel
 from langchain_core.tools import BaseTool
 
@@ -68,6 +68,7 @@ class Agent:
         system_prompt: str = "",
         log_tools: bool = True,
         log_dir: Optional[str] = "logs",
+        validator: Any = None,
     ):
         """
         Initialize the Agent.
@@ -82,6 +83,12 @@ class Agent:
         """
         self.system_prompt = system_prompt
         self.log_tools = log_tools
+        # PATCH: optional EvidenceValidator. When set, every tool result is validated
+        # by code inside execute_tools -- the model cannot skip it, unlike a system
+        # prompt asking for validation. Pattern borrowed from CXRAgent's _explain_func
+        # (arXiv:2510.21324); the arithmetic half is computed rather than prompted.
+        self.validator = validator
+        self.pending_validations: List[str] = []
 
         if self.log_tools:
             self.log_path = Path(log_dir or "logs")
@@ -114,6 +121,16 @@ class Agent:
         messages = state["messages"]
         if self.system_prompt:
             messages = [SystemMessage(content=self.system_prompt)] + messages
+        # PATCH: validations are injected here rather than folded into the ToolMessage
+        # content, because interface.py calls eval() on that content and would break.
+        if self.pending_validations:
+            messages = messages + [HumanMessage(content=(
+                "Validation of the tool results above. The computed lines are facts, "
+                "not suggestions: a tool marked UNINFORMATIVE must not be counted as a "
+                "vote, and your stated confidence must not exceed the computed ceiling."
+                "\n\n" + "\n\n".join(self.pending_validations)
+            ))]
+            self.pending_validations = []
         response = self.model.invoke(messages)
         return {"messages": [response]}
 
@@ -150,6 +167,15 @@ class Agent:
                 result = "invalid tool, please retry"
             else:
                 result = self.tools[call["name"]].invoke(call["args"])
+
+            # PATCH: forced validation -- a function call, not an instruction.
+            if self.validator is not None:
+                try:
+                    self.pending_validations.append(self.validator.validate(call, result))
+                except Exception as exc:
+                    self.pending_validations.append(
+                        f"<validation tool=\"{call['name']}\">failed: {exc}</validation>"
+                    )
 
             results.append(
                 ToolMessage(

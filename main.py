@@ -98,6 +98,23 @@ def initialize_agent(
         if tool_name in all_tools:
             tools_dict[tool_name] = all_tools[tool_name]()
 
+    # PATCH: forced evidence validation. Runs as a function call on every tool result
+    # rather than as a system-prompt request the model may ignore. Uses temperature=0
+    # and a separate un-tool-bound model so validation cannot itself call tools.
+    # Disable with MEDRAX_VALIDATE=0.
+    validator = None
+    if os.getenv("MEDRAX_VALIDATE", "1") == "1":
+        # MEDRAX_VALIDATE_DESCRIBE=0 drops the LLM visual assessment, leaving purely
+        # deterministic validation. The descriptive half can hurt: GPT-4o answering
+        # "no supporting signs visible" gets used as evidence against a specialist
+        # reporting 0.995, which is the generalist-overrules-specialist failure again.
+        describe = os.getenv("MEDRAX_VALIDATE_DESCRIBE", "0") == "1"
+        validator = EvidenceValidator(
+            model=ChatOpenAI(model=model, temperature=0, **openai_kwargs),
+            describe=describe,
+        )
+        print(f"Evidence validation: ON (forced per tool call, describe={describe})")
+
     checkpointer = MemorySaver()
     model = ChatOpenAI(model=model, temperature=temperature, top_p=top_p, **openai_kwargs)
     agent = Agent(
@@ -107,6 +124,7 @@ def initialize_agent(
         log_dir="logs",
         system_prompt=prompt,
         checkpointer=checkpointer,
+        validator=validator,
     )
 
     print("Agent initialized")

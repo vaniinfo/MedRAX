@@ -178,3 +178,6 @@ data/indiana_samples/
 
 # Local investigation notes - not for commit
 docs/vqa-investigation.md
+
+# macOS Finder metadata
+.DS_Store
