@@ -455,12 +455,26 @@ class EvidenceValidator:
                 x1, y1, x2, y2 = region["box_pct"]
                 lines.append(f"  {region['label']}: ({x1},{y1})-({x2},{y2}), "
                              f"{region['side_if_frontal']} on a frontal view")
-            lines.append("  This IS localised visual evidence, from a model trained on "
-                         "chest X-rays. Cite it as supportive evidence.")
+            # PATCH: measured on 84 image x finding pairs, 28 images. Grounding is NOT
+            # independent corroboration -- it is the same model's localisation head,
+            # and it tracks the binary head at a lower threshold (17% of pairs grounded
+            # below P(yes)=0.2, 91% between 0.2 and 0.5, 100% above). It found every
+            # true positive including two the binary head missed, but drew a box on 31%
+            # of images that did not have the finding. Describing it as corroboration
+            # would double-count one model's opinion as two.
+            lines.append("  CAUTION: this is the same model's localisation head, not a "
+                         "second opinion. Measured on this dataset it draws a box on 31% "
+                         "of images that do NOT have the finding, and it grounds almost "
+                         "anything the binary head scores above 0.2. Use it to say WHERE "
+                         "the finding would be if present; do not treat it as independent "
+                         "confirmation THAT it is present, and do not count it as a "
+                         "separate agreeing tool.")
         elif record.get("grounding_attempted"):
             lines.append(f"chest_xray_expert was asked to localise {record.get('focus')} "
-                         "and returned no region; that is not evidence against the "
-                         "finding, only an absent localisation.")
+                         "and returned no region. On this dataset an absent localisation "
+                         "was a stronger negative signal than a present one is a positive: "
+                         "it grounded 19 of 19 true positives, so failing to ground weighs "
+                         "against the finding, though it remains one model's opinion.")
         if record.get("supportive_evidence"):
             lines.append(f"Visual assessment by validator: {record['supportive_evidence']}")
         else:
