@@ -40,14 +40,25 @@ _DESCRIBE_SYSTEM = (
 class EvidenceValidator:
     """Validates each tool result. Numbers are computed; only prose comes from the LLM."""
 
-    def __init__(self, model: Optional[BaseLanguageModel] = None, describe: bool = True):
+    # CheXagent's trained grounding template. Verified empirically against several
+    # phrasings: this one and "Locate {f} in this chest X-ray." both return boxes,
+    # while "Where is the {f}?" returns prose with no coordinates.
+    GROUNDING_PROMPT = "Please locate the following phrase in the chest X-ray: {finding}"
+
+    def __init__(self, model: Optional[BaseLanguageModel] = None, describe: bool = True,
+                 grounder: Any = None):
         """
         Args:
             model: a vision-capable chat model used only for the descriptive half.
-            describe: set False to skip the LLM call entirely (deterministic only).
+            describe: set False to skip that LLM call (deterministic only).
+            grounder: the XRayVQATool. CheXagent can localise a named finding with
+                bounding boxes, which is visual evidence from a radiology-trained
+                model rather than from the generalist orchestrator.
         """
         self.model = model
         self.describe = describe and model is not None
+        self.grounder = grounder
+        self._grounding_cache: Dict[Tuple[str, str], List[Dict[str, Any]]] = {}
 
     # ---------------------------------------------------------------- numbers
 
@@ -268,6 +279,26 @@ class EvidenceValidator:
                 "stance": "NEGATES" if chosen["negated"] else "ASSERTS",
                 "quote": chosen["quote"]}
 
+    def _ground(self, path: Optional[str], focus: Optional[str]) -> List[Dict[str, Any]]:
+        """Ask CheXagent to localise the finding. Cached per (image, finding) so the
+        same question is not re-asked once per tool in a turn."""
+        if not (self.grounder and path and focus):
+            return []
+        key = (path, focus)
+        if key in self._grounding_cache:
+            return self._grounding_cache[key]
+        try:
+            out, _ = self.grounder._run(
+                image_paths=[path],
+                prompt=self.GROUNDING_PROMPT.format(finding=focus),
+                max_new_tokens=96,
+            )
+            regions = out.get("regions", []) or []
+        except Exception:
+            regions = []
+        self._grounding_cache[key] = regions
+        return regions
+
     def assess(self, call: Dict[str, Any], result: Any,
                focus: Optional[str] = None) -> Dict[str, Any]:
         """Build the validation record for one tool call. Always runs; cannot be skipped.
@@ -332,6 +363,9 @@ class EvidenceValidator:
         return {
             "tool": name,
             "text_stance": stance,
+            "grounded_regions": self._ground(self._image_path(args), focus),
+            "grounding_attempted": bool(self.grounder and focus
+                                        and self._image_path(args)),
             "args": args,
             "raw_output": claim,
             "conclusion": self._conclusion(name, payload, informative, relevant),
@@ -413,6 +447,20 @@ class EvidenceValidator:
                              "not outweigh a specialist reporting a high probability.")
         lines.append(f"  confidence ceiling: {record['confidence_ceiling']} "
                      f"(you may report lower, never higher)")
+        regions = record.get("grounded_regions") or []
+        if regions:
+            lines.append(f"Localised by chest_xray_expert (radiology-trained, boxes are "
+                         f"percentages of image width/height):")
+            for region in regions:
+                x1, y1, x2, y2 = region["box_pct"]
+                lines.append(f"  {region['label']}: ({x1},{y1})-({x2},{y2}), "
+                             f"{region['side_if_frontal']} on a frontal view")
+            lines.append("  This IS localised visual evidence, from a model trained on "
+                         "chest X-rays. Cite it as supportive evidence.")
+        elif record.get("grounding_attempted"):
+            lines.append(f"chest_xray_expert was asked to localise {record.get('focus')} "
+                         "and returned no region; that is not evidence against the "
+                         "finding, only an absent localisation.")
         if record.get("supportive_evidence"):
             lines.append(f"Visual assessment by validator: {record['supportive_evidence']}")
         else:
@@ -453,6 +501,10 @@ class EvidenceValidator:
         stance = record.get("text_stance")
         if stance and stance["stance"] != "SILENT":
             lines.append(f"  TEXT STANCE: {stance['stance']} -> \"{stance['quote']}\"")
+        for region in record.get("grounded_regions") or []:
+            x1, y1, x2, y2 = region["box_pct"]
+            lines.append(f"  GROUNDED REGION: {region['label']} at ({x1},{y1})-({x2},{y2}) "
+                         f"pct, {region['side_if_frontal']} on a frontal view")
         lines.append("  SUPPORTIVE EVIDENCE: " + (
             record["supportive_evidence"] or "(validator did not assess; Director reports "
                                              "this from the image itself)"))

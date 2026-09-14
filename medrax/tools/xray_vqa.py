@@ -1,3 +1,4 @@
+import re
 from typing import Dict, List, Optional, Tuple, Type, Any
 from pathlib import Path
 from pydantic import BaseModel, Field
@@ -37,6 +38,16 @@ def _require_compatible_transformers() -> None:
             "Fix: pip install 'transformers==4.40.0' 'tokenizers>=0.19,<0.20'\n"
             "Verify afterwards with: python scripts/verify_vqa_vision.py"
         )
+
+
+# CheXagent emits phrase grounding as:
+#   <|ref|> Consolidation <|/ref|> <|box|> (30,14),(46,36) <|/box|>
+# Module level rather than a class attribute: pydantic turns a leading-underscore
+# class attribute into a ModelPrivateAttr, which is not the compiled pattern.
+_REGION_RE = re.compile(
+    r"<\|ref\|>\s*(?P<label>.*?)\s*<\|/ref\|>\s*"
+    r"<\|box\|>\s*\((?P<x1>\d+),(?P<y1>\d+)\),\((?P<x2>\d+),(?P<y2>\d+)\)\s*<\|/box\|>"
+)
 
 
 class XRayVQAToolInput(BaseModel):
@@ -191,6 +202,25 @@ class XRayVQATool(BaseTool):
         )
         return round(float(pair[0]), 4)
 
+    @staticmethod
+    def _parse_regions(response: str) -> List[Dict[str, Any]]:
+        """Extract grounded regions from CheXagent's <|ref|>/<|box|> markup.
+
+        Coordinates are percentages of image width/height. On a frontal radiograph the
+        left of the image is the patient's right side, so `side` is reported from the
+        patient's perspective and is meaningless on a lateral view.
+        """
+        regions = []
+        for match in _REGION_RE.finditer(response or ""):
+            x1, y1 = int(match["x1"]), int(match["y1"])
+            x2, y2 = int(match["x2"]), int(match["y2"])
+            centre = (x1 + x2) / 2
+            side = "patient's right" if centre < 45 else (
+                "patient's left" if centre > 55 else "midline")
+            regions.append({"label": match["label"], "box_pct": [x1, y1, x2, y2],
+                            "side_if_frontal": side})
+        return regions
+
     def _run(
         self,
         image_paths: List[str],
@@ -220,6 +250,13 @@ class XRayVQATool(BaseTool):
             output = {
                 "response": response,
             }
+            # PATCH: CheXagent emits phrase grounding as
+            #   <|ref|> Consolidation <|/ref|> <|box|> (30,14),(46,36) <|/box|>
+            # which was previously passed through as raw markup and ignored. Parsed
+            # here so the coordinates can be used as localized visual evidence.
+            regions = self._parse_regions(response)
+            if regions:
+                output["regions"] = regions
             # PATCH: only present for yes/no answers; omitted for open-ended replies
             if confidence is not None:
                 output["confidence"] = confidence

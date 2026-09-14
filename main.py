@@ -112,6 +112,10 @@ def initialize_agent(
         validator = EvidenceValidator(
             model=ChatOpenAI(model=model, temperature=0, **openai_kwargs),
             describe=describe,
+            # CheXagent localises a named finding with bounding boxes. Passing the
+            # tool in lets the validator get visual evidence from a radiology-trained
+            # model instead of only from the generalist orchestrator.
+            grounder=tools_dict.get("XRayVQATool"),
         )
         print(f"Evidence validation: ON (forced per tool call, describe={describe})")
 
