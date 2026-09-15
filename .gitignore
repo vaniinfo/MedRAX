@@ -181,3 +181,6 @@ docs/vqa-investigation.md
 
 # macOS Finder metadata
 .DS_Store
+
+# Larger locally downloaded Open-i evaluation set
+data/indiana_eval/

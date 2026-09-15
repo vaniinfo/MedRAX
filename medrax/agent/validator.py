@@ -22,9 +22,39 @@ from typing import Any, Dict, List, Optional, Tuple
 from langchain_core.language_models import BaseLanguageModel
 from langchain_core.messages import HumanMessage, SystemMessage
 
-# A probability inside this band expresses no opinion. Treating it as a vote is what
-# made three tools outvote a correct specialist on every pneumothorax case.
-DEAD_ZONE: Tuple[float, float] = (0.40, 0.60)
+# Measured per-tool, per-finding reliability. 212 Open-i chest X-rays, ground truth from
+# the curated MeSH labels, local inference only. See scripts/measure_reliability.py.
+#
+# This replaces a uniform 0.40-0.60 "dead zone" that was guessed from four pneumothorax
+# images. That guess was wrong in a way that mattered: the classifier's best threshold
+# for cardiomegaly is 0.20, so a reading of 0.46 is a clear positive, and the dead zone
+# was discarding it as "no opinion".
+#
+#   threshold : the decision point that maximised balanced accuracy, NOT 0.5
+#   auc       : discrimination for this finding; 0.5 is chance
+RELIABILITY: Dict[Tuple[str, str], Dict[str, float]] = {
+    ("chest_xray_expert", "cardiomegaly"):         {"auc": 0.934, "threshold": 0.70},
+    ("chest_xray_expert", "pleural effusion"):     {"auc": 0.965, "threshold": 0.45},
+    ("chest_xray_expert", "atelectasis"):          {"auc": 0.863, "threshold": 0.55},
+    ("chest_xray_expert", "pulmonary edema"):      {"auc": 0.836, "threshold": 0.25},
+    ("chest_xray_classifier", "cardiomegaly"):     {"auc": 0.847, "threshold": 0.20},
+    ("chest_xray_classifier", "pleural effusion"): {"auc": 0.819, "threshold": 0.40},
+    ("chest_xray_classifier", "atelectasis"):      {"auc": 0.755, "threshold": 0.50},
+    ("chest_xray_classifier", "pulmonary edema"):  {"auc": 0.824, "threshold": 0.25},
+}
+
+# The report generator emits no probability, so it is scored on whether its text asserts
+# the finding. precision = of the reports asserting it, the fraction correct.
+REPORT_RELIABILITY: Dict[str, Dict[str, float]] = {
+    "cardiomegaly":     {"recall": 0.48, "precision": 0.62},
+    "pleural effusion": {"recall": 0.45, "precision": 0.78},
+    "pulmonary edema":  {"recall": 0.38, "precision": 0.26},
+    "atelectasis":      {"recall": 0.21, "precision": 0.57},
+}
+
+# Fallback for findings never measured -- notably pneumothorax, whose Open-i query failed.
+# An unmeasured pair is flagged as such rather than silently treated as reliable.
+UNMEASURED_THRESHOLD = 0.5
 
 _DESCRIBE_SYSTEM = (
     "You are validating one claim made by a chest X-ray analysis tool, against the image.\n"
@@ -99,13 +129,48 @@ class EvidenceValidator:
         return as_float if 0.0 <= as_float <= 1.0 else None
 
     @staticmethod
-    def _is_uninformative(p: float) -> bool:
-        return DEAD_ZONE[0] <= p <= DEAD_ZONE[1]
+    def _reliability(tool: str, finding: Optional[str]) -> Optional[Dict[str, float]]:
+        return RELIABILITY.get((tool, finding or ""))
+
+    @classmethod
+    def _classify(cls, p: float, tool: str, finding: Optional[str]) -> Dict[str, Any]:
+        """Score one probability against the measured threshold for this tool+finding.
+
+        `margin` is distance from the decision point, normalised to 0-1 on whichever
+        side the value falls, so it is comparable across tools with different
+        thresholds. A small margin means the tool is genuinely undecided -- which is
+        not the same as being near 0.5.
+        """
+        info = cls._reliability(tool, finding)
+        threshold = info["threshold"] if info else UNMEASURED_THRESHOLD
+        auc = info["auc"] if info else None
+        supports_yes = p >= threshold
+        margin = ((p - threshold) / (1 - threshold) if supports_yes and threshold < 1
+                  else (threshold - p) / threshold if threshold > 0 else 1.0)
+        return {"supports": "YES" if supports_yes else "NO",
+                "margin": round(margin, 3),
+                "informative": margin >= 0.15,
+                "threshold": threshold, "auc": auc, "measured": info is not None}
+
+    @classmethod
+    def _ceiling_from_scored(cls, scored: List[Dict[str, Any]]) -> str:
+        """Ceiling from margin AND discrimination. A wide margin on a tool that barely
+        separates this finding is not the same as a wide margin on one that does."""
+        live = [s for s in scored if s["informative"]]
+        if not scored:
+            return "not computable (no probabilities; this tool is unvalidated)"
+        if not live:
+            return "Low"
+        best = max(live, key=lambda s: s["margin"] * ((s["auc"] or 0.6) - 0.5) * 2)
+        strength = best["margin"] * ((best["auc"] or 0.6) - 0.5) * 2
+        if strength > 0.45:
+            return "High"
+        return "Medium" if strength > 0.15 else "Low"
 
     @classmethod
     def _ceiling(cls, probs: List[Tuple[str, float]]) -> str:
         """Confidence ceiling, computed -- never the model's self-assessment."""
-        live = [p for _, p in probs if not cls._is_uninformative(p)]
+        live = [p for _, p in probs if p is not None]
         if not probs:
             # A text-returning tool (the report generator) yields nothing measurable.
             # Reporting "Medium" implied a computed judgement that does not exist, and
@@ -317,9 +382,13 @@ class EvidenceValidator:
         # so an irrelevant Cardiomegaly=0.006 forced a High ceiling on a pneumothorax
         # question -- which suppressed the hedging that the un-validated run produced.
         relevant = [(l, p) for l, p in probs if self._is_relevant(l, focus)]
-        informative, uninformative = [], []
+        scored = []
         for label, p in relevant:
-            (uninformative if self._is_uninformative(p) else informative).append((label, p))
+            entry = self._classify(p, name, focus)
+            entry.update({"label": label, "value": round(p, 4)})
+            scored.append(entry)
+        informative = [(s["label"], s["value"]) for s in scored if s["informative"]]
+        uninformative = [(s["label"], s["value"]) for s in scored if not s["informative"]]
 
         # PATCH: when the validator does not run its own visual pass, say nothing about
         # it being "disabled". The Director reads that as "I cannot look" and stops
@@ -335,9 +404,10 @@ class EvidenceValidator:
         # on exactly the borderline cases where it should stay neutral.
         refuting = []
         uninformative_notes = [
-            f"{label}={p:.3f} is inside the {DEAD_ZONE[0]}-{DEAD_ZONE[1]} dead zone: "
-            "no opinion either way, do not count it as a vote in either direction"
-            for label, p in uninformative
+            f"{s['label']}={s['value']:.3f} sits within {1 - s['margin']:.0%} of this "
+            f"tool's measured decision point ({s['threshold']:.2f}) for {focus}: "
+            "too close to call, do not count it as a vote in either direction"
+            for s in scored if not s["informative"]
         ]
         stance = None
         if not probs and isinstance(payload, str):
@@ -369,16 +439,25 @@ class EvidenceValidator:
             "args": args,
             "raw_output": claim,
             "conclusion": self._conclusion(name, payload, informative, relevant),
-            "probabilities": [{"label": l, "value": round(p, 4),
-                               "relevant": self._is_relevant(l, focus),
-                               "informative": not self._is_uninformative(p),
-                               "supports": None if self._is_uninformative(p) else ("YES" if p > 0.5 else "NO")}
-                              for l, p in probs],
+            # PATCH: score a probability against the finding's threshold only when it
+            # actually bears on that finding. Previously every value was scored against
+            # the focus threshold, so on a pleural-effusion question the classifier's
+            # Cardiomegaly reading was judged against the effusion decision point.
+            "probabilities": [
+                (dict(self._classify(p, name, focus), label=l, value=round(p, 4),
+                      relevant=True)
+                 if self._is_relevant(l, focus) else
+                 {"label": l, "value": round(p, 4), "relevant": False,
+                  "informative": False, "supports": None, "margin": 0.0,
+                  "threshold": None, "auc": None, "measured": False})
+                for l, p in probs
+            ],
+            "report_reliability": REPORT_RELIABILITY.get(focus or ""),
             "supportive_evidence": supports,
             "refuting_evidence": refuting,
             "uninformative_notes": uninformative_notes,
             "focus": focus,
-            "confidence_ceiling": self._ceiling(relevant),
+            "confidence_ceiling": self._ceiling_from_scored(scored),
         }
 
     @staticmethod
@@ -396,7 +475,7 @@ class EvidenceValidator:
             # Report what it calls present, and how much of it is undecided.
             positives = sorted(((l, p) for l, p in informative if p > 0.5),
                                key=lambda kv: -kv[1])
-            undecided = sum(1 for _, p in probs_all if EvidenceValidator._is_uninformative(p))
+            undecided = len(probs_all) - len(informative)
             suffix = (f"; {undecided} of {len(probs_all)} relevant value(s) undecided"
                       if undecided else "")
             if positives:
@@ -424,9 +503,14 @@ class EvidenceValidator:
         hidden = len(record["probabilities"]) - len(shown)
         if shown:
             for pr in shown:
-                verdict = (f"informative, supports {pr['supports']}" if pr["informative"]
-                           else "UNINFORMATIVE - near 0.5, expresses no opinion, "
-                                "do not count as a vote")
+                basis = (f"measured threshold {pr['threshold']:.2f}, AUC {pr['auc']:.2f}"
+                         if pr.get("measured") else
+                         f"threshold {pr['threshold']:.2f} ASSUMED - this tool has not "
+                         "been measured for this finding")
+                verdict = (f"supports {pr['supports']} (margin {pr['margin']:.2f}; {basis})"
+                           if pr["informative"] else
+                           f"TOO CLOSE TO CALL (margin {pr['margin']:.2f}; {basis}) - "
+                           "do not count as a vote")
                 lines.append(f"  {pr['label']} = {pr['value']:.3f} -> {verdict}")
         else:
             lines.append("  this tool reported no probability about "
@@ -475,6 +559,11 @@ class EvidenceValidator:
                          "was a stronger negative signal than a present one is a positive: "
                          "it grounded 19 of 19 true positives, so failing to ground weighs "
                          "against the finding, though it remains one model's opinion.")
+        rr = record.get("report_reliability")
+        if rr and record["tool"] == "chest_xray_report_generator":
+            lines.append(f"  measured reliability of this tool for {record.get('focus')}: "
+                         f"recall {rr['recall']:.0%}, precision {rr['precision']:.0%}. "
+                         "It is the weakest of the three tools; weight it accordingly.")
         if record.get("supportive_evidence"):
             lines.append(f"Visual assessment by validator: {record['supportive_evidence']}")
         else:
@@ -507,9 +596,18 @@ class EvidenceValidator:
         if record["probabilities"]:
             lines.append("  PROBABILITIES (* = bears on the finding in question):")
             for pr in record["probabilities"]:
-                tag = f"supports {pr['supports']}" if pr["informative"] else "UNINFORMATIVE (dead zone)"
+                if pr["informative"]:
+                    tag = f"supports {pr['supports']}, margin {pr['margin']:.2f}"
+                else:
+                    tag = f"TOO CLOSE TO CALL, margin {pr['margin']:.2f}"
+                if not pr.get("relevant", True):
+                    tag, basis = "not related to this finding", "not scored"
+                elif pr.get("measured"):
+                    basis = f"thr {pr['threshold']:.2f} auc {pr['auc']:.2f}"
+                else:
+                    basis = f"thr {pr['threshold']:.2f} UNMEASURED"
                 star = "*" if pr.get("relevant", True) else " "
-                lines.append(f"    {star} {pr['label']} = {pr['value']:.4f}  [{tag}]")
+                lines.append(f"    {star} {pr['label']} = {pr['value']:.4f}  [{tag}; {basis}]")
         else:
             lines.append("  PROBABILITIES: none reported by this tool")
         stance = record.get("text_stance")
