@@ -89,6 +89,7 @@ class EvidenceValidator:
         self.describe = describe and model is not None
         self.grounder = grounder
         self._grounding_cache: Dict[Tuple[str, str], List[Dict[str, Any]]] = {}
+        self._grounding_repeat = False
 
     # ---------------------------------------------------------------- numbers
 
@@ -351,7 +352,12 @@ class EvidenceValidator:
             return []
         key = (path, focus)
         if key in self._grounding_cache:
+            # Already localised for this image and finding in this turn. Return it for
+            # the record, but flag it so the model-facing block does not repeat the same
+            # coordinates once per tool.
+            self._grounding_repeat = True
             return self._grounding_cache[key]
+        self._grounding_repeat = False
         try:
             out, _ = self.grounder._run(
                 image_paths=[path],
@@ -434,6 +440,7 @@ class EvidenceValidator:
             "tool": name,
             "text_stance": stance,
             "grounded_regions": self._ground(self._image_path(args), focus),
+            "grounding_repeat": self._grounding_repeat,
             "grounding_attempted": bool(self.grounder and focus
                                         and self._image_path(args)),
             "args": args,
@@ -532,7 +539,11 @@ class EvidenceValidator:
         lines.append(f"  confidence ceiling: {record['confidence_ceiling']} "
                      f"(you may report lower, never higher)")
         regions = record.get("grounded_regions") or []
-        if regions:
+        if regions and record.get("grounding_repeat"):
+            lines.append(f"Localisation for {record.get('focus')} was reported above; "
+                         "it is one result for this image, not separate corroboration "
+                         "from each tool.")
+        elif regions:
             lines.append(f"Localised by chest_xray_expert (radiology-trained, boxes are "
                          f"percentages of image width/height):")
             for region in regions:
@@ -576,11 +587,15 @@ class EvidenceValidator:
             # specialist. Without this the Director downgraded correct findings to Low
             # purely because it could not see a mild or subtle sign itself, which is
             # expected: it is not trained on radiology and the specialists are.
-            lines.append("If you write 'none visible', that is a limit of your own general "
-                         "vision, NOT evidence against the finding. You are not a "
-                         "radiology-trained model and the specialist tools are. Do not "
-                         "lower your confidence or your conclusion because you personally "
-                         "could not see a subtle sign.")
+            lines.append("You ARE a multimodal model and the radiograph is attached to "
+                         "this conversation. Do not answer that you rely on tool outputs "
+                         "rather than visual assessment, or that you cannot assess images "
+                         "-- look, and report what you see.")
+            lines.append("If you genuinely see nothing, write 'none visible'. That is a "
+                         "limit of your own general vision, NOT evidence against the "
+                         "finding: you are not radiology-trained and the specialist tools "
+                         "are. Do not lower your confidence or change your conclusion "
+                         "because you personally could not see a subtle sign.")
         lines.append("</validation>")
         return "\n".join(lines)
 
@@ -595,7 +610,11 @@ class EvidenceValidator:
             lines.append(f"  FINDING IN QUESTION: {record['focus']}")
         if record["probabilities"]:
             lines.append("  PROBABILITIES (* = bears on the finding in question):")
+            skipped = 0
             for pr in record["probabilities"]:
+                if not pr.get("relevant", True):
+                    skipped += 1
+                    continue
                 if pr["informative"]:
                     tag = f"supports {pr['supports']}, margin {pr['margin']:.2f}"
                 else:
@@ -606,8 +625,10 @@ class EvidenceValidator:
                     basis = f"thr {pr['threshold']:.2f} auc {pr['auc']:.2f}"
                 else:
                     basis = f"thr {pr['threshold']:.2f} UNMEASURED"
-                star = "*" if pr.get("relevant", True) else " "
-                lines.append(f"    {star} {pr['label']} = {pr['value']:.4f}  [{tag}; {basis}]")
+                lines.append(f"    * {pr['label']} = {pr['value']:.4f}  [{tag}; {basis}]")
+            if skipped:
+                lines.append(f"      ({skipped} other value(s) not related to "
+                             f"{record.get('focus')}, not scored)")
         else:
             lines.append("  PROBABILITIES: none reported by this tool")
         stance = record.get("text_stance")
