@@ -42,26 +42,28 @@ from langchain_core.messages import HumanMessage, SystemMessage
 # 0.20, making a reading of 0.46 "a clear positive" -- does not survive remeasurement at
 # 0.45. Both values sit inside this row's 0.25-0.55 interval. The point estimate was never
 # precise enough to settle the case that prompted it, in either direction.
-RELIABILITY: Dict[Tuple[str, str], Dict[str, float]] = {
-    #                                                                            thr 95% CI
-    ("chest_xray_expert", "cardiomegaly"):         {"auc": 0.909, "threshold": 0.45},  # .45-.60
-    ("chest_xray_expert", "pleural effusion"):     {"auc": 0.951, "threshold": 0.70},  # .50-.80
-    ("chest_xray_expert", "pneumothorax"):         {"auc": 0.948, "threshold": 0.25},  # .10-.60
-    ("chest_xray_expert", "consolidation"):        {"auc": 0.810, "threshold": 0.25},  # .15-.40
-    ("chest_xray_expert", "pulmonary edema"):      {"auc": 0.897, "threshold": 0.50},  # .20-.75
-    ("chest_xray_expert", "atelectasis"):          {"auc": 0.819, "threshold": 0.40},  # .35-.65
-    ("chest_xray_classifier", "cardiomegaly"):     {"auc": 0.852, "threshold": 0.45},  # .25-.55
-    ("chest_xray_classifier", "pleural effusion"): {"auc": 0.887, "threshold": 0.50},  # .40-.60
+#   thr_ci    : 95% bootstrap interval for that decision point. A reading inside it is
+#               not a vote -- a plausible alternative threshold would flip its direction,
+#               so which way the tool leans is not something the data settles.
+RELIABILITY: Dict[Tuple[str, str], Dict[str, Any]] = {
+    ("chest_xray_expert", "cardiomegaly"):         {"auc": 0.909, "threshold": 0.45, "thr_ci": (0.45, 0.60)},
+    ("chest_xray_expert", "pleural effusion"):     {"auc": 0.951, "threshold": 0.70, "thr_ci": (0.50, 0.80)},
+    ("chest_xray_expert", "pneumothorax"):         {"auc": 0.948, "threshold": 0.25, "thr_ci": (0.10, 0.60)},
+    ("chest_xray_expert", "consolidation"):        {"auc": 0.810, "threshold": 0.25, "thr_ci": (0.15, 0.40)},
+    ("chest_xray_expert", "pulmonary edema"):      {"auc": 0.897, "threshold": 0.50, "thr_ci": (0.20, 0.75)},
+    ("chest_xray_expert", "atelectasis"):          {"auc": 0.819, "threshold": 0.40, "thr_ci": (0.35, 0.65)},
+    ("chest_xray_classifier", "cardiomegaly"):     {"auc": 0.852, "threshold": 0.45, "thr_ci": (0.25, 0.55)},
+    ("chest_xray_classifier", "pleural effusion"): {"auc": 0.887, "threshold": 0.50, "thr_ci": (0.40, 0.60)},
     # Near chance, and the finding this whole code path was built around. Its AUC interval
     # is 0.510-0.728: it clears chance by a hundredth. Kept rather than dropped because
     # dropping it would make the pair ASSUMED at 0.5, which claims more than this does --
     # and the AUC weighting in _ceiling_from_scored already discounts 0.622 to nearly
-    # nothing. This is the measurement behind the original complaint that three tools
-    # outvoted a correct specialist on pneumothorax.
-    ("chest_xray_classifier", "pneumothorax"):     {"auc": 0.622, "threshold": 0.35},  # .05-.50
-    ("chest_xray_classifier", "consolidation"):    {"auc": 0.762, "threshold": 0.50},  # .50-.50
-    ("chest_xray_classifier", "pulmonary edema"):  {"auc": 0.807, "threshold": 0.15},  # .05-.40
-    ("chest_xray_classifier", "atelectasis"):      {"auc": 0.699, "threshold": 0.40},  # .35-.55
+    # nothing. Its threshold interval spans 0.05-0.50, so the coin-flip readings that
+    # started this investigation now correctly register as no opinion at all.
+    ("chest_xray_classifier", "pneumothorax"):     {"auc": 0.622, "threshold": 0.35, "thr_ci": (0.05, 0.50)},
+    ("chest_xray_classifier", "consolidation"):    {"auc": 0.762, "threshold": 0.50, "thr_ci": (0.50, 0.50)},
+    ("chest_xray_classifier", "pulmonary edema"):  {"auc": 0.807, "threshold": 0.15, "thr_ci": (0.05, 0.40)},
+    ("chest_xray_classifier", "atelectasis"):      {"auc": 0.699, "threshold": 0.40, "thr_ci": (0.35, 0.55)},
 }
 
 # CheXagent beats the classifier on five of six findings, paired on the same bootstrap
@@ -95,6 +97,13 @@ REPORT_RELIABILITY: Dict[str, Dict[str, float]] = {
 # now measured, so this applies to findings nobody has evaluated at all. An unmeasured
 # pair is flagged as such rather than silently treated as reliable.
 UNMEASURED_THRESHOLD = 0.5
+
+# The original guessed dead zone, surviving only where it is the best available answer:
+# a pair with no measured threshold interval. For everything in RELIABILITY the band is
+# that pair's own thr_ci, which is narrower for some findings and far wider for others --
+# 0.15 wide for CheXagent on cardiomegaly, 0.55 wide for CheXagent on edema. Applying one
+# uniform band to all of them was the mistake this whole investigation started from.
+ASSUMED_DEAD_ZONE: Tuple[float, float] = (0.40, 0.60)
 
 _DESCRIBE_SYSTEM = (
     "You are validating one claim made by a chest X-ray analysis tool, against the image.\n"
@@ -181,17 +190,32 @@ class EvidenceValidator:
         side the value falls, so it is comparable across tools with different
         thresholds. A small margin means the tool is genuinely undecided -- which is
         not the same as being near 0.5.
+
+        Whether a reading counts as a vote is decided by that pair's measured threshold
+        interval, not by the margin. PATCH: it used to be `margin >= 0.15`, a guessed
+        constant that ignored discrimination entirely, so the classifier reading 0.50 on
+        pneumothorax -- a tool at AUC 0.622, which is the exact failure this code path
+        exists to prevent -- came back "supports YES, margin 0.23". Inside thr_ci, a
+        plausible alternative threshold would flip the direction, so there is no vote to
+        count. Outside it, `auc` still governs how much the vote is worth, in
+        _ceiling_from_scored. One question per number.
         """
         info = cls._reliability(tool, finding)
         threshold = info["threshold"] if info else UNMEASURED_THRESHOLD
         auc = info["auc"] if info else None
+        thr_ci = info.get("thr_ci") if info else None
         supports_yes = p >= threshold
         margin = ((p - threshold) / (1 - threshold) if supports_yes and threshold < 1
                   else (threshold - p) / threshold if threshold > 0 else 1.0)
+        if thr_ci:
+            informative = p < thr_ci[0] or p > thr_ci[1]
+        else:
+            informative = not (ASSUMED_DEAD_ZONE[0] <= p <= ASSUMED_DEAD_ZONE[1])
         return {"supports": "YES" if supports_yes else "NO",
                 "margin": round(margin, 3),
-                "informative": margin >= 0.15,
-                "threshold": threshold, "auc": auc, "measured": info is not None}
+                "informative": informative,
+                "threshold": threshold, "thr_ci": thr_ci,
+                "auc": auc, "measured": info is not None}
 
     @classmethod
     def _ceiling_from_scored(cls, scored: List[Dict[str, Any]]) -> str:
@@ -450,10 +474,14 @@ class EvidenceValidator:
         # negative verdicts on exactly the borderline cases where it should stay neutral.
         refuting = []
         uninformative_notes = [
-            f"{s['label']}={s['value']:.3f} is only {s['margin']:.2f} from this tool's "
-            f"{'measured' if s['measured'] else 'ASSUMED (unmeasured)'} decision point "
-            f"of {s['threshold']:.2f} for {focus}: too close to call, do not count it as "
-            "a vote in either direction"
+            f"{s['label']}={s['value']:.3f} falls inside the uncertainty around this "
+            f"tool's decision point for {focus} "
+            + (f"(measured 95% interval {s['thr_ci'][0]:.2f}-{s['thr_ci'][1]:.2f})"
+               if s.get("thr_ci") else
+               f"(ASSUMED {ASSUMED_DEAD_ZONE[0]}-{ASSUMED_DEAD_ZONE[1]}; this tool has "
+               "never been measured for this finding)")
+            + ": which side of the line it falls on is not settled by the data, so do "
+              "not count it as a vote in either direction"
             for s in scored if not s["informative"]
         ]
         stance = None
@@ -551,14 +579,18 @@ class EvidenceValidator:
         hidden = len(record["probabilities"]) - len(shown)
         if shown:
             for pr in shown:
-                basis = (f"measured threshold {pr['threshold']:.2f}, AUC {pr['auc']:.2f}"
+                ci = pr.get("thr_ci")
+                basis = (f"measured threshold {pr['threshold']:.2f} "
+                         f"(95% {ci[0]:.2f}-{ci[1]:.2f}), AUC {pr['auc']:.2f}"
+                         if pr.get("measured") and ci else
+                         f"measured threshold {pr['threshold']:.2f}, AUC {pr['auc']:.2f}"
                          if pr.get("measured") else
                          f"threshold {pr['threshold']:.2f} ASSUMED - this tool has not "
                          "been measured for this finding")
                 verdict = (f"supports {pr['supports']} (margin {pr['margin']:.2f}; {basis})"
                            if pr["informative"] else
-                           f"TOO CLOSE TO CALL (margin {pr['margin']:.2f}; {basis}) - "
-                           "do not count as a vote")
+                           f"TOO CLOSE TO CALL - inside the decision point's own "
+                           f"uncertainty ({basis}), so it is not a vote either way")
                 lines.append(f"  {pr['label']} = {pr['value']:.3f} -> {verdict}")
         else:
             lines.append("  this tool reported no probability about "
@@ -658,14 +690,16 @@ class EvidenceValidator:
                 if not pr.get("relevant", True):
                     skipped += 1
                     continue
+                ci = pr.get("thr_ci")
                 if pr["informative"]:
                     tag = f"supports {pr['supports']}, margin {pr['margin']:.2f}"
                 else:
-                    tag = f"TOO CLOSE TO CALL, margin {pr['margin']:.2f}"
+                    tag = "TOO CLOSE TO CALL, inside the threshold's own interval"
                 if not pr.get("relevant", True):
                     tag, basis = "not related to this finding", "not scored"
                 elif pr.get("measured"):
-                    basis = f"thr {pr['threshold']:.2f} auc {pr['auc']:.2f}"
+                    span = f" 95% {ci[0]:.2f}-{ci[1]:.2f}" if ci else ""
+                    basis = f"thr {pr['threshold']:.2f}{span} auc {pr['auc']:.2f}"
                 else:
                     basis = f"thr {pr['threshold']:.2f} UNMEASURED"
                 lines.append(f"    * {pr['label']} = {pr['value']:.4f}  [{tag}; {basis}]")

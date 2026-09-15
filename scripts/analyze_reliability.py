@@ -203,6 +203,7 @@ def main():
                 a_ci, t_ci = f"{a_lo:.3f}-{a_hi:.3f}", f"{t_lo:.2f}-{t_hi:.2f}"
             else:
                 a_lo = a_hi = float("nan")
+                t_lo = t_hi = None
                 a_ci = t_ci = "--"
 
             flag = ""
@@ -220,7 +221,12 @@ def main():
                 skipped.append((key, finding,
                                 f"AUC CI {a_lo:.3f}-{a_hi:.3f} includes chance"))
             else:
-                emit[(key, finding)] = {"auc": round(a, 3), "threshold": thr}
+                # thr_ci is what the validator uses to decide whether a reading is a
+                # vote at all: inside the interval, a plausible alternative threshold
+                # would flip its direction, so the data does not determine which way
+                # this tool leans.
+                emit[(key, finding)] = {"auc": round(a, 3), "threshold": thr,
+                                        "thr_ci": None if t_lo is None else (t_lo, t_hi)}
 
             print(f"{finding:18s} {npos:4d} {label:11s} {a:6.3f} {a_ci:>14s} "
                   f"{thr:5.2f} {t_ci:>12s} {acc:7.1%}{flag}")
@@ -255,12 +261,17 @@ def main():
     print("pair ASSUMED, which is the honest description of one it could not measure.")
     print("=" * 78)
     if emit:
+        if any(v["thr_ci"] is None for v in emit.values()):
+            print("# WARNING: run with --bootstrap to get thr_ci. Without it the "
+                  "validator\n# falls back to a guessed band for these pairs.")
         width = max(len(f'    ("{k}", "{f}"):') for k, f in emit)
-        print("RELIABILITY: Dict[Tuple[str, str], Dict[str, float]] = {")
+        print("RELIABILITY: Dict[Tuple[str, str], Dict[str, Any]] = {")
         for (key, finding), v in emit.items():
             head = f'    ("{key}", "{finding}"):'
+            ci_text = ("None" if v["thr_ci"] is None
+                       else f'({v["thr_ci"][0]:.2f}, {v["thr_ci"][1]:.2f})')
             print(f'{head:<{width}} {{"auc": {v["auc"]:.3f}, '
-                  f'"threshold": {v["threshold"]:.2f}}},')
+                  f'"threshold": {v["threshold"]:.2f}, "thr_ci": {ci_text}}},')
         print("}")
     else:
         print("RELIABILITY = {}   # nothing measured well enough to emit")
