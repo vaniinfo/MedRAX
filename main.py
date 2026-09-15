@@ -64,8 +64,14 @@ def initialize_agent(
     # 4-bit. Both require bitsandbytes, which needs CUDA -- on Apple Silicon these
     # tools cannot run at all, so the value is irrelevant there.
     quant = os.getenv("MEDRAX_QUANT", "8bit").lower()
-    quant_kwargs = {"load_in_4bit": True} if quant == "4bit" else (
-        {} if quant in ("none", "off", "full") else {"load_in_8bit": True})
+    # PATCH: "none" must pass both flags False explicitly. load_pretrained_model's
+    # signature defaults load_in_4bit=True, so an empty dict still quantised.
+    if quant == "4bit":
+        quant_kwargs = {"load_in_4bit": True, "load_in_8bit": False}
+    elif quant in ("none", "off", "full"):
+        quant_kwargs = {"load_in_4bit": False, "load_in_8bit": False}
+    else:
+        quant_kwargs = {"load_in_8bit": True, "load_in_4bit": False}
 
     prompts = load_prompts_from_file(prompt_file)
     # PATCH: the prompt section is now selectable. MEDICAL_ASSISTANT_EDV adds the
