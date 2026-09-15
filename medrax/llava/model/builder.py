@@ -22,13 +22,18 @@ def load_pretrained_model(
 
     kwargs = {}
 
-    if device != "cuda":
-        kwargs["device_map"] = {"": device}
-    # else:
-    #     kwargs["device_map"] = "auto"
+    # PATCH: always pass a device_map. Previously nothing was passed on CUDA, leaving
+    # placement to transformers' defaults; quantized models need an explicit map.
+    kwargs["device_map"] = {"": 0} if device == "cuda" else {"": device}
 
     if load_in_8bit:
-        kwargs["load_in_8bit"] = True
+        # PATCH: was kwargs["load_in_8bit"] = True. That bare kwarg is deprecated in
+        # transformers 4.40 and does not mark the model as quantized early enough, so
+        # accelerate takes its single-device shortcut in dispatch_model and calls
+        # model.to(device) -- which bitsandbytes rejects:
+        #   ValueError: `.to` is not supported for `4-bit` or `8-bit` bitsandbytes models
+        # The 4-bit branch below already used the supported form; this now matches it.
+        kwargs["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
     elif load_in_4bit:
         # kwargs["load_in_4bit"] = True
         kwargs["quantization_config"] = BitsAndBytesConfig(
