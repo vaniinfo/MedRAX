@@ -22,38 +22,78 @@ from typing import Any, Dict, List, Optional, Tuple
 from langchain_core.language_models import BaseLanguageModel
 from langchain_core.messages import HumanMessage, SystemMessage
 
-# Measured per-tool, per-finding reliability. 212 Open-i chest X-rays, ground truth from
-# the curated MeSH labels, local inference only. See scripts/measure_reliability.py.
+# Measured per-tool, per-finding reliability. 544 frontal chest X-rays from the Indiana
+# University collection, ground truth from the curated MeSH labels, local inference only.
 #
-# This replaces a uniform 0.40-0.60 "dead zone" that was guessed from four pneumothorax
-# images. That guess was wrong in a way that mattered: the classifier's best threshold
-# for cardiomegaly is 0.20, so a reading of 0.46 is a clear positive, and the dead zone
-# was discarding it as "no opinion".
+#   scripts/build_eval_set.py       selects the images (reproducible from --seed)
+#   scripts/measure_reliability.py  runs the three tools over them
+#   scripts/analyze_reliability.py  produces this table, with bootstrap intervals
 #
-#   threshold : the decision point that maximised balanced accuracy, NOT 0.5
+# Supersedes a 212-image Open-i table whose data no longer exists and could not have been
+# regenerated: Open-i redraws a ranked search on every call, so the set was never the same
+# twice. The AUCs below replicate that table within ~0.06 on 2.5x the images. The
+# thresholds do not replicate, which is the more important result.
+#
+#   threshold : the decision point maximising balanced accuracy, NOT 0.5
 #   auc       : discrimination for this finding; 0.5 is chance
+#
+# Read the threshold interval before resting any argument on a single reading. The
+# earlier table's headline claim -- that the classifier's cardiomegaly decision point is
+# 0.20, making a reading of 0.46 "a clear positive" -- does not survive remeasurement at
+# 0.45. Both values sit inside this row's 0.25-0.55 interval. The point estimate was never
+# precise enough to settle the case that prompted it, in either direction.
 RELIABILITY: Dict[Tuple[str, str], Dict[str, float]] = {
-    ("chest_xray_expert", "cardiomegaly"):         {"auc": 0.934, "threshold": 0.70},
-    ("chest_xray_expert", "pleural effusion"):     {"auc": 0.965, "threshold": 0.45},
-    ("chest_xray_expert", "atelectasis"):          {"auc": 0.863, "threshold": 0.55},
-    ("chest_xray_expert", "pulmonary edema"):      {"auc": 0.836, "threshold": 0.25},
-    ("chest_xray_classifier", "cardiomegaly"):     {"auc": 0.847, "threshold": 0.20},
-    ("chest_xray_classifier", "pleural effusion"): {"auc": 0.819, "threshold": 0.40},
-    ("chest_xray_classifier", "atelectasis"):      {"auc": 0.755, "threshold": 0.50},
-    ("chest_xray_classifier", "pulmonary edema"):  {"auc": 0.824, "threshold": 0.25},
+    #                                                                            thr 95% CI
+    ("chest_xray_expert", "cardiomegaly"):         {"auc": 0.909, "threshold": 0.45},  # .45-.60
+    ("chest_xray_expert", "pleural effusion"):     {"auc": 0.951, "threshold": 0.70},  # .50-.80
+    ("chest_xray_expert", "pneumothorax"):         {"auc": 0.948, "threshold": 0.25},  # .10-.60
+    ("chest_xray_expert", "consolidation"):        {"auc": 0.810, "threshold": 0.25},  # .15-.40
+    ("chest_xray_expert", "pulmonary edema"):      {"auc": 0.897, "threshold": 0.50},  # .20-.75
+    ("chest_xray_expert", "atelectasis"):          {"auc": 0.819, "threshold": 0.40},  # .35-.65
+    ("chest_xray_classifier", "cardiomegaly"):     {"auc": 0.852, "threshold": 0.45},  # .25-.55
+    ("chest_xray_classifier", "pleural effusion"): {"auc": 0.887, "threshold": 0.50},  # .40-.60
+    # Near chance, and the finding this whole code path was built around. Its AUC interval
+    # is 0.510-0.728: it clears chance by a hundredth. Kept rather than dropped because
+    # dropping it would make the pair ASSUMED at 0.5, which claims more than this does --
+    # and the AUC weighting in _ceiling_from_scored already discounts 0.622 to nearly
+    # nothing. This is the measurement behind the original complaint that three tools
+    # outvoted a correct specialist on pneumothorax.
+    ("chest_xray_classifier", "pneumothorax"):     {"auc": 0.622, "threshold": 0.35},  # .05-.50
+    ("chest_xray_classifier", "consolidation"):    {"auc": 0.762, "threshold": 0.50},  # .50-.50
+    ("chest_xray_classifier", "pulmonary edema"):  {"auc": 0.807, "threshold": 0.15},  # .05-.40
+    ("chest_xray_classifier", "atelectasis"):      {"auc": 0.699, "threshold": 0.40},  # .35-.55
 }
+
+# CheXagent beats the classifier on five of six findings, paired on the same bootstrap
+# resamples. Consolidation is the exception at +0.047 (CI -0.001 to +0.100) -- within
+# noise. An earlier claim that it wins on *every* finding was two AUCs compared by eye.
+#
+#   pneumothorax +0.325   cardiomegaly +0.056   consolidation +0.047 (no separation)
+#   atelectasis  +0.118   effusion     +0.064
+#   edema        +0.090
 
 # The report generator emits no probability, so it is scored on whether its text asserts
 # the finding. precision = of the reports asserting it, the fraction correct.
+#
+# It also contradicts itself -- asserting in FINDINGS and denying in IMPRESSION, or the
+# reverse -- on 14% of cardiomegaly mentions and 11% of effusion mentions. Those reports
+# are excluded from both rates here rather than forced into one column; _text_stance
+# reports them as CONTRADICTS so the Director sees the disagreement instead of a verdict.
 REPORT_RELIABILITY: Dict[str, Dict[str, float]] = {
-    "cardiomegaly":     {"recall": 0.48, "precision": 0.62},
-    "pleural effusion": {"recall": 0.45, "precision": 0.78},
-    "pulmonary edema":  {"recall": 0.38, "precision": 0.26},
-    "atelectasis":      {"recall": 0.21, "precision": 0.57},
+    "cardiomegaly":     {"recall": 0.41, "precision": 0.65},
+    "pleural effusion": {"recall": 0.58, "precision": 0.69},
+    # Asserting these two is barely better than a coin flip. Weight the text accordingly.
+    "pneumothorax":     {"recall": 0.46, "precision": 0.46},
+    "pulmonary edema":  {"recall": 0.56, "precision": 0.27},
+    "consolidation":    {"recall": 0.23, "precision": 0.56},
+    # Zero negations in 544 reports: it asserts atelectasis or says nothing at all, so
+    # silence is the only negative signal it offers and must not be read as one.
+    "atelectasis":      {"recall": 0.30, "precision": 0.45},
 }
 
-# Fallback for findings never measured -- notably pneumothorax, whose Open-i query failed.
-# An unmeasured pair is flagged as such rather than silently treated as reliable.
+# Fallback for pairs outside the table above -- every finding in scripts/findings.py is
+# now measured, so this applies to findings nobody has evaluated at all. An unmeasured
+# pair is flagged as such rather than silently treated as reliable.
 UNMEASURED_THRESHOLD = 0.5
 
 _DESCRIBE_SYSTEM = (
@@ -405,9 +445,9 @@ class EvidenceValidator:
 
         # Refuting evidence that can be computed without a model: this tool's own
         # numbers pointing the other way, and any value that is really a coin flip.
-        # PATCH: a probability in the dead zone is ABSENCE of evidence, not evidence
-        # against. Listing it as refuting pushed the Director toward negative verdicts
-        # on exactly the borderline cases where it should stay neutral.
+        # PATCH: a probability too close to its decision point is ABSENCE of evidence,
+        # not evidence against. Listing it as refuting pushed the Director toward
+        # negative verdicts on exactly the borderline cases where it should stay neutral.
         refuting = []
         uninformative_notes = [
             f"{s['label']}={s['value']:.3f} is only {s['margin']:.2f} from this tool's "
@@ -492,7 +532,7 @@ class EvidenceValidator:
                 return f"{name} reports present: {listed}{more}{suffix}"
             return f"{name} reports nothing above 0.50 for this finding{suffix}"
         if probs_all:
-            # Relevant values exist but all sit in the dead zone.
+            # Relevant values exist, but all sit too near their decision points to call.
             listed = ", ".join(f"{l}={p:.3f}" for l, p in probs_all[:3])
             return f"{name} is undecided on this finding ({listed})"
         text = " ".join(str(payload).split())
