@@ -634,10 +634,16 @@ class EvidenceValidator:
         stance = record.get("text_stance")
         if stance and stance["stance"] != "SILENT":
             lines.append(f"  TEXT STANCE: {stance['stance']} -> \"{stance['quote']}\"")
-        for region in record.get("grounded_regions") or []:
-            x1, y1, x2, y2 = region["box_pct"]
-            lines.append(f"  GROUNDED REGION: {region['label']} at ({x1},{y1})-({x2},{y2}) "
-                         f"pct, {region['side_if_frontal']} on a frontal view")
+        # PATCH: localisation is one cached result per image+finding. render_for_model
+        # was de-duplicated but this was not, so the console still printed the same
+        # coordinates under every tool, reading as three separate confirmations.
+        if record.get("grounded_regions") and record.get("grounding_repeat"):
+            lines.append("  GROUNDED REGION: (same result as above, not re-queried)")
+        else:
+            for region in record.get("grounded_regions") or []:
+                x1, y1, x2, y2 = region["box_pct"]
+                lines.append(f"  GROUNDED REGION: {region['label']} at ({x1},{y1})-({x2},{y2}) "
+                             f"pct, {region['side_if_frontal']} on a frontal view")
         lines.append("  SUPPORTIVE EVIDENCE: " + (
             record["supportive_evidence"] or "(validator did not assess; Director reports "
                                              "this from the image itself)"))
