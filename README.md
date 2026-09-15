@@ -260,6 +260,45 @@ python scripts/verify_vqa_vision.py      # exit 0 = healthy, 1 = broken
 | VQA answers look plausible but ignore the image | Run `scripts/verify_vqa_vision.py` |
 | Port 8585 in use | Change `server_port` at the bottom of `main.py` |
 
+### Gated and quantised models
+
+**MAIRA-2 needs approval.** `microsoft/maira-2` is a gated Hugging Face repo. Request
+access on [its model page](https://huggingface.co/microsoft/maira-2), wait to be granted,
+then authenticate:
+
+```powershell
+python -m pip install huggingface_hub[cli]
+huggingface-cli login          # paste a token from hf.co/settings/tokens
+```
+
+Until then the tool is skipped with a message; the rest of MedRAX runs normally.
+
+**Load LLaVA-Med unquantised if you have the VRAM.** `transformers==4.40` calls
+accelerate's `dispatch_model` whenever a `device_map` is set, with no guard for quantised
+models, and accelerate takes a `model.to(device)` shortcut for a single-device map --
+which bitsandbytes rejects:
+
+```
+ValueError: `.to` is not supported for `4-bit` or `8-bit` bitsandbytes models
+```
+
+This affects any single-GPU bitsandbytes load under the pinned transformers. On a 24 GB
+card, skip quantisation entirely:
+
+```powershell
+$env:MEDRAX_QUANT="none"; python main.py
+```
+
+Verified working on an RTX 3090: CheXagent (~6 GB) + LLaVA-Med bf16 (~14 GB) + the small
+tools (~2 GB). On a 12-16 GB card you will need quantisation, and therefore will hit the
+conflict above -- run without LLaVA-Med instead:
+
+```powershell
+$env:MEDRAX_TOOLS="ImageVisualizerTool,DicomProcessorTool,ChestXRayClassifierTool,ChestXRaySegmentationTool,ChestXRayReportGeneratorTool,XRayVQATool"
+```
+
+A tool that cannot load no longer stops startup -- it is reported and skipped.
+
 > **A pinned dependency worth understanding.** CheXagent-2-3b only works with
 > `transformers==4.40.x`. On newer versions it still loads and still produces confident,
 > well-formed radiology text, but it stops attending to the image — silently, with no

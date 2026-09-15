@@ -105,12 +105,33 @@ def initialize_agent(
         "DicomProcessorTool": lambda: DicomProcessorTool(temp_dir=temp_dir),
     }
 
-    # Initialize only selected tools or all if none specified
+    # Initialize only selected tools or all if none specified.
+    # PATCH: a tool that cannot load must not take the whole application down with it.
+    # Weights can be gated (microsoft/maira-2 needs approval), absent (RoentGen is not
+    # public), too large for the card, or blocked by a version conflict. Previously any
+    # one of those raised during startup and nothing ran at all.
     tools_dict = {}
+    failed = {}
     tools_to_use = tools_to_use or all_tools.keys()
     for tool_name in tools_to_use:
-        if tool_name in all_tools:
+        if tool_name not in all_tools:
+            print(f"  ! unknown tool {tool_name!r}, skipping")
+            continue
+        try:
             tools_dict[tool_name] = all_tools[tool_name]()
+        except Exception as exc:
+            failed[tool_name] = exc
+            reason = str(exc).split("\n")[0][:160]
+            print(f"  ! {tool_name} unavailable, continuing without it: {reason}")
+
+    if failed:
+        print(f"\n{len(failed)} tool(s) could not load: {', '.join(failed)}")
+        for tool_name, exc in failed.items():
+            if "gated repo" in str(exc).lower() or "403" in str(exc):
+                print(f"  {tool_name}: the weights are gated. Request access on the model's "
+                      f"Hugging Face page, then run `huggingface-cli login`.")
+    if not tools_dict:
+        raise RuntimeError("No tools could be initialized; refusing to start.")
 
     # PATCH: forced evidence validation. Runs as a function call on every tool result
     # rather than as a system-prompt request the model may ignore. Uses temperature=0
