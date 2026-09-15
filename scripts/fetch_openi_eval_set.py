@@ -8,7 +8,8 @@ negated text too. Truth always comes from the MeSH `problems` field.
 import csv, json, os, time, urllib.parse, urllib.request
 
 BASE = "https://openi.nlm.nih.gov"
-OUT = "/Users/hari/_workarea_/vani/MedRAX/data/indiana_eval"
+OUT = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "indiana_eval")
 os.makedirs(OUT, exist_ok=True)
 
 QUERIES = [

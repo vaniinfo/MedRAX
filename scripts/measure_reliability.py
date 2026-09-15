@@ -13,10 +13,26 @@ Results are written incrementally so the run can be interrupted and resumed.
 """
 import csv, json, os, sys, time, warnings
 warnings.filterwarnings("ignore")
-sys.path.insert(0, "/Users/hari/_workarea_/vani/MedRAX")
-os.chdir("/Users/hari/_workarea_/vani/MedRAX")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+os.chdir(ROOT)
 from medrax.tools import XRayVQATool, ChestXRayClassifierTool, ChestXRayReportGeneratorTool
 from medrax.agent import EvidenceValidator
+
+
+def pick_device() -> str:
+    """cuda on Colab or a GPU box, mps on Apple Silicon, cpu otherwise."""
+    import torch
+    if os.getenv("MEDRAX_DEVICE"):
+        return os.environ["MEDRAX_DEVICE"]
+    if torch.cuda.is_available():
+        return "cuda"
+    return "mps" if torch.backends.mps.is_available() else "cpu"
+
+
+DEVICE = pick_device()
+CACHE = os.getenv("MEDRAX_MODEL_DIR", os.path.expanduser("~/model-weights"))
+print(f"device: {DEVICE} | weights: {CACHE}", flush=True)
 
 DATA = "data/indiana_eval"
 OUT = "reliability.json"
@@ -38,9 +54,9 @@ if os.path.exists(OUT):
     done = {r["file"]: r for r in json.load(open(OUT))}
     print(f"resuming: {len(done)} images already measured", flush=True)
 
-vqa = XRayVQATool(cache_dir=os.path.expanduser("~/model-weights"), device="mps")
-clf = ChestXRayClassifierTool(device="mps")
-rep = ChestXRayReportGeneratorTool(cache_dir=os.path.expanduser("~/model-weights"), device="mps")
+vqa = XRayVQATool(cache_dir=CACHE, device=DEVICE)
+clf = ChestXRayClassifierTool(device=DEVICE)
+rep = ChestXRayReportGeneratorTool(cache_dir=CACHE, device=DEVICE)
 
 results = list(done.values())
 t0, n = time.time(), 0
