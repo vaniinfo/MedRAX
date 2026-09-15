@@ -123,14 +123,18 @@ installing it first pins the CUDA build so the next step does not replace it. Ch
 CUDA version:
 
 ```powershell
-pip install --upgrade pip
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+python -m pip install --upgrade pip
+python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ```
+
+> Use `python -m pip`, not bare `pip`, on Windows. Windows cannot replace `pip.exe`
+> while it is running, so `pip install --upgrade pip` fails with
+> *"To modify pip, please run the following command"*.
 
 **4. Install MedRAX**
 
 ```powershell
-pip install -e .
+python -m pip install -e .
 python -c "import torch; print('cuda:', torch.cuda.is_available(), torch.cuda.get_device_name(0))"
 ```
 
