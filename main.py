@@ -128,8 +128,11 @@ def initialize_agent(
         print(f"\n{len(failed)} tool(s) could not load: {', '.join(failed)}")
         for tool_name, exc in failed.items():
             if "gated repo" in str(exc).lower() or "403" in str(exc):
-                print(f"  {tool_name}: the weights are gated. Request access on the model's "
-                      f"Hugging Face page, then run `huggingface-cli login`.")
+                # The 403 says "not in the authorized list" even when the account does
+                # have access, if the request was anonymous. Login is the usual fix.
+                print(f"  {tool_name}: gated weights. Run `huggingface-cli login` first — "
+                      f"the 403 says 'not in the authorized list' even when you do have "
+                      f"access, if you are not logged in.")
     if not tools_dict:
         raise RuntimeError("No tools could be initialized; refusing to start.")
 

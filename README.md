@@ -262,16 +262,19 @@ python scripts/verify_vqa_vision.py      # exit 0 = healthy, 1 = broken
 
 ### Gated and quantised models
 
-**MAIRA-2 needs approval.** `microsoft/maira-2` is a gated Hugging Face repo. Request
-access on [its model page](https://huggingface.co/microsoft/maira-2), wait to be granted,
-then authenticate:
+**MAIRA-2 needs you to be logged in.** `microsoft/maira-2` is a gated Hugging Face repo,
+so downloading it requires authentication:
 
 ```powershell
-python -m pip install huggingface_hub[cli]
 huggingface-cli login          # paste a token from hf.co/settings/tokens
 ```
 
-Until then the tool is skipped with a message; the rest of MedRAX runs normally.
+If you are not logged in you get a 403 saying *"you are not in the authorized list"* —
+**even when your account does have access**, because the request arrives anonymous. Log
+in first; only if it still fails do you need to request access on
+[the model page](https://huggingface.co/microsoft/maira-2).
+
+Either way the tool is skipped with a message and the rest of MedRAX runs normally.
 
 **Load LLaVA-Med unquantised if you have the VRAM.** `transformers==4.40` calls
 accelerate's `dispatch_model` whenever a `device_map` is set, with no guard for quantised
