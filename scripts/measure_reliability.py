@@ -14,8 +14,10 @@ Results are written incrementally so the run can be interrupted and resumed.
 import csv, json, os, sys, time, warnings
 warnings.filterwarnings("ignore")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "scripts"))
 sys.path.insert(0, ROOT)
 os.chdir(ROOT)
+from findings import FINDINGS, is_positive
 from medrax.tools import XRayVQATool, ChestXRayClassifierTool, ChestXRayReportGeneratorTool
 from medrax.agent import EvidenceValidator
 
@@ -37,18 +39,10 @@ print(f"device: {DEVICE} | weights: {CACHE}", flush=True)
 DATA = "data/indiana_eval"
 OUT = "reliability.json"
 
-# finding -> (MeSH substrings proving presence, classifier key)
-FINDINGS = {
-    "cardiomegaly":     (["cardiomegaly"], "Cardiomegaly"),
-    "pleural effusion": (["pleural effusion"], "Effusion"),
-    # Re-enabled: the Open-i query that failed on the first run now works. Check the
-    # class balance before trusting the row -- under ~20 positives it is noise.
-    "pneumothorax":     (["pneumothorax"], "Pneumothorax"),
-    "consolidation":    (["consolidation"], "Consolidation"),
-    "pulmonary edema":  (["pulmonary edema"], "Edema"),
-    # 63 positives in this set -- better populated than edema, and it was missing
-    "atelectasis":      (["atelectasis"], "Atelectasis"),
-}
+# Which findings, and how each is recognised in the MeSH labels, now live in
+# scripts/findings.py -- shared with the fetch and analysis scripts. Keeping a second
+# copy here is what let this script measure six findings while validator.py's
+# RELIABILITY table still held four.
 
 rows = list(csv.DictReader(open(f"{DATA}/GROUND_TRUTH.csv")))
 done = {}
@@ -76,8 +70,9 @@ for row in rows:
     except Exception as exc:
         print(f"  ! {row['file']}: {exc}", flush=True)
         continue
-    for finding, (keys, clf_key) in FINDINGS.items():
-        truth = any(k in row["problems"].lower() for k in keys)
+    for finding, spec in FINDINGS.items():
+        clf_key = spec["clf"]
+        truth = is_positive(row["problems"], finding)
         try:
             out, _ = vqa._run(image_paths=[img], max_new_tokens=8,
                               prompt=f"Does this chest X-ray contain a {finding}?")

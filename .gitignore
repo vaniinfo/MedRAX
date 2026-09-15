@@ -184,3 +184,8 @@ docs/vqa-investigation.md
 
 # Larger locally downloaded Open-i evaluation set
 data/indiana_eval/
+
+# Raw Kaggle mirror of the same Indiana University collection (~7.5k images). The
+# balanced subset the measurement actually runs on is built from this into
+# data/indiana_eval/, so this directory is the download and never the working set.
+data/indiana_kaggle/
