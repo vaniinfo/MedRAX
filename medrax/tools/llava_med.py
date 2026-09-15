@@ -98,17 +98,22 @@ class LlavaMedTool(BaseTool):
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
 
+        # PATCH: was .cuda(), which hard-fails on any machine without CUDA rather than
+        # falling back. Follow the loaded model instead, so the tool works wherever the
+        # model was placed.
+        device = self.model.device
+
         input_ids = (
             tokenizer_image_token(prompt, self.tokenizer, IMAGE_TOKEN_INDEX, return_tensors="pt")
             .unsqueeze(0)
-            .cuda()
+            .to(device)
         )
 
         image_tensor = None
         if image_path:
             image = Image.open(image_path)
             image_tensor = process_images([image], self.image_processor, self.model.config)[0]
-            image_tensor = image_tensor.unsqueeze(0).half().cuda()
+            image_tensor = image_tensor.unsqueeze(0).half().to(device)
 
         return input_ids, image_tensor
 

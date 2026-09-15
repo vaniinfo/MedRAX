@@ -59,6 +59,14 @@ def initialize_agent(
     Returns:
         Tuple[Agent, Dict[str, BaseTool]]: Initialized agent and dictionary of tool instances
     """
+    # PATCH: quantisation is a per-machine decision, not a constant. 8-bit is the
+    # upstream default; a 12-16GB card running LLaVA-Med alongside CheXagent needs
+    # 4-bit. Both require bitsandbytes, which needs CUDA -- on Apple Silicon these
+    # tools cannot run at all, so the value is irrelevant there.
+    quant = os.getenv("MEDRAX_QUANT", "8bit").lower()
+    quant_kwargs = {"load_in_4bit": True} if quant == "4bit" else (
+        {} if quant in ("none", "off", "full") else {"load_in_8bit": True})
+
     prompts = load_prompts_from_file(prompt_file)
     # PATCH: the prompt section is now selectable. MEDICAL_ASSISTANT_EDV adds the
     # evidence-driven validation protocol from CXRAgent (arXiv:2510.21324): consult
@@ -76,13 +84,13 @@ def initialize_agent(
     all_tools = {
         "ChestXRayClassifierTool": lambda: ChestXRayClassifierTool(device=device),
         "ChestXRaySegmentationTool": lambda: ChestXRaySegmentationTool(device=device),
-        "LlavaMedTool": lambda: LlavaMedTool(cache_dir=model_dir, device=device, load_in_8bit=True),
+        "LlavaMedTool": lambda: LlavaMedTool(cache_dir=model_dir, device=device, **quant_kwargs),
         "XRayVQATool": lambda: XRayVQATool(cache_dir=model_dir, device=device),
         "ChestXRayReportGeneratorTool": lambda: ChestXRayReportGeneratorTool(
             cache_dir=model_dir, device=device
         ),
         "XRayPhraseGroundingTool": lambda: XRayPhraseGroundingTool(
-            cache_dir=model_dir, temp_dir=temp_dir, load_in_8bit=True, device=device
+            cache_dir=model_dir, temp_dir=temp_dir, device=device, **quant_kwargs
         ),
         "ChestXRayGeneratorTool": lambda: ChestXRayGeneratorTool(
             model_path=f"{model_dir}/roentgen", temp_dir=temp_dir, device=device
@@ -142,19 +150,39 @@ if __name__ == "__main__":
     """
     print("Starting server...")
 
-    # Example: initialize with only specific tools
-    # Here three tools are commented out, you can uncomment them to use them
-    selected_tools = [
+    # PATCH: resolve the weights directory and compute device at runtime instead of
+    # hardcoding "/model-weights" (root-owned on macOS) and "cuda". Must happen before
+    # the tool list is chosen, since some tools are CUDA-only.
+    model_dir = os.getenv("MEDRAX_MODEL_DIR", os.path.expanduser("~/model-weights"))
+    os.makedirs(model_dir, exist_ok=True)
+    device = select_device()
+    print(f"Using device: {device} | model_dir: {model_dir}")
+
+    # PATCH: tool selection is now chosen for the machine instead of hand-edited.
+    # LlavaMedTool and XRayPhraseGroundingTool need bitsandbytes quantisation, which
+    # requires CUDA -- they cannot run on Apple Silicon or CPU at all. ChestXRayGeneratorTool
+    # is never on by default: RoentGen weights are not publicly downloadable.
+    # Override with MEDRAX_TOOLS as a comma-separated list.
+    PORTABLE_TOOLS = [
         "ImageVisualizerTool",
         "DicomProcessorTool",
         "ChestXRayClassifierTool",
         "ChestXRaySegmentationTool",
         "ChestXRayReportGeneratorTool",
         "XRayVQATool",
-        # "LlavaMedTool",
-        # "XRayPhraseGroundingTool",
-        # "ChestXRayGeneratorTool",
     ]
+    CUDA_ONLY_TOOLS = [
+        "LlavaMedTool",
+        "XRayPhraseGroundingTool",
+    ]
+
+    if tools_env := os.getenv("MEDRAX_TOOLS"):
+        selected_tools = [name.strip() for name in tools_env.split(",") if name.strip()]
+    else:
+        selected_tools = list(PORTABLE_TOOLS)
+        if device == "cuda":
+            selected_tools += CUDA_ONLY_TOOLS
+    print(f"Tools: {', '.join(selected_tools)}")
 
     # Collect the ENV variables
     openai_kwargs = {}
@@ -163,13 +191,6 @@ if __name__ == "__main__":
 
     if base_url := os.getenv("OPENAI_BASE_URL"):
         openai_kwargs["base_url"] = base_url
-
-    # PATCH: resolve the weights directory and compute device at runtime instead of
-    # hardcoding "/model-weights" (root-owned on macOS) and "cuda".
-    model_dir = os.getenv("MEDRAX_MODEL_DIR", os.path.expanduser("~/model-weights"))
-    os.makedirs(model_dir, exist_ok=True)
-    device = select_device()
-    print(f"Using device: {device} | model_dir: {model_dir}")
 
     agent, tools_dict = initialize_agent(
         "medrax/docs/system_prompts.txt",

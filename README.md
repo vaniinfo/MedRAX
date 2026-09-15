@@ -67,51 +67,234 @@ python quickstart.py \
 <br>
 
 ## Installation
+
 ### Prerequisites
-- Python 3.8+
-- CUDA/GPU for best performance
 
-### Installation Steps
-```bash
-# Clone the repository
-git clone https://github.com/bowang-lab/MedRAX.git
-cd MedRAX
+| | requirement |
+|---|---|
+| Python | **3.11 exactly.** Not 3.12 or 3.13 — this project pins `numpy<2` and `tokenizers 0.19.1`, and neither publishes wheels for 3.12+, so `pip` tries to build them from source and fails |
+| Disk | ~20 GB for model weights (~35 GB if you enable LLaVA-Med and MAIRA-2) |
+| GPU | Optional. NVIDIA (CUDA) is fastest and unlocks two extra tools; Apple Silicon (MPS) works; CPU works but is slow |
+| API key | An OpenAI key — GPT-4o orchestrates the tools and nothing runs without it |
 
-# Install package
-pip install -e .
+---
+
+### Windows with an NVIDIA GPU
+
+This is the configuration that runs **every** tool except the image generator.
+
+**1. Install Python 3.11** from [python.org](https://www.python.org/downloads/release/python-3119/).
+Tick **"Add Python to PATH"** in the installer.
+
+```powershell
+py -3.11 --version        # must print 3.11.x
+nvidia-smi                # confirms the driver and shows your VRAM
 ```
 
-### Getting Started
-```bash
-# Start the Gradio interface
+**2. Clone and create a virtual environment**
+
+```powershell
+git clone https://github.com/vaniinfo/MedRAX.git
+cd MedRAX
+py -3.11 -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+> If PowerShell refuses with *"running scripts is disabled on this system"*, run this
+> once and then activate again:
+> ```powershell
+> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+> ```
+> On `cmd.exe` the activate command is `.venv\Scripts\activate.bat` instead.
+
+Your prompt should now start with `(.venv)`. Confirm the right interpreter is active —
+if this path does not contain `.venv`, activation failed and you will install into
+system Python:
+
+```powershell
+where python
+```
+
+**3. Install CUDA PyTorch FIRST**
+
+This step is the one people miss. The default PyTorch wheel on Windows is **CPU-only**;
+installing it first pins the CUDA build so the next step does not replace it. Check
+[pytorch.org](https://pytorch.org/get-started/locally/) for the index URL matching your
+CUDA version:
+
+```powershell
+pip install --upgrade pip
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+```
+
+**4. Install MedRAX**
+
+```powershell
+pip install -e .
+python -c "import torch; print('cuda:', torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+```
+
+That must print `cuda: True`. If it prints `False`, step 3 did not take — uninstall torch
+and redo it.
+
+**5. Add your OpenAI key**
+
+Create a file named `.env` in the project root with one line. The encoding matters —
+PowerShell's default adds a BOM that breaks parsing:
+
+```powershell
+Set-Content -Path .env -Value 'OPENAI_API_KEY=sk-your-key-here' -Encoding utf8
+```
+
+**6. Run**
+
+```powershell
 python main.py
 ```
-or if you run into permission issues
+
+Open **http://localhost:8585**. The first run downloads the model weights and will sit
+quiet for several minutes before the URL appears.
+
+---
+
+### macOS (Apple Silicon) and Linux
+
 ```bash
-sudo -E env "PATH=$PATH" python main.py
+python3.11 -m venv .venv && source .venv/bin/activate
+pip install -e .
+echo 'OPENAI_API_KEY=sk-your-key-here' > .env
+python main.py                      # http://localhost:8585
 ```
-You need to setup the `model_dir` inside `main.py` to the directory where you want to download or already have the weights of above tools from Hugging Face.
-Comment out the tools that you do not have access to.
-Make sure to setup your OpenAI API key in `.env` file!
+
+On Linux with an NVIDIA GPU, install CUDA PyTorch first as in Windows step 3.
+
+---
+
+### Which tools run where
+
+Tool selection is automatic. `main.py` prints the device and the tool list at startup.
+
+| tool | CUDA | Apple Silicon | CPU |
+|---|:---:|:---:|:---:|
+| ChestXRayClassifierTool | ✅ | ✅ | ✅ |
+| ChestXRaySegmentationTool | ✅ | ✅ | ✅ |
+| ChestXRayReportGeneratorTool | ✅ | ✅ | ✅ |
+| XRayVQATool (CheXagent) | ✅ | ✅ | ✅ |
+| ImageVisualizerTool / DicomProcessorTool | ✅ | ✅ | ✅ |
+| **LlavaMedTool** | ✅ | ❌ | ❌ |
+| **XRayPhraseGroundingTool** (MAIRA-2) | ✅ | ❌ | ❌ |
+| ChestXRayGeneratorTool (RoentGen) | manual | manual | manual |
+
+The two CUDA-only tools need `bitsandbytes` quantisation, which requires CUDA. RoentGen
+is never enabled automatically because its weights are not publicly downloadable — you
+must [request them from the authors](https://github.com/StanfordMIMI/RoentGen).
+
+**VRAM budget** (approximate, with 8-bit quantisation):
+
+| | VRAM |
+|---|---|
+| CheXagent + classifier + report generator | ~8 GB |
+| \+ LLaVA-Med (7B) | ~8 GB |
+| \+ MAIRA-2 (7B) | ~8 GB |
+
+A 24 GB card runs everything. On 12–16 GB, use 4-bit or run fewer tools:
+
+```powershell
+$env:MEDRAX_QUANT="4bit"; python main.py
+```
+
+---
+
+### Configuration
+
+All optional, all environment variables. No code editing required.
+
+| variable | default | purpose |
+|---|---|---|
+| `MEDRAX_DEVICE` | auto (`cuda`→`mps`→`cpu`) | force a device, e.g. `cpu` |
+| `MEDRAX_MODEL_DIR` | `~/model-weights` | where weights are downloaded |
+| `MEDRAX_TOOLS` | auto by device | comma-separated tool list |
+| `MEDRAX_QUANT` | `8bit` | `4bit`, `8bit` or `none` for the CUDA-only tools |
+| `MEDRAX_PROMPT` | `MEDICAL_ASSISTANT_EDV` | `MEDICAL_ASSISTANT` for the original prompt |
+| `MEDRAX_VALIDATE` | `1` | `0` disables forced evidence validation |
+| `MEDRAX_SHARE` | `0` | `1` publishes a public `gradio.live` link |
+| `MEDRAX_LOG_CONSOLE` | `1` | `0` sends validation logs to file only |
+
+Setting one for a single run:
+
+```powershell
+$env:MEDRAX_DEVICE="cpu"; python main.py      # PowerShell
+set MEDRAX_DEVICE=cpu && python main.py       # cmd.exe
+MEDRAX_DEVICE=cpu python main.py              # macOS / Linux
+```
+
+---
+
+### Verify the install
+
+CheXagent can load, generate fluent clinical text, and **ignore the image entirely** —
+returning the same answer for a real X-ray and a blank one, with no error and no
+warning. This asserts that answers actually depend on the image. Run it after any change
+to the environment, the transformers version, or the device:
+
+```powershell
+python scripts/verify_vqa_vision.py      # exit 0 = healthy, 1 = broken
+```
+
+---
+
+### Troubleshooting
+
+| symptom | cause |
+|---|---|
+| `No matching distribution found` during install | Wrong Python. `python --version` inside the venv must say 3.11 |
+| `torch.cuda.is_available()` is `False` | CPU-only PyTorch. Redo step 3 with the CUDA index URL |
+| `running scripts is disabled` | PowerShell execution policy — see step 2 |
+| Imports fail although install succeeded | The venv is not activated. Check `where python` |
+| `OPENAI_API_KEY` error | `.env` missing, named `.env.txt`, or saved with a BOM |
+| `XRayVQATool requires transformers 4.40.x` | Something upgraded transformers. See the note below |
+| VQA answers look plausible but ignore the image | Run `scripts/verify_vqa_vision.py` |
+| Port 8585 in use | Change `server_port` at the bottom of `main.py` |
+
+> **A pinned dependency worth understanding.** CheXagent-2-3b only works with
+> `transformers==4.40.x`. On newer versions it still loads and still produces confident,
+> well-formed radiology text, but it stops attending to the image — silently, with no
+> exception. `XRayVQATool` therefore refuses to start on any other version rather than
+> fabricate. If you upgrade transformers for another model, CheXagent will stop working,
+> and that is deliberate.
+>
+> **MAIRA-2 is untested against this pin.** It may need a newer transformers than
+> CheXagent allows, in which case the two cannot run in the same environment. If you
+> enable it and hit version errors, that is why.
 <br><br><br>
 
 
 ## Tool Selection and Initialization
 
-MedRAX supports selective tool initialization, allowing you to use only the tools you need. Tools can be specified when initializing the agent (look at `main.py`):
+Tool selection is automatic — `main.py` picks the set your hardware can actually run and
+prints it at startup. CUDA machines additionally get `LlavaMedTool` and
+`XRayPhraseGroundingTool`, which need bitsandbytes quantisation and therefore cannot run
+on Apple Silicon or CPU.
+
+To choose explicitly, set `MEDRAX_TOOLS` rather than editing the source:
+
+```powershell
+$env:MEDRAX_TOOLS="ImageVisualizerTool,ChestXRayClassifierTool,XRayVQATool"
+python main.py
+```
+
+```bash
+MEDRAX_TOOLS="ImageVisualizerTool,ChestXRayClassifierTool,XRayVQATool" python main.py
+```
+
+Embedding MedRAX in your own code works as before:
 
 ```python
-selected_tools = [
-    "ImageVisualizerTool",
-    "ChestXRayClassifierTool",
-    "ChestXRaySegmentationTool",
-    # Add or remove tools as needed
-]
-
 agent, tools_dict = initialize_agent(
     "medrax/docs/system_prompts.txt",
-    tools_to_use=selected_tools,
-    model_dir="/model-weights"
+    tools_to_use=["ImageVisualizerTool", "ChestXRayClassifierTool"],
+    model_dir="/path/to/weights",
+    device="cuda",
 )
 ```
 
