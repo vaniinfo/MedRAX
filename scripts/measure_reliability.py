@@ -41,8 +41,10 @@ OUT = "reliability.json"
 FINDINGS = {
     "cardiomegaly":     (["cardiomegaly"], "Cardiomegaly"),
     "pleural effusion": (["pleural effusion"], "Effusion"),
-    # pneumothorax omitted: the Open-i query failed and this set has only 3 positives,
-    # which cannot support a sensitivity estimate. Add it once the API allows a top-up.
+    # Re-enabled: the Open-i query that failed on the first run now works. Check the
+    # class balance before trusting the row -- under ~20 positives it is noise.
+    "pneumothorax":     (["pneumothorax"], "Pneumothorax"),
+    "consolidation":    (["consolidation"], "Consolidation"),
     "pulmonary edema":  (["pulmonary edema"], "Edema"),
     # 63 positives in this set -- better populated than edema, and it was missing
     "atelectasis":      (["atelectasis"], "Atelectasis"),
