@@ -410,9 +410,10 @@ class EvidenceValidator:
         # on exactly the borderline cases where it should stay neutral.
         refuting = []
         uninformative_notes = [
-            f"{s['label']}={s['value']:.3f} sits within {1 - s['margin']:.0%} of this "
-            f"tool's measured decision point ({s['threshold']:.2f}) for {focus}: "
-            "too close to call, do not count it as a vote in either direction"
+            f"{s['label']}={s['value']:.3f} is only {s['margin']:.2f} from this tool's "
+            f"{'measured' if s['measured'] else 'ASSUMED (unmeasured)'} decision point "
+            f"of {s['threshold']:.2f} for {focus}: too close to call, do not count it as "
+            "a vote in either direction"
             for s in scored if not s["informative"]
         ]
         stance = None
@@ -557,13 +558,15 @@ class EvidenceValidator:
             # true positive including two the binary head missed, but drew a box on 31%
             # of images that did not have the finding. Describing it as corroboration
             # would double-count one model's opinion as two.
-            lines.append("  CAUTION: this is the same model's localisation head, not a "
+            lines.append("  Cite this location in your supportive evidence, naming it as "
+                         "the localisation from chest_xray_expert -- it is the only "
+                         "localised evidence available from a radiology-trained model.")
+            lines.append("  CAUTION: it is the same model's localisation head, not a "
                          "second opinion. Measured on this dataset it draws a box on 31% "
-                         "of images that do NOT have the finding, and it grounds almost "
-                         "anything the binary head scores above 0.2. Use it to say WHERE "
-                         "the finding would be if present; do not treat it as independent "
-                         "confirmation THAT it is present, and do not count it as a "
-                         "separate agreeing tool.")
+                         "of images that do NOT have the finding, and grounds almost "
+                         "anything the binary head scores above 0.2. So it tells you WHERE "
+                         "the finding would be, not THAT it is present: do not count it as "
+                         "a separate agreeing tool or let it raise your confidence.")
         elif record.get("grounding_attempted"):
             lines.append(f"chest_xray_expert was asked to localise {record.get('focus')} "
                          "and returned no region. On this dataset an absent localisation "
