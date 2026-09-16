@@ -178,6 +178,36 @@ RELIABILITY: Dict[Tuple[str, str], Dict[str, Any]] = {
 #   atelectasis  +0.118   effusion     +0.064
 #   edema        +0.090
 
+
+# Do two tools get the SAME films wrong? Claim synthesis needs to know whether a second
+# opinion is independent evidence or an echo, and neither AUC nor PPV says which.
+# Measured as the correlation of their error indicators at their own operating points.
+#
+# The spread matters. On pneumothorax the tools fail almost independently (0.13-0.17),
+# so agreement there is real corroboration. On atelectasis they are wrong in lockstep
+# (0.60-0.64) -- which is why all three called atelectasis on 3453_IM-1676, a film
+# labelled normal. Three tools agreeing is not three pieces of evidence.
+DEPENDENCE: Dict[Tuple[str, str, str], float] = {
+    ("cardiomegaly", "chest_xray_classifier", "chest_xray_expert"): 0.508,
+    ("cardiomegaly", "chest_xray_classifier", "chest_xray_expert_gemma"): 0.462,
+    ("cardiomegaly", "chest_xray_expert", "chest_xray_expert_gemma"): 0.551,
+    ("pleural effusion", "chest_xray_classifier", "chest_xray_expert"): 0.340,
+    ("pleural effusion", "chest_xray_classifier", "chest_xray_expert_gemma"): 0.367,
+    ("pleural effusion", "chest_xray_expert", "chest_xray_expert_gemma"): 0.587,
+    ("pneumothorax", "chest_xray_classifier", "chest_xray_expert"): 0.125,
+    ("pneumothorax", "chest_xray_classifier", "chest_xray_expert_gemma"): 0.147,
+    ("pneumothorax", "chest_xray_expert", "chest_xray_expert_gemma"): 0.166,
+    ("consolidation", "chest_xray_classifier", "chest_xray_expert"): 0.449,
+    ("consolidation", "chest_xray_classifier", "chest_xray_expert_gemma"): 0.383,
+    ("consolidation", "chest_xray_expert", "chest_xray_expert_gemma"): 0.582,
+    ("pulmonary edema", "chest_xray_classifier", "chest_xray_expert"): 0.405,
+    ("pulmonary edema", "chest_xray_classifier", "chest_xray_expert_gemma"): 0.226,
+    ("pulmonary edema", "chest_xray_expert", "chest_xray_expert_gemma"): 0.456,
+    ("atelectasis", "chest_xray_classifier", "chest_xray_expert"): 0.606,
+    ("atelectasis", "chest_xray_classifier", "chest_xray_expert_gemma"): 0.635,
+    ("atelectasis", "chest_xray_expert", "chest_xray_expert_gemma"): 0.604,
+}
+
 # The report generator emits no probability, so it is scored on whether its text asserts
 # the finding. precision = of the reports asserting it, the fraction correct.
 #
@@ -337,7 +367,7 @@ class EvidenceValidator:
                 "margin": round(margin, 3),
                 "informative": informative,
                 "threshold": threshold, "thr_ci": thr_ci,
-                "auc": auc, "measured": info is not None,
+                "auc": auc, "measured": info is not None, "tool": tool,
                 # "probability" or "binary"; decides whether margin scales the evidence
                 # in _strength. Absent for an unmeasured pair, which is treated as
                 # graded -- with the fallback AUC of 0.6 it cannot exceed Medium anyway.
@@ -346,6 +376,64 @@ class EvidenceValidator:
                 # takes, and the prevalence it has to beat to mean anything.
                 "polarity": (info or {}).get("yes" if supports_yes else "no"),
                 "prevalence": (info or {}).get("prevalence")}
+
+    @classmethod
+    def _dependence(cls, finding: Optional[str], a: str, b: str) -> float:
+        """How much two tools' errors coincide on this finding. 0 if unmeasured, which
+        is the generous reading -- it treats the second opinion as fully independent."""
+        if a == b:
+            return 1.0
+        first, second = sorted((a, b))
+        return DEPENDENCE.get((finding or "", first, second), 0.0)
+
+    @classmethod
+    def _synthesise(cls, scored: List[Dict[str, Any]],
+                    finding: Optional[str]) -> Dict[str, Any]:
+        """Combine evidence into a net position. Deliberately NOT a vote.
+
+        The strongest piece of evidence anchors each side. Further evidence can only
+        add, never replace, and adds less the more its errors coincide with the anchor's:
+
+            combined = 1 - (1 - combined) * (1 - strength * (1 - dependence))
+
+        That is noisy-OR, the standard combination for independent evidence. It is
+        bounded at 1, it has diminishing returns by construction, and the dependence
+        term is measured rather than assumed. No constant decides how much a second
+        opinion is worth.
+
+        Why not count agreeing tools: three mediocre tools at 0.20, fully independent,
+        reach 0.49 -- still below one excellent tool at 0.78. On atelectasis, where the
+        three fail in lockstep at 0.60+, the same three reach only 0.32. That is the
+        outvoting failure this whole code path exists to prevent, and it is prevented
+        arithmetically rather than by instruction.
+
+        `net` is support minus contradiction. It is deliberately NOT mapped to
+        High/Medium/Low here: where those boundaries belong is a question for
+        scripts/calibrate_claims.py, which measures how often a claim at a given net
+        strength is actually correct, rather than for whoever picks a number.
+        """
+        live = [s for s in scored if s["informative"]]
+        support = cls._combine([s for s in live if s["supports"] == "YES"], finding)
+        against = cls._combine([s for s in live if s["supports"] == "NO"], finding)
+        return {"support": round(support, 3), "against": round(against, 3),
+                "net": round(support - against, 3),
+                "n_support": sum(1 for s in live if s["supports"] == "YES"),
+                "n_against": sum(1 for s in live if s["supports"] == "NO")}
+
+    @classmethod
+    def _combine(cls, entries: List[Dict[str, Any]], finding: Optional[str]) -> float:
+        """Anchor on the strongest, then add independence-discounted corroboration."""
+        if not entries:
+            return 0.0
+        ranked = sorted(entries, key=cls._strength, reverse=True)
+        anchor = ranked[0]
+        combined = cls._strength(anchor)
+        for entry in ranked[1:]:
+            dependence = cls._dependence(finding, anchor.get("tool", ""),
+                                         entry.get("tool", ""))
+            contribution = cls._strength(entry) * (1 - dependence)
+            combined = 1 - (1 - combined) * (1 - contribution)
+        return combined
 
     @classmethod
     def _ceilings_by_finding(cls, scored: List[Dict[str, Any]]) -> Dict[str, str]:

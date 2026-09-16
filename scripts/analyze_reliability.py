@@ -108,6 +108,29 @@ def polarity(pairs, thr):
     return out
 
 
+def error_correlation(a_pairs, b_pairs, a_thr, b_thr):
+    """Do two tools get the SAME films wrong?
+
+    Claim synthesis needs to know whether a second opinion is independent evidence or
+    an echo. Agreement between tools that fail together is worth far less than the same
+    agreement between tools that fail on different films, and nothing in AUC or PPV
+    says which you have.
+
+    Measured as the correlation of their error indicators at their own operating
+    points. 0 means errors are independent and corroboration is real; 1 means they are
+    wrong in lockstep and the second tool adds nothing.
+    """
+    a_err = [int((p >= a_thr) != t) for p, t in a_pairs]
+    b_err = [int((p >= b_thr) != t) for p, t in b_pairs]
+    n = min(len(a_err), len(b_err))
+    a_err, b_err = a_err[:n], b_err[:n]
+    ma, mb = sum(a_err) / n, sum(b_err) / n
+    num = sum((x - ma) * (y - mb) for x, y in zip(a_err, b_err))
+    da = sum((x - ma) ** 2 for x in a_err) ** 0.5
+    db = sum((y - mb) ** 2 for y in b_err) ** 0.5
+    return round(num / (da * db), 3) if da and db else 0.0
+
+
 def auc(pairs):
     """Area under the ROC curve, by the Mann-Whitney rank formulation.
 
@@ -371,6 +394,24 @@ def main():
         print("\n# left out, and why:")
         for key, finding, reason in skipped:
             print(f"#   ({key}, {finding}) -- {reason}")
+
+    # Emitted for claim synthesis: whether a second opinion is independent evidence.
+    print("\n\nDEPENDENCE: Dict[Tuple[str, str, str], float] = {")
+    for finding in measured:
+        by_tool = {}
+        for key, _, field in tools:
+            pairs = [(r["findings"][finding][field], bool(r["findings"][finding]["truth"]))
+                     for r in records if finding in r["findings"]
+                     and r["findings"][finding].get(field) is not None]
+            if pairs and (key, finding) in emit:
+                by_tool[key] = (pairs, emit[(key, finding)]["threshold"])
+        names = sorted(by_tool)
+        for a_i, a in enumerate(names):
+            for b in names[a_i + 1:]:
+                rho = error_correlation(by_tool[a][0], by_tool[b][0],
+                                        by_tool[a][1], by_tool[b][1])
+                print(f'    ("{finding}", "{a}", "{b}"): {rho:.3f},')
+    print("}")
 
     print("\nREPORT_RELIABILITY: Dict[str, Dict[str, float]] = {")
     for finding in measured:
