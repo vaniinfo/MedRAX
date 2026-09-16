@@ -55,10 +55,34 @@ class RemoteModelTool(BaseTool):
             raise RuntimeError(f"{url} reports vision_ok=False: {info.get('detail')}")
         return cls(name=info["tool"], task=info.get("task", "vqa"),
                    model_id=info.get("model", ""), url=url.rstrip("/"), timeout=timeout,
-                   description=(f"Chest X-ray {info.get('task', 'vqa')} served by "
-                                f"{info.get('model', 'a remote model')}. "
-                                "For yes/no questions the output includes 'confidence', "
-                                "the model's probability that the answer is yes."))
+                   description=cls._describe(info))
+
+    @staticmethod
+    def _describe(info: Dict[str, Any]) -> str:
+        """The description the orchestrator reads when choosing tools.
+
+        PATCH: this used to say "Chest X-ray vqa served by <model>" and little else.
+        Beside XRayVQATool's paragraph about what it can do, that reads as a vaguer
+        duplicate of a tool already on the list -- and it was ignored. MedGemma
+        registered successfully and went uncalled across several runs for no reason
+        other than this string.
+
+        A served model is worth calling precisely because it is a DIFFERENT model, so
+        the description has to say that rather than describe the transport.
+        """
+        model = info.get("model", "a remote model")
+        if info.get("task") == "classify":
+            return (f"Chest X-ray classifier ({model}) returning a probability per "
+                    "pathology. An independent second opinion: different architecture "
+                    "and training data from the other tools, so its mistakes are not "
+                    "the same mistakes.")
+        return (f"Chest X-ray expert ({model}) for visual question answering and "
+                "abnormality detection. This is a SEPARATE model from chest_xray_expert, "
+                "with different architecture and training data -- call BOTH when a "
+                "finding matters, because agreement between independent models is worth "
+                "far more than one model asked twice. Phrase questions as 'Does this "
+                "chest X-ray contain a FINDING?', one finding per call; the output then "
+                "includes 'confidence', its probability that the answer is yes.")
 
     def _call(self, image_path: str, prompt: str,
               max_new_tokens: int = 0) -> Tuple[Any, Dict[str, Any]]:
