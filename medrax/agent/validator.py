@@ -236,6 +236,28 @@ class EvidenceValidator:
                 "auc": auc, "measured": info is not None}
 
     @classmethod
+    def _ceilings_by_finding(cls, scored: List[Dict[str, Any]]) -> Dict[str, str]:
+        """One ceiling per finding, for when no single finding is in question.
+
+        PATCH: commit 484bad5 fixed a ceiling computed across unrelated findings --
+        "an irrelevant Cardiomegaly=0.006 forced a High ceiling on a pneumothorax
+        question" -- by filtering on _is_relevant(label, focus). That filter passes
+        everything when focus is None, so an open-ended question reintroduced exactly
+        the same bug through the back door.
+
+        Observed: the Director concluded atelectasis and reported Medium. That Medium
+        came from Pneumonia=0.0086, an unmeasured absent finding with nothing to say
+        about atelectasis, whose own strength is 0.110 -- Low. A ceiling earned by one
+        finding must not license confidence about another, so they are kept apart.
+        """
+        by_finding: Dict[str, List[Dict[str, Any]]] = {}
+        for entry in scored:
+            key = entry.get("scored_as") or entry.get("label") or "this finding"
+            by_finding.setdefault(key, []).append(entry)
+        return {finding: cls._ceiling_from_scored(entries)
+                for finding, entries in by_finding.items()}
+
+    @classmethod
     def _ceiling_from_scored(cls, scored: List[Dict[str, Any]]) -> str:
         """Ceiling from margin AND discrimination. A wide margin on a tool that barely
         separates this finding is not the same as a wide margin on one that does."""
@@ -620,7 +642,13 @@ class EvidenceValidator:
             "refuting_evidence": refuting,
             "uninformative_notes": uninformative_notes,
             "focus": focus,
-            "confidence_ceiling": self._ceiling_from_scored(scored),
+            # With a focus, one ceiling for that finding. Without, the scalar is capped
+            # by whatever the tool actually asserts present -- an affirmative conclusion
+            # is the risky direction -- and the per-finding map carries the detail.
+            "confidence_ceiling": self._ceiling_from_scored(
+                scored if focus else
+                [s for s in scored if s["supports"] == "YES"] or scored),
+            "ceilings_by_finding": None if focus else self._ceilings_by_finding(scored),
         }
 
     @staticmethod
@@ -707,6 +735,14 @@ class EvidenceValidator:
                              "not outweigh a specialist reporting a high probability.")
         lines.append(f"  confidence ceiling: {record['confidence_ceiling']} "
                      f"(you may report lower, never higher)")
+        by_finding = record.get("ceilings_by_finding") or {}
+        if len(by_finding) > 1:
+            lines.append("  no single finding was in question, so that ceiling is per "
+                         "finding. A ceiling earned by one finding does NOT license the "
+                         "same confidence about another -- match the ceiling to whatever "
+                         "you actually conclude:")
+            for finding, tier in sorted(by_finding.items(), key=lambda kv: kv[0]):
+                lines.append(f"    {finding}: {tier}")
         regions = record.get("grounded_regions") or []
         if regions and record.get("grounding_repeat"):
             lines.append(f"Localisation for {record.get('focus')} was reported above; "
@@ -854,6 +890,10 @@ class EvidenceValidator:
             for item in record["uninformative_notes"]:
                 lines.append(f"      {item}")
         lines.append(f"  CONFIDENCE (computed ceiling): {record['confidence_ceiling']}")
+        by_finding = record.get("ceilings_by_finding") or {}
+        if len(by_finding) > 1:
+            listed = ", ".join(f"{f}={t}" for f, t in sorted(by_finding.items()))
+            lines.append(f"  CEILING PER FINDING: {listed}")
         return "\n".join(lines)
 
     def validate(self, call: Dict[str, Any], result: Any) -> str:
