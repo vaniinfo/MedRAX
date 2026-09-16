@@ -45,25 +45,49 @@ from langchain_core.messages import HumanMessage, SystemMessage
 #   thr_ci    : 95% bootstrap interval for that decision point. A reading inside it is
 #               not a vote -- a plausible alternative threshold would flip its direction,
 #               so which way the tool leans is not something the data settles.
+#   output_type: "probability" where the tool grades its answers, "binary" where it does
+#               not. Measured, not declared: the share of readings landing in 0.05-0.95
+#               is 43-99% for CheXagent and the classifier and 1-6% for MedGemma. Only a
+#               graded tool earns the margin multiplier in _strength; for a binary one
+#               the margin is ~0.99 whatever it believes, and paying out on it turns
+#               emphasis into evidence.
 RELIABILITY: Dict[Tuple[str, str], Dict[str, Any]] = {
-    ("chest_xray_expert", "cardiomegaly"):         {"auc": 0.909, "threshold": 0.45, "thr_ci": (0.45, 0.60)},
-    ("chest_xray_expert", "pleural effusion"):     {"auc": 0.951, "threshold": 0.70, "thr_ci": (0.50, 0.80)},
-    ("chest_xray_expert", "pneumothorax"):         {"auc": 0.948, "threshold": 0.25, "thr_ci": (0.10, 0.60)},
-    ("chest_xray_expert", "consolidation"):        {"auc": 0.810, "threshold": 0.25, "thr_ci": (0.15, 0.40)},
-    ("chest_xray_expert", "pulmonary edema"):      {"auc": 0.897, "threshold": 0.50, "thr_ci": (0.20, 0.75)},
-    ("chest_xray_expert", "atelectasis"):          {"auc": 0.819, "threshold": 0.40, "thr_ci": (0.35, 0.65)},
-    ("chest_xray_classifier", "cardiomegaly"):     {"auc": 0.852, "threshold": 0.45, "thr_ci": (0.25, 0.55)},
-    ("chest_xray_classifier", "pleural effusion"): {"auc": 0.887, "threshold": 0.50, "thr_ci": (0.40, 0.60)},
-    # Near chance, and the finding this whole code path was built around. Its AUC interval
-    # is 0.510-0.728: it clears chance by a hundredth. Kept rather than dropped because
-    # dropping it would make the pair ASSUMED at 0.5, which claims more than this does --
-    # and the AUC weighting in _ceiling_from_scored already discounts 0.622 to nearly
-    # nothing. Its threshold interval spans 0.05-0.50, so the coin-flip readings that
-    # started this investigation now correctly register as no opinion at all.
-    ("chest_xray_classifier", "pneumothorax"):     {"auc": 0.622, "threshold": 0.35, "thr_ci": (0.05, 0.50)},
-    ("chest_xray_classifier", "consolidation"):    {"auc": 0.762, "threshold": 0.50, "thr_ci": (0.50, 0.50)},
-    ("chest_xray_classifier", "pulmonary edema"):  {"auc": 0.807, "threshold": 0.15, "thr_ci": (0.05, 0.40)},
-    ("chest_xray_classifier", "atelectasis"):      {"auc": 0.699, "threshold": 0.40, "thr_ci": (0.35, 0.55)},
+    ("chest_xray_expert", "cardiomegaly"):
+        {"auc": 0.909, "threshold": 0.45, "thr_ci": (0.45, 0.60), "output_type": "probability"},
+    ("chest_xray_classifier", "cardiomegaly"):
+        {"auc": 0.852, "threshold": 0.45, "thr_ci": (0.25, 0.55), "output_type": "probability"},
+    ("chest_xray_expert_gemma", "cardiomegaly"):
+        {"auc": 0.889, "threshold": 0.30, "thr_ci": (0.05, 0.95), "output_type": "binary"},
+    ("chest_xray_expert", "pleural effusion"):
+        {"auc": 0.951, "threshold": 0.70, "thr_ci": (0.50, 0.80), "output_type": "probability"},
+    ("chest_xray_classifier", "pleural effusion"):
+        {"auc": 0.887, "threshold": 0.50, "thr_ci": (0.40, 0.60), "output_type": "probability"},
+    ("chest_xray_expert_gemma", "pleural effusion"):
+        {"auc": 0.905, "threshold": 0.40, "thr_ci": (0.05, 0.95), "output_type": "binary"},
+    ("chest_xray_expert", "pneumothorax"):
+        {"auc": 0.948, "threshold": 0.25, "thr_ci": (0.10, 0.60), "output_type": "probability"},
+    ("chest_xray_classifier", "pneumothorax"):
+        {"auc": 0.622, "threshold": 0.35, "thr_ci": (0.05, 0.50), "output_type": "probability"},
+    ("chest_xray_expert_gemma", "pneumothorax"):
+        {"auc": 0.792, "threshold": 0.05, "thr_ci": (0.05, 0.95), "output_type": "binary"},
+    ("chest_xray_expert", "consolidation"):
+        {"auc": 0.810, "threshold": 0.25, "thr_ci": (0.15, 0.40), "output_type": "probability"},
+    ("chest_xray_classifier", "consolidation"):
+        {"auc": 0.762, "threshold": 0.50, "thr_ci": (0.50, 0.50), "output_type": "probability"},
+    ("chest_xray_expert_gemma", "consolidation"):
+        {"auc": 0.775, "threshold": 0.05, "thr_ci": (0.05, 0.10), "output_type": "binary"},
+    ("chest_xray_expert", "pulmonary edema"):
+        {"auc": 0.897, "threshold": 0.50, "thr_ci": (0.20, 0.75), "output_type": "probability"},
+    ("chest_xray_classifier", "pulmonary edema"):
+        {"auc": 0.807, "threshold": 0.15, "thr_ci": (0.05, 0.40), "output_type": "probability"},
+    ("chest_xray_expert_gemma", "pulmonary edema"):
+        {"auc": 0.862, "threshold": 0.05, "thr_ci": (0.05, 0.95), "output_type": "binary"},
+    ("chest_xray_expert", "atelectasis"):
+        {"auc": 0.819, "threshold": 0.40, "thr_ci": (0.35, 0.65), "output_type": "probability"},
+    ("chest_xray_classifier", "atelectasis"):
+        {"auc": 0.699, "threshold": 0.40, "thr_ci": (0.35, 0.55), "output_type": "probability"},
+    ("chest_xray_expert_gemma", "atelectasis"):
+        {"auc": 0.747, "threshold": 0.80, "thr_ci": (0.05, 0.95), "output_type": "binary"},
 }
 
 # CheXagent beats the classifier on five of six findings, paired on the same bootstrap
@@ -233,7 +257,11 @@ class EvidenceValidator:
                 "margin": round(margin, 3),
                 "informative": informative,
                 "threshold": threshold, "thr_ci": thr_ci,
-                "auc": auc, "measured": info is not None}
+                "auc": auc, "measured": info is not None,
+                # "probability" or "binary"; decides whether margin scales the evidence
+                # in _strength. Absent for an unmeasured pair, which is treated as
+                # graded -- with the fallback AUC of 0.6 it cannot exceed Medium anyway.
+                "output_type": (info or {}).get("output_type")}
 
     @classmethod
     def _ceilings_by_finding(cls, scored: List[Dict[str, Any]]) -> Dict[str, str]:
@@ -259,10 +287,30 @@ class EvidenceValidator:
 
     @staticmethod
     def _strength(entry: Dict[str, Any]) -> float:
-        """How much one reading is worth: distance from the decision point, scaled by
-        how well this tool separates this finding at all. 0.5 AUC is chance, so it
-        contributes nothing however wide the margin. Unmeasured tools assume 0.6."""
-        return entry["margin"] * ((entry.get("auc") or 0.6) - 0.5) * 2
+        """What one reading is worth as evidence.
+
+        reliability = (auc - 0.5) * 2 puts discrimination on 0-1: chance scores 0,
+        perfect scores 1. Read it for what it is -- a population-level property of this
+        tool for this finding, NOT the probability that this particular answer is
+        right. MedGemma's 0.792 on pneumothorax says it separates the classes usefully
+        over 544 films. It does not say a positive MedGemma pneumothorax answer has a
+        79.2% chance of being correct, and nothing here should be read as claiming so.
+
+        The margin is applied only where it carries information:
+
+          probability : a graded tool landing far from its decision point has told you
+                        more than one landing near it, so margin scales the evidence.
+          binary      : it has not. MedGemma puts 97% of its answers outside 0.05-0.95,
+                        so its margin is ~0.99 no matter what it thinks. Multiplying by
+                        it converts confident delivery into strong evidence -- the exact
+                        chain this code path exists to break -- and would have returned
+                        High for every finding it measures, atelectasis at AUC 0.747
+                        included.
+        """
+        reliability = ((entry.get("auc") or 0.6) - 0.5) * 2
+        if entry.get("output_type") == "binary":
+            return reliability
+        return entry["margin"] * reliability
 
     @classmethod
     def _strength_tier(cls, entry: Dict[str, Any]) -> str:

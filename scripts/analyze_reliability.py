@@ -59,6 +59,20 @@ def discover_tools(records):
     return tools
 SWEEP = [t / 100 for t in range(5, 100, 5)]
 
+# A margin only means something if the tool actually produces graded output. Below this
+# share of readings in the interior, a "probability" is a yes/no vote wearing a decimal
+# point, and the distance from its decision point is an artefact rather than evidence.
+#
+# The cut point does no delicate work: measured per tool and finding, MedGemma lands
+# between 1% and 6% and the other two between 43% and 99%. Nothing falls in the gap.
+GRADED_INTERIOR_MIN = 0.10
+
+
+def output_type(pairs):
+    """"probability" if the tool grades its answers, "binary" if it effectively does not."""
+    interior = sum(1 for p, _ in pairs if 0.05 <= p <= 0.95) / len(pairs)
+    return "probability" if interior >= GRADED_INTERIOR_MIN else "binary"
+
 
 def auc(pairs):
     """Area under the ROC curve, by the Mann-Whitney rank formulation.
@@ -253,8 +267,11 @@ def main():
                 # vote at all: inside the interval, a plausible alternative threshold
                 # would flip its direction, so the data does not determine which way
                 # this tool leans.
-                emit[(key, finding)] = {"auc": round(a, 3), "threshold": thr,
-                                        "thr_ci": None if t_lo is None else (t_lo, t_hi)}
+                emit[(key, finding)] = {
+                    "auc": round(a, 3), "threshold": thr,
+                    "thr_ci": None if t_lo is None else (t_lo, t_hi),
+                    # Decides whether the validator may multiply by the margin at all.
+                    "output_type": output_type(pairs)}
 
             print(f"{finding:18s} {npos:4d} {label:11s} {a:6.3f} {a_ci:>14s} "
                   f"{thr:5.2f} {t_ci:>12s} {acc:7.1%}{flag}")
@@ -297,14 +314,13 @@ def main():
         if any(v["thr_ci"] is None for v in emit.values()):
             print("# WARNING: run with --bootstrap to get thr_ci. Without it the "
                   "validator\n# falls back to a guessed band for these pairs.")
-        width = max(len(f'    ("{k}", "{f}"):') for k, f in emit)
         print("RELIABILITY: Dict[Tuple[str, str], Dict[str, Any]] = {")
         for (key, finding), v in emit.items():
-            head = f'    ("{key}", "{finding}"):'
             ci_text = ("None" if v["thr_ci"] is None
                        else f'({v["thr_ci"][0]:.2f}, {v["thr_ci"][1]:.2f})')
-            print(f'{head:<{width}} {{"auc": {v["auc"]:.3f}, '
-                  f'"threshold": {v["threshold"]:.2f}, "thr_ci": {ci_text}}},')
+            print(f'    ("{key}", "{finding}"):')
+            print(f'        {{"auc": {v["auc"]:.3f}, "threshold": {v["threshold"]:.2f}, '
+                  f'"thr_ci": {ci_text}, "output_type": "{v["output_type"]}"}},')
         print("}")
     else:
         print("RELIABILITY = {}   # nothing measured well enough to emit")
