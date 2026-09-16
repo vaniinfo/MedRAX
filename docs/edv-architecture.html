@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Evidence-Driven Validation — architecture</title>
+<style>
+  :root{
+    --ink:#1c1917; --muted:#57534e; --faint:#a8a29e; --line:#e7e5e4;
+    --bg:#fafaf9; --accent:#0f766e; --warn:#b45309;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+    background:var(--bg); color:var(--ink); padding:32px 20px; line-height:1.5;
+  }
+  .wrap{max-width:1180px; margin:0 auto}
+  h1{font-size:27px; font-weight:650; letter-spacing:-.02em}
+  .sub{font-size:14.5px; color:var(--muted); margin-top:6px; max-width:860px}
+  .cols{display:grid; grid-template-columns:400px 1fr; gap:28px; margin-top:28px; align-items:start}
+  pre{
+    font-family:"SF Mono",Menlo,Consolas,monospace; font-size:11.5px; line-height:1.45;
+    background:#fff; border:1px solid var(--line); border-radius:8px; padding:18px;
+    overflow-x:auto; color:#292524;
+  }
+  h2{font-size:15px; font-weight:650; margin:22px 0 8px; letter-spacing:-.01em}
+  h2:first-child{margin-top:0}
+  p{font-size:13.2px; color:var(--muted); margin-bottom:9px}
+  p b{color:var(--ink); font-weight:620}
+  table{border-collapse:collapse; width:100%; font-size:12.2px; margin:8px 0 4px}
+  th{text-align:left; font-weight:620; color:var(--muted); padding:5px 10px 5px 0;
+     border-bottom:1px solid var(--line); font-size:11px; text-transform:uppercase;
+     letter-spacing:.05em}
+  td{padding:5px 10px 5px 0; border-bottom:1px solid #f5f5f4}
+  td.n{font-family:"SF Mono",Menlo,Consolas,monospace; font-size:11.5px}
+  .note{
+    border-left:3px solid var(--warn); background:#fffbeb; padding:11px 14px;
+    border-radius:0 6px 6px 0; margin:12px 0; font-size:12.5px; color:#78350f;
+  }
+  .note b{color:#78350f}
+  footer{margin-top:26px; padding-top:14px; border-top:1px solid var(--line);
+         font-size:11.8px; color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Evidence-Driven Validation</h1>
+  <p class="sub">Is there a meaningful observation? &rarr; How trustworthy is this particular
+  observation? &rarr; How much <em>independent</em> corroboration exists? &rarr; What has that
+  evidence level actually meant on unseen data? There is no voting anywhere in the chain.</p>
+
+  <div class="cols">
+  <pre>
+                  GPT-4o Director
+                        │
+                  selects tools
+                        │
+     ┌──────────────────┼──────────────────┐
+     ▼                  ▼                  ▼
+ CheXagent          MedGemma           DenseNet
+ 2-3b               4b-it              121
+ tf 4.40            tf 5.17            no tf
+ in-process         HTTP :8102         in-process
+     │                  │                  │
+     └──────────────────┼──────────────────┘
+                        ▼
+              FORCED EDV ASSESSMENT
+                (cannot be skipped)
+                        │
+                        ▼
+        ┌───────────────────────────────┐
+        │ 1. IS THE OBSERVATION         │
+        │    DECISIVE?                  │
+        │                               │
+        │ outside the threshold's 95%   │
+        │ uncertainty interval → use    │
+        │ inside it          → abstain  │
+        └───────────────┬───────────────┘
+                        ▼
+        ┌───────────────────────────────┐
+        │ 2. EVIDENCE STRENGTH          │
+        │                               │
+        │ tool × finding × polarity     │
+        │                               │
+        │ directional reliability       │
+        │ + prevalence correction       │
+        │                               │
+        │ graded → base × calibrated    │
+        │                  margin       │
+        │ binary → base                 │
+        │   (no calibrated margin       │
+        │    available)                 │
+        └───────────────┬───────────────┘
+                        ▼
+        ┌───────────────────────────────┐
+        │ 3. CLAIM SYNTHESIS            │
+        │                               │
+        │ strongest evidence anchors    │
+        │             +                 │
+        │ corroboration discounted by   │
+        │ measured pairwise error       │
+        │ dependence                    │
+        │                               │
+        │ Noisy-OR, not vote counting   │
+        └───────────────┬───────────────┘
+                        ▼
+        ┌───────────────────────────────┐
+        │ 4. EMPIRICAL CALIBRATION      │
+        │                               │
+        │ held-out PPV, 272 films,      │
+        │ system frozen beforehand:     │
+        │                               │
+        │   &lt; 0.48   56.9% [48.9–64.4]  │
+        │   ≥ 0.48   77.7% [69.5–84.2]  │
+        │                               │
+        │ intervals do not overlap:     │
+        │ 0.48 is established           │
+        │                               │
+        │ no claim reaches 0.80, so no  │
+        │ higher band is demonstrated   │
+        │                               │
+        │ do NOT convert ≥0.48 to       │
+        │ clinical "High"               │
+        └───────────────┬───────────────┘
+                        ▼
+              validated evidence
+            injected into Director
+                        │
+                        ▼
+                  final answer
+  </pre>
+
+  <div>
+    <h2>Why not counting</h2>
+    <p>Two runs, visually identical tool agreement — both experts answering yes at
+    0.96–1.00 — and <b>2.3&times; the evidential weight</b>. Every input to the difference is
+    measured.</p>
+    <table>
+      <tr><th></th><th>atelectasis</th><th>cardiomegaly</th></tr>
+      <tr><td>CheXagent PPV (yes)</td><td class="n">46.4%</td><td class="n">61.8%</td></tr>
+      <tr><td>MedGemma PPV (yes)</td><td class="n">43.5%</td><td class="n">67.5%</td></tr>
+      <tr><td>error dependence</td><td class="n">0.604</td><td class="n">0.551</td></tr>
+      <tr><td>third tool</td><td>abstained</td><td>contributed</td></tr>
+      <tr><td><b>net evidence</b></td><td class="n">+0.28</td><td class="n">+0.65</td></tr>
+    </table>
+    <p>Both claims were correct. The atelectasis one was reported at low confidence
+    because both tools are poor at asserting it and their errors coincide; a vote-counting
+    system would have called two-for-two overwhelming.</p>
+
+    <h2>Worked example — cardiomegaly</h2>
+    <table>
+      <tr><th>tool</th><th>type</th><th>PPV</th><th>base</th><th>margin</th><th>strength</th></tr>
+      <tr><td>MedGemma</td><td>binary</td><td class="n">67.5%</td><td class="n">0.544</td><td class="n">—</td><td class="n">0.544</td></tr>
+      <tr><td>CheXagent</td><td>graded</td><td class="n">61.8%</td><td class="n">0.463</td><td class="n">0.98</td><td class="n">0.454</td></tr>
+      <tr><td>DenseNet</td><td>graded</td><td class="n">53.2%</td><td class="n">0.342</td><td class="n">0.26</td><td class="n">0.089</td></tr>
+    </table>
+    <pre style="padding:12px; margin-top:8px">anchor                              0.544
++ CheXagent  0.454 × (1 − 0.551) →  0.637
++ DenseNet   0.089 × (1 − 0.462) →  0.654</pre>
+    <p>Three tools agreeing raises the anchor by 0.11, because their errors coincide.</p>
+
+    <div class="note">
+      <b>Calibration figures are scoring-dependent.</b> These are for evidence strength
+      scored on directional reliability. An earlier version scored graded tools on
+      margin&nbsp;&times;&nbsp;discrimination and reported 52.5% / 67.6% / 87.8% across three
+      bands, separating only the highest from the lowest. Moving to directional
+      reliability compressed the scale: nothing reaches 0.80, but the 0.48 boundary
+      became established. Any change to evidence strength invalidates this box and
+      requires re-running <code>scripts/calibrate_claims.py</code>.
+    </div>
+
+    <h2>What is no longer in the path</h2>
+    <p>A guessed dead zone. A fixed 0.5 decision point. A model-level reliability score.
+    Margin credit for a model that answers in absolutes. Corroboration credit for models
+    that fail on the same films. And a confidence grade chosen by anyone's judgement.</p>
+
+    <h2>Limits</h2>
+    <p>Pneumothorax is unvalidated — the corpus holds 28 positives and the fitting set
+    took all of them. Ground truth is report-derived MeSH rather than an independent read.
+    Error dependence is measured <b>pairwise</b>, which does not fully describe the joint
+    error structure of three tools. External validation is obstructed by the tools having
+    trained on most public CXR data: SIIM-ACR was ruled out on finding NIH's corrupted
+    ages, 148 and 413, in its metadata.</p>
+  </div>
+  </div>
+
+  <footer>Generated from medrax/agent/validator.py and scripts/calibrate_claims.py.
+  Figures: 544 films fitted, 272 held out, system frozen before the held-out run.</footer>
+</div>
+</body>
+</html>

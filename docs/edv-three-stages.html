@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Evidence-Driven Validation — three ways to build it</title>
+<style>
+  :root{
+    --ink:#1c1917; --muted:#57534e; --faint:#a8a29e;
+    --line:#e7e5e4; --bg:#fafaf9; --card:#fff;
+    --s1:#a8a29e;   /* stage 1 — grey, no safeguard */
+    --s2:#d97706;   /* stage 2 — amber, asked but not enforced */
+    --s3:#0f766e;   /* stage 3 — teal, enforced */
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+    background:var(--bg); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; min-height:100vh; padding:24px;
+  }
+  .slide{
+    width:1280px; max-width:100%; aspect-ratio:16/9; background:var(--card);
+    border:1px solid var(--line); border-radius:10px;
+    padding:40px 44px; display:flex; flex-direction:column;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  h1{font-size:30px; font-weight:650; letter-spacing:-.02em}
+  .sub{font-size:15px; color:var(--muted); margin-top:6px}
+  .cols{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:26px; flex:1}
+  .col{
+    border:1px solid var(--line); border-top:4px solid var(--accent);
+    border-radius:8px; padding:18px 18px 16px; display:flex; flex-direction:column;
+    background:#fff;
+  }
+  .col.one{--accent:var(--s1)} .col.two{--accent:var(--s2)} .col.three{--accent:var(--s3)}
+  .tag{
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--accent);
+  }
+  h2{font-size:18px; font-weight:650; margin-top:7px; letter-spacing:-.01em}
+  .who{
+    font-size:12.5px; color:var(--muted); margin-top:9px; padding-bottom:11px;
+    border-bottom:1px dashed var(--line);
+  }
+  .who b{color:var(--ink); font-weight:650}
+  ul{list-style:none; margin-top:12px; display:flex; flex-direction:column; gap:9px; flex:1}
+  li{font-size:12.8px; line-height:1.45; color:var(--ink); padding-left:14px; position:relative}
+  li::before{content:"–"; position:absolute; left:0; color:var(--faint)}
+  li em{font-style:normal; color:var(--muted)}
+  code{
+    font-family:"SF Mono",Menlo,Consolas,monospace; font-size:11.5px;
+    background:#f5f5f4; padding:1px 4px; border-radius:3px; color:#44403c;
+  }
+  .fail{
+    margin-top:12px; padding-top:11px; border-top:1px dashed var(--line);
+    font-size:11.8px; line-height:1.4; color:var(--muted);
+  }
+  .fail b{color:var(--accent); font-weight:650; text-transform:uppercase;
+          font-size:10px; letter-spacing:.07em; display:block; margin-bottom:3px}
+  footer{
+    margin-top:22px; padding-top:14px; border-top:1px solid var(--line);
+    display:flex; gap:28px; align-items:flex-start;
+  }
+  .note{font-size:11.8px; line-height:1.45; color:var(--muted); flex:1}
+  .note b{color:var(--ink); font-weight:650}
+  .stat{
+    text-align:right; font-size:11.5px; color:var(--muted); line-height:1.45;
+    border-left:1px solid var(--line); padding-left:24px; min-width:250px;
+  }
+  .stat .big{font-size:21px; font-weight:650; color:var(--s3); letter-spacing:-.01em}
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <header>
+    <h1>Evidence-Driven Validation: three ways to build it</h1>
+    <p class="sub">The rules barely changed between these stages. What changed is <b>who applies them</b> — and whether they can be skipped.</p>
+  </header>
+
+  <div class="cols">
+
+    <section class="col one">
+      <span class="tag">Stage 1 · original MedRAX</span>
+      <h2>Trust the model</h2>
+      <p class="who">Who judges the evidence? <b>GPT-4o, unconstrained</b></p>
+      <ul>
+        <li>Raw tool output goes <em>straight back to the model, untouched</em></li>
+        <li>Prompt is six lines: <em>“solve using your own vision … tools complement your reasoning”</em></li>
+        <li>The model is the primary reader; specialists are a supplement</li>
+        <li>Confidence is whatever the model says it is</li>
+      </ul>
+      <p class="fail"><b>Fails when</b>Three tools near 0.50 outvote one specialist at 0.95. Nothing notices, and nothing in the output shows it happened.</p>
+    </section>
+
+    <section class="col two">
+      <span class="tag">Stage 2 · EDV as a prompt</span>
+      <h2>Ask the model</h2>
+      <p class="who">Who judges the evidence? <b>GPT-4o, instructed</b></p>
+      <ul>
+        <li>A long rubric written in English: consult ≥2 tools, quote every number, never omit a tool that disagrees</li>
+        <li><em>“A probability near 0.50 expresses no opinion — do not count it as a vote”</em></li>
+        <li>Confidence rubric with fixed bands: <code>0.30–0.70</code> caps you at Medium</li>
+        <li>The model also supplies the visual evidence, from its own reading</li>
+      </ul>
+      <p class="fail"><b>Fails when</b>It is a request, not a rule. The model can skip a step or count that 0.50 anyway — and you cannot tell from the output whether it complied. The bands are guesses.</p>
+    </section>
+
+    <section class="col three">
+      <span class="tag">Stage 3 · EDV as code</span>
+      <h2>Compute it</h2>
+      <p class="who">Who judges the evidence? <b>Python, before the model sees anything</b></p>
+      <ul>
+        <li>Every tool result is <em>intercepted</em>; the verdict is arithmetic, no AI involved</li>
+        <li>Thresholds are <em>measured per tool and per finding</em>, not assumed at 0.5</li>
+        <li>Strength = <code>margin × (AUC−0.5) × 2</code>, and the ceiling takes the <em>strongest single</em> tool — never a sum, so agreement cannot outvote quality</li>
+        <li>Visual evidence comes from CheXagent’s boxes, not from the generalist</li>
+      </ul>
+      <p class="fail"><b>Still open</b>The model can still invent detail in prose. A computed ceiling constrains stated confidence — it cannot make a sentence true.</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p class="note">
+      <b>How this compares to CXRAgent</b> (arXiv:2510.21324), where the term EDV originates. Its paper states the validator
+      “does not rely on a secondary, task-specific vision model … it is implemented as a high-level reasoning protocol executed by the
+      central multi-modal LLM.” Their code agrees — EDV is a system prompt asking the LLM to restate each conclusion with supporting
+      evidence, refuting evidence and a credibility judgement. <b>That is Stage 2.</b> This work takes it to Stage 3, and deliberately
+      inverts one choice: it <em>does</em> use a second vision model for evidence, because the generalist’s own reading was measured to do harm.
+    </p>
+    <p class="stat">
+      <span class="big">544 chest X-rays</span><br>
+      12 tool × finding pairs measured<br>
+      CheXagent on pneumothorax <b>AUC 0.948</b><br>
+      classifier on pneumothorax <b>AUC 0.622</b>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
