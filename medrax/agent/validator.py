@@ -237,6 +237,12 @@ UNMEASURED_THRESHOLD = 0.5
 # reliability, the scale compressed so that nothing reaches 0.80 any more, and this
 # text went on quoting a band that no longer has any members. Regenerate with
 # scripts/calibrate_claims.py --input heldout.json after any change to _strength.
+# The one boundary held-out data supports. Above it, positive claims measured 77.7%
+# correct [69.5-84.2]; below, 56.9% [48.9-64.4]; the intervals do not overlap. There is
+# no second boundary, so the claim ceiling has two grades and not three -- and the upper
+# one is Medium rather than High, because 77.7% is not what High should mean.
+VALIDATED_NET_BOUNDARY = 0.48
+
 CALIBRATION_NOTE = (
     "Calibration, measured on 272 films this system had never seen, with every "
     "reliability figure frozen beforehand: positive claims with net evidence above "
@@ -487,14 +493,29 @@ class EvidenceValidator:
                 f"  {finding}: net {v['net']:+.2f} -> {direction}  "
                 f"(support {v['support']:.2f} from {v['n_support']} tool(s), "
                 f"against {v['against']:.2f} from {v['n_against']})")
+        # PATCH: computed, not requested. The previous version stated the net and told
+        # the Director to take its confidence from it. On a film with edema present it
+        # read net -0.19, ignored the instruction, and reported High -- lifted from the
+        # per-tool ceiling of the one tool that said no. Prose asking for a behaviour is
+        # the thing this whole code path exists to replace, so the claim ceiling is now
+        # computed here in the same imperative form the per-tool ceilings use.
+        strongest = max((abs(v["net"]) for v in verdicts.values()), default=0.0)
+        ceiling = cls._claim_ceiling(strongest)
+        lines.append(f"CLAIM CONFIDENCE CEILING: {ceiling} (you may report lower, never "
+                     f"higher). Computed from the net evidence above, which is the only "
+                     f"figure validated against outcomes. The per-tool ceilings in the "
+                     f"blocks above bound what each tool could support ALONE and are "
+                     f"not claim ceilings -- taking the highest of them, from a tool the "
+                     f"others contradict, is not a reading of the evidence.")
         lines.append(CALIBRATION_NOTE)
-        lines.append(
-            "This net figure, not any single tool's ceiling, is what your stated "
-            "confidence about the CLAIM must follow. A per-tool ceiling bounds what "
-            "THAT TOOL alone could support; it says nothing about a claim the other "
-            "tools contradict. Where they disagree, the net is the answer.")
         lines.append("</synthesis>")
         return "\n".join(lines)
+
+    @classmethod
+    def _claim_ceiling(cls, net: float) -> str:
+        """Claim confidence from net evidence, on the one boundary that survived
+        held-out validation. Two grades, because one boundary supports two grades."""
+        return "Medium" if abs(net) >= VALIDATED_NET_BOUNDARY else "Low"
 
     @classmethod
     def _combine(cls, entries: List[Dict[str, Any]], finding: Optional[str]) -> float:
@@ -1093,8 +1114,13 @@ class EvidenceValidator:
                 lines.append("  -> UNVALIDATED NEGATION: no probability accompanies it, and "
                              "this phrasing is boilerplate in most generated reports. It must "
                              "not outweigh a specialist reporting a high probability.")
-        lines.append(f"  confidence ceiling: {record['confidence_ceiling']} "
-                     f"(you may report lower, never higher)")
+        # Named for what it is. Called "confidence ceiling" it read as the ceiling for
+        # the claim, and the Director quoted the highest one across tools -- including
+        # from a tool the others contradicted. The claim ceiling is in <synthesis>.
+        lines.append(f"  what THIS TOOL ALONE could support: "
+                     f"{record['confidence_ceiling']}. This is not the claim ceiling, "
+                     f"and it does not survive another tool disagreeing -- see the "
+                     f"CLAIM CONFIDENCE CEILING in <synthesis>.")
         by_finding = record.get("ceilings_by_finding") or {}
         if len(by_finding) > 1:
             lines.append("  no single finding was in question, so that ceiling is per "
