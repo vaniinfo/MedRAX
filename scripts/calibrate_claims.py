@@ -15,11 +15,29 @@ chosen from intuition cannot, and this branch has already had to withdraw two of
     python scripts/calibrate_claims.py
     python scripts/calibrate_claims.py --bands 6
 
-Note what this can and cannot support. The claims are scored against MeSH labels
-derived from the original reports, not an independent read, and the thresholds and
-reliabilities being applied were themselves fitted on these same 544 films. The
-numbers are therefore optimistic, and the shape of the curve is worth more than any
-single cell. Held-out calibration is the next thing this needs.
+WHAT THIS HAS ESTABLISHED, stated no more strongly than the data allows:
+
+    On an unseen 272-film set, EDV scores above 0.80 identified a substantially
+    higher-PPV group of positive claims, while the data did not establish separation
+    between the two lower evidence ranges.
+
+                   fitted (544)              held out (272)
+      < 0.48       37.7% [32.5-43.3]         52.5% [43.6-61.3]
+      0.48-0.80    62.9% [57.4-68.1]         67.6% [58.1-75.9]
+      > 0.80       85.1% [79.0-89.6]         87.8% [78.5-93.5]
+
+That is one boundary, near 0.80, not three tiers. The two lower bands overlap on
+held-out data and must not be reported as distinct. Anyone reading this table and
+deriving High/Medium/Low from it is doing the thing this branch spent its history
+undoing -- turning a number that looks like a boundary into one.
+
+Limits that bound the claim further. Labels come from the original reports rather than
+an independent read. The held-out films contain no pneumothorax or edema positives,
+because the entire 3818-film collection holds only 28 and 45 of them and the fitting
+set took all of them -- so pneumothorax, the finding this code path was built around,
+cannot be held-out validated in this corpus at all. Those absent positives also make
+the negative side artificially easy, which is why accuracy and NPV read better here
+than they should. PPV is the only column that compares fairly between the two sets.
 """
 import argparse
 import json
