@@ -1,0 +1,8102 @@
+[
+ {
+  "file": "1506_IM-0330-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1506_IM-0330-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1506_IM-0330-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1506_IM-0330-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1506_IM-0330-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1506_IM-0330-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3211_IM-1517-1001-0002.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3211_IM-1517-1001-0002.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3211_IM-1517-1001-0002.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3211_IM-1517-1001-0002.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3211_IM-1517-1001-0002.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3211_IM-1517-1001-0002.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1102_IM-0069-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1102_IM-0069-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1102_IM-0069-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1102_IM-0069-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1102_IM-0069-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1102_IM-0069-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3620_IM-1791-1001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3620_IM-1791-1001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3620_IM-1791-1001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3620_IM-1791-1001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3620_IM-1791-1001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3620_IM-1791-1001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1125_IM-0082-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1125_IM-0082-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1125_IM-0082-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1125_IM-0082-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1125_IM-0082-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1125_IM-0082-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "183_IM-0537-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "183_IM-0537-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "183_IM-0537-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "183_IM-0537-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "183_IM-0537-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "183_IM-0537-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3509_IM-1711-0001-0003.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3509_IM-1711-0001-0003.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3509_IM-1711-0001-0003.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3509_IM-1711-0001-0003.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3509_IM-1711-0001-0003.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3509_IM-1711-0001-0003.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2887_IM-1289-4001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2887_IM-1289-4001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2887_IM-1289-4001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2887_IM-1289-4001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2887_IM-1289-4001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2887_IM-1289-4001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2943_IM-1343-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2943_IM-1343-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2943_IM-1343-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2943_IM-1343-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2943_IM-1343-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2943_IM-1343-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1445_IM-0287-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1445_IM-0287-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1445_IM-0287-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1445_IM-0287-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1445_IM-0287-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1445_IM-0287-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2360_IM-0925-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2360_IM-0925-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2360_IM-0925-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2360_IM-0925-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2360_IM-0925-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2360_IM-0925-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2608_IM-1098-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2608_IM-1098-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2608_IM-1098-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2608_IM-1098-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2608_IM-1098-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2608_IM-1098-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3508_IM-1710-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3508_IM-1710-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3508_IM-1710-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3508_IM-1710-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3508_IM-1710-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3508_IM-1710-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1525_IM-0340-4001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1525_IM-0340-4001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1525_IM-0340-4001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1525_IM-0340-4001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1525_IM-0340-4001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1525_IM-0340-4001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1857_IM-0556-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1857_IM-0556-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1857_IM-0556-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1857_IM-0556-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1857_IM-0556-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1857_IM-0556-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3378_IM-1627-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3378_IM-1627-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3378_IM-1627-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3378_IM-1627-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3378_IM-1627-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3378_IM-1627-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1983_IM-0640-2002.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1983_IM-0640-2002.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1983_IM-0640-2002.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1983_IM-0640-2002.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1983_IM-0640-2002.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1983_IM-0640-2002.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2206_IM-0815-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2206_IM-0815-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2206_IM-0815-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2206_IM-0815-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2206_IM-0815-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2206_IM-0815-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1909_IM-0590-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1909_IM-0590-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1909_IM-0590-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1909_IM-0590-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1909_IM-0590-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1909_IM-0590-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2777_IM-1217-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2777_IM-1217-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2777_IM-1217-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2777_IM-1217-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2777_IM-1217-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2777_IM-1217-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3552_IM-1741-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3552_IM-1741-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3552_IM-1741-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3552_IM-1741-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3552_IM-1741-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3552_IM-1741-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1882_IM-0571-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1882_IM-0571-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1882_IM-0571-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1882_IM-0571-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1882_IM-0571-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1882_IM-0571-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2616_IM-1106-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2616_IM-1106-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2616_IM-1106-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2616_IM-1106-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2616_IM-1106-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2616_IM-1106-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2817_IM-1241-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2817_IM-1241-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2817_IM-1241-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2817_IM-1241-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2817_IM-1241-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2817_IM-1241-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3006_IM-1388-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3006_IM-1388-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3006_IM-1388-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3006_IM-1388-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3006_IM-1388-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3006_IM-1388-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2383_IM-0941-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2383_IM-0941-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2383_IM-0941-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2383_IM-0941-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2383_IM-0941-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2383_IM-0941-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3212_IM-1517-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3212_IM-1517-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3212_IM-1517-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3212_IM-1517-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3212_IM-1517-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3212_IM-1517-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2338_IM-0905-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2338_IM-0905-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2338_IM-0905-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2338_IM-0905-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2338_IM-0905-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2338_IM-0905-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3453_IM-1676-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3453_IM-1676-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3453_IM-1676-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3453_IM-1676-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3453_IM-1676-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3453_IM-1676-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "304_IM-1413-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "304_IM-1413-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "304_IM-1413-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "304_IM-1413-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "304_IM-1413-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "304_IM-1413-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2752_IM-1202-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2752_IM-1202-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2752_IM-1202-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2752_IM-1202-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2752_IM-1202-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2752_IM-1202-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3245_IM-1537-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3245_IM-1537-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3245_IM-1537-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3245_IM-1537-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3245_IM-1537-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3245_IM-1537-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1274_IM-0183-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1274_IM-0183-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1274_IM-0183-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1274_IM-0183-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1274_IM-0183-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1274_IM-0183-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1977_IM-0636-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1977_IM-0636-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1977_IM-0636-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1977_IM-0636-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1977_IM-0636-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1977_IM-0636-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3738_IM-1867-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3738_IM-1867-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3738_IM-1867-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3738_IM-1867-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3738_IM-1867-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3738_IM-1867-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2475_IM-1004-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2475_IM-1004-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2475_IM-1004-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2475_IM-1004-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2475_IM-1004-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2475_IM-1004-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1748_IM-0490-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1748_IM-0490-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1748_IM-0490-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1748_IM-0490-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1748_IM-0490-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1748_IM-0490-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3273_IM-1554-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3273_IM-1554-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3273_IM-1554-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3273_IM-1554-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3273_IM-1554-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3273_IM-1554-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2548_IM-1056-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2548_IM-1056-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2548_IM-1056-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2548_IM-1056-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2548_IM-1056-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2548_IM-1056-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1419_IM-0267-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1419_IM-0267-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1419_IM-0267-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1419_IM-0267-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1419_IM-0267-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1419_IM-0267-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2191_IM-0801-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2191_IM-0801-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2191_IM-0801-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2191_IM-0801-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2191_IM-0801-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2191_IM-0801-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2702_IM-1170-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2702_IM-1170-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2702_IM-1170-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2702_IM-1170-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2702_IM-1170-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2702_IM-1170-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1867_IM-0560-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1867_IM-0560-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1867_IM-0560-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1867_IM-0560-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1867_IM-0560-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1867_IM-0560-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1792_IM-0515-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1792_IM-0515-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1792_IM-0515-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1792_IM-0515-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1792_IM-0515-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1792_IM-0515-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2139_IM-0760-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2139_IM-0760-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2139_IM-0760-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2139_IM-0760-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2139_IM-0760-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2139_IM-0760-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2673_IM-1149-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2673_IM-1149-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2673_IM-1149-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2673_IM-1149-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2673_IM-1149-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2673_IM-1149-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3360_IM-1613-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3360_IM-1613-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3360_IM-1613-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3360_IM-1613-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3360_IM-1613-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3360_IM-1613-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1587_IM-0381-1002001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1587_IM-0381-1002001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1587_IM-0381-1002001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1587_IM-0381-1002001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1587_IM-0381-1002001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1587_IM-0381-1002001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "771_IM-2316-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "771_IM-2316-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "771_IM-2316-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "771_IM-2316-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "771_IM-2316-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "771_IM-2316-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2506_IM-1029-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2506_IM-1029-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2506_IM-1029-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2506_IM-1029-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2506_IM-1029-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2506_IM-1029-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3025_IM-1400-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3025_IM-1400-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3025_IM-1400-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3025_IM-1400-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3025_IM-1400-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3025_IM-1400-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2959_IM-1354-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2959_IM-1354-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2959_IM-1354-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2959_IM-1354-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2959_IM-1354-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2959_IM-1354-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2334_IM-0902-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2334_IM-0902-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2334_IM-0902-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2334_IM-0902-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2334_IM-0902-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2334_IM-0902-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2183_IM-0794-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2183_IM-0794-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2183_IM-0794-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2183_IM-0794-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2183_IM-0794-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2183_IM-0794-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3884_IM-1971-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3884_IM-1971-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3884_IM-1971-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3884_IM-1971-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3884_IM-1971-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3884_IM-1971-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "292_IM-1322-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "292_IM-1322-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "292_IM-1322-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "292_IM-1322-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "292_IM-1322-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "292_IM-1322-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1855_IM-0555-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1855_IM-0555-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1855_IM-0555-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1855_IM-0555-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1855_IM-0555-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1855_IM-0555-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "188_IM-0569-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "188_IM-0569-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "188_IM-0569-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "188_IM-0569-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "188_IM-0569-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "188_IM-0569-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2165_IM-0781-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2165_IM-0781-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2165_IM-0781-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2165_IM-0781-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2165_IM-0781-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2165_IM-0781-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2433_IM-0975-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2433_IM-0975-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2433_IM-0975-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2433_IM-0975-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2433_IM-0975-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2433_IM-0975-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1353_IM-0230-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1353_IM-0230-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1353_IM-0230-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1353_IM-0230-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1353_IM-0230-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1353_IM-0230-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1473_IM-0306-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1473_IM-0306-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1473_IM-0306-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1473_IM-0306-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1473_IM-0306-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1473_IM-0306-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1262_IM-0178-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1262_IM-0178-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1262_IM-0178-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1262_IM-0178-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1262_IM-0178-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1262_IM-0178-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "78_IM-2322-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "78_IM-2322-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "78_IM-2322-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "78_IM-2322-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "78_IM-2322-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "78_IM-2322-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "602_IM-2192-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "602_IM-2192-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "602_IM-2192-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "602_IM-2192-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "602_IM-2192-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "602_IM-2192-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3123_IM-1468-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3123_IM-1468-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3123_IM-1468-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3123_IM-1468-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3123_IM-1468-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3123_IM-1468-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1936_IM-0606-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1936_IM-0606-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1936_IM-0606-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1936_IM-0606-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1936_IM-0606-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1936_IM-0606-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1733_IM-0483-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1733_IM-0483-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1733_IM-0483-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1733_IM-0483-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1733_IM-0483-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1733_IM-0483-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3108_IM-1457-12001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3108_IM-1457-12001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3108_IM-1457-12001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3108_IM-1457-12001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3108_IM-1457-12001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3108_IM-1457-12001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "958_IM-2449-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "958_IM-2449-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "958_IM-2449-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "958_IM-2449-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "958_IM-2449-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "958_IM-2449-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2640_IM-1126-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2640_IM-1126-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2640_IM-1126-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2640_IM-1126-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2640_IM-1126-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2640_IM-1126-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "394_IM-2010-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "394_IM-2010-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "394_IM-2010-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "394_IM-2010-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "394_IM-2010-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "394_IM-2010-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3546_IM-1738-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3546_IM-1738-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3546_IM-1738-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3546_IM-1738-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3546_IM-1738-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3546_IM-1738-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1361_IM-0235-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1361_IM-0235-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1361_IM-0235-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1361_IM-0235-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1361_IM-0235-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1361_IM-0235-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2246_IM-0843-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2246_IM-0843-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2246_IM-0843-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2246_IM-0843-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2246_IM-0843-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2246_IM-0843-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3539_IM-1731-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3539_IM-1731-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3539_IM-1731-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3539_IM-1731-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3539_IM-1731-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3539_IM-1731-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3877_IM-1967-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3877_IM-1967-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3877_IM-1967-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3877_IM-1967-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3877_IM-1967-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3877_IM-1967-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3096_IM-1448-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3096_IM-1448-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3096_IM-1448-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3096_IM-1448-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3096_IM-1448-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3096_IM-1448-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2365_IM-0927-3001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2365_IM-0927-3001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2365_IM-0927-3001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2365_IM-0927-3001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2365_IM-0927-3001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2365_IM-0927-3001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1178_IM-0121-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1178_IM-0121-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1178_IM-0121-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1178_IM-0121-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1178_IM-0121-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1178_IM-0121-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3067_IM-1430-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3067_IM-1430-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3067_IM-1430-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3067_IM-1430-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3067_IM-1430-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3067_IM-1430-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3679_IM-1831-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3679_IM-1831-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3679_IM-1831-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3679_IM-1831-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3679_IM-1831-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3679_IM-1831-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3986_IM-2041-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3986_IM-2041-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3986_IM-2041-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3986_IM-2041-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3986_IM-2041-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3986_IM-2041-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1100_IM-0068-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1100_IM-0068-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1100_IM-0068-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1100_IM-0068-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1100_IM-0068-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1100_IM-0068-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2193_IM-0803-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2193_IM-0803-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2193_IM-0803-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2193_IM-0803-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2193_IM-0803-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2193_IM-0803-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2904_IM-1308-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2904_IM-1308-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2904_IM-1308-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2904_IM-1308-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2904_IM-1308-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2904_IM-1308-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2999_IM-1383-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2999_IM-1383-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2999_IM-1383-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2999_IM-1383-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2999_IM-1383-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2999_IM-1383-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2513_IM-1035-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2513_IM-1035-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2513_IM-1035-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2513_IM-1035-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2513_IM-1035-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2513_IM-1035-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3863_IM-1957-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3863_IM-1957-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3863_IM-1957-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3863_IM-1957-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3863_IM-1957-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3863_IM-1957-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "741_IM-2297-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "741_IM-2297-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "741_IM-2297-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "741_IM-2297-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "741_IM-2297-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "741_IM-2297-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3455_IM-1677-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3455_IM-1677-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3455_IM-1677-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3455_IM-1677-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3455_IM-1677-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3455_IM-1677-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1137_IM-0093-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1137_IM-0093-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1137_IM-0093-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1137_IM-0093-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1137_IM-0093-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1137_IM-0093-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "462_IM-2090-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "462_IM-2090-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "462_IM-2090-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "462_IM-2090-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "462_IM-2090-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "462_IM-2090-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "111_IM-0076-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "111_IM-0076-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "111_IM-0076-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "111_IM-0076-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "111_IM-0076-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "111_IM-0076-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1814_IM-0527-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1814_IM-0527-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1814_IM-0527-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1814_IM-0527-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1814_IM-0527-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1814_IM-0527-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2008_IM-0658-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2008_IM-0658-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2008_IM-0658-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2008_IM-0658-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2008_IM-0658-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2008_IM-0658-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2355_IM-0919-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2355_IM-0919-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2355_IM-0919-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2355_IM-0919-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2355_IM-0919-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2355_IM-0919-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "736_IM-2295-1001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "736_IM-2295-1001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "736_IM-2295-1001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "736_IM-2295-1001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "736_IM-2295-1001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "736_IM-2295-1001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1807_IM-0524-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1807_IM-0524-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1807_IM-0524-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1807_IM-0524-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1807_IM-0524-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1807_IM-0524-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2520_IM-1039-27001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2520_IM-1039-27001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2520_IM-1039-27001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2520_IM-1039-27001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2520_IM-1039-27001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2520_IM-1039-27001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2263_IM-0853-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2263_IM-0853-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2263_IM-0853-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2263_IM-0853-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2263_IM-0853-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2263_IM-0853-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "98_IM-2467-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "98_IM-2467-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "98_IM-2467-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "98_IM-2467-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "98_IM-2467-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "98_IM-2467-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "158_IM-0377-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "158_IM-0377-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "158_IM-0377-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "158_IM-0377-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "158_IM-0377-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "158_IM-0377-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2024_IM-0670-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2024_IM-0670-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2024_IM-0670-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2024_IM-0670-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2024_IM-0670-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2024_IM-0670-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1691_IM-0453-4001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1691_IM-0453-4001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1691_IM-0453-4001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1691_IM-0453-4001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1691_IM-0453-4001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1691_IM-0453-4001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1375_IM-0241-3001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1375_IM-0241-3001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1375_IM-0241-3001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1375_IM-0241-3001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1375_IM-0241-3001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1375_IM-0241-3001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1360_IM-0234-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1360_IM-0234-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1360_IM-0234-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1360_IM-0234-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1360_IM-0234-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1360_IM-0234-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3411_IM-1649-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3411_IM-1649-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3411_IM-1649-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3411_IM-1649-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3411_IM-1649-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3411_IM-1649-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3117_IM-1465-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3117_IM-1465-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3117_IM-1465-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3117_IM-1465-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3117_IM-1465-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3117_IM-1465-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2289_IM-0873-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2289_IM-0873-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2289_IM-0873-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2289_IM-0873-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2289_IM-0873-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2289_IM-0873-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2936_IM-1338-1002001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2936_IM-1338-1002001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2936_IM-1338-1002001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2936_IM-1338-1002001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2936_IM-1338-1002001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2936_IM-1338-1002001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1982_IM-0639-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1982_IM-0639-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1982_IM-0639-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1982_IM-0639-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1982_IM-0639-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1982_IM-0639-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1016_IM-0013-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1016_IM-0013-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1016_IM-0013-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1016_IM-0013-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1016_IM-0013-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1016_IM-0013-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1318_IM-0205-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1318_IM-0205-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1318_IM-0205-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1318_IM-0205-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1318_IM-0205-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1318_IM-0205-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2570_IM-1073-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2570_IM-1073-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2570_IM-1073-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2570_IM-1073-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2570_IM-1073-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2570_IM-1073-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "118_IM-0123-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "118_IM-0123-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "118_IM-0123-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "118_IM-0123-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "118_IM-0123-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "118_IM-0123-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2181_IM-0793-1001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2181_IM-0793-1001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2181_IM-0793-1001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2181_IM-0793-1001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2181_IM-0793-1001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2181_IM-0793-1001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "650_IM-2228-4001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "650_IM-2228-4001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "650_IM-2228-4001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "650_IM-2228-4001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "650_IM-2228-4001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "650_IM-2228-4001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2314_IM-0889-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2314_IM-0889-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2314_IM-0889-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2314_IM-0889-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2314_IM-0889-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2314_IM-0889-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2056_IM-0694-1001-0002.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2056_IM-0694-1001-0002.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2056_IM-0694-1001-0002.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2056_IM-0694-1001-0002.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2056_IM-0694-1001-0002.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2056_IM-0694-1001-0002.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "353_IM-1726-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "353_IM-1726-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "353_IM-1726-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "353_IM-1726-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "353_IM-1726-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "353_IM-1726-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3249_IM-1539-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3249_IM-1539-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3249_IM-1539-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3249_IM-1539-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3249_IM-1539-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3249_IM-1539-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2770_IM-1213-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2770_IM-1213-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2770_IM-1213-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2770_IM-1213-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2770_IM-1213-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2770_IM-1213-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1957_IM-0624-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1957_IM-0624-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1957_IM-0624-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1957_IM-0624-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1957_IM-0624-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1957_IM-0624-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2477_IM-1006-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2477_IM-1006-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2477_IM-1006-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2477_IM-1006-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2477_IM-1006-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2477_IM-1006-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "808_IM-2341-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "808_IM-2341-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "808_IM-2341-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "808_IM-2341-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "808_IM-2341-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "808_IM-2341-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2831_IM-1249-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2831_IM-1249-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2831_IM-1249-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2831_IM-1249-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2831_IM-1249-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2831_IM-1249-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "527_IM-2137-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "527_IM-2137-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "527_IM-2137-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "527_IM-2137-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "527_IM-2137-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "527_IM-2137-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2301_IM-0881-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2301_IM-0881-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2301_IM-0881-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2301_IM-0881-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2301_IM-0881-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2301_IM-0881-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3619_IM-1791-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3619_IM-1791-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3619_IM-1791-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3619_IM-1791-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3619_IM-1791-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3619_IM-1791-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3442_IM-1667-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3442_IM-1667-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3442_IM-1667-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3442_IM-1667-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3442_IM-1667-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3442_IM-1667-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2238_IM-0835-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2238_IM-0835-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2238_IM-0835-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2238_IM-0835-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2238_IM-0835-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2238_IM-0835-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1751_IM-0494-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1751_IM-0494-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1751_IM-0494-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1751_IM-0494-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1751_IM-0494-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1751_IM-0494-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1852_IM-0554-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1852_IM-0554-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1852_IM-0554-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1852_IM-0554-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1852_IM-0554-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1852_IM-0554-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2218_IM-0823-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2218_IM-0823-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2218_IM-0823-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2218_IM-0823-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2218_IM-0823-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2218_IM-0823-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3187_IM-1503-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3187_IM-1503-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3187_IM-1503-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3187_IM-1503-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3187_IM-1503-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3187_IM-1503-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3148_IM-1480-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3148_IM-1480-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3148_IM-1480-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3148_IM-1480-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3148_IM-1480-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3148_IM-1480-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3509_IM-1711-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3509_IM-1711-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3509_IM-1711-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3509_IM-1711-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3509_IM-1711-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3509_IM-1711-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2062_IM-0699-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2062_IM-0699-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2062_IM-0699-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2062_IM-0699-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2062_IM-0699-0001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2062_IM-0699-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3911_IM-1987-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3911_IM-1987-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3911_IM-1987-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3911_IM-1987-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3911_IM-1987-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3911_IM-1987-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3880_IM-1968-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3880_IM-1968-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3880_IM-1968-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3880_IM-1968-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "3880_IM-1968-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3880_IM-1968-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "374_IM-1868-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "374_IM-1868-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "374_IM-1868-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "374_IM-1868-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "374_IM-1868-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "374_IM-1868-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "1182_IM-0124-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1182_IM-0124-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1182_IM-0124-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1182_IM-0124-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "1182_IM-0124-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "1182_IM-0124-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "253_IM-1045-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "253_IM-1045-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "253_IM-1045-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "253_IM-1045-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "253_IM-1045-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "253_IM-1045-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "379_IM-1903-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "379_IM-1903-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "379_IM-1903-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "379_IM-1903-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "379_IM-1903-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "379_IM-1903-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3430_IM-1659-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "3430_IM-1659-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3430_IM-1659-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3430_IM-1659-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3430_IM-1659-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "3430_IM-1659-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "804_IM-2338-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "804_IM-2338-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "804_IM-2338-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "804_IM-2338-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "804_IM-2338-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "804_IM-2338-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "242_IM-0963-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "242_IM-0963-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "242_IM-0963-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "242_IM-0963-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "242_IM-0963-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "242_IM-0963-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "715_IM-2277-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "715_IM-2277-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "present",
+  "a_confidence": "Medium",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "715_IM-2277-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "715_IM-2277-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "715_IM-2277-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "715_IM-2277-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "a_verdict": "present",
+  "a_confidence": "High",
+  "b_verdict": "present",
+  "b_confidence": "Low"
+ },
+ {
+  "file": "2321_IM-0894-3001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2321_IM-0894-3001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2321_IM-0894-3001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "Low",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2321_IM-0894-3001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ },
+ {
+  "file": "2321_IM-0894-3001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "High"
+ },
+ {
+  "file": "2321_IM-0894-3001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "a_verdict": "absent",
+  "a_confidence": "High",
+  "b_verdict": "absent",
+  "b_confidence": "Medium"
+ }
+]
