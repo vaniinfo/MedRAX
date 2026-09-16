@@ -265,6 +265,15 @@ class Agent:
                     record = self.validator.assess(call, result, focus=focus)
                     self.pending_validations.append(self.validator.render_for_model(record))
                     self.pending_records.append(record)
+                    # PATCH: the Director no longer receives the raw answer as though it
+                    # were equivalent to the validated evidence. A tool returning
+                    # {"response": "Yes", "confidence": 0.99} invites its confidence to
+                    # be read as the evidence; the replacement keeps the text but states
+                    # what it was measured to be worth beside it. The (payload, metadata)
+                    # shape is preserved because interface.py evaluates it positionally.
+                    payload = result[0] if isinstance(result, tuple) and result else result
+                    rest = result[1] if isinstance(result, tuple) and len(result) > 1 else {}
+                    result = (self.validator.evidence_view(record, payload), rest)
                     self._write_log(
                         f"\n[{datetime.now().strftime('%H:%M:%S')}] TOOL VALIDATION\n"
                         + self.validator.render_for_log(record)

@@ -458,6 +458,47 @@ class EvidenceValidator:
                 "n_against": sum(1 for s in live if s["supports"] == "NO")}
 
     @classmethod
+    def evidence_view(cls, record: Dict[str, Any], payload: Any) -> Any:
+        """What the Director receives in place of the tool's raw answer.
+
+        Handing back {"response": "Yes", "confidence": 0.99} invites the reader to treat
+        the model's confidence as the evidence, which is the confusion this module
+        exists to remove: 0.99 from a tool whose positive calls are right 43% of the
+        time is not strong evidence, and nothing in that dict says so. The raw text is
+        kept -- it is often clinically informative -- but it arrives labelled, beside
+        what the evidence was measured to be worth.
+
+        Utility tools pass through untouched. image_visualizer returns a path the UI
+        reads by key, and there is nothing evidential to say about it.
+        """
+        scored = [p for p in record.get("probabilities", [])
+                  if p.get("relevant", True) and p.get("scored_as")]
+        if not scored:
+            return payload
+
+        evidence = []
+        for entry in scored:
+            side = entry.get("polarity") or {}
+            evidence.append({
+                "finding": entry["scored_as"],
+                "polarity": "positive" if entry["supports"] == "YES" else "negative",
+                "decisive": entry["informative"],
+                "evidence_strength": round(cls._strength(entry), 3),
+                "reliability_basis": "directional" if side else "discrimination_only",
+                "calibrated_margin_available": entry.get("output_type") == "probability",
+                "measured": entry.get("measured", False),
+                # How often an answer in THIS direction has been right, which is the
+                # question the raw probability does not answer.
+                "answers_this_way_correct": side.get("ppv", side.get("npv")),
+                "n_such_answers": side.get("n"),
+                "raw_value": entry["value"],
+            })
+        return {"source": record.get("tool"),
+                "raw_output": " ".join(str(payload).split())[:400],
+                "evidence": evidence,
+                "this_tool_alone_supports": record.get("confidence_ceiling")}
+
+    @classmethod
     def synthesise_records(cls, records: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
         """Net evidence per finding, across every tool that spoke this turn.
 
