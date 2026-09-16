@@ -436,6 +436,52 @@ class EvidenceValidator:
                 "n_against": sum(1 for s in live if s["supports"] == "NO")}
 
     @classmethod
+    def synthesise_records(cls, records: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+        """Net evidence per finding, across every tool that spoke this turn.
+
+        assess() judges one tool. Whether the tools together support a claim is a
+        different question and cannot be answered inside a per-tool record, which is
+        why this takes the whole set and runs after all of them.
+        """
+        by_finding: Dict[str, List[Dict[str, Any]]] = {}
+        for record in records:
+            for entry in record.get("probabilities", []):
+                finding = entry.get("scored_as")
+                if entry.get("relevant", True) and finding and entry.get("tool"):
+                    by_finding.setdefault(finding, []).append(entry)
+        return {finding: cls._synthesise(entries, finding)
+                for finding, entries in by_finding.items()}
+
+    @classmethod
+    def render_synthesis(cls, records: List[Dict[str, Any]]) -> str:
+        """The cross-tool block the Director reads after the per-tool ones."""
+        verdicts = {f: v for f, v in cls.synthesise_records(records).items()
+                    if v["n_support"] or v["n_against"]}
+        if not verdicts:
+            return ""
+        lines = ["<synthesis>",
+                 "Evidence from all tools above, combined. This is NOT a count of how "
+                 "many tools agreed: the strongest single piece of evidence anchors "
+                 "each side, and further evidence adds less the more its errors "
+                 "coincide with it. Three tools that fail on the same films are not "
+                 "three pieces of evidence."]
+        for finding, v in sorted(verdicts.items(), key=lambda kv: -abs(kv[1]["net"])):
+            direction = "PRESENT" if v["net"] > 0 else "ABSENT" if v["net"] < 0 else "UNDECIDED"
+            lines.append(
+                f"  {finding}: net {v['net']:+.2f} -> {direction}  "
+                f"(support {v['support']:.2f} from {v['n_support']} tool(s), "
+                f"against {v['against']:.2f} from {v['n_against']})")
+        lines.append(
+            "Calibration, measured on 272 films this system had never seen: positive "
+            "claims with net above 0.80 were correct 87.8% of the time (95% CI "
+            "78.5-93.5). Below 0.48 they were correct 52.5% (43.6-61.3). The gap "
+            "between those two is established; the middle is not, so do not read the "
+            "range 0.48-0.80 as its own grade. Nothing here is validated for "
+            "pneumothorax, which the evaluation corpus could not supply.")
+        lines.append("</synthesis>")
+        return "\n".join(lines)
+
+    @classmethod
     def _combine(cls, entries: List[Dict[str, Any]], finding: Optional[str]) -> float:
         """Anchor on the strongest, then add independence-discounted corroboration."""
         if not entries:

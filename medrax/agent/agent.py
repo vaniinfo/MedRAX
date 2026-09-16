@@ -180,11 +180,27 @@ class Agent:
         # PATCH: validations are injected here rather than folded into the ToolMessage
         # content, because interface.py calls eval() on that content and would break.
         if self.pending_validations:
+            blocks = list(self.pending_validations)
+            # PATCH: cross-tool synthesis, appended after the per-tool blocks. It has to
+            # happen here rather than in assess(), which sees one tool at a time and so
+            # cannot answer whether the tools TOGETHER support a claim. Without this the
+            # Director was left to combine the evidence itself, by whatever means -- and
+            # counting agreeing tools is exactly the failure this code path exists to
+            # prevent.
+            if self.validator is not None and self.pending_records:
+                try:
+                    synthesis = self.validator.render_synthesis(self.pending_records)
+                    if synthesis:
+                        blocks.append(synthesis)
+                        self._write_log(f"\n[{datetime.now().strftime('%H:%M:%S')}] "
+                                        f"CROSS-TOOL SYNTHESIS\n{synthesis}")
+                except Exception as exc:
+                    self._write_log(f"  SYNTHESIS FAILED: {exc}")
             messages = messages + [HumanMessage(content=(
                 "Validation of the tool results above. The computed lines are facts, "
                 "not suggestions: a tool marked UNINFORMATIVE must not be counted as a "
                 "vote, and your stated confidence must not exceed the computed ceiling."
-                "\n\n" + "\n\n".join(self.pending_validations)
+                "\n\n" + "\n\n".join(blocks)
             ))]
             self.pending_validations = []
             self.pending_records = []
