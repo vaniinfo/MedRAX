@@ -246,9 +246,25 @@ if __name__ == "__main__":
         "XRayVQATool",
     ]
     CUDA_ONLY_TOOLS = [
-        "LlavaMedTool",
         "XRayPhraseGroundingTool",
     ]
+    # PATCH: LlavaMedTool is no longer loaded by default. Measured over the same 544
+    # films as the other tools, it is at or below chance on every finding:
+    #
+    #   pneumothorax 0.619   cardiomegaly 0.531   effusion 0.514
+    #   edema        0.499   atelectasis  0.434   consolidation 0.429
+    #
+    # Five of the six are excluded by analyze_reliability.py's own gates -- two for a
+    # confidence interval spanning chance, two for lying below it, one for being worse
+    # than chance outright -- and CheXagent beats it by +0.33 to +0.44 AUC on every
+    # finding, the widest margins in the table. It had been loaded in every session of
+    # this project, occupying roughly 8GB, never once called by the Director, and with
+    # no reliability rows it could have contributed through if it had been.
+    #
+    # This measures binary finding detection with CheXagent's question template. The
+    # model was built for open-ended medical VQA and may well be better at that; the
+    # result says it does not belong in this pipeline, not that the model is poor.
+    # Re-enable with MEDRAX_TOOLS if you want it back.
 
     if tools_env := os.getenv("MEDRAX_TOOLS"):
         selected_tools = [name.strip() for name in tools_env.split(",") if name.strip()]

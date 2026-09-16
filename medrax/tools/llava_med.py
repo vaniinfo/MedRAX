@@ -1,6 +1,7 @@
 from typing import Any, Dict, Optional, Tuple, Type
 from pydantic import BaseModel, Field
 
+import re
 import torch
 
 from langchain_core.callbacks import (
@@ -117,12 +118,38 @@ class LlavaMedTool(BaseTool):
 
         return input_ids, image_tensor
 
+    @staticmethod
+    def _answered_yes_no(answer: str) -> bool:
+        """Did the model actually open with yes or no?
+
+        P(yes) is read off the FIRST generated token, so it only means anything if that
+        token was the answer. MedGemma taught this one: asked a yes/no question it
+        replied "Based on the chest X-ray provided..." and P(yes) came back 0.0001 on an
+        image whose text asserted the finding -- a maximal NO pointing the opposite way
+        to what the model said. First whole word, not a prefix, or "Nodular" reads as a
+        no; first NON-EMPTY word, or markdown "**Yes**" reads as neither.
+        """
+        words = [w for w in re.split(r"[^a-z]+", str(answer).lower()) if w]
+        return bool(words) and words[0] in ("yes", "no")
+
+    def _yes_probability(self, scores, answer: str) -> Optional[float]:
+        """P(the answer is yes), or None when that quantity does not exist."""
+        if not scores or not self._answered_yes_no(answer):
+            return None
+        ids = [self.tokenizer.encode(t, add_special_tokens=False) for t in ("Yes", "yes")]
+        first = [i[-1] for i in ids if i]
+        if not first:
+            return None
+        probabilities = torch.softmax(scores[0][0].float(), dim=-1)
+        return float(max(probabilities[i] for i in first))
+
     def _run(
         self,
         question: str,
         image_path: Optional[str] = None,
+        max_new_tokens: int = 500,
         run_manager: Optional[CallbackManagerForToolRun] = None,
-    ) -> Tuple[str, Dict]:
+    ) -> Tuple[Any, Dict]:
         """Answer a medical question, optionally based on an input image.
 
         Args:
@@ -141,23 +168,35 @@ class LlavaMedTool(BaseTool):
             input_ids = input_ids.to(device=self.model.device)
             image_tensor = image_tensor.to(device=self.model.device, dtype=self.model.dtype)
 
+            # PATCH: request scores so a yes/no answer can carry a probability, the way
+            # XRayVQATool already does. Without one this tool could never be measured:
+            # RELIABILITY needs a continuous score to find a decision point, so a
+            # text-only tool falls through to the assumed 0.5 and is capped at Medium
+            # forever, however good it actually is.
             with torch.inference_mode():
-                output_ids = self.model.generate(
+                generated = self.model.generate(
                     input_ids,
                     images=image_tensor,
                     do_sample=False,
                     temperature=0.2,
-                    max_new_tokens=500,
+                    max_new_tokens=max_new_tokens,
                     use_cache=True,
+                    output_scores=True,
+                    return_dict_in_generate=True,
                 )
 
-            output = self.tokenizer.batch_decode(output_ids, skip_special_tokens=True)[0].strip()
+            sequences = generated.sequences
+            output = self.tokenizer.batch_decode(sequences, skip_special_tokens=True)[0].strip()
             metadata = {
                 "question": question,
                 "image_path": image_path,
                 "analysis_status": "completed",
             }
-            return output, metadata
+            confidence = self._yes_probability(generated.scores, output)
+            if confidence is None:
+                return output, metadata
+            # Same shape XRayVQATool returns, so the validator scores it identically.
+            return {"response": output, "confidence": confidence}, metadata
         except Exception as e:
             return f"Error generating answer: {str(e)}", {
                 "question": question,

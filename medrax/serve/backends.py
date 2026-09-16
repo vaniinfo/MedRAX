@@ -282,8 +282,76 @@ class MedGemmaBackend(Backend):
             return None
 
 
+class LlavaMedBackend(Backend):
+    """microsoft/llava-med-v1.5-mistral-7b, wrapping LlavaMedTool.
+
+    Served rather than measured in-process for the same reason as the others: it keeps
+    ~8GB of VRAM out of the agent, and it can be pointed at its own environment later
+    without the agent changing. It runs happily under the pinned transformers 4.40
+    today, so the service can share the main venv.
+
+    It was loaded and never called for the whole of this project's history -- present in
+    the tool list, costing VRAM, contributing nothing, and with no reliability rows to
+    contribute with.
+    """
+
+    tool = "llava_med_qa"
+    model = "microsoft/llava-med-v1.5-mistral-7b"
+    task = "vqa"
+
+    def load(self) -> None:
+        from medrax.tools import LlavaMedTool
+        quant = os.getenv("MEDRAX_QUANT", "8bit").lower()
+        if quant == "4bit":
+            kwargs = {"load_in_4bit": True, "load_in_8bit": False}
+        elif quant in ("none", "off", "full"):
+            kwargs = {"load_in_4bit": False, "load_in_8bit": False}
+        else:
+            kwargs = {"load_in_8bit": True, "load_in_4bit": False}
+        self.impl = LlavaMedTool(cache_dir=_cache_dir(), device=_device(), **kwargs)
+
+    def _ask(self, path: str, prompt: str, max_new_tokens: int = 64):
+        output, _ = self.impl._run(question=prompt, image_path=path,
+                                   max_new_tokens=max_new_tokens)
+        if isinstance(output, dict):
+            return str(output.get("response", "")).strip(), output.get("confidence")
+        return str(output).strip(), None
+
+    def predict(self, image_bytes: bytes, prompt: str,
+                max_new_tokens: Optional[int] = None) -> PredictReply:
+        path = self._to_file(image_bytes)
+        try:
+            answer, p_yes = self._ask(path, prompt, max_new_tokens=max_new_tokens or 256)
+        finally:
+            os.unlink(path)
+        yes_no = is_yes_no(prompt)
+        return PredictReply(model=self.model, task=self.task, answer=answer,
+                            p_yes=p_yes if yes_no else None, yes_no=yes_no)
+
+    def vision_ok(self) -> Optional[bool]:
+        sample = os.getenv("MEDRAX_VISION_CHECK_IMAGE")
+        if not sample or not os.path.isfile(sample):
+            return None
+        try:
+            from PIL import Image
+            blank = self._to_file(b"")
+            os.unlink(blank)
+            Image.new("RGB", (512, 512), "black").save(blank)
+            try:
+                real, _ = self._ask(sample, _VISION_PROBE, 16)
+                dark, _ = self._ask(blank, _VISION_PROBE, 16)
+            finally:
+                os.path.isfile(blank) and os.unlink(blank)
+            if not real.strip() or not dark.strip():
+                return None
+            return real.lower() != dark.lower()
+        except Exception:
+            return None
+
+
 BACKENDS = {
     "densenet": DenseNetBackend,
     "chexagent": CheXagentBackend,
     "medgemma": MedGemmaBackend,
+    "llavamed": LlavaMedBackend,
 }
