@@ -199,7 +199,11 @@ class Agent:
             messages = messages + [HumanMessage(content=(
                 "Validation of the tool results above. The computed lines are facts, "
                 "not suggestions: a tool marked UNINFORMATIVE must not be counted as a "
-                "vote, and your stated confidence must not exceed the computed ceiling."
+                "vote, and your stated confidence must not exceed the computed ceiling. "
+                "A per-tool ceiling bounds what THAT TOOL could support on its own. "
+                "When a <synthesis> block is present it supersedes them for the CLAIM: "
+                "take your confidence from the net evidence there, never from the "
+                "highest ceiling among tools that disagree with each other."
                 "\n\n" + "\n\n".join(blocks)
             ))]
             self.pending_validations = []

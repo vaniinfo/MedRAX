@@ -232,6 +232,22 @@ REPORT_RELIABILITY: Dict[str, Dict[str, float]] = {
 # pair is flagged as such rather than silently treated as reliable.
 UNMEASURED_THRESHOLD = 0.5
 
+# What the held-out calibration actually found, kept next to the table it describes so
+# the two cannot drift apart. They did once: the scoring moved onto directional
+# reliability, the scale compressed so that nothing reaches 0.80 any more, and this
+# text went on quoting a band that no longer has any members. Regenerate with
+# scripts/calibrate_claims.py --input heldout.json after any change to _strength.
+CALIBRATION_NOTE = (
+    "Calibration, measured on 272 films this system had never seen, with every "
+    "reliability figure frozen beforehand: positive claims with net evidence above "
+    "0.48 were correct 77.7% of the time (95% CI 69.5-84.2). Below 0.48 they were "
+    "correct 56.9% (48.9-64.4). Those intervals do not overlap, so 0.48 is a boundary "
+    "the data supports -- but nothing above it has been shown to be better than "
+    "anything else above it, and no claim in this system reaches 0.80. Treat 0.48 as "
+    "the only validated line and do not invent grades between. Nothing here is "
+    "validated for pneumothorax, which the evaluation corpus could not supply."
+)
+
 # The original guessed dead zone, surviving only where it is the best available answer:
 # a pair with no measured threshold interval. For everything in RELIABILITY the band is
 # that pair's own thr_ci, which is narrower for some findings and far wider for others --
@@ -471,13 +487,12 @@ class EvidenceValidator:
                 f"  {finding}: net {v['net']:+.2f} -> {direction}  "
                 f"(support {v['support']:.2f} from {v['n_support']} tool(s), "
                 f"against {v['against']:.2f} from {v['n_against']})")
+        lines.append(CALIBRATION_NOTE)
         lines.append(
-            "Calibration, measured on 272 films this system had never seen: positive "
-            "claims with net above 0.80 were correct 87.8% of the time (95% CI "
-            "78.5-93.5). Below 0.48 they were correct 52.5% (43.6-61.3). The gap "
-            "between those two is established; the middle is not, so do not read the "
-            "range 0.48-0.80 as its own grade. Nothing here is validated for "
-            "pneumothorax, which the evaluation corpus could not supply.")
+            "This net figure, not any single tool's ceiling, is what your stated "
+            "confidence about the CLAIM must follow. A per-tool ceiling bounds what "
+            "THAT TOOL alone could support; it says nothing about a claim the other "
+            "tools contradict. Where they disagree, the net is the answer.")
         lines.append("</synthesis>")
         return "\n".join(lines)
 
