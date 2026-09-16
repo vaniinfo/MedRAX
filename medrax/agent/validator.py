@@ -257,6 +257,18 @@ class EvidenceValidator:
         return {finding: cls._ceiling_from_scored(entries)
                 for finding, entries in by_finding.items()}
 
+    @staticmethod
+    def _strength(entry: Dict[str, Any]) -> float:
+        """How much one reading is worth: distance from the decision point, scaled by
+        how well this tool separates this finding at all. 0.5 AUC is chance, so it
+        contributes nothing however wide the margin. Unmeasured tools assume 0.6."""
+        return entry["margin"] * ((entry.get("auc") or 0.6) - 0.5) * 2
+
+    @classmethod
+    def _strength_tier(cls, entry: Dict[str, Any]) -> str:
+        strength = cls._strength(entry)
+        return "strong" if strength > 0.45 else "moderate" if strength > 0.15 else "weak"
+
     @classmethod
     def _ceiling_from_scored(cls, scored: List[Dict[str, Any]]) -> str:
         """Ceiling from margin AND discrimination. A wide margin on a tool that barely
@@ -266,11 +278,8 @@ class EvidenceValidator:
             return "not computable (no probabilities; this tool is unvalidated)"
         if not live:
             return "Low"
-        best = max(live, key=lambda s: s["margin"] * ((s["auc"] or 0.6) - 0.5) * 2)
-        strength = best["margin"] * ((best["auc"] or 0.6) - 0.5) * 2
-        if strength > 0.45:
-            return "High"
-        return "Medium" if strength > 0.15 else "Low"
+        tier = cls._strength_tier(max(live, key=cls._strength))
+        return {"strong": "High", "moderate": "Medium", "weak": "Low"}[tier]
 
     @classmethod
     def _ceiling(cls, probs: List[Tuple[str, float]]) -> str:
@@ -678,9 +687,23 @@ class EvidenceValidator:
             suffix = (f"; {undecided} of {len(probs_all)} relevant value(s) undecided"
                       if undecided else "")
             if positives:
-                listed = ", ".join(f"{s['label']}={s['value']:.2f}" for s in positives[:4])
+                # PATCH: carry the weight in the headline, not only in the detail lines.
+                # This line read "reports present: Atelectasis=0.57, Pneumothorax=0.51"
+                # and the Director turned it into a two-finding diagnosis -- while the
+                # pneumothorax vote came from a tool measured at AUC 0.62, barely above
+                # chance. A bare list of numbers reads as a list of findings.
+                listed = ", ".join(
+                    f"{s['label']}={s['value']:.2f} ({EvidenceValidator._strength_tier(s)}"
+                    + (f", auc {s['auc']:.2f} where 0.5 is chance)" if s.get("auc")
+                       else ", this tool is unmeasured here)")
+                    for s in positives[:4])
                 more = f" (+{len(positives) - 4} more)" if len(positives) > 4 else ""
-                return f"{name} reports present: {listed}{more}{suffix}"
+                weak = [s["label"] for s in positives[:4]
+                        if EvidenceValidator._strength_tier(s) == "weak"]
+                caveat = (f"; {', '.join(weak)} rest on weak evidence and should be "
+                          "reported as uncertain or not at all, never as findings"
+                          if weak else "")
+                return f"{name} reports present: {listed}{more}{suffix}{caveat}"
             return (f"{name} reports nothing above its measured decision point for "
                     f"this finding{suffix}")
         if probs_all:
