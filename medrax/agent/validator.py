@@ -540,15 +540,30 @@ class EvidenceValidator:
                         High for every finding it measures, atelectasis at AUC 0.747
                         included.
         """
-        reliability = ((entry.get("auc") or 0.6) - 0.5) * 2
+        side = entry.get("polarity")
+        if side is None:
+            # Unmeasured pair: discrimination is all there is, and the 0.6 fallback
+            # keeps it below any ceiling above Medium.
+            discrimination = ((entry.get("auc") or 0.6) - 0.5) * 2
+            return (discrimination if entry.get("output_type") == "binary"
+                    else entry["margin"] * discrimination)
+
+        # Both kinds of tool are now scored on the same quantity: how often an answer
+        # in THIS direction has been right. Previously a graded tool contributed
+        # margin x discrimination and a binary one contributed directional reliability,
+        # and the synthesis subtracted one from the other -- different quantities on
+        # different scales. On a film with edema genuinely present that mismatch decided
+        # the direction: CheXagent's "yes" contributed 0.508 from discrimination while
+        # its measured reliability for saying yes to edema is 0.412 (PPV 46.1%).
+        #
+        # Margin modulates rather than replaces. PPV is measured across every call past
+        # the decision point, confident and marginal alike, so a reading that barely
+        # clears the line has done less than that average and one far past it has done
+        # more. Multiplying is deliberately conservative: a graded reading approaches
+        # its measured directional reliability but never exceeds it.
         if entry.get("output_type") == "binary":
-            # No gradation to read, so the answer is worth what an answer in THIS
-            # DIRECTION has measured. A MedGemma "no" on pneumothorax scores 0.198
-            # despite NPV 95.9%, because at 5.1% prevalence refusing everything already
-            # scores 94.9% -- and discrimination alone would have paid 0.584 for it.
-            side = entry.get("polarity")
-            return side["strength"] if side else reliability
-        return entry["margin"] * reliability
+            return side["strength"]
+        return entry["margin"] * side["strength"]
 
     # A directional rate needs as many observations to mean something as a finding needs
     # positives, so this mirrors MIN_POSITIVES in scripts/findings.py rather than adding
