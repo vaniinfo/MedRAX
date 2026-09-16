@@ -19,6 +19,7 @@ Run one per model, each in its own venv:
     python -m medrax.serve.server --backend densenet  --port 8103   # no transformers
 """
 import os
+import re
 import tempfile
 from typing import Optional
 
@@ -33,6 +34,40 @@ _YES_NO_OPENERS = ("does ", "do ", "did ", "is ", "are ", "was ", "were ", "has 
 
 def is_yes_no(prompt: str) -> bool:
     return " ".join(str(prompt).lower().split()).startswith(_YES_NO_OPENERS)
+
+
+def answered_yes_no(answer: str) -> bool:
+    """Did the model actually answer with yes or no?
+
+    Asking a yes/no question is not enough. P(yes) is read off the distribution for
+    the FIRST generated token, so it only means anything if that token was the answer.
+    MedGemma replies in prose -- "Based on the chest X-ray provided, there is some
+    evidence of..." -- so position 0 is "Based", and P(yes) there came back 0.0001 on a
+    film where its own text asserted the finding. Attached as `confidence` that reads
+    as a maximal NO: evidence pointing the exact opposite way to what the model said.
+
+    A probability whose name does not describe it is worse than no probability at all.
+    """
+    # Whole first word, not a prefix: "Nodular opacity is present" starts with "no"
+    # and a prefix test accepted it, which would attach a P(yes) read off the token
+    # "Nod" to a sentence asserting a finding.
+    # First non-empty word: MedGemma writes markdown, so "**Yes** - there is" leads
+    # with punctuation and a plain split leaves an empty element in front of it.
+    words = [w for w in re.split(r"[^a-z]+", str(answer).lower()) if w]
+    return bool(words) and words[0] in ("yes", "no")
+
+
+def yes_probability(scores, tokenizer, answer: str) -> Optional[float]:
+    """P(the answer is yes), or None when that quantity does not exist."""
+    if not scores or not answered_yes_no(answer):
+        return None
+    import torch
+    ids = [tokenizer.encode(t, add_special_tokens=False) for t in ("Yes", " Yes", "yes")]
+    first = [i[0] for i in ids if i]
+    if not first:
+        return None
+    probabilities = torch.softmax(scores[0][0].float(), dim=-1)
+    return float(max(probabilities[i] for i in first))
 
 
 # The probe for "is this model actually reading the image", taken from
@@ -196,7 +231,13 @@ class MedGemmaBackend(Backend):
             torch_dtype=torch.bfloat16 if self.device == "cuda" else torch.float32,
         ).to(self.device).eval()
 
+    # MedGemma answers in prose by default, which makes P(yes) unreadable. Asking for
+    # the verdict first keeps the free text and puts a scoreable token at position 0.
+    _YES_NO_SUFFIX = ("\nAnswer with a single word, Yes or No, then explain briefly.")
+
     def _ask(self, image, prompt: str, max_new_tokens: int = 128):
+        if is_yes_no(prompt):
+            prompt = prompt.rstrip() + self._YES_NO_SUFFIX
         messages = [{"role": "user", "content": [{"type": "image", "image": image},
                                                  {"type": "text", "text": prompt}]}]
         inputs = self.processor.apply_chat_template(
@@ -209,13 +250,8 @@ class MedGemmaBackend(Backend):
         start = inputs["input_ids"].shape[-1]
         text = self.processor.decode(generated.sequences[0][start:],
                                      skip_special_tokens=True).strip()
-        p_yes = None
-        if is_yes_no(prompt) and generated.scores:
-            ids = [self.processor.tokenizer.encode(t, add_special_tokens=False)
-                   for t in ("Yes", " Yes", "yes")]
-            first = [i[0] for i in ids if i]
-            probabilities = self._torch.softmax(generated.scores[0][0].float(), dim=-1)
-            p_yes = float(max(probabilities[i] for i in first)) if first else None
+        # None unless the model genuinely opened with yes or no -- see answered_yes_no.
+        p_yes = yes_probability(generated.scores, self.processor.tokenizer, text)
         return text, p_yes
 
     def predict(self, image_bytes: bytes, prompt: str) -> PredictReply:

@@ -124,6 +124,10 @@ celerybeat.pid
 # Environments
 .env
 .venv
+# Per-model service environments. Each model service runs in its own venv with
+# its own transformers pin -- that separation is the point, so there will be
+# several of these alongside the main one.
+.venv-*/
 env/
 venv/
 ENV/
