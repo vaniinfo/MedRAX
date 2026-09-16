@@ -142,15 +142,33 @@ class EvidenceValidator:
 
     # ---------------------------------------------------------------- numbers
 
+    # CheXagent's `confidence` is P(the answer is "Yes"), read off the generation
+    # scores. It only means anything when a yes/no question was actually asked.
+    _YES_NO_OPENERS = ("does ", "do ", "did ", "is ", "are ", "was ", "were ", "has ",
+                       "have ", "can ", "could ", "should ", "will ", "would ")
+
+    @classmethod
+    def _is_yes_no_prompt(cls, prompt: str) -> bool:
+        return cls._normalise(prompt).startswith(cls._YES_NO_OPENERS)
+
     @staticmethod
-    def _probabilities(result: Any) -> List[Tuple[str, float]]:
-        """Pull every probability a tool reported. Tools return (output, metadata)."""
+    def _probabilities(result: Any, yes_no: bool = True) -> List[Tuple[str, float]]:
+        """Pull every probability a tool reported. Tools return (output, metadata).
+
+        PATCH: `yes_no` guards the CheXagent confidence. Observed on a real run, the
+        Director ignored its instruction to use the trained template and asked
+        "Identify any abnormalities in this chest X-ray." CheXagent replied "No
+        abnormalities detected." with confidence=0.0002 -- the probability of a "Yes"
+        token that was never on offer. The validator read that noise as a maximal
+        negative vote, margin 1.00, on a question with no yes/no answer to be
+        confident about. A value that cannot mean what its name says is dropped.
+        """
         payload = result[0] if isinstance(result, tuple) and result else result
         if not isinstance(payload, dict):
             return []
         found: List[Tuple[str, float]] = []
         confidence = EvidenceValidator._as_probability(payload.get("confidence"))
-        if confidence is not None:
+        if confidence is not None and yes_no:
             answer = str(payload.get("response", "")).strip()
             found.append((f"P(yes) [answered {answer!r}]", confidence))
         for key, value in payload.items():
@@ -319,6 +337,29 @@ class EvidenceValidator:
         return None
 
     @classmethod
+    def _finding_for_label(cls, label: str) -> Optional[str]:
+        """Which measured finding does this probability label itself refer to?
+
+        PATCH: the reverse of _is_relevant, and the fix for a silent, total failure.
+        When the user asks an open-ended question ("identify any abnormalities") no
+        focus can be inferred, and every value used to be scored against focus=None --
+        which matches nothing in RELIABILITY, so all 18 classifier readings fell back
+        to the guessed 0.40-0.60 band and the whole measured table was bypassed.
+
+        Observed on a real run: Atelectasis=0.5656 was discarded as "too close to call"
+        when its measured row (threshold 0.40, interval 0.35-0.55) makes it a clear YES
+        at margin 0.28. The label alone is enough to know which row applies; the user's
+        intent was never needed for it.
+        """
+        normalised = cls._normalise(label)
+        hits = [(name, alias) for name, aliases in cls.FINDING_ALIASES.items()
+                for alias in aliases if alias in normalised or normalised in alias]
+        if not hits:
+            return None
+        # longest alias wins, so "pleural effusion" beats bare "effusion"
+        return max(hits, key=lambda pair: len(pair[1]))[0]
+
+    @classmethod
     def _is_relevant(cls, label: str, focus: Optional[str]) -> bool:
         """Does this probability bear on the finding being asked about?"""
         if focus is None:
@@ -443,9 +484,17 @@ class EvidenceValidator:
         """
         name = call.get("name", "unknown_tool")
         args = call.get("args", {}) or {}
-        probs = self._probabilities(result)
+        asked = str((args or {}).get("prompt", ""))
+        yes_no = self._is_yes_no_prompt(asked)
+        probs = self._probabilities(result, yes_no=yes_no)
         payload = result[0] if isinstance(result, tuple) and result else result
         claim = str(payload)[:2000]
+        # Say so when a confidence was discarded. Silently dropping it makes the tool
+        # look like one that reported no number, rather than one that was asked wrongly.
+        dropped_confidence = (
+            not yes_no and isinstance(payload, dict)
+            and self._as_probability(payload.get("confidence")) is not None
+        )
 
         # PATCH: only probabilities bearing on the finding in question may drive the
         # ceiling. Previously the max margin over all 18 classifier outputs was used,
@@ -454,8 +503,12 @@ class EvidenceValidator:
         relevant = [(l, p) for l, p in probs if self._is_relevant(l, focus)]
         scored = []
         for label, p in relevant:
-            entry = self._classify(p, name, focus)
-            entry.update({"label": label, "value": round(p, 4)})
+            # Score against the finding the question is about; failing that, against
+            # the finding this value is itself reporting on. Only fall through to the
+            # assumed band when neither is a pair we have measured.
+            scored_as = focus or self._finding_for_label(label)
+            entry = self._classify(p, name, scored_as)
+            entry.update({"label": label, "value": round(p, 4), "scored_as": scored_as})
             scored.append(entry)
         informative = [(s["label"], s["value"]) for s in scored if s["informative"]]
         uninformative = [(s["label"], s["value"]) for s in scored if not s["informative"]]
@@ -475,7 +528,7 @@ class EvidenceValidator:
         refuting = []
         uninformative_notes = [
             f"{s['label']}={s['value']:.3f} falls inside the uncertainty around this "
-            f"tool's decision point for {focus} "
+            f"tool's decision point for {s.get('scored_as') or 'this finding'} "
             + (f"(measured 95% interval {s['thr_ci'][0]:.2f}-{s['thr_ci'][1]:.2f})"
                if s.get("thr_ci") else
                f"(ASSUMED {ASSUMED_DEAD_ZONE[0]}-{ASSUMED_DEAD_ZONE[1]}; this tool has "
@@ -484,6 +537,14 @@ class EvidenceValidator:
               "not count it as a vote in either direction"
             for s in scored if not s["informative"]
         ]
+        if dropped_confidence:
+            uninformative_notes.insert(0, (
+                "this tool returned a 'confidence' value, but that number is P(the "
+                f"answer is \"Yes\") and the prompt asked was {asked!r} -- a question "
+                "with no yes/no answer, so the value does not mean what its name says "
+                "and has been discarded rather than counted as a vote. To obtain a "
+                "usable probability, ask it 'Does this chest X-ray contain a FINDING?'"
+            ))
         stance = None
         if not probs and isinstance(payload, str):
             stance = self._text_stance(payload, focus)
@@ -514,18 +575,21 @@ class EvidenceValidator:
                                         and self._image_path(args)),
             "args": args,
             "raw_output": claim,
-            "conclusion": self._conclusion(name, payload, informative, relevant),
+            "conclusion": self._conclusion(
+                name, payload, [s for s in scored if s["informative"]], relevant),
             # PATCH: score a probability against the finding's threshold only when it
             # actually bears on that finding. Previously every value was scored against
             # the focus threshold, so on a pleural-effusion question the classifier's
             # Cardiomegaly reading was judged against the effusion decision point.
             "probabilities": [
-                (dict(self._classify(p, name, focus), label=l, value=round(p, 4),
-                      relevant=True)
+                (dict(self._classify(p, name, focus or self._finding_for_label(l)),
+                      label=l, value=round(p, 4), relevant=True,
+                      scored_as=focus or self._finding_for_label(l))
                  if self._is_relevant(l, focus) else
                  {"label": l, "value": round(p, 4), "relevant": False,
                   "informative": False, "supports": None, "margin": 0.0,
-                  "threshold": None, "auc": None, "measured": False})
+                  "threshold": None, "thr_ci": None, "auc": None,
+                  "measured": False, "scored_as": None})
                 for l, p in probs
             ],
             "report_reliability": REPORT_RELIABILITY.get(focus or ""),
@@ -537,28 +601,37 @@ class EvidenceValidator:
         }
 
     @staticmethod
-    def _conclusion(name: str, payload: Any, informative: List[Tuple[str, float]],
+    def _conclusion(name: str, payload: Any, informative: List[Dict[str, Any]],
                     probs_all: List[Tuple[str, float]]) -> str:
-        """One-line restatement of what this tool actually claimed."""
+        """One-line restatement of what this tool actually claimed.
+
+        PATCH: "present" now means the value cleared its own measured decision point,
+        not that it exceeded 0.5. The last place in the scoring path still assuming
+        0.5 -- with the classifier's edema threshold at 0.15, a reading of 0.45 is a
+        clear positive that this line used to omit, and the summary then disagreed
+        with the per-value verdicts printed directly beneath it.
+        """
         if isinstance(payload, dict) and "response" in payload:
             answer = str(payload["response"]).strip()
             if informative:
-                return f"{name} answered {answer!r} ({informative[0][0]}={informative[0][1]:.3f})"
+                first = informative[0]
+                return f"{name} answered {answer!r} ({first['label']}={first['value']:.3f})"
             return f"{name} answered {answer!r}"
         if informative:
             # A multi-label classifier has no single "conclusion"; picking the value
-            # furthest from 0.5 just surfaces whatever is most confidently absent.
-            # Report what it calls present, and how much of it is undecided.
-            positives = sorted(((l, p) for l, p in informative if p > 0.5),
-                               key=lambda kv: -kv[1])
+            # furthest from its threshold just surfaces whatever is most confidently
+            # absent. Report what it calls present, and how much of it is undecided.
+            positives = sorted((s for s in informative if s["supports"] == "YES"),
+                               key=lambda s: -s["value"])
             undecided = len(probs_all) - len(informative)
             suffix = (f"; {undecided} of {len(probs_all)} relevant value(s) undecided"
                       if undecided else "")
             if positives:
-                listed = ", ".join(f"{l}={p:.2f}" for l, p in positives[:4])
+                listed = ", ".join(f"{s['label']}={s['value']:.2f}" for s in positives[:4])
                 more = f" (+{len(positives) - 4} more)" if len(positives) > 4 else ""
                 return f"{name} reports present: {listed}{more}{suffix}"
-            return f"{name} reports nothing above 0.50 for this finding{suffix}"
+            return (f"{name} reports nothing above its measured decision point for "
+                    f"this finding{suffix}")
         if probs_all:
             # Relevant values exist, but all sit too near their decision points to call.
             listed = ", ".join(f"{l}={p:.3f}" for l, p in probs_all[:3])
