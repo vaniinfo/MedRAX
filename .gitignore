@@ -188,6 +188,9 @@ docs/vqa-investigation.md
 
 # Larger locally downloaded Open-i evaluation set
 data/indiana_eval/
+# Held-out draw, excluded from the fitting set. Same reason it is not committed:
+# it is image data, and build_eval_set.py --seed 1 --exclude reproduces it.
+data/indiana_heldout/
 
 # Raw Kaggle mirror of the same Indiana University collection (~7.5k images). The
 # balanced subset the measurement actually runs on is built from this into
