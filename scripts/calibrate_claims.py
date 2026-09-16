@@ -31,6 +31,28 @@ held-out data and must not be reported as distinct. Anyone reading this table an
 deriving High/Medium/Low from it is doing the thing this branch spent its history
 undoing -- turning a number that looks like a boundary into one.
 
+EXTERNAL VALIDATION IS HARDER THAN IT LOOKS, and one candidate is already ruled out.
+
+The classifier's weights are densenet121-res224-all, and torchxrayvision's "all" means
+trained on NIH, PadChest, CheXpert, MIMIC and RSNA. CheXagent was trained on an
+aggregate of public CXR corpora, and MedGemma's data is undisclosed. Between them the
+three tools have seen most public chest X-ray data, so a dataset being new to this
+project does not make it new to the pipeline.
+
+SIIM-ACR Pneumothorax is the obvious choice for testing pneumothorax specifically --
+~2700 positives with expert pixel masks -- and it does not qualify. Its metadata
+carries NIH ChestX-ray14's fingerprint: the same fields (view position, patient age,
+patient sex), DICOM UIDs generated under the DCMTK root 1.2.276.0.7230010.3 (so the
+images were converted, not acquired), and NIH's notorious corrupted ages, 148 and 413,
+surviving in the same rows. The classifier has trained on those images.
+
+It remains useful as a LABEL-QUALITY test -- expert segmentation against Indiana's
+report-derived MeSH terms -- but it cannot answer whether the 0.80 relationship
+transfers to an external population. That needs a regionally independent corpus with
+independent labels: VinDr-CXR (Vietnam) or CANDID-PTX (New Zealand), both PhysioNet
+credentialed. Freeze everything before running it; if the relationship breaks there,
+the dataset shift is the finding.
+
 Limits that bound the claim further. Labels come from the original reports rather than
 an independent read. The held-out films contain no pneumothorax or edema positives,
 because the entire 3818-film collection holds only 28 and 45 of them and the fitting
