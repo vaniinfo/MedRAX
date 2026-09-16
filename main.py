@@ -165,6 +165,21 @@ def initialize_agent(
     if not tools_dict:
         raise RuntimeError("No tools could be initialized; refusing to start.")
 
+    # The definitive list, after remote services have superseded local tools. Printed
+    # because "Tools:" above is the REQUESTED set, and a served model that failed to
+    # register is otherwise invisible until you notice the Director never calls it.
+    served = [t for t in tools_dict.values() if type(t).__name__ == "RemoteModelTool"]
+    print(f"\nAgent tools ({len(tools_dict)}): "
+          f"{', '.join(sorted(getattr(t, 'name', k) for k, t in tools_dict.items()))}")
+    if served:
+        print(f"  of which served remotely: "
+              f"{', '.join(f'{t.name} ({t.model_id})' for t in served)}")
+    elif os.getenv("MEDRAX_REMOTE_TOOLS"):
+        print("  MEDRAX_REMOTE_TOOLS was set but no remote tool registered -- see the "
+              "errors above")
+    else:
+        print("  no remote models: MEDRAX_REMOTE_TOOLS is not set in this shell")
+
     # PATCH: forced evidence validation. Runs as a function call on every tool result
     # rather than as a system-prompt request the model may ignore. Uses temperature=0
     # and a separate un-tool-bound model so validation cannot itself call tools.
