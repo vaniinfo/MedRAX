@@ -60,11 +60,13 @@ class RemoteModelTool(BaseTool):
                                 "For yes/no questions the output includes 'confidence', "
                                 "the model's probability that the answer is yes."))
 
-    def _call(self, image_path: str, prompt: str) -> Tuple[Any, Dict[str, Any]]:
+    def _call(self, image_path: str, prompt: str,
+              max_new_tokens: int = 0) -> Tuple[Any, Dict[str, Any]]:
         with open(image_path, "rb") as handle:
-            response = requests.post(f"{self.url}/predict",
-                                     files={"file": (image_path, handle.read())},
-                                     data={"prompt": prompt}, timeout=self.timeout)
+            response = requests.post(
+                f"{self.url}/predict", files={"file": (image_path, handle.read())},
+                data={"prompt": prompt, "max_new_tokens": max_new_tokens},
+                timeout=self.timeout)
         response.raise_for_status()
         reply = PredictReply(**response.json())
         return to_payload(reply), metadata(reply, self.url)

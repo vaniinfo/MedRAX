@@ -48,12 +48,16 @@ def build_app(backend) -> FastAPI:
                            vision_ok=state["vision_ok"], detail=state["detail"])
 
     @app.post("/predict", response_model=PredictReply)
-    async def predict(file: UploadFile = File(...), prompt: str = Form("")) -> PredictReply:
+    async def predict(file: UploadFile = File(...), prompt: str = Form(""),
+                      max_new_tokens: int = Form(0)) -> PredictReply:
         if not state["ready"]:
             # Fail loudly. A service that answers while broken is worse than one that
             # is down, because the agent cannot tell the difference from the reply.
             raise RuntimeError(f"{backend.tool} is not ready: {state['detail']}")
-        return backend.predict(await file.read(), prompt)
+        # Bounding generation matters for measurement: P(yes) is read off the first
+        # token, so a 3264-call sweep has no reason to pay for the explanation after it.
+        return backend.predict(await file.read(), prompt,
+                               max_new_tokens=max_new_tokens or None)
 
     return app
 

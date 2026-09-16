@@ -102,7 +102,8 @@ class Backend:
     def load(self) -> None:
         raise NotImplementedError
 
-    def predict(self, image_bytes: bytes, prompt: str) -> PredictReply:
+    def predict(self, image_bytes: bytes, prompt: str,
+                max_new_tokens: Optional[int] = None) -> PredictReply:
         raise NotImplementedError
 
     def transformers_version(self) -> Optional[str]:
@@ -139,7 +140,8 @@ class DenseNetBackend(Backend):
         from medrax.tools import ChestXRayClassifierTool
         self.impl = ChestXRayClassifierTool(device=_device())
 
-    def predict(self, image_bytes: bytes, prompt: str) -> PredictReply:
+    def predict(self, image_bytes: bytes, prompt: str,
+                max_new_tokens: Optional[int] = None) -> PredictReply:
         path = self._to_file(image_bytes)
         try:
             probabilities, _ = self.impl._run(path)
@@ -170,10 +172,11 @@ class CheXagentBackend(Backend):
                                    max_new_tokens=max_new_tokens)
         return str(output.get("response", "")).strip(), output.get("confidence")
 
-    def predict(self, image_bytes: bytes, prompt: str) -> PredictReply:
+    def predict(self, image_bytes: bytes, prompt: str,
+                max_new_tokens: Optional[int] = None) -> PredictReply:
         path = self._to_file(image_bytes)
         try:
-            answer, p_yes = self._ask(path, prompt, max_new_tokens=256)
+            answer, p_yes = self._ask(path, prompt, max_new_tokens=max_new_tokens or 256)
         finally:
             os.unlink(path)
         yes_no = is_yes_no(prompt)
@@ -254,11 +257,12 @@ class MedGemmaBackend(Backend):
         p_yes = yes_probability(generated.scores, self.processor.tokenizer, text)
         return text, p_yes
 
-    def predict(self, image_bytes: bytes, prompt: str) -> PredictReply:
+    def predict(self, image_bytes: bytes, prompt: str,
+                max_new_tokens: Optional[int] = None) -> PredictReply:
         import io
         from PIL import Image
         image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
-        answer, p_yes = self._ask(image, prompt)
+        answer, p_yes = self._ask(image, prompt, max_new_tokens=max_new_tokens or 128)
         yes_no = is_yes_no(prompt)
         return PredictReply(model=self.model, task=self.task, answer=answer,
                             p_yes=p_yes if yes_no else None, yes_no=yes_no)

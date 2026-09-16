@@ -33,9 +33,30 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from findings import FINDINGS, MIN_POSITIVES
 
-# (RELIABILITY key, display name, reliability.json key)
+# (RELIABILITY key, display name, reliability.json key) for the in-process tools,
+# whose columns predate the naming convention below.
 TOOLS = [("chest_xray_expert", "CheXagent", "chexagent_p"),
          ("chest_xray_classifier", "classifier", "classifier_p")]
+
+
+def discover_tools(records):
+    """TOOLS, plus any served model measured by scripts/measure_remote.py.
+
+    A served model writes its column as "<tool name>_p", so a new one is picked up
+    without editing this file -- which matters because the whole point of the service
+    split is that adding a model should not mean touching the agent or its scripts.
+    """
+    known = {key for _, _, key in TOOLS}
+    extra = set()
+    for record in records:
+        for entry in record.get("findings", {}).values():
+            extra.update(k for k in entry
+                         if k.endswith("_p") and k not in known and k != "p")
+    tools = list(TOOLS)
+    for key in sorted(extra):
+        name = key[:-2]
+        tools.append((name, name.replace("chest_xray_", ""), key))
+    return tools
 SWEEP = [t / 100 for t in range(5, 100, 5)]
 
 
@@ -103,30 +124,34 @@ def ci(xs):
     return percentile(xs, 2.5), percentile(xs, 97.5)
 
 
-def bootstrap_rows(rows, n, rng):
+def bootstrap_rows(rows, fields, n, rng):
     """Resample images with replacement, recomputing every statistic on each draw.
 
-    Resampling images rather than predictions keeps a patient's CheXagent and
-    classifier readings together, which is what makes the paired AUC difference a
-    fair test rather than two independent ones compared by eye.
+    Resampling images rather than predictions keeps one patient's readings from every
+    tool together, which is what makes the paired AUC difference a fair test rather
+    than independent estimates compared by eye.
+
+    `rows` is [({field: value, ...}, truth)] so any number of tools can be measured --
+    a served model added later needs no change here.
     """
     size = len(rows)
-    out = {"chex_auc": [], "clf_auc": [], "chex_thr": [], "clf_thr": [], "delta": []}
+    out = {f"{f}_auc": [] for f in fields}
+    out.update({f"{f}_thr": [] for f in fields})
+    baseline = fields[0]
+    out.update({f"delta_{f}": [] for f in fields[1:]})
     for _ in range(n):
         draw = [rows[rng.randrange(size)] for _ in range(size)]
-        truths = [t for _, _, t in draw]
-        if not any(truths) or all(truths):
+        if not any(t for _, t in draw) or all(t for _, t in draw):
             continue                       # a degenerate draw has no defined AUC
-        chex = [(c, t) for c, _, t in draw if c is not None]
-        clf = [(k, t) for _, k, t in draw if k is not None]
-        if chex:
-            out["chex_auc"].append(auc(chex))
-            out["chex_thr"].append(best_threshold(chex)[0])
-        if clf:
-            out["clf_auc"].append(auc(clf))
-            out["clf_thr"].append(best_threshold(clf)[0])
-        if chex and clf:
-            out["delta"].append(auc(chex) - auc(clf))
+        pairs = {f: [(values[f], t) for values, t in draw if values.get(f) is not None]
+                 for f in fields}
+        for field, sample in pairs.items():
+            if sample:
+                out[f"{field}_auc"].append(auc(sample))
+                out[f"{field}_thr"].append(best_threshold(sample)[0])
+        for field in fields[1:]:
+            if pairs[baseline] and pairs[field]:
+                out[f"delta_{field}"].append(auc(pairs[baseline]) - auc(pairs[field]))
     return out
 
 
@@ -178,28 +203,31 @@ def main():
         print(f"not present in {args.input}: {', '.join(missing)} "
               "(re-run measure_reliability.py to add them)")
 
+    tools = discover_tools(records)
+    if len(tools) > len(TOOLS):
+        print("served models found in this file: "
+              + ", ".join(k for k, _, _ in tools[len(TOOLS):]))
     emit, skipped, notes = {}, [], []
     print(f"\n{'finding':18s} {'n+':>4s} {'tool':11s} {'AUC':>6s} {'95% CI':>14s} "
           f"{'thr':>5s} {'95% CI':>12s} {'bal acc':>8s}")
     for finding in measured:
-        rows = [(r["findings"][finding].get("chexagent_p"),
-                 r["findings"][finding].get("classifier_p"),
+        rows = [({f: r["findings"][finding].get(f) for _, _, f in tools},
                  bool(r["findings"][finding]["truth"]))
                 for r in records if finding in r["findings"]]
-        npos = sum(1 for *_, t in rows if t)
-        boot = bootstrap_rows(rows, args.bootstrap, rng) if args.bootstrap else None
+        npos = sum(1 for _, t in rows if t)
+        fields = [f for _, _, f in tools]
+        boot = bootstrap_rows(rows, fields, args.bootstrap, rng) if args.bootstrap else None
 
-        for key, label, field in TOOLS:
-            pairs = [(v, t) for c, k, t in rows
-                     for v in [c if field == "chexagent_p" else k] if v is not None]
+        for key, label, field in tools:
+            pairs = [(values[field], t) for values, t in rows
+                     if values.get(field) is not None]
             if not pairs or npos == 0:
                 continue
             a = auc(pairs)
             thr, _sens, _spec, acc = best_threshold(pairs)
             if boot:
-                stem = "chex" if field == "chexagent_p" else "clf"
-                a_lo, a_hi = ci(boot[f"{stem}_auc"])
-                t_lo, t_hi = ci(boot[f"{stem}_thr"])
+                a_lo, a_hi = ci(boot[f"{field}_auc"])
+                t_lo, t_hi = ci(boot[f"{field}_thr"])
                 a_ci, t_ci = f"{a_lo:.3f}-{a_hi:.3f}", f"{t_lo:.2f}-{t_hi:.2f}"
             else:
                 a_lo = a_hi = float("nan")
@@ -231,16 +259,21 @@ def main():
             print(f"{finding:18s} {npos:4d} {label:11s} {a:6.3f} {a_ci:>14s} "
                   f"{thr:5.2f} {t_ci:>12s} {acc:7.1%}{flag}")
 
-        if boot and boot["delta"]:
-            d_lo, d_hi = ci(boot["delta"])
-            verdict = ("CheXagent better" if d_lo > 0 else
-                       "classifier better" if d_hi < 0 else
+        # Every other tool measured against the first, on the same resampled images.
+        for _, other_label, other_field in tools[1:]:
+            deltas = boot.get(f"delta_{other_field}") if boot else None
+            if not deltas:
+                continue
+            d_lo, d_hi = ci(deltas)
+            verdict = (f"{tools[0][1]} better" if d_lo > 0 else
+                       f"{other_label} better" if d_hi < 0 else
                        "no separation -- the difference is within noise")
-            notes.append(f"  {finding:18s} delta AUC {percentile(boot['delta'], 50):+.3f} "
+            notes.append(f"  {finding:18s} vs {other_label:12s} "
+                         f"delta AUC {percentile(deltas, 50):+.3f} "
                          f"(95% CI {d_lo:+.3f} to {d_hi:+.3f})  {verdict}")
 
     if notes:
-        print("\nCheXagent minus classifier, paired on the same resampled images:")
+        print(f"\n{tools[0][1]} minus each other tool, paired on the same resampled images:")
         print("\n".join(notes))
 
     # A one-time agreement check. The fast AUC is worth nothing if it disagrees with
