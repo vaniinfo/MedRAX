@@ -124,8 +124,37 @@ def initialize_agent(
             reason = str(exc).split("\n")[0][:160]
             print(f"  ! {tool_name} unavailable, continuing without it: {reason}")
 
+    # PATCH: models served out of process. MEDRAX_REMOTE_TOOLS is a comma-separated
+    # list of service URLs; each is asked what it is via /health, so the tool name and
+    # task come from the process actually holding the weights.
+    #
+    # A remote tool REPLACES a local one of the same name, which is how a model moves
+    # out of this environment without anything else changing -- and why the transformers
+    # pin can be per model rather than per project. CheXagent needs 4.40 and breaks
+    # silently above it, MedGemma needs >=4.50, MAIRA-2 newer still; in one process
+    # those cannot all be satisfied, which is why XRayPhraseGroundingTool does not load.
+    for url in filter(None, (u.strip() for u in
+                             os.getenv("MEDRAX_REMOTE_TOOLS", "").split(","))):
+        try:
+            from medrax.tools.remote import RemoteModelTool
+            remote = RemoteModelTool.from_health(url)
+            # Match on the TOOL name, not the dict key: locals are keyed by class
+            # (ChestXRayClassifierTool) and remotes by tool name (chest_xray_classifier),
+            # so a key comparison leaves both loaded and the agent gets two opinions
+            # from one model -- correlated errors wearing the costume of corroboration.
+            superseded = [key for key, tool in tools_dict.items()
+                          if getattr(tool, "name", None) == remote.name]
+            for key in superseded:
+                del tools_dict[key]
+            tools_dict[remote.name] = remote
+            note = f" (replacing local {superseded[0]})" if superseded else ""
+            print(f"  + {remote.name} served by {remote.model_id} at {url}{note}")
+        except Exception as exc:
+            failed[url] = exc
+            print(f"  ! remote tool at {url} unavailable: {str(exc).splitlines()[0][:160]}")
+
     if failed:
-        print(f"\n{len(failed)} tool(s) could not load: {', '.join(failed)}")
+        print(f"\n{len(failed)} tool(s) could not load: {', '.join(map(str, failed))}")
         for tool_name, exc in failed.items():
             if "gated repo" in str(exc).lower() or "403" in str(exc):
                 # The 403 says "not in the authorized list" even when the account does
