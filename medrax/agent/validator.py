@@ -43,51 +43,131 @@ from langchain_core.messages import HumanMessage, SystemMessage
 # 0.45. Both values sit inside this row's 0.25-0.55 interval. The point estimate was never
 # precise enough to settle the case that prompted it, in either direction.
 #   thr_ci    : 95% bootstrap interval for that decision point. A reading inside it is
-#               not a vote -- a plausible alternative threshold would flip its direction,
-#               so which way the tool leans is not something the data settles.
+#               not a vote -- a plausible alternative threshold would flip its direction.
 #   output_type: "probability" where the tool grades its answers, "binary" where it does
-#               not. Measured, not declared: the share of readings landing in 0.05-0.95
-#               is 43-99% for CheXagent and the classifier and 1-6% for MedGemma. Only a
-#               graded tool earns the margin multiplier in _strength; for a binary one
-#               the margin is ~0.99 whatever it believes, and paying out on it turns
-#               emphasis into evidence.
+#               not. Measured: 43-99% of readings land in 0.05-0.95 for CheXagent and the
+#               classifier, 1-6% for MedGemma. Only a graded tool earns the margin.
+#   yes / no   : how often an answer in THAT DIRECTION is right at this operating point,
+#               with the number of calls it rests on. Reliability is tool x finding x
+#               POLARITY, because the same model differs sharply by direction: MedGemma
+#               on pneumothorax is PPV 54.5% saying yes and NPV 95.9% saying no.
+#               `strength` normalises against the no-skill baseline -- prevalence for a
+#               positive, 1-prevalence for a negative -- the way (auc-0.5)*2 does. That
+#               is what turns the flattering 95.9% NPV into 0.198, since at 5.1%
+#               prevalence answering "no" to everything already scores 94.9%.
+#
+# AUC is population-level discrimination. It is NOT the probability that any particular
+# answer is correct -- MedGemma reaches 0.792 on pneumothorax while a positive call from
+# it is right about half the time. Use ppv/npv when the question is what a claim is worth.
 RELIABILITY: Dict[Tuple[str, str], Dict[str, Any]] = {
     ("chest_xray_expert", "cardiomegaly"):
-        {"auc": 0.909, "threshold": 0.45, "thr_ci": (0.45, 0.60), "output_type": "probability"},
+        {"auc": 0.909, "threshold": 0.45, "thr_ci": (0.45, 0.60), "output_type": "probability",
+         "prevalence": 0.289,
+         "yes": {"ppv": 0.618, "n": 238, "strength": 0.463},
+         "no": {"npv": 0.967, "n": 306, "strength": 0.887},
+         },
     ("chest_xray_classifier", "cardiomegaly"):
-        {"auc": 0.852, "threshold": 0.45, "thr_ci": (0.25, 0.55), "output_type": "probability"},
+        {"auc": 0.852, "threshold": 0.45, "thr_ci": (0.25, 0.55), "output_type": "probability",
+         "prevalence": 0.289,
+         "yes": {"ppv": 0.532, "n": 265, "strength": 0.342},
+         "no": {"npv": 0.943, "n": 279, "strength": 0.801},
+         },
     ("chest_xray_expert_gemma", "cardiomegaly"):
-        {"auc": 0.889, "threshold": 0.30, "thr_ci": (0.05, 0.95), "output_type": "binary"},
+        {"auc": 0.889, "threshold": 0.30, "thr_ci": (0.05, 0.95), "output_type": "binary",
+         "prevalence": 0.289,
+         "yes": {"ppv": 0.675, "n": 191, "strength": 0.544},
+         "no": {"npv": 0.921, "n": 353, "strength": 0.725},
+         },
     ("chest_xray_expert", "pleural effusion"):
-        {"auc": 0.951, "threshold": 0.70, "thr_ci": (0.50, 0.80), "output_type": "probability"},
+        {"auc": 0.951, "threshold": 0.70, "thr_ci": (0.50, 0.80), "output_type": "probability",
+         "prevalence": 0.221,
+         "yes": {"ppv": 0.739, "n": 134, "strength": 0.665},
+         "no": {"npv": 0.949, "n": 410, "strength": 0.768},
+         },
     ("chest_xray_classifier", "pleural effusion"):
-        {"auc": 0.887, "threshold": 0.50, "thr_ci": (0.40, 0.60), "output_type": "probability"},
+        {"auc": 0.887, "threshold": 0.50, "thr_ci": (0.40, 0.60), "output_type": "probability",
+         "prevalence": 0.221,
+         "yes": {"ppv": 0.495, "n": 218, "strength": 0.353},
+         "no": {"npv": 0.963, "n": 326, "strength": 0.833},
+         },
     ("chest_xray_expert_gemma", "pleural effusion"):
-        {"auc": 0.905, "threshold": 0.40, "thr_ci": (0.05, 0.95), "output_type": "binary"},
+        {"auc": 0.905, "threshold": 0.40, "thr_ci": (0.05, 0.95), "output_type": "binary",
+         "prevalence": 0.221,
+         "yes": {"ppv": 0.696, "n": 125, "strength": 0.610},
+         "no": {"npv": 0.921, "n": 419, "strength": 0.643},
+         },
     ("chest_xray_expert", "pneumothorax"):
-        {"auc": 0.948, "threshold": 0.25, "thr_ci": (0.10, 0.60), "output_type": "probability"},
+        {"auc": 0.948, "threshold": 0.25, "thr_ci": (0.10, 0.60), "output_type": "probability",
+         "prevalence": 0.051,
+         "yes": {"ppv": 0.400, "n": 55, "strength": 0.367},
+         "no": {"npv": 0.988, "n": 489, "strength": 0.762},
+         },
     ("chest_xray_classifier", "pneumothorax"):
-        {"auc": 0.622, "threshold": 0.35, "thr_ci": (0.05, 0.50), "output_type": "probability"},
+        {"auc": 0.622, "threshold": 0.35, "thr_ci": (0.05, 0.50), "output_type": "probability",
+         "prevalence": 0.051,
+         "yes": {"ppv": 0.083, "n": 180, "strength": 0.034},
+         "no": {"npv": 0.964, "n": 364, "strength": 0.306},
+         },
     ("chest_xray_expert_gemma", "pneumothorax"):
-        {"auc": 0.792, "threshold": 0.05, "thr_ci": (0.05, 0.95), "output_type": "binary"},
+        {"auc": 0.792, "threshold": 0.05, "thr_ci": (0.05, 0.95), "output_type": "binary",
+         "prevalence": 0.051,
+         "yes": {"ppv": 0.545, "n": 11, "strength": 0.521},
+         "no": {"npv": 0.959, "n": 533, "strength": 0.198},
+         },
     ("chest_xray_expert", "consolidation"):
-        {"auc": 0.810, "threshold": 0.25, "thr_ci": (0.15, 0.40), "output_type": "probability"},
+        {"auc": 0.810, "threshold": 0.25, "thr_ci": (0.15, 0.40), "output_type": "probability",
+         "prevalence": 0.200,
+         "yes": {"ppv": 0.438, "n": 176, "strength": 0.297},
+         "no": {"npv": 0.913, "n": 368, "strength": 0.566},
+         },
     ("chest_xray_classifier", "consolidation"):
-        {"auc": 0.762, "threshold": 0.50, "thr_ci": (0.50, 0.50), "output_type": "probability"},
+        {"auc": 0.762, "threshold": 0.50, "thr_ci": (0.50, 0.50), "output_type": "probability",
+         "prevalence": 0.200,
+         "yes": {"ppv": 0.335, "n": 260, "strength": 0.168},
+         "no": {"npv": 0.923, "n": 284, "strength": 0.613},
+         },
     ("chest_xray_expert_gemma", "consolidation"):
-        {"auc": 0.775, "threshold": 0.05, "thr_ci": (0.05, 0.10), "output_type": "binary"},
+        {"auc": 0.775, "threshold": 0.05, "thr_ci": (0.05, 0.10), "output_type": "binary",
+         "prevalence": 0.200,
+         "yes": {"ppv": 0.476, "n": 124, "strength": 0.344},
+         "no": {"npv": 0.881, "n": 420, "strength": 0.406},
+         },
     ("chest_xray_expert", "pulmonary edema"):
-        {"auc": 0.897, "threshold": 0.50, "thr_ci": (0.20, 0.75), "output_type": "probability"},
+        {"auc": 0.897, "threshold": 0.50, "thr_ci": (0.20, 0.75), "output_type": "probability",
+         "prevalence": 0.083,
+         "yes": {"ppv": 0.461, "n": 76, "strength": 0.412},
+         "no": {"npv": 0.979, "n": 468, "strength": 0.742},
+         },
     ("chest_xray_classifier", "pulmonary edema"):
-        {"auc": 0.807, "threshold": 0.15, "thr_ci": (0.05, 0.40), "output_type": "probability"},
+        {"auc": 0.807, "threshold": 0.15, "thr_ci": (0.05, 0.40), "output_type": "probability",
+         "prevalence": 0.083,
+         "yes": {"ppv": 0.206, "n": 170, "strength": 0.134},
+         "no": {"npv": 0.973, "n": 374, "strength": 0.677},
+         },
     ("chest_xray_expert_gemma", "pulmonary edema"):
-        {"auc": 0.862, "threshold": 0.05, "thr_ci": (0.05, 0.95), "output_type": "binary"},
+        {"auc": 0.862, "threshold": 0.05, "thr_ci": (0.05, 0.95), "output_type": "binary",
+         "prevalence": 0.083,
+         "yes": {"ppv": 0.595, "n": 37, "strength": 0.558},
+         "no": {"npv": 0.955, "n": 507, "strength": 0.452},
+         },
     ("chest_xray_expert", "atelectasis"):
-        {"auc": 0.819, "threshold": 0.40, "thr_ci": (0.35, 0.65), "output_type": "probability"},
+        {"auc": 0.819, "threshold": 0.40, "thr_ci": (0.35, 0.65), "output_type": "probability",
+         "prevalence": 0.296,
+         "yes": {"ppv": 0.464, "n": 317, "strength": 0.238},
+         "no": {"npv": 0.938, "n": 227, "strength": 0.792},
+         },
     ("chest_xray_classifier", "atelectasis"):
-        {"auc": 0.699, "threshold": 0.40, "thr_ci": (0.35, 0.55), "output_type": "probability"},
+        {"auc": 0.699, "threshold": 0.40, "thr_ci": (0.35, 0.55), "output_type": "probability",
+         "prevalence": 0.296,
+         "yes": {"ppv": 0.414, "n": 314, "strength": 0.168},
+         "no": {"npv": 0.865, "n": 230, "strength": 0.545},
+         },
     ("chest_xray_expert_gemma", "atelectasis"):
-        {"auc": 0.747, "threshold": 0.80, "thr_ci": (0.05, 0.95), "output_type": "binary"},
+        {"auc": 0.747, "threshold": 0.80, "thr_ci": (0.05, 0.95), "output_type": "binary",
+         "prevalence": 0.296,
+         "yes": {"ppv": 0.435, "n": 306, "strength": 0.197},
+         "no": {"npv": 0.882, "n": 238, "strength": 0.602},
+         },
 }
 
 # CheXagent beats the classifier on five of six findings, paired on the same bootstrap
@@ -261,7 +341,11 @@ class EvidenceValidator:
                 # "probability" or "binary"; decides whether margin scales the evidence
                 # in _strength. Absent for an unmeasured pair, which is treated as
                 # graded -- with the fallback AUC of 0.6 it cannot exceed Medium anyway.
-                "output_type": (info or {}).get("output_type")}
+                "output_type": (info or {}).get("output_type"),
+                # Measured worth of an answer in the direction this reading actually
+                # takes, and the prevalence it has to beat to mean anything.
+                "polarity": (info or {}).get("yes" if supports_yes else "no"),
+                "prevalence": (info or {}).get("prevalence")}
 
     @classmethod
     def _ceilings_by_finding(cls, scored: List[Dict[str, Any]]) -> Dict[str, str]:
@@ -309,13 +393,30 @@ class EvidenceValidator:
         """
         reliability = ((entry.get("auc") or 0.6) - 0.5) * 2
         if entry.get("output_type") == "binary":
-            return reliability
+            # No gradation to read, so the answer is worth what an answer in THIS
+            # DIRECTION has measured. A MedGemma "no" on pneumothorax scores 0.198
+            # despite NPV 95.9%, because at 5.1% prevalence refusing everything already
+            # scores 94.9% -- and discrimination alone would have paid 0.584 for it.
+            side = entry.get("polarity")
+            return side["strength"] if side else reliability
         return entry["margin"] * reliability
+
+    # A directional rate needs as many observations to mean something as a finding needs
+    # positives, so this mirrors MIN_POSITIVES in scripts/findings.py rather than adding
+    # a new number. MedGemma's pneumothorax PPV rests on 11 answers: a plausible-looking
+    # 54.5% that four more mistakes would move to 40%.
+    MIN_POLARITY_N = 20
 
     @classmethod
     def _strength_tier(cls, entry: Dict[str, Any]) -> str:
         strength = cls._strength(entry)
-        return "strong" if strength > 0.45 else "moderate" if strength > 0.15 else "weak"
+        tier = "strong" if strength > 0.45 else "moderate" if strength > 0.15 else "weak"
+        polarity = entry.get("polarity")
+        if tier == "strong" and polarity and polarity["n"] < cls.MIN_POLARITY_N:
+            # Too few answers in this direction to license the top tier, however
+            # favourable the rate computed from them looks.
+            return "moderate"
+        return tier
 
     @classmethod
     def _ceiling_from_scored(cls, scored: List[Dict[str, Any]]) -> str:
@@ -786,6 +887,15 @@ class EvidenceValidator:
                            if pr["informative"] else
                            f"TOO CLOSE TO CALL - inside the decision point's own "
                            f"uncertainty ({basis}), so it is not a vote either way")
+                # The number that answers "how much is THIS claim worth" -- which AUC
+                # does not. Stated absolutely, because a lift over a low base rate can
+                # look impressive while the claim is still close to a coin flip.
+                pol = pr.get("polarity")
+                if pol and pr["informative"]:
+                    stat = pol.get("ppv", pol.get("npv"))
+                    verdict += (f". When this tool answers {pr['supports']} for this "
+                                f"finding it is correct {stat:.0%} of the time "
+                                f"({pol['n']} such answers in 544 films)")
                 lines.append(f"  {pr['label']} = {pr['value']:.3f} -> {verdict}")
         else:
             lines.append("  this tool reported no probability about "

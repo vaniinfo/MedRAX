@@ -74,6 +74,40 @@ def output_type(pairs):
     return "probability" if interior >= GRADED_INTERIOR_MIN else "binary"
 
 
+def polarity(pairs, thr):
+    """How often an answer in each direction is right, at this row's operating point.
+
+    AUC says how well a tool ranks cases. It does not say what a given answer is worth,
+    and the two come apart badly: MedGemma reaches AUC 0.792 on pneumothorax while a
+    positive call from it is correct about half the time. PPV and NPV ask the question
+    claim confidence actually needs -- given THIS answer, how likely is it right.
+
+    `strength` normalises each against its no-skill baseline the way (auc-0.5)*2 does:
+    a positive call is compared with prevalence, a negative one with 1-prevalence. That
+    correction matters most where it is least obvious. MedGemma's NPV for pneumothorax
+    is 95.9%, which looks excellent until you notice prevalence is 5.1% -- saying "no"
+    to everything scores 94.9%. Normalised, that 95.9% is worth 0.198, not 0.959.
+
+    Reliability is therefore tool x finding x POLARITY, not tool x finding: the same
+    model on the same finding can be strong in one direction and useless in the other.
+    """
+    tp = sum(1 for p, t in pairs if p >= thr and t)
+    fp = sum(1 for p, t in pairs if p >= thr and not t)
+    fn = sum(1 for p, t in pairs if p < thr and t)
+    tn = sum(1 for p, t in pairs if p < thr and not t)
+    prev = (tp + fn) / len(pairs)
+    out = {"prevalence": round(prev, 3)}
+    if tp + fp and prev < 1:
+        ppv = tp / (tp + fp)
+        out["yes"] = {"ppv": round(ppv, 3), "n": tp + fp,
+                      "strength": round(max(0.0, (ppv - prev) / (1 - prev)), 3)}
+    if tn + fn and prev > 0:
+        npv = tn / (tn + fn)
+        out["no"] = {"npv": round(npv, 3), "n": tn + fn,
+                     "strength": round(max(0.0, (npv - (1 - prev)) / prev), 3)}
+    return out
+
+
 def auc(pairs):
     """Area under the ROC curve, by the Mann-Whitney rank formulation.
 
@@ -271,7 +305,8 @@ def main():
                     "auc": round(a, 3), "threshold": thr,
                     "thr_ci": None if t_lo is None else (t_lo, t_hi),
                     # Decides whether the validator may multiply by the margin at all.
-                    "output_type": output_type(pairs)}
+                    "output_type": output_type(pairs),
+                    **polarity(pairs, thr)}
 
             print(f"{finding:18s} {npos:4d} {label:11s} {a:6.3f} {a_ci:>14s} "
                   f"{thr:5.2f} {t_ci:>12s} {acc:7.1%}{flag}")
@@ -320,7 +355,14 @@ def main():
                        else f'({v["thr_ci"][0]:.2f}, {v["thr_ci"][1]:.2f})')
             print(f'    ("{key}", "{finding}"):')
             print(f'        {{"auc": {v["auc"]:.3f}, "threshold": {v["threshold"]:.2f}, '
-                  f'"thr_ci": {ci_text}, "output_type": "{v["output_type"]}"}},')
+                  f'"thr_ci": {ci_text}, "output_type": "{v["output_type"]}",')
+            print(f'         "prevalence": {v["prevalence"]:.3f},')
+            for side, stat in (("yes", "ppv"), ("no", "npv")):
+                if v.get(side):
+                    d = v[side]
+                    print(f'         "{side}": {{"{stat}": {d[stat]:.3f}, "n": {d["n"]}, '
+                          f'"strength": {d["strength"]:.3f}}},')
+            print('         },')
         print("}")
     else:
         print("RELIABILITY = {}   # nothing measured well enough to emit")
