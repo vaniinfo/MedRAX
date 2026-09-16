@@ -1275,7 +1275,8 @@ class EvidenceValidator:
             lines.append("  NO OPINION (absence of evidence, not evidence against):")
             for item in record["uninformative_notes"]:
                 lines.append(f"      {item}")
-        lines.append(f"  CONFIDENCE (computed ceiling): {record['confidence_ceiling']}")
+        lines.append(f"  THIS TOOL ALONE could support: {record['confidence_ceiling']} "
+                     f"(not the claim ceiling; see CROSS-TOOL SYNTHESIS)")
         by_finding = record.get("ceilings_by_finding") or {}
         if len(by_finding) > 1:
             listed = ", ".join(f"{f}={t}" for f, t in sorted(by_finding.items()))
