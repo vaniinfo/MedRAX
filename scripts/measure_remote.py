@@ -28,7 +28,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from findings import FINDINGS, is_positive  # noqa: E402
 from medrax.tools.remote import RemoteModelTool  # noqa: E402
 
-DATA = "data/indiana_eval"
+DATA = os.getenv("MEDRAX_EVAL_DIR", "data/indiana_eval")
 
 
 def main() -> int:

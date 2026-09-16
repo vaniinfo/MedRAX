@@ -59,7 +59,7 @@ def is_png(path):
         return False
 
 
-def load_frontal():
+def load_frontal(exclude=frozenset()):
     """Join reports to projections on uid, keeping frontal views.
 
     Laterals are dropped: every tool in this pipeline is trained on frontal films, and
@@ -80,6 +80,10 @@ def load_frontal():
     for entry in projections:
         report = reports.get(entry["uid"])
         if not report or entry["projection"] != "Frontal":
+            continue
+        # Held-out draws must not reuse a film the tables were fitted on, or the
+        # experiment measures memory rather than generalisation.
+        if entry["filename"] in exclude:
             continue
         rows.append({"file": entry["filename"], "uid": entry["uid"],
                      "problems": report["Problems"] or "",
@@ -169,6 +173,7 @@ def report_balance(rows, label):
 
 
 def main():
+    global OUT, GROUND_TRUTH
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--cap", type=int, default=100,
                     help="max positives per finding (default 100)")
@@ -177,10 +182,22 @@ def main():
     ap.add_argument("--seed", type=int, default=0, help="selection seed")
     ap.add_argument("--dry-run", action="store_true",
                     help="report the selection without downloading anything")
+    ap.add_argument("--out", default=OUT, help="destination directory")
+    ap.add_argument("--exclude", default="",
+                    help="a GROUND_TRUTH.csv whose films must NOT be drawn again")
     args = ap.parse_args()
 
-    rows = load_frontal()
-    print(f"{len(rows)} frontal images with a matching report")
+    OUT = args.out
+    GROUND_TRUTH = os.path.join(OUT, "GROUND_TRUTH.csv")
+
+    exclude = set()
+    if args.exclude:
+        with open(args.exclude, newline="", encoding="utf-8") as handle:
+            exclude = {r["file"] for r in csv.DictReader(handle)}
+        print(f"excluding {len(exclude)} films already used for fitting")
+
+    rows = load_frontal(exclude)
+    print(f"{len(rows)} frontal images available with a matching report")
     report_balance(rows, "full collection")
 
     selected = select(rows, args.cap, args.normals, args.seed)

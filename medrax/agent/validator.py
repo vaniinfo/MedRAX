@@ -380,7 +380,22 @@ class EvidenceValidator:
     @classmethod
     def _dependence(cls, finding: Optional[str], a: str, b: str) -> float:
         """How much two tools' errors coincide on this finding. 0 if unmeasured, which
-        is the generous reading -- it treats the second opinion as fully independent."""
+        is the generous reading -- it treats the second opinion as fully independent.
+
+        KNOWN LIMITATION, on the backlog rather than fixed. This is PAIRWISE error
+        correlation, which is not the same thing as the conditional dependence of the
+        evidence. For three tools A, B and C, a set of pairwise discounts does not fully
+        describe their joint error structure: three tools can be pairwise mildly
+        correlated and still fail together far more often than those pairs imply, and
+        the reverse is also possible. Corroboration here is therefore discounted
+        approximately, and on this data the approximation errs toward over-crediting
+        the third opinion.
+
+        It is kept simple deliberately. Measured pairwise dependence is already a long
+        way better than the assumption it replaces -- that agreeing tools are
+        independent -- and the failures of a simple rule stay visible, which is how
+        most of the real problems on this branch were found.
+        """
         if a == b:
             return 1.0
         first, second = sorted((a, b))

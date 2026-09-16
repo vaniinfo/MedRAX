@@ -36,8 +36,10 @@ DEVICE = pick_device()
 CACHE = os.getenv("MEDRAX_MODEL_DIR", os.path.expanduser("~/model-weights"))
 print(f"device: {DEVICE} | weights: {CACHE}", flush=True)
 
-DATA = "data/indiana_eval"
-OUT = "reliability.json"
+# Held-out runs point these elsewhere; nothing about the measurement changes.
+DATA = os.getenv("MEDRAX_EVAL_DIR", "data/indiana_eval")
+OUT = os.getenv("MEDRAX_EVAL_OUT", "reliability.json")
+print(f"eval set: {DATA} -> {OUT}", flush=True)
 
 # Which findings, and how each is recognised in the MeSH labels, now live in
 # scripts/findings.py -- shared with the fetch and analysis scripts. Keeping a second

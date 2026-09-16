@@ -23,6 +23,7 @@ single cell. Held-out calibration is the next thing this needs.
 """
 import argparse
 import json
+import math
 import os
 import sys
 
@@ -59,11 +60,37 @@ def claims(records):
                    "truth": bool(entry["truth"]), **verdict}
 
 
+def wilson(hits, n, z=1.96):
+    """95% Wilson score interval for a proportion.
+
+    A percentage with no interval hides how thin the cell behind it is: 85.4% from 171
+    claims and 85.4% from 12 are the same number and very different evidence. This is
+    the same problem already caught at the individual-tool level, where MedGemma's
+    pneumothorax PPV of 54.5% turned out to rest on 11 answers.
+
+    Wilson rather than the normal approximation because it stays inside 0-1 and behaves
+    at small n and at proportions near the ends, which is exactly where these land.
+    """
+    if not n:
+        return float("nan"), float("nan")
+    p = hits / n
+    denominator = 1 + z * z / n
+    centre = (p + z * z / (2 * n)) / denominator
+    half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denominator
+    return max(0.0, centre - half), min(1.0, centre + half)
+
+
+def rate(rows, correct_if):
+    hits = sum(1 for r in rows if correct_if(r))
+    low, high = wilson(hits, len(rows))
+    return hits, (hits / len(rows) if rows else float("nan")), low, high
+
+
 def band_table(rows, edges):
-    """Observed correctness within each band of |net|."""
-    print(f"\n{'net evidence':>16s} {'N':>6s} {'accuracy':>9s} "
-          f"{'claims +':>9s} {'PPV':>7s} {'claims -':>9s} {'NPV':>7s}")
-    print("-" * 70)
+    """Observed correctness within each band of |net|, with intervals."""
+    print(f"\n{'net evidence':>15s} {'N':>5s} {'acc':>7s} | {'pos':>4s} {'PPV':>7s} "
+          f"{'95% CI':>15s} | {'neg':>4s} {'NPV':>7s} {'95% CI':>15s}")
+    print("-" * 92)
     for low, high in zip(edges, edges[1:]):
         band = [r for r in rows if low <= abs(r["net"]) < high]
         if not band:
@@ -71,11 +98,14 @@ def band_table(rows, edges):
         # The claim is the direction the evidence points; its strength is |net|.
         positive = [r for r in band if r["net"] > 0]
         negative = [r for r in band if r["net"] < 0]
-        correct = sum(1 for r in band if (r["net"] > 0) == r["truth"])
-        ppv = sum(1 for r in positive if r["truth"]) / len(positive) if positive else float("nan")
-        npv = sum(1 for r in negative if not r["truth"]) / len(negative) if negative else float("nan")
-        print(f"{low:6.2f} - {high:<6.2f} {len(band):6d} {correct / len(band):8.1%} "
-              f"{len(positive):9d} {ppv:6.1%} {len(negative):9d} {npv:6.1%}")
+        _, acc, _, _ = rate(band, lambda r: (r["net"] > 0) == r["truth"])
+        _, ppv, p_lo, p_hi = rate(positive, lambda r: r["truth"])
+        _, npv, n_lo, n_hi = rate(negative, lambda r: not r["truth"])
+        p_ci = f"[{p_lo:.1%}-{p_hi:.1%}]" if positive else ""
+        n_ci = f"[{n_lo:.1%}-{n_hi:.1%}]" if negative else ""
+        print(f"{low:5.2f} - {high:<5.2f} {len(band):5d} {acc:6.1%} | "
+              f"{len(positive):4d} {ppv:6.1%} {p_ci:>15s} | "
+              f"{len(negative):4d} {npv:6.1%} {n_ci:>15s}")
 
 
 def main():
