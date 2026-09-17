@@ -14,8 +14,8 @@ how you want it framed, and I will rewrite that section.
 
 | # | slide | one line |
 |---|---|---|
-| 1 | [EDV, as CXRAgent defined it](#slide-1--edv-as-cxragent-defined-it) | where the term comes from |
-| 2 | [The one change we made](#slide-2--the-one-change-we-made) | an answer is not evidence |
+| 1 | [EDV, as CXRAgent defined it](#slide-1--edv-as-cxragent-defined-it) | the term's origin — the Director judges everything |
+| 2 | [The one change we made](#slide-2--the-one-change-we-made) | we took the judging away from it |
 | 3 | [The cast](#slide-3--the-cast) | five models, and who grades nothing |
 | 4 | [The two questions](#slide-4--the-two-questions-asked-of-every-model) | yes and no are measured separately |
 | 5 | [When it says YES](#slide-5--when-it-says-yes) | the best cell is 74% |
@@ -60,14 +60,25 @@ half the time.
 **It looks at the actual radiograph.** Validation is against *this* image, not against
 general medical knowledge or the tool's own reported confidence.
 
-**Who does the looking is the key design choice.** The central multimodal LLM does, using
-its own reading of the X-ray. The paper is explicit:
+**GPT-4o — the Director — is heavily involved in deciding.** This is the key design
+choice, and it is where our version departs. In CXRAgent the same generalist model does
+all of it:
+
+- picks which tools to call
+- **reads the X-ray itself** — there is no specialist verifier
+- produces the supporting evidence
+- produces the refuting evidence
+- **judges how credible the claim is**
+- writes the final answer
+
+Validation runs entirely through the model whose output is being validated. The paper is
+explicit that this is intentional:
 
 > "does not rely on a secondary, task-specific vision model … it is implemented as a
 > high-level reasoning protocol executed by the central multi-modal LLM."
 
 So the output is free-flowing text — a reasoned argument about the evidence, with no
-numbers in it. **EDV as a reasoning protocol.**
+numbers in it. **EDV as a reasoning protocol, with the Director as the judge.**
 
 ---
 
