@@ -180,6 +180,9 @@ def main():
     ap.add_argument("--normals", type=int, default=150,
                     help="confirmed-normal negatives to add (default 150)")
     ap.add_argument("--seed", type=int, default=0, help="selection seed")
+    ap.add_argument("--all", action="store_true",
+                    help="take EVERY frontal film, unstratified -- the de-enriched corpus "
+                         "(ignores --cap/--normals/--seed; roughly 7.5 GB)")
     ap.add_argument("--dry-run", action="store_true",
                     help="report the selection without downloading anything")
     ap.add_argument("--out", default=OUT, help="destination directory")
@@ -200,8 +203,19 @@ def main():
     print(f"{len(rows)} frontal images available with a matching report")
     report_balance(rows, "full collection")
 
-    selected = select(rows, args.cap, args.normals, args.seed)
-    thin = report_balance(selected, f"selection (cap={args.cap}, seed={args.seed})")
+    if args.all:
+        # Stratification is what makes ppv unquotable outside this corpus: pulling every
+        # positive of a rare finding into 544 films enriches it 2.3x-7x, and ppv moves
+        # with prevalence even though auc and the threshold do not. Taking the whole
+        # frontal collection gives the collection's own rate by construction, which is
+        # the only prevalence here that was not chosen by us.
+        selected = [dict(r, selected_for={f for f in FINDINGS
+                                          if is_positive(r["problems"], f)} or {"negative"})
+                    for r in rows]
+        thin = report_balance(selected, "the whole frontal collection, unstratified")
+    else:
+        selected = select(rows, args.cap, args.normals, args.seed)
+        thin = report_balance(selected, f"selection (cap={args.cap}, seed={args.seed})")
     size_gb = len(selected) * 2.0 / 1024
     print(f"\n{len(selected)} images selected, roughly {size_gb:.1f} GB to download")
     if thin:
