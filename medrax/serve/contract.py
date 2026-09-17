@@ -1,12 +1,24 @@
 """The wire contract between a model service and the agent.
 
 One shape for every model, so the agent and the EvidenceValidator do not care which
-process, which environment or which machine answered. This is what makes the
-dependency conflicts go away: CheXagent needs transformers 4.40 and silently stops
-attending to the image on anything newer, MedGemma needs >=4.50, MAIRA-2 needs newer
-still. In one process those are irreconcilable -- MAIRA-2 already fails to load for
-exactly this reason. Across processes each keeps its own pin and none of them can
-break another.
+process, which environment or which machine answered.
+
+This exists because the models cannot share an environment, and that is not a
+judgement call. CheXagent's own modeling_visual.py, shipped by Stanford, contains:
+
+    assert transformers.__version__ == "4.40.0", \
+        "Please install a specific HF transformers version: pip install transformers==4.40.0"
+
+An equality assertion on one exact version. MedGemma needs >=4.50 for Gemma-3;
+transformers 5.x additionally removes `is_tf_available`, which CheXagent's tokenizer
+imports, so it cannot even reach that assert there. MAIRA-2 needs newer still and
+fails to load in the pinned environment for the same class of reason.
+
+Tested rather than assumed: transformers 4.56.2 does carry both `is_tf_available` and
+Gemma-3, so it looked like a version that might satisfy both. It does not. The assert
+is in the model's code, and no dependency work gets around it.
+
+Across processes each model keeps its own pin and none of them can break another.
 
 Nothing in medrax/agent changes to support this. A service reply is mapped back into
 the payload shape the in-process tools already return, so RELIABILITY keys, thresholds
