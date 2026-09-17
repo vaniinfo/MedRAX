@@ -15,7 +15,7 @@ how you want it framed, and I will rewrite that section.
 | # | slide | one line |
 |---|---|---|
 | 1 | [EDV implementation in CXRAgent](#slide-1--edv-implementation-in-cxragent) | the term's origin — the Director judges everything |
-| 2 | [The one change we made](#slide-2--the-one-change-we-made) | we took the judging away from it |
+| 2 | [EDV ported into MedRAX](#slide-2--edv-ported-into-medrax) | we took the judging away from it |
 | 3 | [The cast](#slide-3--the-cast) | five models, and who grades nothing |
 | 4 | [The two questions](#slide-4--the-two-questions-asked-of-every-model) | yes and no are measured separately |
 | 5 | [When it says YES](#slide-5--when-it-says-yes) | the best cell is 74% |
@@ -82,12 +82,16 @@ numbers in it. **EDV as a reasoning protocol, with the Director as the judge.**
 
 ---
 
-## Slide 2 — The one change we made
+## Slide 2 — EDV ported into MedRAX
 
 **Frame:** we kept their mechanism and replaced their judge. Everything else in the deck
 is this sentence with numbers filled in.
 
-We kept the forced function call. We changed two things about what happens inside it.
+MedRAX had no validation step at all — a tool answered, and the Director quoted it. EDV is
+the step we ported in. The mechanism carried over unchanged: a forced function call in the
+tool-execution loop, asking support / refute / credibility of every tool statement.
+
+Two things changed on the way across.
 
 **1. The generalist does not grade the evidence.** Asking GPT-4o "how credible is this?"
 produces a fluent paragraph with nothing behind it. The credibility judgement is now
@@ -103,7 +107,7 @@ Which leaves the idea the rest of the deck unpacks:
 > A model's answer is not evidence. **What that model has been measured to be right
 > about, when it answers that way, about that specific finding** — that is evidence.
 
-| | CXRAgent | here |
+| | CXRAgent | MedRAX + EDV |
 |---|---|---|
 | when it runs | forced function call | **same** |
 | what it asks | support / refute / credibility | **same** |
