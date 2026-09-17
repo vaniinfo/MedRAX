@@ -196,3 +196,12 @@ data/indiana_heldout/
 # balanced subset the measurement actually runs on is built from this into
 # data/indiana_eval/, so this directory is the download and never the working set.
 data/indiana_kaggle/
+
+# The de-enriched corpus: the whole frontal collection at its own prevalence, built
+# by build_eval_set.py --all. Image data, and reproducible from that one flag.
+data/indiana_full/
+
+# Slide exports rendered from docs/*.md. The markdown is the source and is tracked;
+# a binary re-export of it is not something to diff or review.
+docs/*.pdf
+docs/*.pptx
