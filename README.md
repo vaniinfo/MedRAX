@@ -161,6 +161,61 @@ quiet for several minutes before the URL appears.
 
 ---
 
+### Run from the command line
+
+The UI is not required. `scripts/ask.py` asks one question and prints the answer, using
+the same agent, tools and validator `main.py` builds — it calls `initialize_agent`
+rather than assembling a parallel one, so what you see is what the UI would have done.
+
+```powershell
+python scripts/ask.py path\to\xray.png "Does this chest X-ray contain a pulmonary edema?"
+```
+
+Phrase questions as `Does this chest X-ray contain a FINDING?`, one finding per call.
+That is the form the visual-QA models were trained on, and it is what produces a usable
+probability rather than one the validator discards.
+
+| flag | effect |
+|---|---|
+| `--quiet` | print the final answer only; validation still goes to `logs/` |
+| `--no-image` | withhold the radiograph, so the Director sees only validated tool evidence |
+| `--model`, `--temperature` | override the orchestrating model and its temperature |
+
+`--no-image` is the interesting one: it removes the Director's own reading of the image
+as a confound, leaving what it concludes from the evidence alone.
+
+Every run writes the per-tool validation and the cross-tool synthesis to `logs/`,
+whether you use the UI or the CLI.
+
+---
+
+### Optional: models served in their own environment
+
+Some models cannot share a Python environment. CheXagent's own code asserts
+`transformers == 4.40.0` exactly; MedGemma needs `>= 4.50`. There is no version
+satisfying both, so a model that conflicts runs as a small HTTP service instead and the
+agent talks to it over the wire.
+
+```powershell
+# terminal 1 — the model, in a venv with its own dependencies
+.venv-medgemma\Scripts\python.exe -m medrax.serve.server --backend medgemma --port 8102
+
+# terminal 2 — the agent, told where to find it
+$env:MEDRAX_REMOTE_TOOLS="http://127.0.0.1:8102"
+python main.py
+```
+
+Startup prints the tool set it actually assembled, and names anything served remotely.
+A served model replaces a local tool of the same name, so moving a model out of process
+changes nothing else. `--backend` accepts `chexagent`, `medgemma`, `densenet` and
+`llavamed`.
+
+Each service reports its transformers version at `/health`, and — where it can test
+itself — whether the answer still depends on the image. The agent refuses a service
+that reports it does not.
+
+---
+
 ### macOS (Apple Silicon) and Linux
 
 ```bash
@@ -221,6 +276,8 @@ All optional, all environment variables. No code editing required.
 | `MEDRAX_QUANT` | `8bit` | `4bit`, `8bit` or `none` for the CUDA-only tools |
 | `MEDRAX_PROMPT` | `MEDICAL_ASSISTANT_EDV` | `MEDICAL_ASSISTANT` for the original prompt |
 | `MEDRAX_VALIDATE` | `1` | `0` disables forced evidence validation |
+| `MEDRAX_VALIDATE_DESCRIBE` | `0` | `1` lets the validator ask the LLM to describe the image. Off because its "no supporting signs visible" was overruling specialists reporting 0.995 |
+| `MEDRAX_REMOTE_TOOLS` | unset | comma-separated URLs of model services, e.g. `http://127.0.0.1:8102` |
 | `MEDRAX_SHARE` | `0` | `1` publishes a public `gradio.live` link |
 | `MEDRAX_LOG_CONSOLE` | `1` | `0` sends validation logs to file only |
 
