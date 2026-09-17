@@ -14,7 +14,7 @@ how you want it framed, and I will rewrite that section.
 
 | # | slide | one line |
 |---|---|---|
-| 1 | [EDV, as CXRAgent defined it](#slide-1--edv-as-cxragent-defined-it) | the term's origin — the Director judges everything |
+| 1 | [EDV implementation in CXRAgent](#slide-1--edv-implementation-in-cxragent) | the term's origin — the Director judges everything |
 | 2 | [The one change we made](#slide-2--the-one-change-we-made) | we took the judging away from it |
 | 3 | [The cast](#slide-3--the-cast) | five models, and who grades nothing |
 | 4 | [The two questions](#slide-4--the-two-questions-asked-of-every-model) | yes and no are measured separately |
@@ -31,7 +31,7 @@ how you want it framed, and I will rewrite that section.
 
 ---
 
-## Slide 1 — EDV, as CXRAgent defined it
+## Slide 1 — EDV implementation in CXRAgent
 
 **Frame:** we did not invent the term. Here is what it means in the paper it comes from,
 and it is a genuinely good idea.
