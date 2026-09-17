@@ -59,6 +59,17 @@ from langchain_core.messages import HumanMessage, SystemMessage
 # AUC is population-level discrimination. It is NOT the probability that any particular
 # answer is correct -- MedGemma reaches 0.792 on pneumothorax while a positive call from
 # it is right about half the time. Use ppv/npv when the question is what a claim is worth.
+#
+# PREVALENCE CAVEAT, and it cuts against these numbers. build_eval_set.py samples
+# stratified -- every positive of a rare finding is pulled into the 544, so the corpus is
+# enriched 2.3x to 7x over the collection's own rate. auc, threshold, sensitivity and
+# specificity are prevalence-independent and unaffected. ppv is NOT, and neither is the
+# `strength` derived from it. At the collection's own prevalence the positive rows fall
+# hard -- CheXagent on pleural effusion from 74% to 28%, on cardiomegaly 62% to 27%, on
+# pneumothorax 40% to 8%. Nothing here is mismeasured: these are the right numbers for a
+# population with this mix. They are optimistic for any population where the finding is
+# rarer, which is most of them. Recompute from reliability.json before quoting a ppv
+# outside this corpus.
 RELIABILITY: Dict[Tuple[str, str], Dict[str, Any]] = {
     ("chest_xray_expert", "cardiomegaly"):
         {"auc": 0.909, "threshold": 0.45, "thr_ci": (0.45, 0.60), "output_type": "probability",
@@ -251,7 +262,12 @@ CALIBRATION_NOTE = (
     "the data supports -- but nothing above it has been shown to be better than "
     "anything else above it, and no claim in this system reaches 0.80. Treat 0.48 as "
     "the only validated line and do not invent grades between. Nothing here is "
-    "validated for pneumothorax, which the evaluation corpus could not supply."
+    "validated for pneumothorax or pulmonary edema: the held-out set contains zero "
+    "positive cases of either, so neither finding contributed a single claim to the "
+    "figures above. The boundary rests mostly on cardiomegaly (109 positives) and "
+    "atelectasis (105), thinly on pleural effusion (24) and consolidation (17). That "
+    "held-out set is also positive-enriched relative to the wider collection, so 77.7% "
+    "is what this boundary buys at that prevalence, not at a lower one."
 )
 
 # What CheXagent's localisation head is worth, measured by scripts/grounding_specificity.py
