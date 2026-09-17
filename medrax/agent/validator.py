@@ -254,6 +254,32 @@ CALIBRATION_NOTE = (
     "validated for pneumothorax, which the evaluation corpus could not supply."
 )
 
+# What CheXagent's localisation head is worth, measured by scripts/grounding_specificity.py
+# on 573 image x finding pairs -- up to 50 known-positive and 50 known-negative films per
+# finding, same corpus and expert labels as RELIABILITY, asked through the shipped
+# GROUNDING_PROMPT and region parser so it measures the path that actually runs.
+#
+# The question was whether it localises findings or boxes whatever phrase it is handed.
+# MAIRA-2 does the latter: asked for pneumothorax on a film without one it returns a
+# confident box. CheXagent does not -- it boxes 96% of positives [93-98] and 49% of
+# negatives, so LR+ 1.95 and LR- 0.080. The absence of a box is the informative half.
+#
+# But unconditional rates are the wrong question, because the Director already knows what
+# the same model's yes/no head said. Conditioned on that:
+#
+#   P(yes) >= 0.5   boxed 256 of 257 times -- deterministic, so no information at all
+#   P(yes) <  0.5   boxed     -> truly positive 37% [30-45]
+#                   not boxed -> truly positive  7% [4-12]
+#
+# So grounding carries information in exactly one regime: where the binary head said no.
+# There it separates 37% from 7% on non-overlapping intervals. Everywhere else it is a
+# foregone conclusion being read as agreement.
+GROUNDING_MEASURED = {
+    "pairs": 573, "sens": 0.96, "spec": 0.51,
+    "box_when_head_said_no": 0.37, "no_box_when_head_said_no": 0.07,
+    "box_when_head_said_yes": 256 / 257,
+}
+
 # The original guessed dead zone, surviving only where it is the best available answer:
 # a pair with no measured threshold interval. For everything in RELIABILITY the band is
 # that pair's own thr_ci, which is narrower for some findings and far wider for others --
@@ -1182,28 +1208,40 @@ class EvidenceValidator:
                 x1, y1, x2, y2 = region["box_pct"]
                 lines.append(f"  {region['label']}: ({x1},{y1})-({x2},{y2}), "
                              f"{region['side_if_frontal']} on a frontal view")
-            # PATCH: measured on 84 image x finding pairs, 28 images. Grounding is NOT
-            # independent corroboration -- it is the same model's localisation head,
-            # and it tracks the binary head at a lower threshold (17% of pairs grounded
-            # below P(yes)=0.2, 91% between 0.2 and 0.5, 100% above). It found every
-            # true positive including two the binary head missed, but drew a box on 31%
-            # of images that did not have the finding. Describing it as corroboration
-            # would double-count one model's opinion as two.
+            # See GROUNDING_MEASURED. The earlier 84-pair probe read this as "grounds
+            # almost anything above P(yes)=0.2"; 573 pairs replicate it closely (28%
+            # boxed below 0.2, 92% between 0.2 and 0.5, ~100% above). What that probe
+            # could not see is the conditional structure: above 0.5 the box is
+            # deterministic and therefore empty of information, and all of grounding's
+            # value sits in the band where the binary head said no.
             lines.append("  Cite this location in your supportive evidence, naming it as "
                          "the localisation from chest_xray_expert -- it is the only "
                          "localised evidence available from a radiology-trained model.")
             lines.append("  CAUTION: it is the same model's localisation head, not a "
-                         "second opinion. Measured on this dataset it draws a box on 31% "
-                         "of images that do NOT have the finding, and grounds almost "
-                         "anything the binary head scores above 0.2. So it tells you WHERE "
-                         "the finding would be, not THAT it is present: do not count it as "
-                         "a separate agreeing tool or let it raise your confidence.")
+                         "second opinion, so it is never a separate agreeing tool. What a "
+                         "box is worth depends entirely on what that model's own yes/no "
+                         "answer was. If it already answered yes, the box is automatic "
+                         "(256 of 257 such films) and tells you nothing you did not "
+                         "already have. If it answered no, the box is real but weak "
+                         "evidence: those films had the finding 37% of the time against "
+                         "7% when no box was drawn -- still more likely absent than "
+                         "present. Either way it tells you WHERE the finding would be, "
+                         "not THAT it is present.")
         elif record.get("grounding_attempted"):
+            # The claim this branch used to make -- "it grounded 19 of 19 true positives"
+            # -- was sensitivity measured on positives only, which a model that boxes
+            # every phrase scores by construction. Tested against negatives too, the
+            # direction holds and is the strong half: LR- 0.080 against LR+ 1.95.
             lines.append(f"chest_xray_expert was asked to localise {record.get('focus')} "
-                         "and returned no region. On this dataset an absent localisation "
-                         "was a stronger negative signal than a present one is a positive: "
-                         "it grounded 19 of 19 true positives, so failing to ground weighs "
-                         "against the finding, though it remains one model's opinion.")
+                         "and returned no region. Measured on 573 films with expert "
+                         "labels, an absent localisation is a stronger negative signal "
+                         "than a present one is a positive: it boxes 96% of films that "
+                         "have the finding, so silence is unusual, and among films where "
+                         "its yes/no answer was also no, the ones it declined to box had "
+                         "the finding 7% of the time against 37% for the ones it boxed. "
+                         "Failing to ground weighs against the finding -- though it "
+                         "remains one model's opinion, and that model has usually already "
+                         "answered no, so this is not a second tool agreeing.")
         # PATCH: driven by every claim the text makes, not only the focus finding.
         # Keyed on focus alone, this said nothing at all on an open-ended question --
         # so the Director was never told that the tool it was quoting is the weak one.

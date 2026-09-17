@@ -1,0 +1,4586 @@
+[
+ {
+  "file": "3863_IM-1957-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,52),(80,80) <|/box|>"
+ },
+ {
+  "file": "3479_IM-1690-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (38,40),(84,64) <|/box|>"
+ },
+ {
+  "file": "1990_IM-0648-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,62),(80,85) <|/box|>"
+ },
+ {
+  "file": "1961_IM-0628-3001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,30),(78,54) <|/box|>"
+ },
+ {
+  "file": "2268_IM-0857-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (32,44),(80,72) <|/box|>"
+ },
+ {
+  "file": "3811_IM-1921-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,50),(80,76) <|/box|>"
+ },
+ {
+  "file": "1375_IM-0241-3001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,54),(88,85) <|/box|>"
+ },
+ {
+  "file": "3187_IM-1503-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,47),(82,68) <|/box|>"
+ },
+ {
+  "file": "1139_IM-0095-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,54),(82,80) <|/box|>"
+ },
+ {
+  "file": "3260_IM-1547-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,40),(84,68) <|/box|>"
+ },
+ {
+  "file": "2532_IM-1046-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (32,48),(80,78) <|/box|>"
+ },
+ {
+  "file": "772_IM-2317-0001-0002.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (33,50),(80,72) <|/box|>"
+ },
+ {
+  "file": "1898_IM-0581-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (31,48),(80,72) <|/box|>"
+ },
+ {
+  "file": "1666_IM-0440-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,54),(81,76) <|/box|>"
+ },
+ {
+  "file": "656_IM-2232-84570001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (28,58),(72,76) <|/box|>"
+ },
+ {
+  "file": "3853_IM-1950-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (38,48),(88,72) <|/box|>"
+ },
+ {
+  "file": "2702_IM-1170-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,62),(80,80) <|/box|>"
+ },
+ {
+  "file": "2477_IM-1006-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (28,54),(80,85) <|/box|>"
+ },
+ {
+  "file": "3905_IM-1984-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (32,54),(88,86) <|/box|>"
+ },
+ {
+  "file": "2615_IM-1106-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (36,44),(81,68) <|/box|>"
+ },
+ {
+  "file": "2593_IM-1084-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,50),(78,72) <|/box|>"
+ },
+ {
+  "file": "2456_IM-0989-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (38,50),(80,68) <|/box|>"
+ },
+ {
+  "file": "2637_IM-1122-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (36,60),(85,85) <|/box|>"
+ },
+ {
+  "file": "1970_IM-0632-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,52),(80,68) <|/box|>"
+ },
+ {
+  "file": "3256_IM-1543-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (39,40),(90,72) <|/box|>"
+ },
+ {
+  "file": "2936_IM-1338-1002001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,61),(80,85) <|/box|>"
+ },
+ {
+  "file": "513_IM-2128-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (24,54),(80,82) <|/box|>"
+ },
+ {
+  "file": "2211_IM-0818-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (32,40),(90,70) <|/box|>"
+ },
+ {
+  "file": "825_IM-2355-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,36),(81,60) <|/box|>"
+ },
+ {
+  "file": "227_IM-0859-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,58),(84,85) <|/box|>"
+ },
+ {
+  "file": "2221_IM-0825-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (33,48),(80,76) <|/box|>"
+ },
+ {
+  "file": "1743_IM-0489-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (30,50),(76,73) <|/box|>"
+ },
+ {
+  "file": "3455_IM-1677-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (40,55),(85,80) <|/box|>"
+ },
+ {
+  "file": "2139_IM-0760-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,52),(78,72) <|/box|>"
+ },
+ {
+  "file": "2191_IM-0801-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (39,55),(78,69) <|/box|>"
+ },
+ {
+  "file": "1965_IM-0629-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (32,48),(94,85) <|/box|>"
+ },
+ {
+  "file": "1230_IM-0154-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (28,42),(72,72) <|/box|>"
+ },
+ {
+  "file": "802_IM-2336-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (33,44),(80,68) <|/box|>"
+ },
+ {
+  "file": "1031_IM-0025-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (33,50),(80,80) <|/box|>"
+ },
+ {
+  "file": "3214_IM-1519-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (30,47),(80,72) <|/box|>"
+ },
+ {
+  "file": "3248_IM-1538-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (32,47),(76,63) <|/box|>"
+ },
+ {
+  "file": "2752_IM-1202-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (40,41),(85,62) <|/box|>"
+ },
+ {
+  "file": "379_IM-1903-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (33,47),(84,68) <|/box|>"
+ },
+ {
+  "file": "216_IM-0777-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (32,48),(80,80) <|/box|>"
+ },
+ {
+  "file": "123_IM-0153-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (36,56),(82,74) <|/box|>"
+ },
+ {
+  "file": "3638_IM-1804-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,40),(81,62) <|/box|>"
+ },
+ {
+  "file": "1105_IM-0072-1001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,44),(80,64) <|/box|>"
+ },
+ {
+  "file": "1112_IM-0078-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (30,40),(84,64) <|/box|>"
+ },
+ {
+  "file": "2570_IM-1073-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (26,50),(78,70) <|/box|>"
+ },
+ {
+  "file": "388_IM-1968-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (38,47),(80,64) <|/box|>"
+ },
+ {
+  "file": "3321_IM-1588-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "1911_IM-0593-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "1615_IM-0398-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (32,47),(76,68) <|/box|>"
+ },
+ {
+  "file": "1974_IM-0633-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2008_IM-0658-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2433_IM-0975-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (34,47),(82,65) <|/box|>"
+ },
+ {
+  "file": "2668_IM-1147-3001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "3836_IM-1939-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2023_IM-0669-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "1845_IM-0548-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (43,50),(81,68) <|/box|>"
+ },
+ {
+  "file": "2365_IM-0927-3001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2248_IM-0844-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "3140_IM-1477-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "136_IM-0233-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "465_IM-2093-0001-0002.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (32,44),(80,62) <|/box|>"
+ },
+ {
+  "file": "3883_IM-1971-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2845_IM-1254-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "320_IM-1511-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "840_IM-2364-0001-0002.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (33,56),(76,73) <|/box|>"
+ },
+ {
+  "file": "1551_IM-0359-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "1360_IM-0234-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (33,55),(80,80) <|/box|>"
+ },
+ {
+  "file": "3562_IM-1747-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (40,44),(81,63) <|/box|>"
+ },
+ {
+  "file": "2728_IM-1187-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (31,61),(80,85) <|/box|>"
+ },
+ {
+  "file": "1460_IM-0298-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "1043_IM-0035-0001-0002.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "303_IM-1404-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (32,54),(80,76) <|/box|>"
+ },
+ {
+  "file": "2193_IM-0803-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,52),(72,69) <|/box|>"
+ },
+ {
+  "file": "818_IM-2349-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (38,64),(83,82) <|/box|>"
+ },
+ {
+  "file": "3025_IM-1400-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2959_IM-1354-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "554_IM-2155-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "3109_IM-1458-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2547_IM-1055-4004.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (31,60),(75,82) <|/box|>"
+ },
+ {
+  "file": "601_IM-2192-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (38,47),(82,64) <|/box|>"
+ },
+ {
+  "file": "2537_IM-1049-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (36,62),(78,80) <|/box|>"
+ },
+ {
+  "file": "334_IM-1600-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "741_IM-2297-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2338_IM-0905-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (33,54),(76,76) <|/box|>"
+ },
+ {
+  "file": "785_IM-2325-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2664_IM-1145-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "3064_IM-1428-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "3067_IM-1430-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "1882_IM-0571-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "53_IM-2138-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (40,50),(78,64) <|/box|>"
+ },
+ {
+  "file": "2034_IM-0679-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "267_IM-1147-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (30,48),(70,63) <|/box|>"
+ },
+ {
+  "file": "988_IM-2474-1001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No cardiomegaly detected."
+ },
+ {
+  "file": "2608_IM-1098-2001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (38,47),(82,64) <|/box|>"
+ },
+ {
+  "file": "2165_IM-0781-0001-0001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Cardiomegaly <|/ref|> <|box|> (38,50),(78,64) <|/box|>"
+ },
+ {
+  "file": "2887_IM-1289-4001.dcm.png",
+  "finding": "cardiomegaly",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> cardiomegaly <|/ref|> <|box|> (38,54),(81,72) <|/box|>"
+ },
+ {
+  "file": "188_IM-0569-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (7,80),(14,87) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (53,50),(90,82) <|/box|>"
+ },
+ {
+  "file": "372_IM-1858-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (84,72),(90,80) <|/box|>"
+ },
+ {
+  "file": "3508_IM-1710-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (14,54),(44,76) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (75,60),(85,73) <|/box|>"
+ },
+ {
+  "file": "1494_IM-0319-4001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (8,47),(34,56) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (75,47),(88,56) <|/box|>"
+ },
+ {
+  "file": "3245_IM-1537-4001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (8,58),(34,72) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (75,60),(98,72) <|/box|>"
+ },
+ {
+  "file": "2943_IM-1343-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (54,6),(90,70) <|/box|>"
+ },
+ {
+  "file": "509_IM-2125-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (12,14),(44,76) <|/box|>"
+ },
+ {
+  "file": "2616_IM-1106-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (7,70),(44,85) <|/box|>"
+ },
+ {
+  "file": "3090_IM-1445-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,54),(44,76) <|/box|>"
+ },
+ {
+  "file": "313_IM-1472-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (18,62),(26,72) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (78,66),(85,75) <|/box|>"
+ },
+ {
+  "file": "2334_IM-0902-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,76),(10,85) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (84,77),(90,85) <|/box|>"
+ },
+ {
+  "file": "111_IM-0076-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (8,48),(44,81) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (87,64),(96,76) <|/box|>"
+ },
+ {
+  "file": "830_IM-2358-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (10,64),(44,80) <|/box|>"
+ },
+ {
+  "file": "2642_IM-1128-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,87),(11,94) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (87,90),(94,96) <|/box|>"
+ },
+ {
+  "file": "1868_IM-0561-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,70),(10,79) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (84,72),(90,78) <|/box|>"
+ },
+ {
+  "file": "2615_IM-1106-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,74),(8,79) <|/box|>"
+ },
+ {
+  "file": "267_IM-1147-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (8,58),(18,69) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (75,58),(85,69) <|/box|>"
+ },
+ {
+  "file": "2716_IM-1181-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,54),(39,77) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (83,64),(93,76) <|/box|>"
+ },
+ {
+  "file": "1649_IM-0426-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (7,64),(38,76) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (64,64),(90,78) <|/box|>"
+ },
+ {
+  "file": "2905_IM-1309-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (52,22),(92,81) <|/box|>"
+ },
+ {
+  "file": "1678_IM-0447-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,38),(43,65) <|/box|>"
+ },
+ {
+  "file": "2289_IM-0873-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (82,64),(92,76) <|/box|>"
+ },
+ {
+  "file": "1243_IM-0165-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (82,54),(90,66) <|/box|>"
+ },
+ {
+  "file": "2474_IM-1003-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (8,75),(14,85) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (84,75),(90,85) <|/box|>"
+ },
+ {
+  "file": "1845_IM-0548-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (84,58),(90,68) <|/box|>"
+ },
+ {
+  "file": "1100_IM-0068-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (8,48),(38,64) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (75,52),(95,65) <|/box|>"
+ },
+ {
+  "file": "3260_IM-1547-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (10,44),(44,64) <|/box|>"
+ },
+ {
+  "file": "2130_IM-0755-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,80),(10,87) <|/box|>"
+ },
+ {
+  "file": "3396_IM-1640-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (8,60),(14,72) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (84,62),(90,72) <|/box|>"
+ },
+ {
+  "file": "1102_IM-0069-12012.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (10,64),(38,85) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (76,68),(88,85) <|/box|>"
+ },
+ {
+  "file": "2817_IM-1241-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,70),(14,81) <|/box|>"
+ },
+ {
+  "file": "2657_IM-1139-0001-0002.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,70),(26,85) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (84,75),(92,86) <|/box|>"
+ },
+ {
+  "file": "2348_IM-0913-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (14,34),(44,62) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (68,48),(85,63) <|/box|>"
+ },
+ {
+  "file": "145_IM-0290-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,32),(44,62) <|/box|>"
+ },
+ {
+  "file": "1867_IM-0560-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (8,70),(14,85) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (84,70),(90,85) <|/box|>"
+ },
+ {
+  "file": "1704_IM-0464-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (59,34),(93,72) <|/box|>"
+ },
+ {
+  "file": "3148_IM-1480-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (82,64),(94,76) <|/box|>"
+ },
+ {
+  "file": "3256_IM-1543-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (75,54),(94,69) <|/box|>"
+ },
+ {
+  "file": "651_IM-2229-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (59,47),(83,60) <|/box|>"
+ },
+ {
+  "file": "1230_IM-0154-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (10,48),(44,85) <|/box|>"
+ },
+ {
+  "file": "105_IM-0037-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (80,51),(89,64) <|/box|>"
+ },
+ {
+  "file": "3557_IM-1742-0001-0002.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,80),(10,87) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (89,83),(94,89) <|/box|>"
+ },
+ {
+  "file": "3614_IM-1787-4001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (84,54),(89,66) <|/box|>"
+ },
+ {
+  "file": "3536_IM-1729-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (8,67),(14,78) <|/box|>"
+ },
+ {
+  "file": "1043_IM-0035-0001-0002.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (75,68),(90,85) <|/box|>"
+ },
+ {
+  "file": "3116_IM-1464-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,60),(26,72) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (83,62),(96,73) <|/box|>"
+ },
+ {
+  "file": "3249_IM-1539-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,54),(38,72) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (84,68),(92,76) <|/box|>"
+ },
+ {
+  "file": "3750_IM-1874-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,64),(26,82) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (84,72),(92,85) <|/box|>"
+ },
+ {
+  "file": "2074_IM-0708-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (8,60),(14,72) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (87,60),(94,72) <|/box|>"
+ },
+ {
+  "file": "3187_IM-1503-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,64),(14,75) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (83,62),(93,75) <|/box|>"
+ },
+ {
+  "file": "2360_IM-0925-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "3225_IM-1525-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (8,80),(14,87) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (87,81),(92,89) <|/box|>"
+ },
+ {
+  "file": "1419_IM-0267-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (84,72),(89,80) <|/box|>"
+ },
+ {
+  "file": "2548_IM-1056-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (84,50),(90,60) <|/box|>"
+ },
+ {
+  "file": "2862_IM-1270-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "1196_IM-0131-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (82,80),(87,87) <|/box|>"
+ },
+ {
+  "file": "334_IM-1600-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,82),(10,87) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (87,83),(90,87) <|/box|>"
+ },
+ {
+  "file": "418_IM-2061-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (86,77),(90,85) <|/box|>"
+ },
+ {
+  "file": "1853_IM-0555-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "178_IM-0509-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (12,54),(18,63) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (83,48),(90,60) <|/box|>"
+ },
+ {
+  "file": "183_IM-0537-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "2218_IM-0823-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (82,50),(89,62) <|/box|>"
+ },
+ {
+  "file": "2308_IM-0883-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (84,78),(92,87) <|/box|>"
+ },
+ {
+  "file": "1031_IM-0025-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (8,70),(14,85) <|/box|>"
+ },
+ {
+  "file": "2151_IM-0771-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "527_IM-2137-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "3552_IM-1741-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "818_IM-2349-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (84,77),(90,85) <|/box|>"
+ },
+ {
+  "file": "3560_IM-1745-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (84,90),(88,96) <|/box|>"
+ },
+ {
+  "file": "3857_IM-1952-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "3880_IM-1968-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "2279_IM-0865-2001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (84,78),(88,85) <|/box|>"
+ },
+ {
+  "file": "828_IM-2357-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "3273_IM-1554-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (6,67),(10,73) <|/box|>"
+ },
+ {
+  "file": "1262_IM-0178-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "3986_IM-2041-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (8,75),(11,79) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (84,72),(88,78) <|/box|>"
+ },
+ {
+  "file": "3411_IM-1649-0001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (78,62),(85,71) <|/box|>"
+ },
+ {
+  "file": "2676_IM-1151-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (84,58),(90,69) <|/box|>"
+ },
+ {
+  "file": "2181_IM-0793-1001-0001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,58),(14,72) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (84,58),(92,72) <|/box|>"
+ },
+ {
+  "file": "2532_IM-1046-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,82),(10,87) <|/box|>"
+ },
+ {
+  "file": "175_IM-0492-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,54),(12,63) <|/box|> <|ref|> Pleural effusion <|/ref|> <|box|> (84,54),(90,63) <|/box|>"
+ },
+ {
+  "file": "3288_IM-1569-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (5,77),(10,85) <|/box|>"
+ },
+ {
+  "file": "2314_IM-0889-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,87),(10,94) <|/box|>"
+ },
+ {
+  "file": "697_IM-2262-2002.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (84,72),(90,81) <|/box|>"
+ },
+ {
+  "file": "1398_IM-0254-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (10,59),(17,72) <|/box|>"
+ },
+ {
+  "file": "3466_IM-1683-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (10,73),(16,81) <|/box|>"
+ },
+ {
+  "file": "1751_IM-0494-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "292_IM-1322-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "242_IM-0963-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "522_IM-2133-1002001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,77),(10,83) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (87,77),(92,84) <|/box|>"
+ },
+ {
+  "file": "2388_IM-0944-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "247_IM-1000-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "2489_IM-1016-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (84,64),(90,72) <|/box|>"
+ },
+ {
+  "file": "1026_IM-0021-2002.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "2959_IM-1354-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "1033_IM-0027-4004.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (5,58),(10,68) <|/box|>"
+ },
+ {
+  "file": "2777_IM-1217-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pleural effusion detected."
+ },
+ {
+  "file": "1375_IM-0241-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (86,85),(90,91) <|/box|>"
+ },
+ {
+  "file": "78_IM-2322-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pleural effusion <|/ref|> <|box|> (82,55),(90,65) <|/box|>"
+ },
+ {
+  "file": "2268_IM-0857-1001.dcm.png",
+  "finding": "pleural effusion",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pleural effusion <|/ref|> <|box|> (8,64),(14,76) <|/box|> <|ref|> pleural effusion <|/ref|> <|box|> (82,64),(90,76) <|/box|>"
+ },
+ {
+  "file": "91_IM-2415-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (18,5),(46,63) <|/box|>"
+ },
+ {
+  "file": "2482_IM-1011-0001-0002.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (17,16),(44,38) <|/box|>"
+ },
+ {
+  "file": "2831_IM-1249-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 4,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (10,52),(14,64) <|/box|> <|ref|> pneumothorax <|/ref|> <|box|> (14,64),(20,69) <|/box|> <|ref|> pneumothorax <|/ref|> <|bo"
+ },
+ {
+  "file": "1339_IM-0218-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (10,5),(44,23) <|/box|>"
+ },
+ {
+  "file": "2827_IM-1246-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,14),(44,31) <|/box|>"
+ },
+ {
+  "file": "830_IM-2358-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (28,14),(46,20) <|/box|>"
+ },
+ {
+  "file": "1230_IM-0154-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,8),(44,22) <|/box|>"
+ },
+ {
+  "file": "1262_IM-0178-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "253_IM-1045-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,8),(84,42) <|/box|>"
+ },
+ {
+  "file": "1326_IM-0210-0001-0002.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (18,16),(44,34) <|/box|>"
+ },
+ {
+  "file": "465_IM-2093-0001-0002.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (18,9),(44,28) <|/box|>"
+ },
+ {
+  "file": "2318_IM-0891-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,4),(88,84) <|/box|>"
+ },
+ {
+  "file": "3378_IM-1627-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (9,5),(44,63) <|/box|>"
+ },
+ {
+  "file": "2448_IM-0983-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,5),(46,33) <|/box|>"
+ },
+ {
+  "file": "3891_IM-1973-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (28,10),(46,18) <|/box|>"
+ },
+ {
+  "file": "1339_IM-0218-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "64_IM-2218-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,23),(46,44) <|/box|>"
+ },
+ {
+  "file": "1525_IM-0340-3001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,6),(74,28) <|/box|>"
+ },
+ {
+  "file": "3945_IM-2014-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,6),(84,76) <|/box|>"
+ },
+ {
+  "file": "1691_IM-0453-4001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,8),(70,15) <|/box|>"
+ },
+ {
+  "file": "1021_IM-0017-1001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (14,10),(46,63) <|/box|>"
+ },
+ {
+  "file": "3369_IM-1621-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (14,6),(46,87) <|/box|>"
+ },
+ {
+  "file": "1874_IM-0565-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,18),(44,33) <|/box|>"
+ },
+ {
+  "file": "3847_IM-1946-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,18),(76,28) <|/box|>"
+ },
+ {
+  "file": "840_IM-2364-0001-0002.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,15),(72,24) <|/box|>"
+ },
+ {
+  "file": "1525_IM-0340-4001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pneumothorax <|/ref|> <|box|> (54,6),(77,38) <|/box|>"
+ },
+ {
+  "file": "3694_IM-1845-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (55,12),(76,24) <|/box|>"
+ },
+ {
+  "file": "1230_IM-0154-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,20),(44,32) <|/box|>"
+ },
+ {
+  "file": "509_IM-2125-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,13),(44,30) <|/box|>"
+ },
+ {
+  "file": "227_IM-0859-12012.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (28,5),(46,12) <|/box|>"
+ },
+ {
+  "file": "3679_IM-1831-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2954_IM-1352-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,8),(46,24) <|/box|>"
+ },
+ {
+  "file": "1805_IM-0523-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2046_IM-0688-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (12,5),(43,30) <|/box|>"
+ },
+ {
+  "file": "3187_IM-1503-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "3560_IM-1745-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2339_IM-0905-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "423_IM-2066-0001-0003.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,6),(46,22) <|/box|>"
+ },
+ {
+  "file": "2637_IM-1122-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "3104_IM-1455-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "3999_IM-2049-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "716_IM-2278-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "1288_IM-0189-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "3595_IM-1773-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "1977_IM-0636-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2902_IM-1306-4001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,12),(68,18) <|/box|>"
+ },
+ {
+  "file": "28_IM-1231-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2817_IM-1241-3001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (24,4),(44,16) <|/box|>"
+ },
+ {
+  "file": "550_IM-2154-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,8),(76,20) <|/box|>"
+ },
+ {
+  "file": "948_IM-2443-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "1052_IM-0040-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "1494_IM-0319-4001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pneumothorax <|/ref|> <|box|> (28,10),(46,18) <|/box|>"
+ },
+ {
+  "file": "1348_IM-0226-4004-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,4),(71,14) <|/box|>"
+ },
+ {
+  "file": "522_IM-2133-1002001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "3586_IM-1764-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "123_IM-0153-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "1792_IM-0515-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "901_IM-2409-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "817_IM-2348-0001-0002.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "1026_IM-0021-2002.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "3185_IM-1503-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2301_IM-0881-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "749_IM-2302-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2577_IM-1077-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "1033_IM-0027-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (54,12),(72,20) <|/box|>"
+ },
+ {
+  "file": "3487_IM-1696-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2211_IM-0818-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2111_IM-0741-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (20,8),(46,24) <|/box|>"
+ },
+ {
+  "file": "2999_IM-1383-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "3562_IM-1747-2001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2135_IM-0757-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "1898_IM-0581-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2370_IM-0931-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pneumothorax <|/ref|> <|box|> (14,4),(44,24) <|/box|>"
+ },
+ {
+  "file": "2191_IM-0801-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "911_IM-2417-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "3382_IM-1629-0001-0001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "3580_IM-1760-1001.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "2304_IM-0882-4004.dcm.png",
+  "finding": "pneumothorax",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pneumothorax detected."
+ },
+ {
+  "file": "267_IM-1147-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (20,30),(32,40) <|/box|>"
+ },
+ {
+  "file": "29_IM-1302-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (60,47),(73,56) <|/box|>"
+ },
+ {
+  "file": "1641_IM-0420-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,50),(71,60) <|/box|>"
+ },
+ {
+  "file": "3260_IM-1547-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (14,42),(40,56) <|/box|>"
+ },
+ {
+  "file": "2246_IM-0843-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "1288_IM-0189-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "697_IM-2262-2002.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (59,54),(86,76) <|/box|>"
+ },
+ {
+  "file": "3565_IM-1750-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (15,40),(41,57) <|/box|>"
+ },
+ {
+  "file": "144_IM-0283-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "1649_IM-0426-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (18,48),(40,68) <|/box|>"
+ },
+ {
+  "file": "1909_IM-0590-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (28,50),(42,65) <|/box|>"
+ },
+ {
+  "file": "1226_IM-0150-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "1691_IM-0453-4001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (70,44),(85,54) <|/box|>"
+ },
+ {
+  "file": "1769_IM-0503-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (64,41),(89,64) <|/box|>"
+ },
+ {
+  "file": "2909_IM-1313-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (70,54),(80,64) <|/box|>"
+ },
+ {
+  "file": "1016_IM-0013-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (14,50),(38,68) <|/box|>"
+ },
+ {
+  "file": "2396_IM-0945-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (76,47),(85,54) <|/box|>"
+ },
+ {
+  "file": "2289_IM-0873-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (70,54),(80,70) <|/box|>"
+ },
+ {
+  "file": "3866_IM-1959-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (20,50),(40,68) <|/box|>"
+ },
+ {
+  "file": "1874_IM-0565-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (20,60),(34,68) <|/box|>"
+ },
+ {
+  "file": "3411_IM-1649-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (70,54),(82,64) <|/box|>"
+ },
+ {
+  "file": "2887_IM-1289-4001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (32,54),(40,63) <|/box|>"
+ },
+ {
+  "file": "3455_IM-1677-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (64,42),(77,50) <|/box|>"
+ },
+ {
+  "file": "343_IM-1658-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (33,14),(44,28) <|/box|>"
+ },
+ {
+  "file": "1855_IM-0555-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (76,58),(90,76) <|/box|>"
+ },
+ {
+  "file": "2507_IM-1030-3001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (20,50),(40,72) <|/box|>"
+ },
+ {
+  "file": "945_IM-2440-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (56,16),(81,42) <|/box|>"
+ },
+ {
+  "file": "3840_IM-1941-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (60,43),(85,73) <|/box|>"
+ },
+ {
+  "file": "2485_IM-1013-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (20,48),(40,60) <|/box|>"
+ },
+ {
+  "file": "3666_IM-1824-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (14,50),(32,68) <|/box|>"
+ },
+ {
+  "file": "1240_IM-0162-4001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,50),(90,68) <|/box|>"
+ },
+ {
+  "file": "2207_IM-0815-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "3829_IM-1932-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,64),(76,76) <|/box|>"
+ },
+ {
+  "file": "1282_IM-0188-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (12,50),(20,60) <|/box|>"
+ },
+ {
+  "file": "2338_IM-0905-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (7,50),(23,72) <|/box|> <|ref|> consolidation <|/ref|> <|box|> (74,61),(92,76) <|/box|>"
+ },
+ {
+  "file": "540_IM-2146-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (54,54),(65,65) <|/box|>"
+ },
+ {
+  "file": "3479_IM-1690-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (20,24),(44,56) <|/box|> <|ref|> Consolidation <|/ref|> <|box|> (60,24),(85,56) <|/box|>"
+ },
+ {
+  "file": "495_IM-2114-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (62,40),(71,50) <|/box|>"
+ },
+ {
+  "file": "423_IM-2066-0001-0003.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (14,42),(40,56) <|/box|> <|ref|> consolidation <|/ref|> <|box|> (64,42),(86,56) <|/box|>"
+ },
+ {
+  "file": "3130_IM-1472-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (26,38),(34,44) <|/box|>"
+ },
+ {
+  "file": "715_IM-2277-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (14,54),(40,65) <|/box|>"
+ },
+ {
+  "file": "1196_IM-0131-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (70,54),(84,70) <|/box|>"
+ },
+ {
+  "file": "3611_IM-1784-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (28,52),(36,60) <|/box|>"
+ },
+ {
+  "file": "178_IM-0509-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,30),(73,41) <|/box|>"
+ },
+ {
+  "file": "194_IM-0609-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (76,60),(90,70) <|/box|>"
+ },
+ {
+  "file": "1102_IM-0069-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (14,34),(40,56) <|/box|>"
+ },
+ {
+  "file": "183_IM-0537-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (28,48),(40,63) <|/box|>"
+ },
+ {
+  "file": "25_IM-1024-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,43),(85,64) <|/box|>"
+ },
+ {
+  "file": "2537_IM-1049-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (14,64),(34,76) <|/box|>"
+ },
+ {
+  "file": "1501_IM-0327-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (20,34),(38,46) <|/box|>"
+ },
+ {
+  "file": "1332_IM-0213-1001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (59,30),(68,40) <|/box|>"
+ },
+ {
+  "file": "2456_IM-0989-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "2766_IM-1211-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,54),(77,70) <|/box|>"
+ },
+ {
+  "file": "1646_IM-0423-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "2034_IM-0679-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "2817_IM-1241-3001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (24,8),(42,24) <|/box|>"
+ },
+ {
+  "file": "2777_IM-1217-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "2831_IM-1249-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (10,58),(20,63) <|/box|>"
+ },
+ {
+  "file": "550_IM-2154-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,42),(76,50) <|/box|>"
+ },
+ {
+  "file": "2640_IM-1126-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "3529_IM-1725-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "2388_IM-0944-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "1362_IM-0235-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (59,43),(73,52) <|/box|>"
+ },
+ {
+  "file": "1833_IM-0539-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "3519_IM-1717-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (60,26),(80,46) <|/box|>"
+ },
+ {
+  "file": "3288_IM-1569-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "1021_IM-0017-1001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (28,30),(46,60) <|/box|>"
+ },
+ {
+  "file": "635_IM-2215-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (60,44),(85,64) <|/box|>"
+ },
+ {
+  "file": "3123_IM-1468-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (28,54),(40,68) <|/box|>"
+ },
+ {
+  "file": "1852_IM-0554-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "649_IM-2227-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (64,38),(84,64) <|/box|>"
+ },
+ {
+  "file": "1315_IM-0204-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "1485_IM-0313-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (20,60),(34,71) <|/box|>"
+ },
+ {
+  "file": "242_IM-0963-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "2904_IM-1308-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "1033_IM-0027-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,43),(73,50) <|/box|>"
+ },
+ {
+  "file": "2398_IM-0947-12012.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (54,30),(70,46) <|/box|>"
+ },
+ {
+  "file": "3148_IM-1480-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,40),(73,50) <|/box|>"
+ },
+ {
+  "file": "418_IM-2061-2001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (28,20),(40,28) <|/box|>"
+ },
+ {
+  "file": "2616_IM-1106-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (20,58),(38,70) <|/box|>"
+ },
+ {
+  "file": "1489_IM-0315-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "2936_IM-1338-1002001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (59,64),(68,72) <|/box|>"
+ },
+ {
+  "file": "253_IM-1045-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "158_IM-0377-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "3430_IM-1659-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (54,50),(65,70) <|/box|>"
+ },
+ {
+  "file": "3111_IM-1461-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,50),(86,72) <|/box|>"
+ },
+ {
+  "file": "1361_IM-0235-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (34,18),(42,28) <|/box|>"
+ },
+ {
+  "file": "1743_IM-0489-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (28,50),(34,54) <|/box|>"
+ },
+ {
+  "file": "2383_IM-0941-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (64,47),(86,64) <|/box|>"
+ },
+ {
+  "file": "3797_IM-1910-0001-0002.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (60,50),(73,64) <|/box|>"
+ },
+ {
+  "file": "2177_IM-0789-4001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (28,30),(40,40) <|/box|>"
+ },
+ {
+  "file": "3509_IM-1711-0001-0001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (14,50),(33,64) <|/box|>"
+ },
+ {
+  "file": "2862_IM-1270-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "1853_IM-0555-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "2905_IM-1309-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Consolidation <|/ref|> <|box|> (54,30),(73,46) <|/box|>"
+ },
+ {
+  "file": "2728_IM-1187-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (28,58),(40,72) <|/box|>"
+ },
+ {
+  "file": "1375_IM-0241-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (64,54),(73,64) <|/box|>"
+ },
+ {
+  "file": "1982_IM-0639-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "124_IM-0161-4004.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> consolidation <|/ref|> <|box|> (54,30),(73,52) <|/box|>"
+ },
+ {
+  "file": "1697_IM-0458-1001.dcm.png",
+  "finding": "consolidation",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No consolidation detected."
+ },
+ {
+  "file": "672_IM-2246-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (18,34),(40,56) <|/box|>"
+ },
+ {
+  "file": "2570_IM-1073-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (12,48),(34,64) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (69,47),(88,66) <|/box|>"
+ },
+ {
+  "file": "2532_IM-1046-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (20,28),(40,64) <|/box|>"
+ },
+ {
+  "file": "802_IM-2336-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (18,20),(45,60) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,20),(85,64) <|/box|>"
+ },
+ {
+  "file": "3455_IM-1677-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (18,26),(47,73) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (60,26),(86,73) <|/box|>"
+ },
+ {
+  "file": "934_IM-2432-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (8,28),(35,82) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,28),(88,82) <|/box|>"
+ },
+ {
+  "file": "2183_IM-0794-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (8,28),(34,76) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (68,30),(94,78) <|/box|>"
+ },
+ {
+  "file": "3249_IM-1539-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,28),(40,64) <|/box|>"
+ },
+ {
+  "file": "2657_IM-1139-0001-0002.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (14,14),(45,84) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (54,14),(86,84) <|/box|>"
+ },
+ {
+  "file": "1807_IM-0524-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,28),(40,64) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,28),(80,64) <|/box|>"
+ },
+ {
+  "file": "1102_IM-0069-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,8),(45,54) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (55,8),(85,54) <|/box|>"
+ },
+ {
+  "file": "3082_IM-1441-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (14,28),(45,77) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,28),(88,77) <|/box|>"
+ },
+ {
+  "file": "3245_IM-1537-4001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,14),(45,68) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (58,16),(86,68) <|/box|>"
+ },
+ {
+  "file": "2151_IM-0771-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "2543_IM-1054-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (15,24),(47,67) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (64,24),(91,67) <|/box|>"
+ },
+ {
+  "file": "227_IM-0859-12012.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,14),(90,85) <|/box|>"
+ },
+ {
+  "file": "3750_IM-1874-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,28),(42,72) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (64,28),(85,72) <|/box|>"
+ },
+ {
+  "file": "1965_IM-0629-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,28),(47,78) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (64,28),(91,78) <|/box|>"
+ },
+ {
+  "file": "3372_IM-1623-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,20),(47,68) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,20),(88,68) <|/box|>"
+ },
+ {
+  "file": "3801_IM-1912-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,26),(47,72) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (64,24),(86,72) <|/box|>"
+ },
+ {
+  "file": "1375_IM-0241-3001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (64,31),(86,76) <|/box|>"
+ },
+ {
+  "file": "1898_IM-0581-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,24),(45,64) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,24),(85,64) <|/box|>"
+ },
+ {
+  "file": "2615_IM-1106-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (62,24),(71,34) <|/box|>"
+ },
+ {
+  "file": "2130_IM-0755-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (14,28),(40,76) <|/box|>"
+ },
+ {
+  "file": "2055_IM-0693-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,28),(40,62) <|/box|>"
+ },
+ {
+  "file": "3672_IM-1828-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (8,14),(45,75) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (58,14),(92,75) <|/box|>"
+ },
+ {
+  "file": "227_IM-0859-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,20),(47,76) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,20),(86,76) <|/box|>"
+ },
+ {
+  "file": "3245_IM-1537-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,14),(45,68) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (58,16),(86,68) <|/box|>"
+ },
+ {
+  "file": "804_IM-2338-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,14),(47,63) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,15),(86,65) <|/box|>"
+ },
+ {
+  "file": "2637_IM-1122-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (14,58),(34,76) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (65,52),(86,78) <|/box|>"
+ },
+ {
+  "file": "2082_IM-0714-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,8),(45,68) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (58,14),(88,68) <|/box|>"
+ },
+ {
+  "file": "1100_IM-0068-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (12,16),(45,62) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,16),(90,63) <|/box|>"
+ },
+ {
+  "file": "1102_IM-0069-12012.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (15,31),(37,64) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (55,31),(78,64) <|/box|>"
+ },
+ {
+  "file": "3811_IM-1921-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,50),(34,68) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (65,50),(80,68) <|/box|>"
+ },
+ {
+  "file": "925_IM-2425-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (14,16),(45,77) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (58,16),(92,77) <|/box|>"
+ },
+ {
+  "file": "2673_IM-1149-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,25),(45,72) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,25),(86,72) <|/box|>"
+ },
+ {
+  "file": "1506_IM-0330-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "3479_IM-1690-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,20),(45,58) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (58,20),(85,59) <|/box|>"
+ },
+ {
+  "file": "2396_IM-0945-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "1139_IM-0095-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,24),(45,73) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,24),(85,73) <|/box|>"
+ },
+ {
+  "file": "353_IM-1726-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (20,20),(46,64) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (60,20),(86,64) <|/box|>"
+ },
+ {
+  "file": "3884_IM-1971-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (15,14),(45,56) <|/box|> <|ref|> Pulmonary edema <|/ref|> <|box|> (60,15),(90,59) <|/box|>"
+ },
+ {
+  "file": "1375_IM-0241-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (64,31),(85,76) <|/box|>"
+ },
+ {
+  "file": "3880_IM-1968-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (34,28),(45,45) <|/box|>"
+ },
+ {
+  "file": "3111_IM-1461-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,28),(47,72) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,28),(86,72) <|/box|>"
+ },
+ {
+  "file": "2238_IM-0835-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "1244_IM-0166-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (64,28),(85,64) <|/box|>"
+ },
+ {
+  "file": "491_IM-2111-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (12,64),(20,72) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (78,64),(88,72) <|/box|>"
+ },
+ {
+  "file": "1112_IM-0078-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,24),(40,54) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,24),(80,54) <|/box|>"
+ },
+ {
+  "file": "554_IM-2155-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "177_IM-0503-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (34,14),(45,28) <|/box|>"
+ },
+ {
+  "file": "1636_IM-0415-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "3108_IM-1457-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "3857_IM-1952-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "2904_IM-1308-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "749_IM-2302-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "253_IM-1045-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "1909_IM-0590-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,50),(34,66) <|/box|>"
+ },
+ {
+  "file": "1582_IM-0378-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "91_IM-2415-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "459_IM-2090-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "830_IM-2358-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "1936_IM-0606-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "2957_IM-1354-1003.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (14,26),(34,64) <|/box|>"
+ },
+ {
+  "file": "1026_IM-0021-2002.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "1857_IM-0556-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "3679_IM-1831-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "3796_IM-1909-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "423_IM-2066-0001-0003.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (12,20),(38,54) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (59,20),(86,54) <|/box|>"
+ },
+ {
+  "file": "948_IM-2443-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "513_IM-2128-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "285_IM-1258-4004.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,20),(42,64) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,20),(81,64) <|/box|>"
+ },
+ {
+  "file": "465_IM-2093-0001-0002.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (15,26),(37,56) <|/box|>"
+ },
+ {
+  "file": "3870_IM-1963-4001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (8,34),(34,72) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (68,32),(90,72) <|/box|>"
+ },
+ {
+  "file": "3379_IM-1627-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "2207_IM-0815-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "2036_IM-0680-4001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (34,20),(45,34) <|/box|>"
+ },
+ {
+  "file": "3566_IM-1751-12012.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,50),(34,63) <|/box|>"
+ },
+ {
+  "file": "2608_IM-1098-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (20,48),(40,63) <|/box|>"
+ },
+ {
+  "file": "2610_IM-1101-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "1855_IM-0555-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "856_IM-2377-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (34,34),(45,48) <|/box|>"
+ },
+ {
+  "file": "1426_IM-0272-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "3619_IM-1791-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "1419_IM-0267-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "509_IM-2125-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (15,20),(45,72) <|/box|>"
+ },
+ {
+  "file": "3378_IM-1627-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "408_IM-2054-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (18,47),(34,63) <|/box|>"
+ },
+ {
+  "file": "650_IM-2228-4001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Pulmonary edema <|/ref|> <|box|> (24,24),(42,64) <|/box|>"
+ },
+ {
+  "file": "1819_IM-0530-1001-0001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,24),(46,54) <|/box|> <|ref|> pulmonary edema <|/ref|> <|box|> (60,24),(86,54) <|/box|>"
+ },
+ {
+  "file": "3370_IM-1622-2001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "945_IM-2440-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> pulmonary edema <|/ref|> <|box|> (20,8),(45,40) <|/box|>"
+ },
+ {
+  "file": "3728_IM-1864-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "204_IM-0683-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "334_IM-1600-1001.dcm.png",
+  "finding": "pulmonary edema",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No pulmonary edema detected."
+ },
+ {
+  "file": "3414_IM-1650-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (28,41),(44,52) <|/box|>"
+ },
+ {
+  "file": "1961_IM-0628-3001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,30),(74,41) <|/box|>"
+ },
+ {
+  "file": "2062_IM-0699-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,58),(76,71) <|/box|>"
+ },
+ {
+  "file": "2610_IM-1101-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (30,16),(41,28) <|/box|>"
+ },
+ {
+  "file": "1874_IM-0565-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,58),(40,70) <|/box|>"
+ },
+ {
+  "file": "3797_IM-1910-0001-0002.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,54),(40,63) <|/box|> <|ref|> Atelectasis <|/ref|> <|box|> (60,54),(85,65) <|/box|>"
+ },
+ {
+  "file": "945_IM-2440-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (64,14),(85,38) <|/box|>"
+ },
+ {
+  "file": "749_IM-2302-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (74,54),(85,64) <|/box|>"
+ },
+ {
+  "file": "715_IM-2277-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (5,54),(36,70) <|/box|>"
+ },
+ {
+  "file": "1360_IM-0234-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (20,55),(40,66) <|/box|> <|ref|> atelectasis <|/ref|> <|box|> (60,60),(85,76) <|/box|>"
+ },
+ {
+  "file": "2433_IM-0975-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (20,54),(40,63) <|/box|>"
+ },
+ {
+  "file": "2999_IM-1383-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (73,58),(90,72) <|/box|>"
+ },
+ {
+  "file": "1016_IM-0013-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (14,54),(34,64) <|/box|> <|ref|> Atelectasis <|/ref|> <|box|> (74,60),(85,68) <|/box|>"
+ },
+ {
+  "file": "1233_IM-0157-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (78,65),(89,73) <|/box|>"
+ },
+ {
+  "file": "3901_IM-1980-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,44),(34,54) <|/box|>"
+ },
+ {
+  "file": "1053_IM-0040-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (20,48),(40,62) <|/box|> <|ref|> atelectasis <|/ref|> <|box|> (70,44),(85,52) <|/box|>"
+ },
+ {
+  "file": "3891_IM-1973-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,48),(40,56) <|/box|> <|ref|> Atelectasis <|/ref|> <|box|> (60,50),(85,62) <|/box|>"
+ },
+ {
+  "file": "78_IM-2322-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (74,50),(90,60) <|/box|>"
+ },
+ {
+  "file": "3829_IM-1932-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (64,54),(73,65) <|/box|>"
+ },
+ {
+  "file": "2314_IM-0889-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (5,78),(25,87) <|/box|>"
+ },
+ {
+  "file": "411_IM-2056-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,54),(90,68) <|/box|>"
+ },
+ {
+  "file": "2246_IM-0843-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (78,64),(92,72) <|/box|>"
+ },
+ {
+  "file": "2276_IM-0863-1001-0002.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (64,64),(90,76) <|/box|>"
+ },
+ {
+  "file": "1919_IM-0598-3001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (14,50),(30,68) <|/box|>"
+ },
+ {
+  "file": "2055_IM-0693-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (54,47),(73,62) <|/box|>"
+ },
+ {
+  "file": "303_IM-1404-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,64),(90,76) <|/box|>"
+ },
+ {
+  "file": "2954_IM-1352-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (14,50),(40,66) <|/box|>"
+ },
+ {
+  "file": "304_IM-1413-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (64,64),(90,90) <|/box|>"
+ },
+ {
+  "file": "297_IM-1361-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (64,60),(90,76) <|/box|>"
+ },
+ {
+  "file": "3305_IM-1581-4001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (14,54),(40,68) <|/box|>"
+ },
+ {
+  "file": "201_IM-0660-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (28,48),(40,56) <|/box|>"
+ },
+ {
+  "file": "2074_IM-0708-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,54),(34,63) <|/box|>"
+ },
+ {
+  "file": "2046_IM-0688-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (5,47),(33,54) <|/box|>"
+ },
+ {
+  "file": "1867_IM-0560-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (59,64),(73,76) <|/box|>"
+ },
+ {
+  "file": "540_IM-2146-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (64,58),(85,71) <|/box|>"
+ },
+ {
+  "file": "2489_IM-1016-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (84,64),(92,72) <|/box|>"
+ },
+ {
+  "file": "1704_IM-0464-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (7,54),(23,60) <|/box|>"
+ },
+ {
+  "file": "1105_IM-0072-1001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (23,37),(34,40) <|/box|>"
+ },
+ {
+  "file": "2218_IM-0823-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,47),(76,56) <|/box|>"
+ },
+ {
+  "file": "28_IM-1231-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (73,50),(90,64) <|/box|>"
+ },
+ {
+  "file": "2165_IM-0781-0001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,48),(40,60) <|/box|> <|ref|> Atelectasis <|/ref|> <|box|> (60,48),(76,61) <|/box|>"
+ },
+ {
+  "file": "1819_IM-0530-1001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (64,32),(86,45) <|/box|>"
+ },
+ {
+  "file": "3562_IM-1747-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (78,54),(89,60) <|/box|>"
+ },
+ {
+  "file": "3508_IM-1710-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (26,10),(46,30) <|/box|>"
+ },
+ {
+  "file": "688_IM-2256-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,54),(85,64) <|/box|>"
+ },
+ {
+  "file": "3260_IM-1547-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (14,42),(40,56) <|/box|>"
+ },
+ {
+  "file": "2206_IM-0815-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "3415_IM-1650-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,58),(90,73) <|/box|>"
+ },
+ {
+  "file": "177_IM-0503-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,50),(40,65) <|/box|>"
+ },
+ {
+  "file": "1769_IM-0503-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": true,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,43),(90,64) <|/box|>"
+ },
+ {
+  "file": "554_IM-2155-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "3580_IM-1760-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "3495_IM-1700-3001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "1906_IM-0588-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (7,58),(34,68) <|/box|> <|ref|> atelectasis <|/ref|> <|box|> (54,58),(85,68) <|/box|>"
+ },
+ {
+  "file": "881_IM-2396-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,28),(23,32) <|/box|>"
+ },
+ {
+  "file": "3546_IM-1738-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (64,58),(76,71) <|/box|>"
+ },
+ {
+  "file": "1230_IM-0154-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (14,20),(44,70) <|/box|>"
+ },
+ {
+  "file": "379_IM-1903-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (20,48),(40,61) <|/box|>"
+ },
+ {
+  "file": "3116_IM-1464-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (74,58),(90,69) <|/box|>"
+ },
+ {
+  "file": "2637_IM-1122-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (78,76),(90,86) <|/box|>"
+ },
+ {
+  "file": "2259_IM-0850-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (33,28),(44,43) <|/box|>"
+ },
+ {
+  "file": "2301_IM-0881-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (28,42),(40,52) <|/box|>"
+ },
+ {
+  "file": "2183_IM-0794-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,64),(90,76) <|/box|>"
+ },
+ {
+  "file": "1911_IM-0593-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "2207_IM-0815-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (14,60),(20,68) <|/box|>"
+ },
+ {
+  "file": "1318_IM-0205-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (74,58),(84,64) <|/box|>"
+ },
+ {
+  "file": "2162_IM-0779-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (20,54),(40,65) <|/box|>"
+ },
+ {
+  "file": "2043_IM-0686-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,54),(34,63) <|/box|>"
+ },
+ {
+  "file": "1315_IM-0204-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "227_IM-0859-12012.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,50),(73,64) <|/box|>"
+ },
+ {
+  "file": "3248_IM-1538-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (10,48),(42,60) <|/box|> <|ref|> atelectasis <|/ref|> <|box|> (54,48),(85,60) <|/box|>"
+ },
+ {
+  "file": "2817_IM-1241-3001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,6),(40,22) <|/box|>"
+ },
+ {
+  "file": "364_IM-1804-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "2862_IM-1270-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "2321_IM-0894-3001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "401_IM-2051-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (18,45),(34,52) <|/box|>"
+ },
+ {
+  "file": "602_IM-2192-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "1936_IM-0606-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (34,28),(40,36) <|/box|>"
+ },
+ {
+  "file": "3870_IM-1963-4001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (14,50),(40,68) <|/box|> <|ref|> atelectasis <|/ref|> <|box|> (60,52),(85,68) <|/box|>"
+ },
+ {
+  "file": "3396_IM-1640-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (7,55),(38,68) <|/box|> <|ref|> atelectasis <|/ref|> <|box|> (74,54),(90,65) <|/box|>"
+ },
+ {
+  "file": "2593_IM-1084-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "1615_IM-0398-4004.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "564_IM-2165-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,24),(38,44) <|/box|>"
+ },
+ {
+  "file": "3245_IM-1537-4001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,50),(40,65) <|/box|>"
+ },
+ {
+  "file": "649_IM-2227-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,30),(86,64) <|/box|>"
+ },
+ {
+  "file": "2127_IM-0751-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (14,64),(30,72) <|/box|>"
+ },
+ {
+  "file": "2396_IM-0945-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (64,42),(76,52) <|/box|>"
+ },
+ {
+  "file": "3108_IM-1457-12001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "650_IM-2228-4001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (22,50),(43,72) <|/box|>"
+ },
+ {
+  "file": "3848_IM-1946-1001-0001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (54,50),(86,73) <|/box|>"
+ },
+ {
+  "file": "550_IM-2154-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (64,50),(73,64) <|/box|>"
+ },
+ {
+  "file": "1503_IM-0329-5001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "830_IM-2358-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,50),(34,63) <|/box|>"
+ },
+ {
+  "file": "1697_IM-0458-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (32,44),(42,56) <|/box|>"
+ },
+ {
+  "file": "3694_IM-1845-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "1691_IM-0453-4001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (70,41),(85,50) <|/box|>"
+ },
+ {
+  "file": "1125_IM-0082-2001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 2,
+  "response": "<|ref|> atelectasis <|/ref|> <|box|> (7,70),(34,85) <|/box|> <|ref|> atelectasis <|/ref|> <|box|> (74,69),(94,85) <|/box|>"
+ },
+ {
+  "file": "3560_IM-1745-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (20,60),(34,71) <|/box|>"
+ },
+ {
+  "file": "3529_IM-1725-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": false,
+  "n_boxes": 0,
+  "response": "No atelectasis detected."
+ },
+ {
+  "file": "3801_IM-1912-1001.dcm.png",
+  "finding": "atelectasis",
+  "truth": false,
+  "boxed": true,
+  "n_boxes": 1,
+  "response": "<|ref|> Atelectasis <|/ref|> <|box|> (78,61),(89,72) <|/box|>"
+ }
+]
