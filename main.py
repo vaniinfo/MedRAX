@@ -17,6 +17,43 @@ logging.set_verbosity_error()
 _ = load_dotenv()
 
 
+DIRECTORS = ["gpt-4o", "qwen"]
+
+
+def get_director(name, ollama_model=None):
+    """Return the model name and OpenAI client kwargs for the director LLM.
+
+    Both directors go through ChatOpenAI: GPT-4o via the OpenAI API, Qwen via Ollama's
+    OpenAI-compatible endpoint.
+
+    Args:
+        name (str): "gpt-4o" or "qwen"
+        ollama_model (str, optional): Ollama model tag for "qwen". Defaults to the
+            OLLAMA_MODEL env var, then "qwen3-vl:8b" (~7 GB, fits on a 24 GB GPU next to
+            CheXagent; qwen3.8:latest needs ~16 GB and does not).
+
+    Returns:
+        Tuple[str, dict]: Model name and openai_kwargs for initialize_agent
+    """
+    if name == "gpt-4o":
+        openai_kwargs = {}
+        if api_key := os.getenv("OPENAI_API_KEY"):
+            openai_kwargs["api_key"] = api_key
+        if base_url := os.getenv("OPENAI_BASE_URL"):
+            openai_kwargs["base_url"] = base_url
+        return "gpt-4o", openai_kwargs
+
+    if name == "qwen":
+        model = ollama_model or os.getenv("OLLAMA_MODEL", "qwen3-vl:8b")
+        openai_kwargs = {
+            "base_url": os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1"),
+            "api_key": "ollama",  # Ollama ignores the key, but the client requires one
+        }
+        return model, openai_kwargs
+
+    raise ValueError(f"Unknown director {name!r}, expected one of {DIRECTORS}")
+
+
 def initialize_agent(
     prompt_file,
     tools_to_use=None,
@@ -26,7 +63,8 @@ def initialize_agent(
     model="chatgpt-4o-latest",
     temperature=0.7,
     top_p=0.95,
-    openai_kwargs={}
+    openai_kwargs={},
+    edv="off",
 ):
     """Initialize the MedRAX agent with specified tools and configuration.
 
@@ -40,6 +78,8 @@ def initialize_agent(
         temperature (float, optional): Temperature for the model. Defaults to 0.7.
         top_p (float, optional): Top P for the model. Defaults to 0.95.
         openai_kwargs (dict, optional): Additional keyword arguments for OpenAI API, such as API key and base URL.
+        edv (str, optional): Evidence validation mode: "off", "cxragent" (final responder
+            decides) or "advisory" (critiques shown only). Defaults to "off".
 
     Returns:
         Tuple[Agent, Dict[str, BaseTool]]: Initialized agent and dictionary of tool instances
@@ -51,7 +91,7 @@ def initialize_agent(
         "ChestXRayClassifierTool": lambda: ChestXRayClassifierTool(device=device),
         "ChestXRaySegmentationTool": lambda: ChestXRaySegmentationTool(device=device),
         "LlavaMedTool": lambda: LlavaMedTool(cache_dir=model_dir, device=device, load_in_8bit=True),
-        "XRayVQATool": lambda: XRayVQATool(cache_dir=model_dir, device=device),
+        "XRayVQATool": lambda: XRayVQATool(cache_dir=model_dir, device=device, temp_dir=temp_dir),
         "ChestXRayReportGeneratorTool": lambda: ChestXRayReportGeneratorTool(
             cache_dir=model_dir, device=device
         ),
@@ -81,6 +121,7 @@ def initialize_agent(
         log_dir="logs",
         system_prompt=prompt,
         checkpointer=checkpointer,
+        edv=edv,
     )
 
     print("Agent initialized")
