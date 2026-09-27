@@ -1,2 +1,4 @@
 # Frozen experiment artifacts are checksummed: store them byte-for-byte, no line-ending conversion
 experiments/results/** -text
+# Evidence Engine parameters and specification are checksummed: store byte-for-byte
+medrax/evidence/** -text
