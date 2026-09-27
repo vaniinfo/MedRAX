@@ -10,8 +10,7 @@ if __name__ == "__main__":
 
     The director LLM can be GPT-4o (OpenAI) or Qwen (local Ollama):
         python run_vqa.py                                   # GPT-4o
-        python run_vqa.py --director qwen                   # qwen3-vl:8b on Ollama
-        python run_vqa.py --director qwen --ollama-model qwen3.8:latest  # needs ~16 GB GPU
+        python run_vqa.py --director qwen                   # qwen3.8:latest on Ollama
         python run_vqa.py --director qwen --no-image        # director never sees the X-ray
         python run_vqa.py --director qwen --edv advisory    # show evidence critiques only
         python run_vqa.py --director qwen --edv cxragent    # critiques + final responder (CXRAgent)
@@ -27,7 +26,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--ollama-model",
         default=None,
-        help="Ollama model tag for --director qwen (default: OLLAMA_MODEL or qwen3-vl:8b)",
+        help="Ollama model tag for --director qwen (default: OLLAMA_MODEL or qwen3.8:latest)",
     )
     parser.add_argument(
         "--no-image",

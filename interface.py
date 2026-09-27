@@ -8,6 +8,44 @@ from typing import AsyncGenerator, List, Optional, Tuple
 from gradio import ChatMessage
 
 
+# The critique sometimes restates the requested format before its content
+_FORMAT_HEADER = re.compile(
+    r"\[Conclusion\]\s*—\s*\[Supporting Evidence\]\s*—\s*\[Refuting Evidence\]\s*—\s*"
+    r"\[Credibility Evaluation\]\s*",
+    re.IGNORECASE,
+)
+_EVIDENCE_LABEL = re.compile(
+    r"\s*(?:—\s*)?\[?\s*(supporting|refuting)\s+evidence\s*\]?\s*(?:—|:)?\s*",
+    re.IGNORECASE,
+)
+
+
+# Section labels of the radiologist-style critique, shown as headings
+_REPORT_SECTION = re.compile(
+    r"^[ \t]*\**(Conclusion|Supportive|Refuting|Confidence)\**[ \t]*:?\**[ \t]*",
+    re.IGNORECASE | re.MULTILINE,
+)
+
+
+def format_evidence(text: str) -> str:
+    """Put "Supporting evidence" / "Refuting evidence" labels on their own line in bold.
+
+    The EDV critique and the summaries write these labels in several forms
+    ("[Supporting Evidence] —", "— Supporting Evidence:", "Supporting evidence:").
+    Display only; the text given to the models and the logs is unchanged.
+    """
+    formatted = _EVIDENCE_LABEL.sub(
+        lambda m: f"\n\n**{m.group(1).capitalize()} evidence:** ", _FORMAT_HEADER.sub("", text)
+    )
+    # Drop labels left with no text, e.g. where the model restated the format header
+    formatted = re.sub(r"\*\*\w+ evidence:\*\*\s*(?=\n\n\*\*)", "", formatted)
+    # Radiologist-style sections: bold heading on its own line, text below
+    formatted = _REPORT_SECTION.sub(
+        lambda m: f"\n\n**{m.group(1).capitalize()}**\n\n", formatted
+    )
+    return re.sub(r"\n{3,}", "\n\n", formatted).strip()
+
+
 class ChatInterface:
     """
     A chat interface for interacting with a medical AI agent through Gradio.
@@ -174,7 +212,7 @@ class ChatInterface:
                         ai_message = event["process"]["messages"][-1]
                         content = ai_message.content
                         if content:
-                            content = re.sub(r"temp/[^\s]*", "", content)
+                            content = format_evidence(re.sub(r"temp/[^\s]*", "", content))
                             metadata = None
                             # With EDV, the director's closing answer is replaced by the
                             # final responder's; keep it visible but collapsed
@@ -192,7 +230,9 @@ class ChatInterface:
                             yield chat_history, self.display_file_path, ""
 
                     elif "respond" in event:
-                        content = re.sub(r"temp/[^\s]*", "", event["respond"]["messages"][-1].content)
+                        content = format_evidence(
+                            re.sub(r"temp/[^\s]*", "", event["respond"]["messages"][-1].content)
+                        )
                         chat_history.append(ChatMessage(role="assistant", content=content))
                         yield chat_history, self.display_file_path, ""
 
@@ -200,7 +240,12 @@ class ChatInterface:
                         notes = {n["tool_call_id"]: n for n in event["execute"].get("edv_notes", [])}
                         for message in event["execute"]["messages"]:
                             tool_name = message.name
-                            tool_result = eval(message.content)[0]
+                            # The raw result is in the artifact when the content also holds
+                            # an EDV critique ("inline" mode)
+                            if message.artifact is not None:
+                                tool_result = message.artifact[0]
+                            else:
+                                tool_result = eval(message.content)[0]
 
                             # image_visualizer only re-displays an image; skip it if this
                             # reply already showed that image (e.g. a grounding visualization)
@@ -254,7 +299,7 @@ class ChatInterface:
                                 chat_history.append(
                                     ChatMessage(
                                         role="assistant",
-                                        content=note["explanation"],
+                                        content=format_evidence(note["explanation"]),
                                         metadata={"title": f"🔎 Evidence validation: {tool_name}"},
                                     )
                                 )

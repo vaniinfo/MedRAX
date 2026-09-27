@@ -104,11 +104,14 @@ class XRayVQATool(BaseTool):
             trust_remote_code=True,
             cache_dir=cache_dir,
         )
+        # Load straight in self.dtype: loading in float32 first leaves ~12 GB reserved by
+        # PyTorch's allocator even after the conversion below
         self.model = AutoModelForCausalLM.from_pretrained(
             model_name,
             device_map=self.device,
             trust_remote_code=True,
             cache_dir=cache_dir,
+            torch_dtype=self.dtype,
         )
         self.model = self.model.to(dtype=self.dtype)
         self.model.eval()
@@ -329,6 +332,55 @@ class XRayVQATool(BaseTool):
                 _, yes_no = self._generate_response([image_path], f"Is there {phrase}?", 8)
                 p_by_phrase[phrase] = yes_no["p_yes"] if yes_no else None
             entry["p_present"] = p_by_phrase.get(phrase)
+
+    def locate_findings(
+        self, image_path: str, findings: List[str]
+    ) -> Tuple[List[Dict[str, Any]], Optional[str]]:
+        """Visual proof for findings named by another model: box each one on the image.
+
+        Each finding gets a "Please locate the following phrase: <finding>" call. Findings
+        the model does not box are reported as not localized rather than guessed. A box the
+        model labels as a different finding is not counted, and p_present always scores
+        the finding that was asked about.
+
+        Args:
+            image_path: Path to the chest X-ray
+            findings: Short finding phrases, e.g. ["pneumonia", "pleural effusion"]
+        Returns:
+            Tuple of per-finding results ({"finding", "localized", "boxes"}) and the path to
+            an image with all boxes drawn, or None if nothing was localized
+        """
+        results, all_boxes = [], []
+        for finding in findings:
+            response, _ = self._generate_response(
+                [image_path], f"Please locate the following phrase: {finding}", 128
+            )
+            _, boxes = self._parse_grounding(response)
+
+            # The model sometimes boxes a different finding than the one asked about
+            # (e.g. "Pneumothorax" for "pneumonia"); such a box is no evidence for it
+            key = finding.strip().lower()
+            matching, substituted = [], []
+            for box in boxes:
+                label = (box["phrase"] or finding).strip().lower()
+                (matching if key in label or label in key else substituted).append(box)
+
+            if matching:
+                # Score the finding that was asked about, not the model's label: the label
+                # can be a different finding, and even its capitalization shifts the score
+                _, yes_no = self._generate_response([image_path], f"Is there {finding}?", 8)
+                for box in matching:
+                    box["phrase"] = finding
+                    box["p_present"] = yes_no["p_yes"] if yes_no else None
+                all_boxes.extend(matching)
+
+            result = {"finding": finding, "localized": bool(matching), "boxes": matching}
+            if substituted:
+                result["substituted_labels"] = sorted({b["phrase"] for b in substituted})
+            results.append(result)
+
+        viz_path = self._visualize_boxes(image_path, all_boxes) if all_boxes else None
+        return results, viz_path
 
     def _run(
         self,

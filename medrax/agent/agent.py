@@ -76,6 +76,7 @@ class Agent:
         log_tools: bool = True,
         log_dir: Optional[str] = "logs",
         edv: str = "off",
+        edv_style: str = "cxragent",
     ):
         """
         Initialize the Agent.
@@ -93,15 +94,20 @@ class Agent:
                 "cxragent": a final responder writes the answer from the critiques.
                 "advisory": critiques are shown and logged only; the director's answer
                 stands, so the critic cannot overturn the specialist tool.
+                "inline": each tool result reaches the director together with its
+                critique, and the director summarizes both.
                 Defaults to "off".
+            edv_style (str, optional): Critique prompt: "cxragent" (verbatim) or
+                "radiologist" (Conclusion / Supportive / Refuting / Confidence).
         """
-        if edv not in ("off", "cxragent", "advisory"):
+        if edv not in ("off", "cxragent", "advisory", "inline"):
             raise ValueError(f"Unknown edv mode {edv!r}")
         self.system_prompt = system_prompt
         self.log_tools = log_tools
         self.edv = edv != "off"
         self.edv_respond = edv == "cxragent"
-        self.validator = EvidenceValidator(model) if self.edv else None
+        self.edv_inline = edv == "inline"
+        self.validator = EvidenceValidator(model, style=edv_style) if self.edv else None
 
         if self.log_tools:
             self.log_path = Path(log_dir or "logs")
@@ -218,17 +224,10 @@ class Agent:
             else:
                 result = self.tools[call["name"]].invoke(call["args"])
 
-            results.append(
-                ToolMessage(
-                    tool_call_id=call["id"],
-                    name=call["name"],
-                    args=call["args"],
-                    content=str(result),
-                )
-            )
-
+            note = None
             # Forced EDV: every successful clinical tool result is critiqued. The critique
-            # is kept out of the director's messages, as in CXRAgent.
+            # is kept out of the director's messages, as in CXRAgent, except in "inline"
+            # mode, where the director summarizes the tool result and its critique.
             if self.edv and valid and call["name"] not in EDV_SKIP_TOOLS:
                 image_paths = call["args"].get("image_paths") or [
                     p for p in [call["args"].get("image_path")] if p
@@ -241,6 +240,28 @@ class Agent:
                     note["explanation"] = "Evidence validation skipped due to error."
                 note["note"] = self.validator.note(str(result), note["explanation"])
                 notes.append(note)
+
+            if note and self.edv_inline:
+                # Director sees the result with its critique; the raw result stays in the
+                # artifact for the UI and the log
+                results.append(
+                    ToolMessage(
+                        tool_call_id=call["id"],
+                        name=call["name"],
+                        args=call["args"],
+                        content=note["note"],
+                        artifact=result,
+                    )
+                )
+            else:
+                results.append(
+                    ToolMessage(
+                        tool_call_id=call["id"],
+                        name=call["name"],
+                        args=call["args"],
+                        content=str(result),
+                    )
+                )
 
         self._save_tool_calls(results, notes)
         print("Returning to model processing!")
@@ -270,7 +291,8 @@ class Agent:
                 "tool_call_id": call.tool_call_id,
                 "name": call.name,
                 "args": call.args,
-                "content": call.content,
+                # Raw tool result (in "inline" EDV mode the content also holds the critique)
+                "content": str(call.artifact) if call.artifact is not None else call.content,
                 "timestamp": datetime.now().isoformat(),
             }
             if call.tool_call_id in notes_by_id:

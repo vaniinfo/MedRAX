@@ -33,6 +33,33 @@ EXPLAIN_PROMPT = (
     "[Conclusion] — [Supporting Evidence] — [Refuting Evidence] — [Credibility Evaluation]"
 )
 
+# Not CXRAgent: a critique written the way a radiologist reports. Supportive signs are named
+# radiographic signs; Refuting states evidence against the conclusion itself and then the
+# signs that rule out the main alternative explanations; confidence is split between the
+# imaging finding and its cause. Every sign must be visible, since a model asked for named
+# signs will otherwise supply them.
+RADIOLOGIST_PROMPT = (
+    "You are a radiologist validating another model's reading of a chest X-ray. You are "
+    "given the X-ray and the model's result. Boxes in the result are [x1, y1, x2, y2] in "
+    "percent of image width and height; the left of the image is the patient's right.\n"
+    "Write exactly these four sections, each starting on a new line with its label:\n"
+    "Conclusion: one sentence stating the finding, its location (patient side, lobe or "
+    "zone) and its most likely cause, as supported by the image. If the image does not "
+    "support the model's claim, say so here.\n"
+    "Supportive: the named radiographic signs visible on this image that support the "
+    "finding and its location (for example air bronchograms, silhouette sign, distribution "
+    "of the opacity).\n"
+    "Refuting: first, any visible sign that argues against the conclusion itself, or "
+    "'None seen'. Then, for each main alternative explanation (such as atelectasis, "
+    "pleural effusion, pulmonary edema, mass), the visible sign that argues against it.\n"
+    "Confidence: two levels, each High, Medium or Low with a short reason: one for the "
+    "presence and location of the imaging finding, one for its cause. State that the "
+    "cause needs clinical correlation where it does.\n"
+    "Rules: cite only signs you can actually see on this image. If a sign cannot be "
+    "assessed on this image, say 'not assessable' rather than guessing. Do not restate "
+    "the model's scores. Be concise, in the style of a radiology report."
+)
+
 RESPONDER_PROMPT = """
 As the final responder, you need to review the tool call results and team results in the history record. Other information can serve as reference, but you must make the most accurate judgment. Do not mention any tools or other conclusions. Please provide the final result.
         """
@@ -52,14 +79,21 @@ def _image_parts(image_paths: List[str]) -> List[Dict]:
 class EvidenceValidator:
     """Runs CXRAgent's per-tool-result critique and its final responder."""
 
-    def __init__(self, model: BaseLanguageModel, max_tokens_explain: int = 600):
+    def __init__(
+        self, model: BaseLanguageModel, max_tokens_explain: int = 600, style: str = "cxragent"
+    ):
         """
         Args:
             model: Chat model without tools bound (the director's model)
             max_tokens_explain: Token budget for each critique, as in CXRAgent
+            style: "cxragent" (CXRAgent's prompt, verbatim) or "radiologist"
+                (Conclusion / Supportive / Refuting / Confidence, report style)
         """
+        if style not in ("cxragent", "radiologist"):
+            raise ValueError(f"Unknown critique style {style!r}")
         self.model = model
         self.max_tokens_explain = max_tokens_explain
+        self.prompt = RADIOLOGIST_PROMPT if style == "radiologist" else EXPLAIN_PROMPT
 
     def explain(self, tool_result: str, image_paths: List[str]) -> str:
         """Critique one tool result against the images (CXRAgent `_explain_func`)."""
@@ -67,7 +101,7 @@ class EvidenceValidator:
             {"type": "text", "text": "Tool result: " + tool_result}
         ]
         response = self.model.invoke(
-            [SystemMessage(content=EXPLAIN_PROMPT), HumanMessage(content=content)],
+            [SystemMessage(content=self.prompt), HumanMessage(content=content)],
             max_tokens=self.max_tokens_explain,
         )
         return response.content

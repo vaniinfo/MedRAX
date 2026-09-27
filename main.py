@@ -29,8 +29,9 @@ def get_director(name, ollama_model=None):
     Args:
         name (str): "gpt-4o" or "qwen"
         ollama_model (str, optional): Ollama model tag for "qwen". Defaults to the
-            OLLAMA_MODEL env var, then "qwen3-vl:8b" (~7 GB, fits on a 24 GB GPU next to
-            CheXagent; qwen3.8:latest needs ~16 GB and does not).
+            OLLAMA_MODEL env var, then "qwen3.8:latest" (27B, ~16 GB; fits on a 24 GB GPU
+            next to CheXagent loaded in bf16). Also used as the EDV validator, where the
+            smaller qwen3-vl:8b invented findings on a normal film.
 
     Returns:
         Tuple[str, dict]: Model name and openai_kwargs for initialize_agent
@@ -44,7 +45,7 @@ def get_director(name, ollama_model=None):
         return "gpt-4o", openai_kwargs
 
     if name == "qwen":
-        model = ollama_model or os.getenv("OLLAMA_MODEL", "qwen3-vl:8b")
+        model = ollama_model or os.getenv("OLLAMA_MODEL", "qwen3.8:latest")
         openai_kwargs = {
             "base_url": os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1"),
             "api_key": "ollama",  # Ollama ignores the key, but the client requires one
@@ -65,6 +66,8 @@ def initialize_agent(
     top_p=0.95,
     openai_kwargs={},
     edv="off",
+    prompt_name="MEDICAL_ASSISTANT",
+    edv_style="cxragent",
 ):
     """Initialize the MedRAX agent with specified tools and configuration.
 
@@ -79,19 +82,34 @@ def initialize_agent(
         top_p (float, optional): Top P for the model. Defaults to 0.95.
         openai_kwargs (dict, optional): Additional keyword arguments for OpenAI API, such as API key and base URL.
         edv (str, optional): Evidence validation mode: "off", "cxragent" (final responder
-            decides) or "advisory" (critiques shown only). Defaults to "off".
+            decides), "advisory" (critiques shown only) or "inline" (director summarizes
+            each result with its critique). Defaults to "off".
+        prompt_name (str, optional): Section of the prompt file to use as the director's
+            system prompt. Defaults to "MEDICAL_ASSISTANT".
+        edv_style (str, optional): Critique prompt: "cxragent" (verbatim) or "radiologist"
+            (Conclusion / Supportive / Refuting / Confidence). Defaults to "cxragent".
 
     Returns:
         Tuple[Agent, Dict[str, BaseTool]]: Initialized agent and dictionary of tool instances
     """
     prompts = load_prompts_from_file(prompt_file)
-    prompt = prompts["MEDICAL_ASSISTANT"]
+    prompt = prompts[prompt_name]
+
+    model = ChatOpenAI(model=model, temperature=temperature, top_p=top_p, **openai_kwargs)
+
+    # CheXagent is used both as a tool and as MedGemma's visual-proof locator; load it once
+    shared = {}
+
+    def chexagent():
+        if "chexagent" not in shared:
+            shared["chexagent"] = XRayVQATool(cache_dir=model_dir, device=device, temp_dir=temp_dir)
+        return shared["chexagent"]
 
     all_tools = {
         "ChestXRayClassifierTool": lambda: ChestXRayClassifierTool(device=device),
         "ChestXRaySegmentationTool": lambda: ChestXRaySegmentationTool(device=device),
         "LlavaMedTool": lambda: LlavaMedTool(cache_dir=model_dir, device=device, load_in_8bit=True),
-        "XRayVQATool": lambda: XRayVQATool(cache_dir=model_dir, device=device, temp_dir=temp_dir),
+        "XRayVQATool": chexagent,
         "ChestXRayReportGeneratorTool": lambda: ChestXRayReportGeneratorTool(
             cache_dir=model_dir, device=device
         ),
@@ -103,6 +121,9 @@ def initialize_agent(
         ),
         "ImageVisualizerTool": lambda: ImageVisualizerTool(),
         "DicomProcessorTool": lambda: DicomProcessorTool(temp_dir=temp_dir),
+        # The director's model lists MedGemma's findings; MedGemma alone follows the
+        # extraction rules unreliably
+        "MedGemmaTool": lambda: MedGemmaTool(locator=chexagent(), extractor=model),
     }
 
     # Initialize only selected tools or all if none specified
@@ -113,7 +134,6 @@ def initialize_agent(
             tools_dict[tool_name] = all_tools[tool_name]()
 
     checkpointer = MemorySaver()
-    model = ChatOpenAI(model=model, temperature=temperature, top_p=top_p, **openai_kwargs)
     agent = Agent(
         model,
         tools=list(tools_dict.values()),
@@ -122,6 +142,7 @@ def initialize_agent(
         system_prompt=prompt,
         checkpointer=checkpointer,
         edv=edv,
+        edv_style=edv_style,
     )
 
     print("Agent initialized")
