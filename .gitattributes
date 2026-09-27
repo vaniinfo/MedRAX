@@ -1,0 +1,2 @@
+# Frozen experiment artifacts are checksummed: store them byte-for-byte, no line-ending conversion
+experiments/results/** -text

@@ -1,0 +1,67 @@
+{
+ "created": "2026-09-27T11:14:48",
+ "seed": 20260927,
+ "dev_images": 381,
+ "findings": {
+  "cardiomegaly": {
+   "threshold": 0.443,
+   "dev_youden_j": 0.7063,
+   "platt": {
+    "coef": 0.8593329351491763,
+    "intercept": -0.7116785100096138
+   },
+   "dev_pos": 115,
+   "dev_neg": 266
+  },
+  "pleural effusion": {
+   "threshold": 0.556,
+   "dev_youden_j": 0.7543,
+   "platt": {
+    "coef": 1.0668774063823072,
+    "intercept": -1.0023211780587025
+   },
+   "dev_pos": 84,
+   "dev_neg": 297
+  },
+  "pneumothorax": {
+   "threshold": 0.119,
+   "dev_youden_j": 0.8418,
+   "platt": {
+    "coef": 1.378427450539917,
+    "intercept": -0.09059375423063148
+   },
+   "dev_pos": 20,
+   "dev_neg": 361
+  },
+  "consolidation": {
+   "threshold": 0.237,
+   "dev_youden_j": 0.3758,
+   "platt": {
+    "coef": 0.5071370379400804,
+    "intercept": -0.55596240873972
+   },
+   "dev_pos": 76,
+   "dev_neg": 305
+  },
+  "pulmonary edema": {
+   "threshold": 0.368,
+   "dev_youden_j": 0.6979,
+   "platt": {
+    "coef": 0.7294518761873668,
+    "intercept": -1.3767136295419844
+   },
+   "dev_pos": 31,
+   "dev_neg": 350
+  },
+  "atelectasis": {
+   "threshold": 0.448,
+   "dev_youden_j": 0.496,
+   "platt": {
+    "coef": 0.7536728581627271,
+    "intercept": -0.8114294499692055
+   },
+   "dev_pos": 113,
+   "dev_neg": 268
+  }
+ }
+}

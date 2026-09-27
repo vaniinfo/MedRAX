@@ -1,0 +1,8406 @@
+{
+ "seed": 20260928,
+ "n": 600,
+ "images": [
+  {
+   "file": "00014081_002.png",
+   "patient": 14081,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021869_000.png",
+   "patient": 21869,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001719_006.png",
+   "patient": 1719,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016280_004.png",
+   "patient": 16280,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020349_008.png",
+   "patient": 20349,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00029991_006.png",
+   "patient": 29991,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025781_003.png",
+   "patient": 25781,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022572_049.png",
+   "patient": 22572,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027782_008.png",
+   "patient": 27782,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016624_000.png",
+   "patient": 16624,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016036_004.png",
+   "patient": 16036,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009640_004.png",
+   "patient": 9640,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00020333_002.png",
+   "patient": 20333,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015895_008.png",
+   "patient": 15895,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017961_012.png",
+   "patient": 17961,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019001_003.png",
+   "patient": 19001,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009234_001.png",
+   "patient": 9234,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018251_007.png",
+   "patient": 18251,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009305_003.png",
+   "patient": 9305,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004893_066.png",
+   "patient": 4893,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00009876_002.png",
+   "patient": 9876,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015205_001.png",
+   "patient": 15205,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017174_004.png",
+   "patient": 17174,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022466_003.png",
+   "patient": 22466,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011547_000.png",
+   "patient": 11547,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005026_014.png",
+   "patient": 5026,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006981_005.png",
+   "patient": 6981,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004832_022.png",
+   "patient": 4832,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016837_006.png",
+   "patient": 16837,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014982_000.png",
+   "patient": 14982,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00029526_008.png",
+   "patient": 29526,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00023325_003.png",
+   "patient": 23325,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026810_010.png",
+   "patient": 26810,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012094_004.png",
+   "patient": 12094,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025421_002.png",
+   "patient": 25421,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015588_001.png",
+   "patient": 15588,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020094_004.png",
+   "patient": 20094,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014022_028.png",
+   "patient": 14022,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027045_002.png",
+   "patient": 27045,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009321_016.png",
+   "patient": 9321,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012592_000.png",
+   "patient": 12592,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006233_003.png",
+   "patient": 6233,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003490_015.png",
+   "patient": 3490,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028803_002.png",
+   "patient": 28803,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028939_010.png",
+   "patient": 28939,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006425_027.png",
+   "patient": 6425,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022237_023.png",
+   "patient": 22237,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00027213_060.png",
+   "patient": 27213,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010294_021.png",
+   "patient": 10294,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013875_006.png",
+   "patient": 13875,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018705_004.png",
+   "patient": 18705,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018574_020.png",
+   "patient": 18574,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006051_001.png",
+   "patient": 6051,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028499_004.png",
+   "patient": 28499,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027938_008.png",
+   "patient": 27938,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010475_016.png",
+   "patient": 10475,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014106_008.png",
+   "patient": 14106,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018104_005.png",
+   "patient": 18104,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026204_015.png",
+   "patient": 26204,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018224_014.png",
+   "patient": 18224,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00029009_002.png",
+   "patient": 29009,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017603_019.png",
+   "patient": 17603,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025062_001.png",
+   "patient": 25062,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015799_006.png",
+   "patient": 15799,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002224_005.png",
+   "patient": 2224,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005579_007.png",
+   "patient": 5579,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010531_045.png",
+   "patient": 10531,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00021970_002.png",
+   "patient": 21970,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009508_003.png",
+   "patient": 9508,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028357_030.png",
+   "patient": 28357,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002412_000.png",
+   "patient": 2412,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014362_003.png",
+   "patient": 14362,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017070_001.png",
+   "patient": 17070,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012878_001.png",
+   "patient": 12878,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027657_023.png",
+   "patient": 27657,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000376_008.png",
+   "patient": 376,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00004034_004.png",
+   "patient": 4034,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00005944_001.png",
+   "patient": 5944,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00021547_001.png",
+   "patient": 21547,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025294_002.png",
+   "patient": 25294,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004381_031.png",
+   "patient": 4381,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010350_023.png",
+   "patient": 10350,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014298_002.png",
+   "patient": 14298,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015953_004.png",
+   "patient": 15953,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017365_004.png",
+   "patient": 17365,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010773_007.png",
+   "patient": 10773,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021840_008.png",
+   "patient": 21840,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00012620_007.png",
+   "patient": 12620,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008298_001.png",
+   "patient": 8298,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017852_038.png",
+   "patient": 17852,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019085_004.png",
+   "patient": 19085,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006829_007.png",
+   "patient": 6829,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010203_005.png",
+   "patient": 10203,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015414_011.png",
+   "patient": 15414,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006481_014.png",
+   "patient": 6481,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00023138_012.png",
+   "patient": 23138,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013881_002.png",
+   "patient": 13881,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004591_004.png",
+   "patient": 4591,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013888_003.png",
+   "patient": 13888,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019328_013.png",
+   "patient": 19328,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005600_005.png",
+   "patient": 5600,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00021277_020.png",
+   "patient": 21277,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015081_003.png",
+   "patient": 15081,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025556_004.png",
+   "patient": 25556,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016991_008.png",
+   "patient": 16991,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009932_001.png",
+   "patient": 9932,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027725_025.png",
+   "patient": 27725,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010007_059.png",
+   "patient": 10007,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013941_002.png",
+   "patient": 13941,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011835_001.png",
+   "patient": 11835,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016399_020.png",
+   "patient": 16399,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018606_005.png",
+   "patient": 18606,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012635_014.png",
+   "patient": 12635,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028281_001.png",
+   "patient": 28281,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011757_004.png",
+   "patient": 11757,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008269_006.png",
+   "patient": 8269,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020629_009.png",
+   "patient": 20629,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027105_001.png",
+   "patient": 27105,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015770_037.png",
+   "patient": 15770,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017111_004.png",
+   "patient": 17111,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028454_016.png",
+   "patient": 28454,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027355_003.png",
+   "patient": 27355,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014715_015.png",
+   "patient": 14715,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002505_019.png",
+   "patient": 2505,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007018_033.png",
+   "patient": 7018,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014141_001.png",
+   "patient": 14141,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014717_002.png",
+   "patient": 14717,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014888_019.png",
+   "patient": 14888,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002058_021.png",
+   "patient": 2058,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019889_002.png",
+   "patient": 19889,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001685_000.png",
+   "patient": 1685,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009378_010.png",
+   "patient": 9378,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019994_002.png",
+   "patient": 19994,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014034_009.png",
+   "patient": 14034,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00021201_070.png",
+   "patient": 21201,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00001836_119.png",
+   "patient": 1836,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00026818_017.png",
+   "patient": 26818,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015355_008.png",
+   "patient": 15355,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017236_074.png",
+   "patient": 17236,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004508_014.png",
+   "patient": 4508,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012156_003.png",
+   "patient": 12156,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022402_000.png",
+   "patient": 22402,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007735_050.png",
+   "patient": 7735,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011579_004.png",
+   "patient": 11579,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00001971_002.png",
+   "patient": 1971,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019208_003.png",
+   "patient": 19208,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021835_018.png",
+   "patient": 21835,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012082_000.png",
+   "patient": 12082,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00030068_003.png",
+   "patient": 30068,
+   "view": "PA",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00026860_004.png",
+   "patient": 26860,
+   "view": "AP",
+   "selected_for": "pulmonary edema",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00017431_000.png",
+   "patient": 17431,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002130_000.png",
+   "patient": 2130,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017467_000.png",
+   "patient": 17467,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00019743_000.png",
+   "patient": 19743,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00001781_001.png",
+   "patient": 1781,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010648_002.png",
+   "patient": 10648,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000061_023.png",
+   "patient": 61,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008850_010.png",
+   "patient": 8850,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016918_007.png",
+   "patient": 16918,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005332_000.png",
+   "patient": 5332,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008347_008.png",
+   "patient": 8347,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021127_002.png",
+   "patient": 21127,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00023156_002.png",
+   "patient": 23156,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00017921_000.png",
+   "patient": 17921,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003538_000.png",
+   "patient": 3538,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00027383_003.png",
+   "patient": 27383,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00028394_000.png",
+   "patient": 28394,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020398_006.png",
+   "patient": 20398,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008903_004.png",
+   "patient": 8903,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00023296_003.png",
+   "patient": 23296,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004399_001.png",
+   "patient": 4399,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010447_009.png",
+   "patient": 10447,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016679_000.png",
+   "patient": 16679,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00026098_019.png",
+   "patient": 26098,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026088_000.png",
+   "patient": 26088,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014705_001.png",
+   "patient": 14705,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010647_004.png",
+   "patient": 10647,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00018626_008.png",
+   "patient": 18626,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018778_003.png",
+   "patient": 18778,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002000_003.png",
+   "patient": 2000,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00024212_001.png",
+   "patient": 24212,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027230_000.png",
+   "patient": 27230,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020811_008.png",
+   "patient": 20811,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014458_003.png",
+   "patient": 14458,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002275_022.png",
+   "patient": 2275,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026963_032.png",
+   "patient": 26963,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027697_002.png",
+   "patient": 27697,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013705_000.png",
+   "patient": 13705,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011351_010.png",
+   "patient": 11351,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022124_003.png",
+   "patient": 22124,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007080_000.png",
+   "patient": 7080,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025732_000.png",
+   "patient": 25732,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00017607_000.png",
+   "patient": 17607,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018055_045.png",
+   "patient": 18055,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014871_005.png",
+   "patient": 14871,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00016818_008.png",
+   "patient": 16818,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001558_015.png",
+   "patient": 1558,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019092_007.png",
+   "patient": 19092,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001301_044.png",
+   "patient": 1301,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00011251_008.png",
+   "patient": 11251,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012615_000.png",
+   "patient": 12615,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022764_015.png",
+   "patient": 22764,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022707_005.png",
+   "patient": 22707,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020841_000.png",
+   "patient": 20841,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013774_016.png",
+   "patient": 13774,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00030023_000.png",
+   "patient": 30023,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001698_012.png",
+   "patient": 1698,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000591_008.png",
+   "patient": 591,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00001601_012.png",
+   "patient": 1601,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00004798_008.png",
+   "patient": 4798,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003606_001.png",
+   "patient": 3606,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013757_003.png",
+   "patient": 13757,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00003052_005.png",
+   "patient": 3052,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00005154_000.png",
+   "patient": 5154,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010038_000.png",
+   "patient": 10038,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009023_003.png",
+   "patient": 9023,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017886_000.png",
+   "patient": 17886,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001534_006.png",
+   "patient": 1534,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007708_006.png",
+   "patient": 7708,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00016860_005.png",
+   "patient": 16860,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005773_002.png",
+   "patient": 5773,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002217_000.png",
+   "patient": 2217,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00016672_008.png",
+   "patient": 16672,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014528_007.png",
+   "patient": 14528,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00019595_000.png",
+   "patient": 19595,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00018387_030.png",
+   "patient": 18387,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00021023_009.png",
+   "patient": 21023,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00026112_000.png",
+   "patient": 26112,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00010563_021.png",
+   "patient": 10563,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010585_036.png",
+   "patient": 10585,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021128_003.png",
+   "patient": 21128,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001403_001.png",
+   "patient": 1403,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015071_006.png",
+   "patient": 15071,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00016083_002.png",
+   "patient": 16083,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017395_003.png",
+   "patient": 17395,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021772_006.png",
+   "patient": 21772,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017930_005.png",
+   "patient": 17930,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012364_009.png",
+   "patient": 12364,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027628_006.png",
+   "patient": 27628,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020513_006.png",
+   "patient": 20513,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00026560_010.png",
+   "patient": 26560,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019434_006.png",
+   "patient": 19434,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00001976_002.png",
+   "patient": 1976,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007437_000.png",
+   "patient": 7437,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018362_011.png",
+   "patient": 18362,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00013307_006.png",
+   "patient": 13307,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027584_000.png",
+   "patient": 27584,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014721_017.png",
+   "patient": 14721,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020683_000.png",
+   "patient": 20683,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00014472_014.png",
+   "patient": 14472,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017536_000.png",
+   "patient": 17536,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001029_005.png",
+   "patient": 1029,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00029901_004.png",
+   "patient": 29901,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016884_000.png",
+   "patient": 16884,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017064_018.png",
+   "patient": 17064,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025303_025.png",
+   "patient": 25303,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00028070_001.png",
+   "patient": 28070,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022877_027.png",
+   "patient": 22877,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000869_003.png",
+   "patient": 869,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00011960_007.png",
+   "patient": 11960,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00012829_006.png",
+   "patient": 12829,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00001745_000.png",
+   "patient": 1745,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000963_023.png",
+   "patient": 963,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017588_000.png",
+   "patient": 17588,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028792_002.png",
+   "patient": 28792,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021930_012.png",
+   "patient": 21930,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016521_005.png",
+   "patient": 16521,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00005977_015.png",
+   "patient": 5977,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014072_001.png",
+   "patient": 14072,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012640_015.png",
+   "patient": 12640,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009349_019.png",
+   "patient": 9349,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00013295_000.png",
+   "patient": 13295,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021725_000.png",
+   "patient": 21725,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014688_009.png",
+   "patient": 14688,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00018669_007.png",
+   "patient": 18669,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00026024_015.png",
+   "patient": 26024,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019124_111.png",
+   "patient": 19124,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00009485_007.png",
+   "patient": 9485,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013192_000.png",
+   "patient": 13192,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021176_000.png",
+   "patient": 21176,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018051_002.png",
+   "patient": 18051,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003789_007.png",
+   "patient": 3789,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025707_006.png",
+   "patient": 25707,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016797_015.png",
+   "patient": 16797,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012625_014.png",
+   "patient": 12625,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002529_019.png",
+   "patient": 2529,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003973_008.png",
+   "patient": 3973,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017023_000.png",
+   "patient": 17023,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00023090_000.png",
+   "patient": 23090,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016184_015.png",
+   "patient": 16184,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012863_042.png",
+   "patient": 12863,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022837_030.png",
+   "patient": 22837,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019363_017.png",
+   "patient": 19363,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026099_023.png",
+   "patient": 26099,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015013_008.png",
+   "patient": 15013,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028912_003.png",
+   "patient": 28912,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021163_002.png",
+   "patient": 21163,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003599_004.png",
+   "patient": 3599,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027675_002.png",
+   "patient": 27675,
+   "view": "AP",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013653_002.png",
+   "patient": 13653,
+   "view": "PA",
+   "selected_for": "consolidation",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00000071_001.png",
+   "patient": 71,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015423_006.png",
+   "patient": 15423,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00028208_026.png",
+   "patient": 28208,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020408_058.png",
+   "patient": 20408,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014046_006.png",
+   "patient": 14046,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028861_010.png",
+   "patient": 28861,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028094_001.png",
+   "patient": 28094,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028148_008.png",
+   "patient": 28148,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012223_005.png",
+   "patient": 12223,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004186_005.png",
+   "patient": 4186,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00010544_014.png",
+   "patient": 10544,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017943_001.png",
+   "patient": 17943,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008770_001.png",
+   "patient": 8770,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001806_007.png",
+   "patient": 1806,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021449_004.png",
+   "patient": 21449,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001248_024.png",
+   "patient": 1248,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002174_000.png",
+   "patient": 2174,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013685_040.png",
+   "patient": 13685,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008342_012.png",
+   "patient": 8342,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003101_005.png",
+   "patient": 3101,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020450_023.png",
+   "patient": 20450,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021711_007.png",
+   "patient": 21711,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008518_006.png",
+   "patient": 8518,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00026914_000.png",
+   "patient": 26914,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002454_000.png",
+   "patient": 2454,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006192_010.png",
+   "patient": 6192,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018964_006.png",
+   "patient": 18964,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006769_020.png",
+   "patient": 6769,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004858_071.png",
+   "patient": 4858,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026132_029.png",
+   "patient": 26132,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002720_015.png",
+   "patient": 2720,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022182_001.png",
+   "patient": 22182,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026078_004.png",
+   "patient": 26078,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012057_009.png",
+   "patient": 12057,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015653_005.png",
+   "patient": 15653,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003215_000.png",
+   "patient": 3215,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007745_003.png",
+   "patient": 7745,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006703_010.png",
+   "patient": 6703,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027547_002.png",
+   "patient": 27547,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010469_000.png",
+   "patient": 10469,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019861_010.png",
+   "patient": 19861,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00004824_010.png",
+   "patient": 4824,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00029866_003.png",
+   "patient": 29866,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00023198_001.png",
+   "patient": 23198,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015023_003.png",
+   "patient": 15023,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021431_009.png",
+   "patient": 21431,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011845_006.png",
+   "patient": 11845,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001724_012.png",
+   "patient": 1724,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017458_010.png",
+   "patient": 17458,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003669_007.png",
+   "patient": 3669,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021818_018.png",
+   "patient": 21818,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00007056_007.png",
+   "patient": 7056,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017504_066.png",
+   "patient": 17504,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00023168_005.png",
+   "patient": 23168,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00022670_001.png",
+   "patient": 22670,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003615_002.png",
+   "patient": 3615,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004092_004.png",
+   "patient": 4092,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022155_005.png",
+   "patient": 22155,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003546_016.png",
+   "patient": 3546,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014708_003.png",
+   "patient": 14708,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002356_009.png",
+   "patient": 2356,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005801_012.png",
+   "patient": 5801,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025150_005.png",
+   "patient": 25150,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028421_004.png",
+   "patient": 28421,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027189_002.png",
+   "patient": 27189,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00009953_025.png",
+   "patient": 9953,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021112_003.png",
+   "patient": 21112,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012922_002.png",
+   "patient": 12922,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015056_007.png",
+   "patient": 15056,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006506_002.png",
+   "patient": 6506,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016318_002.png",
+   "patient": 16318,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00003161_002.png",
+   "patient": 3161,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006791_006.png",
+   "patient": 6791,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021222_005.png",
+   "patient": 21222,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00024749_000.png",
+   "patient": 24749,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002299_001.png",
+   "patient": 2299,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013342_014.png",
+   "patient": 13342,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020248_003.png",
+   "patient": 20248,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027927_003.png",
+   "patient": 27927,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010936_027.png",
+   "patient": 10936,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022804_000.png",
+   "patient": 22804,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014314_003.png",
+   "patient": 14314,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017994_005.png",
+   "patient": 17994,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001762_005.png",
+   "patient": 1762,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001561_000.png",
+   "patient": 1561,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028765_009.png",
+   "patient": 28765,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028961_001.png",
+   "patient": 28961,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008232_016.png",
+   "patient": 8232,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014280_004.png",
+   "patient": 14280,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00005240_002.png",
+   "patient": 5240,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003348_001.png",
+   "patient": 3348,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012021_033.png",
+   "patient": 12021,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00023065_011.png",
+   "patient": 23065,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017368_009.png",
+   "patient": 17368,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003086_004.png",
+   "patient": 3086,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022083_002.png",
+   "patient": 22083,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022263_005.png",
+   "patient": 22263,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022367_001.png",
+   "patient": 22367,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026738_001.png",
+   "patient": 26738,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00029129_005.png",
+   "patient": 29129,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00000493_000.png",
+   "patient": 493,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027079_008.png",
+   "patient": 27079,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013329_002.png",
+   "patient": 13329,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014663_041.png",
+   "patient": 14663,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021795_001.png",
+   "patient": 21795,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00023085_005.png",
+   "patient": 23085,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028698_002.png",
+   "patient": 28698,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005113_003.png",
+   "patient": 5113,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00009890_003.png",
+   "patient": 9890,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022192_017.png",
+   "patient": 22192,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016685_001.png",
+   "patient": 16685,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002219_006.png",
+   "patient": 2219,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026586_007.png",
+   "patient": 26586,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017731_012.png",
+   "patient": 17731,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014919_008.png",
+   "patient": 14919,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010316_002.png",
+   "patient": 10316,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026913_000.png",
+   "patient": 26913,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016773_003.png",
+   "patient": 16773,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000547_006.png",
+   "patient": 547,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009755_001.png",
+   "patient": 9755,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008230_005.png",
+   "patient": 8230,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007402_001.png",
+   "patient": 7402,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009696_000.png",
+   "patient": 9696,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025787_050.png",
+   "patient": 25787,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00029548_007.png",
+   "patient": 29548,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008304_000.png",
+   "patient": 8304,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017942_002.png",
+   "patient": 17942,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019527_004.png",
+   "patient": 19527,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010020_003.png",
+   "patient": 10020,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00001673_007.png",
+   "patient": 1673,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013917_020.png",
+   "patient": 13917,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022651_001.png",
+   "patient": 22651,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015502_007.png",
+   "patient": 15502,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009206_001.png",
+   "patient": 9206,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003916_001.png",
+   "patient": 3916,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008147_014.png",
+   "patient": 8147,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00025454_012.png",
+   "patient": 25454,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00016266_002.png",
+   "patient": 16266,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005403_001.png",
+   "patient": 5403,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005680_003.png",
+   "patient": 5680,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008156_000.png",
+   "patient": 8156,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010071_008.png",
+   "patient": 10071,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011355_044.png",
+   "patient": 11355,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00027092_005.png",
+   "patient": 27092,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015764_004.png",
+   "patient": 15764,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022431_003.png",
+   "patient": 22431,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012024_002.png",
+   "patient": 12024,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028544_009.png",
+   "patient": 28544,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003330_002.png",
+   "patient": 3330,
+   "view": "AP",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020773_008.png",
+   "patient": 20773,
+   "view": "PA",
+   "selected_for": "pneumothorax",
+   "truth": {
+    "cardiomegaly": 0,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027468_000.png",
+   "patient": 27468,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028097_004.png",
+   "patient": 28097,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007633_000.png",
+   "patient": 7633,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000406_000.png",
+   "patient": 406,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011176_003.png",
+   "patient": 11176,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00001249_010.png",
+   "patient": 1249,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004495_000.png",
+   "patient": 4495,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022282_002.png",
+   "patient": 22282,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005900_000.png",
+   "patient": 5900,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021209_002.png",
+   "patient": 21209,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000131_002.png",
+   "patient": 131,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028646_000.png",
+   "patient": 28646,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017939_000.png",
+   "patient": 17939,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00017524_023.png",
+   "patient": 17524,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028794_000.png",
+   "patient": 28794,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021670_007.png",
+   "patient": 21670,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010524_000.png",
+   "patient": 10524,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021616_001.png",
+   "patient": 21616,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016554_003.png",
+   "patient": 16554,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004857_020.png",
+   "patient": 4857,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004892_000.png",
+   "patient": 4892,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000432_000.png",
+   "patient": 432,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025845_000.png",
+   "patient": 25845,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004775_001.png",
+   "patient": 4775,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013285_003.png",
+   "patient": 13285,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00020839_002.png",
+   "patient": 20839,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016650_000.png",
+   "patient": 16650,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001373_030.png",
+   "patient": 1373,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025443_008.png",
+   "patient": 25443,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00005516_000.png",
+   "patient": 5516,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008316_000.png",
+   "patient": 8316,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007948_001.png",
+   "patient": 7948,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028774_021.png",
+   "patient": 28774,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027108_000.png",
+   "patient": 27108,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011516_000.png",
+   "patient": 11516,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028873_006.png",
+   "patient": 28873,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008802_005.png",
+   "patient": 8802,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000852_000.png",
+   "patient": 852,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00027415_032.png",
+   "patient": 27415,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010437_003.png",
+   "patient": 10437,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025594_000.png",
+   "patient": 25594,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018451_012.png",
+   "patient": 18451,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00016873_000.png",
+   "patient": 16873,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016661_000.png",
+   "patient": 16661,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010970_000.png",
+   "patient": 10970,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015646_026.png",
+   "patient": 15646,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017138_042.png",
+   "patient": 17138,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00005270_007.png",
+   "patient": 5270,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002083_000.png",
+   "patient": 2083,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018686_000.png",
+   "patient": 18686,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008002_000.png",
+   "patient": 8002,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004809_008.png",
+   "patient": 4809,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00008339_003.png",
+   "patient": 8339,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00010388_001.png",
+   "patient": 10388,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00029007_002.png",
+   "patient": 29007,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014287_000.png",
+   "patient": 14287,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017980_000.png",
+   "patient": 17980,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022672_004.png",
+   "patient": 22672,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 1,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00020684_000.png",
+   "patient": 20684,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004737_007.png",
+   "patient": 4737,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000333_000.png",
+   "patient": 333,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002442_000.png",
+   "patient": 2442,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00023003_002.png",
+   "patient": 23003,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020673_041.png",
+   "patient": 20673,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013245_002.png",
+   "patient": 13245,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022322_000.png",
+   "patient": 22322,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016976_000.png",
+   "patient": 16976,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020181_000.png",
+   "patient": 20181,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025754_000.png",
+   "patient": 25754,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018916_000.png",
+   "patient": 18916,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00024439_000.png",
+   "patient": 24439,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006862_000.png",
+   "patient": 6862,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006067_001.png",
+   "patient": 6067,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009966_002.png",
+   "patient": 9966,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028216_001.png",
+   "patient": 28216,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00010693_026.png",
+   "patient": 10693,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027908_004.png",
+   "patient": 27908,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004556_001.png",
+   "patient": 4556,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009717_002.png",
+   "patient": 9717,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00002552_001.png",
+   "patient": 2552,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00009864_001.png",
+   "patient": 9864,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012937_003.png",
+   "patient": 12937,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00008226_004.png",
+   "patient": 8226,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000155_000.png",
+   "patient": 155,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00026955_000.png",
+   "patient": 26955,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00010625_014.png",
+   "patient": 10625,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00021373_005.png",
+   "patient": 21373,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00010095_000.png",
+   "patient": 10095,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001868_000.png",
+   "patient": 1868,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013808_003.png",
+   "patient": 13808,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021845_001.png",
+   "patient": 21845,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00012275_000.png",
+   "patient": 12275,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014863_000.png",
+   "patient": 14863,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003895_002.png",
+   "patient": 3895,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 1,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016037_000.png",
+   "patient": 16037,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00024116_001.png",
+   "patient": 24116,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015520_001.png",
+   "patient": 15520,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00002434_000.png",
+   "patient": 2434,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00029108_000.png",
+   "patient": 29108,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00029221_003.png",
+   "patient": 29221,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00011010_011.png",
+   "patient": 11010,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007798_000.png",
+   "patient": 7798,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00016673_000.png",
+   "patient": 16673,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013546_000.png",
+   "patient": 13546,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001959_000.png",
+   "patient": 1959,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003198_004.png",
+   "patient": 3198,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00026522_000.png",
+   "patient": 26522,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009609_004.png",
+   "patient": 9609,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015344_000.png",
+   "patient": 15344,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025126_000.png",
+   "patient": 25126,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001580_001.png",
+   "patient": 1580,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 1,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009798_015.png",
+   "patient": 9798,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00004006_037.png",
+   "patient": 4006,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00014320_039.png",
+   "patient": 14320,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00020428_000.png",
+   "patient": 20428,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00011023_004.png",
+   "patient": 11023,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00017055_006.png",
+   "patient": 17055,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00027094_006.png",
+   "patient": 27094,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003338_000.png",
+   "patient": 3338,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007228_001.png",
+   "patient": 7228,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028716_000.png",
+   "patient": 28716,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00001385_012.png",
+   "patient": 1385,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000512_001.png",
+   "patient": 512,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000732_008.png",
+   "patient": 732,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013890_013.png",
+   "patient": 13890,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00023271_010.png",
+   "patient": 23271,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00019581_000.png",
+   "patient": 19581,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013036_010.png",
+   "patient": 13036,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006537_000.png",
+   "patient": 6537,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028535_002.png",
+   "patient": 28535,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00020471_007.png",
+   "patient": 20471,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00028368_001.png",
+   "patient": 28368,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00021458_000.png",
+   "patient": 21458,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009342_002.png",
+   "patient": 9342,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00024107_000.png",
+   "patient": 24107,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00007559_000.png",
+   "patient": 7559,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00009934_007.png",
+   "patient": 9934,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00003598_001.png",
+   "patient": 3598,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00016175_007.png",
+   "patient": 16175,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00018233_060.png",
+   "patient": 18233,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00015007_005.png",
+   "patient": 15007,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 1,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000961_000.png",
+   "patient": 961,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00013447_018.png",
+   "patient": 13447,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00025382_004.png",
+   "patient": 25382,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000409_001.png",
+   "patient": 409,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00024980_000.png",
+   "patient": 24980,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00022215_012.png",
+   "patient": 22215,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 1
+   }
+  },
+  {
+   "file": "00020458_008.png",
+   "patient": 20458,
+   "view": "AP",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00000294_000.png",
+   "patient": 294,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 0,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  },
+  {
+   "file": "00006476_000.png",
+   "patient": 6476,
+   "view": "PA",
+   "selected_for": "cardiomegaly",
+   "truth": {
+    "cardiomegaly": 1,
+    "pleural effusion": 1,
+    "pneumothorax": 0,
+    "consolidation": 0,
+    "pulmonary edema": 0,
+    "atelectasis": 0
+   }
+  }
+ ]
+}
