@@ -15,6 +15,7 @@ import hashlib
 import json
 import os
 import shutil
+import zipfile
 import sys
 from pathlib import Path
 
@@ -89,6 +90,15 @@ def download_file(s, name, dst):
         with tmp.open("wb") as f:
             for chunk in r.iter_content(1 << 20):
                 f.write(chunk)
+    # Kaggle sends some files zipped: unpack the single member under the expected name
+    if zipfile.is_zipfile(tmp):
+        with zipfile.ZipFile(tmp) as z:
+            members = z.namelist()
+            assert len(members) == 1, f"{name}: expected one file in the zip, found {members}"
+            with z.open(members[0]) as src, dst.open("wb") as out:
+                shutil.copyfileobj(src, out)
+        tmp.unlink()
+    else:
         tmp.replace(dst)
 
 
