@@ -14,6 +14,7 @@ Branch `medgemma-edv`. Nothing on this branch has been pushed.
 | **Evidence Engine v1.0 frozen** | NIH-derived Platt LR + NIH-development empirical bands; Indiana comparator; runtime reproduces D2/D3 on 60,480 assessments | tag **`evidence-engine-v1.0`** (`c30c5d7`), spec `medrax/evidence/EVIDENCE_ENGINE_V1.md` |
 | Final external validation | **pre-registered, not yet run** (data not downloaded) | commit `5280b43` |
 | Amendment 1 (Part B): claim-blinded vs claim-conditioned grounding | **pre-registered 2026-10-04, before the data**; hypotheses from development experiments (`f9cea44`) | `experiments/vindr_amendment_1_grounding.md`, tag `vindr-amendment-1` |
+| Amendment 2: data source = Kaggle VinBigData release (3 readers, majority labels; edema not evaluable) | **pre-registered 2026-10-04, before any download** | `experiments/vindr_amendment_2_data_source.md`, tag `vindr-amendment-2` |
 
 ## The one remaining step: VinDr-CXR external validation
 
@@ -22,16 +23,24 @@ committed before the data was on this machine:
 `experiments/vindr_external_validation_design.md` and
 `experiments/vindr_external_validation.py`.
 
-1. **Get the data** (needs a credentialed PhysioNet account and the signed data use
-   agreement): https://physionet.org/content/vindr-cxr/1.0.0/
-   Download only the test split and its labels, not the full ~200 GB release:
-   - `test/` (3,000 DICOMs)
-   - `annotations/image_labels_test.csv` (Part A)
-   - `annotations/annotations_test.csv` (radiologist boxes; Part B, Amendment 1)
-
-   Place them under `D:\datasets\vindr-cxr\` keeping the `test/` and `annotations/`
-   folders, or pass another location with `--data` (or set `VINDR_DIR`).
-2. **Run** from the repository root, in the project venv:
+1. **Get the data: Kaggle route (Amendment 2, `experiments/vindr_amendment_2_data_source.md`).**
+   PhysioNet credentialing will not be done, so the data source is the Kaggle competition
+   "VinBigData Chest X-ray Abnormalities Detection" (VinDr training split, three readers per
+   image), sampled and converted exactly as pre-registered in Amendment 2:
+   - Accept the competition rules at
+     https://www.kaggle.com/competitions/vinbigdata-chest-xray-abnormalities-detection/rules
+     and check they permit this research use.
+   ```powershell
+   python experiments/vindr_kaggle_derive.py sample     # file names only -> experiments/results/vindr_kaggle_sample.json
+   git add experiments/results/vindr_kaggle_sample.json; git commit -m "Freeze the VinDr Kaggle sample before downloading labels"
+   python experiments/vindr_kaggle_derive.py download   # train.csv + the 3,000 sampled DICOMs -> D:\datasets\vindr-kaggle
+   python experiments/vindr_kaggle_derive.py derive     # derived files -> D:\datasets\vindr-cxr-kaggle-derived
+   $env:VINDR_DIR = "D:\datasets\vindr-cxr-kaggle-derived"
+   ```
+   (The original PhysioNet route, if ever available: test/ DICOMs plus
+   `annotations/image_labels_test.csv` and `annotations/annotations_test.csv` under
+   `D:\datasets\vindr-cxr\`.)
+2. **Run** from the repository root, in the project venv (with `VINDR_DIR` set as above):
    ```powershell
    python experiments/vindr_external_validation.py prepare   # checks files, converts DICOMs, freezes the manifest
    python experiments/vindr_external_validation.py run       # CheXagent readings, ~90 min on an RTX 3090, resumable
@@ -59,9 +68,9 @@ committed before the data was on this machine:
 - Report both engines (NIH primary, Indiana comparator); do not select one on VinDr results.
 - **No D4, no v1.1, no further dataset for this version.** After this step: stop and write
   the paper.
-- The only change to this plan is Amendment 1 (Part B), recorded openly as a new
-  pre-specified analysis before the data was available; it adds hypotheses and does not
-  modify Part A. No further amendments once any VinDr data has been examined.
+- The only changes to this plan are Amendment 1 (Part B, new hypotheses) and Amendment 2
+  (data source), both recorded openly before any VinDr data was available; neither modifies
+  Part A's analysis. No further amendments once any VinDr image or label has been examined.
 
 ### Before running, check
 - The venv still has the versions in `experiments/results/REPRODUCE.md` (transformers
