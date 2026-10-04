@@ -13,6 +13,7 @@ Branch `medgemma-edv`. Nothing on this branch has been pushed.
 | D3 | dual-evidence REFUTING rule removes most tail failures | commits `aee83a3` (protocol), `3643e42` (results) |
 | **Evidence Engine v1.0 frozen** | NIH-derived Platt LR + NIH-development empirical bands; Indiana comparator; runtime reproduces D2/D3 on 60,480 assessments | tag **`evidence-engine-v1.0`** (`c30c5d7`), spec `medrax/evidence/EVIDENCE_ENGINE_V1.md` |
 | Final external validation | **pre-registered, not yet run** (data not downloaded) | commit `5280b43` |
+| Amendment 1 (Part B): claim-blinded vs claim-conditioned grounding | **pre-registered 2026-10-04, before the data**; hypotheses from development experiments (`f9cea44`) | `experiments/vindr_amendment_1_grounding.md`, tag `vindr-amendment-1` |
 
 ## The one remaining step: VinDr-CXR external validation
 
@@ -25,7 +26,8 @@ committed before the data was on this machine:
    agreement): https://physionet.org/content/vindr-cxr/1.0.0/
    Download only the test split and its labels, not the full ~200 GB release:
    - `test/` (3,000 DICOMs)
-   - `annotations/image_labels_test.csv`
+   - `annotations/image_labels_test.csv` (Part A)
+   - `annotations/annotations_test.csv` (radiologist boxes; Part B, Amendment 1)
 
    Place them under `D:\datasets\vindr-cxr\` keeping the `test/` and `annotations/`
    folders, or pass another location with `--data` (or set `VINDR_DIR`).
@@ -38,6 +40,15 @@ committed before the data was on this machine:
    `prepare` stops instead of guessing if the files do not match the protocol (for example,
    several label rows per image) and reports label counts only. `analyze` refuses to run on
    incomplete readings and verifies the engine's checksums on load.
+
+   Then Part B (Amendment 1), after Part A's `prepare`:
+   ```powershell
+   python experiments/vindr_grounding_amendment.py prepare
+   python experiments/vindr_grounding_amendment.py run chexagent
+   $env:HF_HUB_OFFLINE="1"; python experiments/vindr_grounding_amendment.py run maira   # 8-bit, ~8 GB GPU
+   python experiments/vindr_grounding_amendment.py analyze   # -> experiments/results/vindr_grounding_amendment.md
+   ```
+   Part A and Part B are reported separately; Part B does not change Part A.
 3. **Commit** the manifest, readings and report, and write up the result.
 
 ### Rules for this step (do not relax)
@@ -48,6 +59,9 @@ committed before the data was on this machine:
 - Report both engines (NIH primary, Indiana comparator); do not select one on VinDr results.
 - **No D4, no v1.1, no further dataset for this version.** After this step: stop and write
   the paper.
+- The only change to this plan is Amendment 1 (Part B), recorded openly as a new
+  pre-specified analysis before the data was available; it adds hypotheses and does not
+  modify Part A. No further amendments once any VinDr data has been examined.
 
 ### Before running, check
 - The venv still has the versions in `experiments/results/REPRODUCE.md` (transformers
