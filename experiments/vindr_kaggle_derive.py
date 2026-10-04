@@ -57,12 +57,23 @@ def sample():
         if not body.get("hasNextPageToken") or not token:
             break
     ids = sorted({Path(n).stem for n in names if n and n.startswith("train/") and n.endswith(".dicom")})
+    source = "competition file list"
     if not ids:
-        raise SystemExit("no train/*.dicom files listed: accept the competition rules on Kaggle first")
+        # Deviation 1 (vindr_amendment_2_deviation_1.md): the file list is empty for this
+        # competition, so the IDs come from train.csv's image_id column only; no label column
+        # is read here
+        import pandas as pd
+
+        download_file(s, "train.csv", RAW / "train.csv")
+        ids = sorted(pd.read_csv(RAW / "train.csv", usecols=["image_id"])["image_id"].unique())
+        source = "train.csv image_id column only (deviation 1)"
+    if not ids:
+        raise SystemExit("no training image IDs found")
     rank = lambda i: hashlib.sha256(f"{SEED}:{i}".encode()).hexdigest()
     chosen = sorted(ids, key=rank)[:N]
     RESULTS.mkdir(exist_ok=True)
-    SAMPLE.write_text(json.dumps({"competition": COMPETITION, "seed": SEED, "listed_train_images": len(ids),
+    SAMPLE.write_text(json.dumps({"competition": COMPETITION, "seed": SEED, "id_source": source,
+                                  "listed_train_images": len(ids),
                                   "rule": "lowest SHA-256(seed:image_id), first 3000",
                                   "image_ids": sorted(chosen)}, indent=1), encoding="utf-8")
     print(f"{len(ids)} training images listed, {len(chosen)} sampled -> {SAMPLE}; commit it before downloading")
