@@ -1,0 +1,836 @@
+{"dataset": "indiana", "file": "1012_IM-0013-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 64, 14, 76], [75, 62, 90, 76]], "other_labels": [], "p_present": 0.94}
+{"dataset": "indiana", "file": "1016_IM-0013-1001.dcm.png", "finding": "pleural effusion", "boxes": [[10, 48, 38, 76], [84, 64, 92, 73]], "other_labels": [], "p_present": 0.951}
+{"dataset": "indiana", "file": "1043_IM-0035-0001-0002.dcm.png", "finding": "pleural effusion", "boxes": [[75, 70, 90, 85]], "other_labels": [], "p_present": 0.982}
+{"dataset": "indiana", "file": "105_IM-0037-1001.dcm.png", "finding": "pleural effusion", "boxes": [[82, 51, 89, 64]], "other_labels": [], "p_present": 0.828}
+{"dataset": "indiana", "file": "1100_IM-0068-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 48, 38, 64], [74, 52, 96, 65]], "other_labels": [], "p_present": 0.966}
+{"dataset": "indiana", "file": "1102_IM-0069-12012.dcm.png", "finding": "pleural effusion", "boxes": [[10, 60, 38, 85], [76, 64, 88, 80]], "other_labels": [], "p_present": 0.971}
+{"dataset": "indiana", "file": "111_IM-0076-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 47, 44, 81], [87, 64, 96, 76]], "other_labels": [], "p_present": 0.964}
+{"dataset": "indiana", "file": "1230_IM-0154-1001.dcm.png", "finding": "pleural effusion", "boxes": [[10, 20, 44, 72]], "other_labels": [], "p_present": 0.853}
+{"dataset": "indiana", "file": "1230_IM-0154-2001.dcm.png", "finding": "pleural effusion", "boxes": [[10, 48, 44, 85]], "other_labels": [], "p_present": 0.94}
+{"dataset": "indiana", "file": "124_IM-0161-4004.dcm.png", "finding": "pleural effusion", "boxes": [[8, 64, 14, 73], [52, 14, 92, 81]], "other_labels": [], "p_present": 0.978}
+{"dataset": "indiana", "file": "1289_IM-0189-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 54, 38, 68], [59, 54, 92, 69]], "other_labels": [], "p_present": 0.977}
+{"dataset": "indiana", "file": "1430_IM-0277-2001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 82, 14, 89], [82, 80, 88, 87]], "other_labels": [], "p_present": 0.699}
+{"dataset": "indiana", "file": "1445_IM-0287-4004.dcm.png", "finding": "pleural effusion", "boxes": [[5, 48, 40, 68], [83, 54, 94, 69]], "other_labels": [], "p_present": 0.78}
+{"dataset": "indiana", "file": "1557_IM-0364-4004.dcm.png", "finding": "pleural effusion", "boxes": [[8, 54, 38, 77], [75, 60, 98, 78]], "other_labels": [], "p_present": 0.932}
+{"dataset": "indiana", "file": "1649_IM-0426-1001.dcm.png", "finding": "pleural effusion", "boxes": [[7, 64, 38, 77], [64, 64, 90, 78]], "other_labels": [], "p_present": 0.981}
+{"dataset": "indiana", "file": "1678_IM-0447-0001-0001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 38, 43, 65]], "other_labels": [], "p_present": 0.945}
+{"dataset": "indiana", "file": "1704_IM-0464-1001.dcm.png", "finding": "pleural effusion", "boxes": [[59, 38, 93, 72]], "other_labels": [], "p_present": 0.98}
+{"dataset": "indiana", "file": "1733_IM-0483-0001-0001.dcm.png", "finding": "pleural effusion", "boxes": [[59, 54, 93, 85]], "other_labels": [], "p_present": 0.984}
+{"dataset": "indiana", "file": "1769_IM-0503-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 62, 14, 69], [75, 54, 90, 69]], "other_labels": [], "p_present": 0.92}
+{"dataset": "indiana", "file": "177_IM-0503-1001.dcm.png", "finding": "pleural effusion", "boxes": [[14, 48, 44, 76], [75, 52, 92, 76]], "other_labels": [], "p_present": 0.987}
+{"dataset": "indiana", "file": "1792_IM-0515-1001.dcm.png", "finding": "pleural effusion", "boxes": [[84, 55, 89, 64]], "other_labels": [], "p_present": 0.211}
+{"dataset": "indiana", "file": "1867_IM-0560-4004.dcm.png", "finding": "pleural effusion", "boxes": [[8, 70, 14, 85], [84, 70, 90, 85]], "other_labels": [], "p_present": 0.817}
+{"dataset": "indiana", "file": "1868_IM-0561-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 70, 10, 79], [84, 72, 90, 78]], "other_labels": [], "p_present": 0.657}
+{"dataset": "indiana", "file": "188_IM-0569-1001.dcm.png", "finding": "pleural effusion", "boxes": [[7, 80, 14, 87], [53, 50, 90, 82]], "other_labels": [], "p_present": 0.972}
+{"dataset": "indiana", "file": "2046_IM-0688-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 48, 26, 60], [84, 48, 92, 60]], "other_labels": [], "p_present": 0.881}
+{"dataset": "indiana", "file": "2055_IM-0693-1001.dcm.png", "finding": "pleural effusion", "boxes": [[7, 64, 14, 72], [59, 54, 86, 72]], "other_labels": [], "p_present": 0.944}
+{"dataset": "indiana", "file": "2074_IM-0708-1001.dcm.png", "finding": "pleural effusion", "boxes": [[7, 62, 14, 72], [89, 62, 94, 72]], "other_labels": [], "p_present": 0.916}
+{"dataset": "indiana", "file": "2127_IM-0751-1001.dcm.png", "finding": "pleural effusion", "boxes": [[10, 67, 16, 75]], "other_labels": [], "p_present": 0.692}
+{"dataset": "indiana", "file": "227_IM-0859-12012.dcm.png", "finding": "pleural effusion", "boxes": [[84, 90, 90, 96]], "other_labels": [], "p_present": 0.165}
+{"dataset": "indiana", "file": "2289_IM-0873-1001.dcm.png", "finding": "pleural effusion", "boxes": [[82, 64, 92, 76]], "other_labels": [], "p_present": 0.926}
+{"dataset": "indiana", "file": "2370_IM-0931-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 44, 38, 62]], "other_labels": [], "p_present": 0.935}
+{"dataset": "indiana", "file": "2474_IM-1003-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 75, 14, 85], [84, 75, 90, 85]], "other_labels": [], "p_present": 0.627}
+{"dataset": "indiana", "file": "2512_IM-1034-1001.dcm.png", "finding": "pleural effusion", "boxes": [[59, 42, 90, 73]], "other_labels": [], "p_present": 0.986}
+{"dataset": "indiana", "file": "25_IM-1024-2001.dcm.png", "finding": "pleural effusion", "boxes": [[7, 74, 26, 85], [54, 44, 85, 76]], "other_labels": [], "p_present": 0.955}
+{"dataset": "indiana", "file": "2608_IM-1098-2001.dcm.png", "finding": "pleural effusion", "boxes": [[10, 58, 38, 72], [75, 61, 95, 72]], "other_labels": [], "p_present": 0.961}
+{"dataset": "indiana", "file": "2615_IM-1106-1001.dcm.png", "finding": "pleural effusion", "boxes": [[6, 74, 10, 79]], "other_labels": [], "p_present": 0.08}
+{"dataset": "indiana", "file": "2637_IM-1122-4004.dcm.png", "finding": "pleural effusion", "boxes": [[5, 80, 10, 87]], "other_labels": [], "p_present": 0.21}
+{"dataset": "indiana", "file": "2642_IM-1128-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 87, 11, 94], [87, 90, 94, 96]], "other_labels": [], "p_present": 0.596}
+{"dataset": "indiana", "file": "2657_IM-1139-0001-0002.dcm.png", "finding": "pleural effusion", "boxes": [[5, 70, 26, 85], [84, 75, 92, 86]], "other_labels": [], "p_present": 0.959}
+{"dataset": "indiana", "file": "267_IM-1147-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 58, 18, 69], [75, 60, 85, 69]], "other_labels": [], "p_present": 0.976}
+{"dataset": "indiana", "file": "2702_IM-1170-1001.dcm.png", "finding": "pleural effusion", "boxes": [[3, 79, 10, 87]], "other_labels": [], "p_present": 0.268}
+{"dataset": "indiana", "file": "2752_IM-1202-0001-0001.dcm.png", "finding": "pleural effusion", "boxes": [[9, 18, 47, 70]], "other_labels": [], "p_present": 0.994}
+{"dataset": "indiana", "file": "2817_IM-1241-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 70, 14, 81]], "other_labels": [], "p_present": 0.413}
+{"dataset": "indiana", "file": "2817_IM-1241-3001.dcm.png", "finding": "pleural effusion", "boxes": [[6, 73, 11, 80]], "other_labels": [], "p_present": 0.268}
+{"dataset": "indiana", "file": "2943_IM-1343-4004.dcm.png", "finding": "pleural effusion", "boxes": [[54, 6, 90, 70]], "other_labels": [], "p_present": 0.903}
+{"dataset": "indiana", "file": "2961_IM-1355-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 60, 17, 72], [82, 62, 92, 72]], "other_labels": [], "p_present": 0.815}
+{"dataset": "indiana", "file": "2999_IM-1383-0001-0001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 70, 14, 78], [82, 68, 90, 78]], "other_labels": [], "p_present": 0.633}
+{"dataset": "indiana", "file": "3090_IM-1445-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 54, 44, 80]], "other_labels": [], "p_present": 0.991}
+{"dataset": "indiana", "file": "3116_IM-1464-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 62, 26, 73], [84, 62, 96, 73]], "other_labels": [], "p_present": 0.98}
+{"dataset": "indiana", "file": "3187_IM-1503-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 64, 14, 75], [81, 64, 93, 75]], "other_labels": [], "p_present": 0.963}
+{"dataset": "indiana", "file": "3211_IM-1517-1001-0002.dcm.png", "finding": "pleural effusion", "boxes": [[8, 58, 14, 68], [84, 64, 90, 72]], "other_labels": [], "p_present": 0.556}
+{"dataset": "indiana", "file": "3214_IM-1519-1001.dcm.png", "finding": "pleural effusion", "boxes": [[14, 65, 22, 72]], "other_labels": [], "p_present": 0.771}
+{"dataset": "indiana", "file": "3245_IM-1537-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 58, 34, 72], [75, 60, 98, 72]], "other_labels": [], "p_present": 0.91}
+{"dataset": "indiana", "file": "3245_IM-1537-4001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 58, 34, 72], [75, 60, 98, 72]], "other_labels": [], "p_present": 0.91}
+{"dataset": "indiana", "file": "3248_IM-1538-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 48, 38, 64], [64, 48, 90, 64]], "other_labels": [], "p_present": 0.981}
+{"dataset": "indiana", "file": "3256_IM-1543-1001.dcm.png", "finding": "pleural effusion", "boxes": [[75, 54, 94, 69]], "other_labels": [], "p_present": 0.954}
+{"dataset": "indiana", "file": "3382_IM-1629-0001-0001.dcm.png", "finding": "pleural effusion", "boxes": [[84, 72, 92, 85]], "other_labels": [], "p_present": 0.664}
+{"dataset": "indiana", "file": "3508_IM-1710-1001.dcm.png", "finding": "pleural effusion", "boxes": [[14, 54, 44, 76], [75, 60, 85, 73]], "other_labels": [], "p_present": 0.963}
+{"dataset": "indiana", "file": "3509_IM-1711-0001-0001.dcm.png", "finding": "pleural effusion", "boxes": [[7, 54, 38, 77]], "other_labels": [], "p_present": 0.955}
+{"dataset": "indiana", "file": "3509_IM-1711-0001-0003.dcm.png", "finding": "pleural effusion", "boxes": [[7, 60, 38, 77]], "other_labels": [], "p_present": 0.904}
+{"dataset": "indiana", "file": "3519_IM-1717-1001.dcm.png", "finding": "pleural effusion", "boxes": [[54, 20, 92, 77]], "other_labels": [], "p_present": 0.985}
+{"dataset": "indiana", "file": "353_IM-1726-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 67, 10, 72], [84, 68, 90, 73]], "other_labels": [], "p_present": 0.723}
+{"dataset": "indiana", "file": "3557_IM-1742-0001-0002.dcm.png", "finding": "pleural effusion", "boxes": [[5, 80, 10, 87], [89, 85, 94, 92]], "other_labels": [], "p_present": 0.4}
+{"dataset": "indiana", "file": "3614_IM-1787-4001.dcm.png", "finding": "pleural effusion", "boxes": [[84, 54, 90, 66]], "other_labels": [], "p_present": 0.221}
+{"dataset": "indiana", "file": "3688_IM-1839-0001-0001.dcm.png", "finding": "pleural effusion", "boxes": [[10, 52, 46, 72], [69, 54, 93, 73]], "other_labels": [], "p_present": 0.963}
+{"dataset": "indiana", "file": "372_IM-1858-4004.dcm.png", "finding": "pleural effusion", "boxes": [[84, 72, 90, 80]], "other_labels": [], "p_present": 0.107}
+{"dataset": "indiana", "file": "374_IM-1868-1001.dcm.png", "finding": "pleural effusion", "boxes": [[10, 34, 44, 70]], "other_labels": [], "p_present": 0.923}
+{"dataset": "indiana", "file": "3750_IM-1874-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 67, 26, 85], [84, 75, 92, 86]], "other_labels": [], "p_present": 0.937}
+{"dataset": "indiana", "file": "379_IM-1903-4004.dcm.png", "finding": "pleural effusion", "boxes": [[8, 52, 38, 64], [75, 54, 95, 68]], "other_labels": [], "p_present": 0.864}
+{"dataset": "indiana", "file": "3853_IM-1950-1001.dcm.png", "finding": "pleural effusion", "boxes": [[7, 64, 14, 72], [86, 65, 92, 72]], "other_labels": [], "p_present": 0.64}
+{"dataset": "indiana", "file": "3870_IM-1963-4001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 48, 44, 76], [60, 52, 88, 76]], "other_labels": [], "p_present": 0.965}
+{"dataset": "indiana", "file": "3891_IM-1973-1001.dcm.png", "finding": "pleural effusion", "boxes": [[76, 54, 90, 66]], "other_labels": [], "p_present": 0.878}
+{"dataset": "indiana", "file": "576_IM-2174-1001.dcm.png", "finding": "pleural effusion", "boxes": [[10, 58, 16, 68]], "other_labels": [], "p_present": 0.271}
+{"dataset": "indiana", "file": "635_IM-2215-1001.dcm.png", "finding": "pleural effusion", "boxes": [[59, 44, 93, 82]], "other_labels": [], "p_present": 0.99}
+{"dataset": "indiana", "file": "649_IM-2227-1001.dcm.png", "finding": "pleural effusion", "boxes": [[84, 64, 90, 72]], "other_labels": [], "p_present": 0.795}
+{"dataset": "indiana", "file": "650_IM-2228-4001.dcm.png", "finding": "pleural effusion", "boxes": [[18, 60, 44, 76]], "other_labels": [], "p_present": 0.922}
+{"dataset": "indiana", "file": "651_IM-2229-1001.dcm.png", "finding": "pleural effusion", "boxes": [[59, 47, 83, 60]], "other_labels": [], "p_present": 0.898}
+{"dataset": "indiana", "file": "677_IM-2249-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 64, 38, 77]], "other_labels": [], "p_present": 0.955}
+{"dataset": "indiana", "file": "830_IM-2358-1001.dcm.png", "finding": "pleural effusion", "boxes": [[10, 64, 44, 80]], "other_labels": [], "p_present": 0.893}
+{"dataset": "indiana", "file": "1137_IM-0093-4004.dcm.png", "finding": "pleural effusion", "boxes": [[84, 90, 92, 99]], "other_labels": [], "p_present": 0.033}
+{"dataset": "indiana", "file": "1026_IM-0021-2002.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2909_IM-1313-1001.dcm.png", "finding": "pleural effusion", "boxes": [[82, 64, 87, 72]], "other_labels": [], "p_present": 0.267}
+{"dataset": "indiana", "file": "1831_IM-0538-2001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3986_IM-2041-1001.dcm.png", "finding": "pleural effusion", "boxes": [[84, 75, 88, 80]], "other_labels": [], "p_present": 0.018}
+{"dataset": "indiana", "file": "242_IM-0963-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "590_IM-2185-2001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1550_IM-0359-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 82, 10, 89], [87, 84, 92, 90]], "other_labels": [], "p_present": 0.052}
+{"dataset": "indiana", "file": "3305_IM-1581-4001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 62, 14, 73]], "other_labels": [], "p_present": 0.552}
+{"dataset": "indiana", "file": "522_IM-2133-1002001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 77, 10, 83]], "other_labels": [], "p_present": 0.04}
+{"dataset": "indiana", "file": "2513_IM-1035-1001.dcm.png", "finding": "pleural effusion", "boxes": [[82, 70, 92, 81]], "other_labels": [], "p_present": 0.63}
+{"dataset": "indiana", "file": "1288_IM-0189-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1085_IM-0059-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3861_IM-1955-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3159_IM-1487-1001-0001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 82, 10, 89]], "other_labels": [], "p_present": 0.256}
+{"dataset": "indiana", "file": "1743_IM-0489-4004.dcm.png", "finding": "pleural effusion", "boxes": [[8, 70, 14, 80]], "other_labels": [], "p_present": 0.053}
+{"dataset": "indiana", "file": "1751_IM-0494-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "483_IM-2107-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 77, 10, 83]], "other_labels": [], "p_present": 0.048}
+{"dataset": "indiana", "file": "1319_IM-0205-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "216_IM-0777-2001.dcm.png", "finding": "pleural effusion", "boxes": [[86, 72, 90, 80]], "other_labels": [], "p_present": 0.058}
+{"dataset": "indiana", "file": "818_IM-2349-1001.dcm.png", "finding": "pleural effusion", "boxes": [[84, 77, 90, 85]], "other_labels": [], "p_present": 0.461}
+{"dataset": "indiana", "file": "3915_IM-1990-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 70, 11, 75]], "other_labels": [], "p_present": 0.052}
+{"dataset": "indiana", "file": "2183_IM-0794-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 77, 14, 87], [87, 77, 94, 87]], "other_labels": [], "p_present": 0.304}
+{"dataset": "indiana", "file": "2577_IM-1077-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2911_IM-1314-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 76, 14, 85], [82, 75, 88, 82]], "other_labels": [], "p_present": 0.22}
+{"dataset": "indiana", "file": "2887_IM-1289-4001.dcm.png", "finding": "pleural effusion", "boxes": [[84, 68, 90, 76]], "other_labels": [], "p_present": 0.465}
+{"dataset": "indiana", "file": "118_IM-0123-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2282_IM-0869-1001.dcm.png", "finding": "pleural effusion", "boxes": [[86, 68, 90, 76]], "other_labels": [], "p_present": 0.086}
+{"dataset": "indiana", "file": "1983_IM-0640-2002.dcm.png", "finding": "pleural effusion", "boxes": [[5, 80, 10, 87], [87, 80, 92, 87]], "other_labels": [], "p_present": 0.014}
+{"dataset": "indiana", "file": "474_IM-2101-1001.dcm.png", "finding": "pleural effusion", "boxes": [[4, 85, 10, 92], [87, 86, 94, 92]], "other_labels": [], "p_present": 0.036}
+{"dataset": "indiana", "file": "1226_IM-0150-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2694_IM-1165-1001.dcm.png", "finding": "pleural effusion", "boxes": [[84, 72, 88, 78]], "other_labels": [], "p_present": 0.022}
+{"dataset": "indiana", "file": "3672_IM-1828-1001.dcm.png", "finding": "pleural effusion", "boxes": [[5, 78, 10, 85], [87, 78, 92, 85]], "other_labels": [], "p_present": 0.114}
+{"dataset": "indiana", "file": "3082_IM-1441-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 75, 14, 85], [84, 75, 90, 85]], "other_labels": [], "p_present": 0.423}
+{"dataset": "indiana", "file": "1178_IM-0121-1001.dcm.png", "finding": "pleural effusion", "boxes": [[6, 87, 10, 92], [87, 86, 90, 91]], "other_labels": [], "p_present": 0.038}
+{"dataset": "indiana", "file": "2005_IM-0656-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "144_IM-0283-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2728_IM-1187-1001.dcm.png", "finding": "pleural effusion", "boxes": [[8, 82, 14, 92], [84, 84, 90, 92]], "other_labels": [], "p_present": 0.301}
+{"dataset": "indiana", "file": "247_IM-1000-1001.dcm.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2548_IM-1056-0001-0001.dcm.png", "finding": "pleural effusion", "boxes": [[84, 50, 90, 60]], "other_labels": [], "p_present": 0.654}
+{"dataset": "indiana", "file": "1016_IM-0013-1001.dcm.png", "finding": "atelectasis", "boxes": [[14, 54, 34, 64], [76, 61, 90, 70]], "other_labels": [], "p_present": 0.806}
+{"dataset": "indiana", "file": "1021_IM-0017-1001-0001.dcm.png", "finding": "atelectasis", "boxes": [[14, 14, 46, 65]], "other_labels": [], "p_present": 0.931}
+{"dataset": "indiana", "file": "1043_IM-0035-0001-0002.dcm.png", "finding": "atelectasis", "boxes": [[74, 64, 85, 76]], "other_labels": [], "p_present": 0.465}
+{"dataset": "indiana", "file": "1053_IM-0040-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 50, 34, 62], [71, 44, 85, 52]], "other_labels": [], "p_present": 0.839}
+{"dataset": "indiana", "file": "1064_IM-0045-1001.dcm.png", "finding": "atelectasis", "boxes": [[10, 48, 45, 76]], "other_labels": [], "p_present": 0.741}
+{"dataset": "indiana", "file": "1075_IM-0054-1001.dcm.png", "finding": "atelectasis", "boxes": [[14, 64, 30, 73]], "other_labels": [], "p_present": 0.595}
+{"dataset": "indiana", "file": "1085_IM-0059-1001.dcm.png", "finding": "atelectasis", "boxes": [[71, 33, 84, 41]], "other_labels": [], "p_present": 0.7}
+{"dataset": "indiana", "file": "1105_IM-0072-1001-0001.dcm.png", "finding": "atelectasis", "boxes": [[23, 41, 34, 45]], "other_labels": [], "p_present": 0.716}
+{"dataset": "indiana", "file": "1233_IM-0157-1001.dcm.png", "finding": "atelectasis", "boxes": [[78, 65, 89, 73]], "other_labels": [], "p_present": 0.506}
+{"dataset": "indiana", "file": "1348_IM-0226-4004-0001.dcm.png", "finding": "atelectasis", "boxes": [[71, 47, 85, 54]], "other_labels": [], "p_present": 0.88}
+{"dataset": "indiana", "file": "1360_IM-0234-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[20, 55, 40, 66], [74, 64, 90, 76]], "other_labels": [], "p_present": 0.955}
+{"dataset": "indiana", "file": "1362_IM-0235-1001.dcm.png", "finding": "atelectasis", "boxes": [[54, 43, 90, 61]], "other_labels": [], "p_present": 0.937}
+{"dataset": "indiana", "file": "1398_IM-0254-1001.dcm.png", "finding": "atelectasis", "boxes": [[14, 55, 40, 68]], "other_labels": [], "p_present": 0.148}
+{"dataset": "indiana", "file": "1419_IM-0267-1001.dcm.png", "finding": "atelectasis", "boxes": [[73, 64, 94, 76]], "other_labels": [], "p_present": 0.95}
+{"dataset": "indiana", "file": "1445_IM-0287-4004.dcm.png", "finding": "atelectasis", "boxes": [[10, 48, 43, 63]], "other_labels": [], "p_present": 0.911}
+{"dataset": "indiana", "file": "1485_IM-0313-1001.dcm.png", "finding": "atelectasis", "boxes": [[8, 64, 34, 77], [74, 64, 96, 77]], "other_labels": [], "p_present": 0.984}
+{"dataset": "indiana", "file": "1525_IM-0340-3001.dcm.png", "finding": "atelectasis", "boxes": [[54, 14, 74, 52]], "other_labels": [], "p_present": 0.689}
+{"dataset": "indiana", "file": "1525_IM-0340-4001.dcm.png", "finding": "atelectasis", "boxes": [[54, 14, 74, 38]], "other_labels": [], "p_present": 0.804}
+{"dataset": "indiana", "file": "1557_IM-0364-4004.dcm.png", "finding": "atelectasis", "boxes": [[14, 50, 38, 66]], "other_labels": [], "p_present": 0.835}
+{"dataset": "indiana", "file": "1704_IM-0464-1001.dcm.png", "finding": "atelectasis", "boxes": [[7, 56, 18, 60], [73, 42, 90, 52]], "other_labels": [], "p_present": 0.919}
+{"dataset": "indiana", "file": "1727_IM-0479-1001.dcm.png", "finding": "atelectasis", "boxes": [[74, 41, 85, 50]], "other_labels": [], "p_present": 0.55}
+{"dataset": "indiana", "file": "1733_IM-0483-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[64, 64, 90, 76]], "other_labels": [], "p_present": 0.765}
+{"dataset": "indiana", "file": "175_IM-0492-1001.dcm.png", "finding": "atelectasis", "boxes": [[10, 47, 42, 56]], "other_labels": [], "p_present": 0.861}
+{"dataset": "indiana", "file": "1769_IM-0503-1001.dcm.png", "finding": "atelectasis", "boxes": [[64, 43, 89, 64]], "other_labels": [], "p_present": 0.764}
+{"dataset": "indiana", "file": "177_IM-0503-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 50, 40, 66]], "other_labels": [], "p_present": 0.703}
+{"dataset": "indiana", "file": "1792_IM-0515-1001.dcm.png", "finding": "atelectasis", "boxes": [[80, 58, 87, 64]], "other_labels": [], "p_present": 0.329}
+{"dataset": "indiana", "file": "1819_IM-0530-1001-0001.dcm.png", "finding": "atelectasis", "boxes": [[64, 32, 86, 45]], "other_labels": [], "p_present": 0.908}
+{"dataset": "indiana", "file": "1833_IM-0539-1001.dcm.png", "finding": "atelectasis", "boxes": [[74, 64, 85, 69]], "other_labels": [], "p_present": 0.771}
+{"dataset": "indiana", "file": "1867_IM-0560-4004.dcm.png", "finding": "atelectasis", "boxes": [[20, 64, 34, 72]], "other_labels": [], "p_present": 0.612}
+{"dataset": "indiana", "file": "1874_IM-0565-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 58, 40, 70]], "other_labels": [], "p_present": 0.427}
+{"dataset": "indiana", "file": "1889_IM-0577-1001.dcm.png", "finding": "atelectasis", "boxes": [[5, 66, 33, 77]], "other_labels": [], "p_present": 0.552}
+{"dataset": "indiana", "file": "188_IM-0569-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 64, 30, 70], [60, 54, 85, 76]], "other_labels": [], "p_present": 0.82}
+{"dataset": "indiana", "file": "1919_IM-0598-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 60, 40, 80]], "other_labels": [], "p_present": 0.386}
+{"dataset": "indiana", "file": "1919_IM-0598-3001.dcm.png", "finding": "atelectasis", "boxes": [[14, 50, 30, 68]], "other_labels": [], "p_present": 0.291}
+{"dataset": "indiana", "file": "194_IM-0609-2001.dcm.png", "finding": "atelectasis", "boxes": [[76, 60, 89, 71]], "other_labels": [], "p_present": 0.74}
+{"dataset": "indiana", "file": "1961_IM-0628-3001.dcm.png", "finding": "atelectasis", "boxes": [[54, 30, 65, 40]], "other_labels": [], "p_present": 0.475}
+{"dataset": "indiana", "file": "1977_IM-0636-1001.dcm.png", "finding": "atelectasis", "boxes": [[70, 64, 85, 76]], "other_labels": [], "p_present": 0.647}
+{"dataset": "indiana", "file": "2034_IM-0679-2001.dcm.png", "finding": "atelectasis", "boxes": [[10, 64, 20, 70]], "other_labels": [], "p_present": 0.687}
+{"dataset": "indiana", "file": "2036_IM-0680-4001.dcm.png", "finding": "atelectasis", "boxes": [[14, 34, 36, 46]], "other_labels": [], "p_present": 0.87}
+{"dataset": "indiana", "file": "2046_IM-0688-1001.dcm.png", "finding": "atelectasis", "boxes": [[5, 47, 33, 54]], "other_labels": [], "p_present": 0.869}
+{"dataset": "indiana", "file": "2055_IM-0693-1001.dcm.png", "finding": "atelectasis", "boxes": [[54, 48, 73, 62]], "other_labels": [], "p_present": 0.738}
+{"dataset": "indiana", "file": "2062_IM-0699-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[64, 58, 76, 71]], "other_labels": [], "p_present": 0.49}
+{"dataset": "indiana", "file": "2074_IM-0708-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 54, 34, 63]], "other_labels": [], "p_present": 0.633}
+{"dataset": "indiana", "file": "2165_IM-0781-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[20, 50, 40, 61], [60, 50, 77, 61]], "other_labels": [], "p_present": 0.938}
+{"dataset": "indiana", "file": "216_IM-0777-2001.dcm.png", "finding": "atelectasis", "boxes": [[64, 64, 89, 77]], "other_labels": [], "p_present": 0.307}
+{"dataset": "indiana", "file": "2177_IM-0789-4001.dcm.png", "finding": "atelectasis", "boxes": [[28, 24, 40, 34]], "other_labels": [], "p_present": 0.45}
+{"dataset": "indiana", "file": "2206_IM-0815-2001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2246_IM-0843-1001.dcm.png", "finding": "atelectasis", "boxes": [[78, 64, 92, 72]], "other_labels": [], "p_present": 0.914}
+{"dataset": "indiana", "file": "2279_IM-0865-2001.dcm.png", "finding": "atelectasis", "boxes": [[32, 60, 40, 70]], "other_labels": [], "p_present": 0.375}
+{"dataset": "indiana", "file": "2314_IM-0889-1001.dcm.png", "finding": "atelectasis", "boxes": [[5, 78, 25, 87]], "other_labels": [], "p_present": 0.927}
+{"dataset": "indiana", "file": "2318_IM-0891-1001.dcm.png", "finding": "atelectasis", "boxes": [[56, 6, 90, 84]], "other_labels": [], "p_present": 0.574}
+{"dataset": "indiana", "file": "2322_IM-0894-1001.dcm.png", "finding": "atelectasis", "boxes": [[8, 70, 34, 82], [74, 70, 94, 82]], "other_labels": [], "p_present": 0.409}
+{"dataset": "indiana", "file": "2370_IM-0931-1001.dcm.png", "finding": "atelectasis", "boxes": [[4, 41, 44, 60]], "other_labels": [], "p_present": 0.816}
+{"dataset": "indiana", "file": "2482_IM-1011-0001-0002.dcm.png", "finding": "atelectasis", "boxes": [[56, 54, 86, 71]], "other_labels": [], "p_present": 0.606}
+{"dataset": "indiana", "file": "2489_IM-1016-1001.dcm.png", "finding": "atelectasis", "boxes": [[84, 64, 92, 72]], "other_labels": [], "p_present": 0.448}
+{"dataset": "indiana", "file": "2513_IM-1035-1001.dcm.png", "finding": "atelectasis", "boxes": [[60, 64, 90, 76]], "other_labels": [], "p_present": 0.665}
+{"dataset": "indiana", "file": "2548_IM-1056-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[10, 44, 34, 54], [60, 44, 85, 54]], "other_labels": [], "p_present": 0.975}
+{"dataset": "indiana", "file": "2610_IM-1101-1001.dcm.png", "finding": "atelectasis", "boxes": [[30, 18, 40, 28]], "other_labels": [], "p_present": 0.367}
+{"dataset": "indiana", "file": "2664_IM-1145-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2676_IM-1151-1001.dcm.png", "finding": "atelectasis", "boxes": [[14, 50, 37, 60]], "other_labels": [], "p_present": 0.665}
+{"dataset": "indiana", "file": "2713_IM-1180-1001.dcm.png", "finding": "atelectasis", "boxes": [[10, 60, 42, 72]], "other_labels": [], "p_present": 0.613}
+{"dataset": "indiana", "file": "2728_IM-1187-1001.dcm.png", "finding": "atelectasis", "boxes": [[74, 78, 90, 91]], "other_labels": [], "p_present": 0.629}
+{"dataset": "indiana", "file": "2752_IM-1202-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[20, 20, 44, 46]], "other_labels": [], "p_present": 0.832}
+{"dataset": "indiana", "file": "285_IM-1258-4004.dcm.png", "finding": "atelectasis", "boxes": [[20, 58, 34, 68]], "other_labels": [], "p_present": 0.622}
+{"dataset": "indiana", "file": "2887_IM-1289-4001.dcm.png", "finding": "atelectasis", "boxes": [[34, 54, 45, 68]], "other_labels": [], "p_present": 0.887}
+{"dataset": "indiana", "file": "2911_IM-1314-1001.dcm.png", "finding": "atelectasis", "boxes": [[7, 68, 18, 72]], "other_labels": [], "p_present": 0.842}
+{"dataset": "indiana", "file": "2957_IM-1354-1003.dcm.png", "finding": "atelectasis", "boxes": [[14, 48, 40, 63]], "other_labels": [], "p_present": 0.683}
+{"dataset": "indiana", "file": "2961_IM-1355-1001.dcm.png", "finding": "atelectasis", "boxes": [[10, 54, 42, 66], [60, 54, 85, 67]], "other_labels": [], "p_present": 0.934}
+{"dataset": "indiana", "file": "297_IM-1361-4004.dcm.png", "finding": "atelectasis", "boxes": [[64, 60, 90, 76]], "other_labels": [], "p_present": 0.751}
+{"dataset": "indiana", "file": "2999_IM-1383-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[73, 58, 90, 72]], "other_labels": [], "p_present": 0.586}
+{"dataset": "indiana", "file": "3096_IM-1448-1001.dcm.png", "finding": "atelectasis", "boxes": [[14, 58, 40, 76]], "other_labels": [], "p_present": 0.686}
+{"dataset": "indiana", "file": "3256_IM-1543-1001.dcm.png", "finding": "atelectasis", "boxes": [[76, 54, 90, 65]], "other_labels": [], "p_present": 0.567}
+{"dataset": "indiana", "file": "3305_IM-1581-4001.dcm.png", "finding": "atelectasis", "boxes": [[14, 54, 40, 68]], "other_labels": [], "p_present": 0.618}
+{"dataset": "indiana", "file": "3369_IM-1621-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 20, 46, 90]], "other_labels": [], "p_present": 0.565}
+{"dataset": "indiana", "file": "3411_IM-1649-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[68, 50, 84, 64]], "other_labels": [], "p_present": 0.912}
+{"dataset": "indiana", "file": "3414_IM-1650-1001.dcm.png", "finding": "atelectasis", "boxes": [[28, 41, 44, 52]], "other_labels": [], "p_present": 0.56}
+{"dataset": "indiana", "file": "3415_IM-1650-1001.dcm.png", "finding": "atelectasis", "boxes": [[64, 58, 90, 72]], "other_labels": [], "p_present": 0.3}
+{"dataset": "indiana", "file": "3442_IM-1667-1001.dcm.png", "finding": "atelectasis", "boxes": [[10, 54, 40, 62], [60, 54, 85, 63]], "other_labels": [], "p_present": 0.889}
+{"dataset": "indiana", "file": "3508_IM-1710-1001.dcm.png", "finding": "atelectasis", "boxes": [[26, 14, 46, 30]], "other_labels": [], "p_present": 0.571}
+{"dataset": "indiana", "file": "3509_IM-1711-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[14, 50, 38, 68]], "other_labels": [], "p_present": 0.5}
+{"dataset": "indiana", "file": "3509_IM-1711-0001-0003.dcm.png", "finding": "atelectasis", "boxes": [[14, 50, 38, 68]], "other_labels": [], "p_present": 0.615}
+{"dataset": "indiana", "file": "3562_IM-1747-2001.dcm.png", "finding": "atelectasis", "boxes": [[78, 54, 89, 60]], "other_labels": [], "p_present": 0.489}
+{"dataset": "indiana", "file": "3566_IM-1751-12012.dcm.png", "finding": "atelectasis", "boxes": [[64, 64, 90, 76]], "other_labels": [], "p_present": 0.362}
+{"dataset": "indiana", "file": "3607_IM-1781-1001.dcm.png", "finding": "atelectasis", "boxes": [[70, 58, 85, 66]], "other_labels": [], "p_present": 0.891}
+{"dataset": "indiana", "file": "3614_IM-1787-4001.dcm.png", "finding": "atelectasis", "boxes": [[54, 47, 90, 72]], "other_labels": [], "p_present": 0.639}
+{"dataset": "indiana", "file": "3688_IM-1839-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[14, 50, 40, 62], [69, 52, 90, 66]], "other_labels": [], "p_present": 0.813}
+{"dataset": "indiana", "file": "374_IM-1868-1001.dcm.png", "finding": "atelectasis", "boxes": [[14, 32, 44, 65]], "other_labels": [], "p_present": 0.732}
+{"dataset": "indiana", "file": "3797_IM-1910-0001-0002.dcm.png", "finding": "atelectasis", "boxes": [[20, 54, 40, 63], [60, 54, 85, 65]], "other_labels": [], "p_present": 0.97}
+{"dataset": "indiana", "file": "3891_IM-1973-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 48, 40, 56], [60, 50, 85, 63]], "other_labels": [], "p_present": 0.932}
+{"dataset": "indiana", "file": "3901_IM-1980-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 44, 34, 54]], "other_labels": [], "p_present": 0.573}
+{"dataset": "indiana", "file": "411_IM-2056-1001.dcm.png", "finding": "atelectasis", "boxes": [[64, 54, 90, 68]], "other_labels": [], "p_present": 0.816}
+{"dataset": "indiana", "file": "491_IM-2111-1001.dcm.png", "finding": "atelectasis", "boxes": [[8, 64, 34, 75], [69, 64, 92, 75]], "other_labels": [], "p_present": 0.977}
+{"dataset": "indiana", "file": "576_IM-2174-1001.dcm.png", "finding": "atelectasis", "boxes": [[22, 48, 40, 60]], "other_labels": [], "p_present": 0.784}
+{"dataset": "indiana", "file": "635_IM-2215-1001.dcm.png", "finding": "atelectasis", "boxes": [[60, 44, 85, 64]], "other_labels": [], "p_present": 0.657}
+{"dataset": "indiana", "file": "688_IM-2256-1001.dcm.png", "finding": "atelectasis", "boxes": [[64, 54, 85, 64]], "other_labels": [], "p_present": 0.964}
+{"dataset": "indiana", "file": "723_IM-2283-1001.dcm.png", "finding": "atelectasis", "boxes": [[34, 50, 46, 60], [70, 54, 82, 64]], "other_labels": [], "p_present": 0.966}
+{"dataset": "indiana", "file": "749_IM-2302-1001.dcm.png", "finding": "atelectasis", "boxes": [[74, 54, 85, 64]], "other_labels": [], "p_present": 0.362}
+{"dataset": "indiana", "file": "78_IM-2322-1001.dcm.png", "finding": "atelectasis", "boxes": [[74, 54, 90, 60]], "other_labels": [], "p_present": 0.746}
+{"dataset": "indiana", "file": "808_IM-2341-2001.dcm.png", "finding": "atelectasis", "boxes": [[14, 54, 34, 60], [70, 54, 88, 66]], "other_labels": [], "p_present": 0.909}
+{"dataset": "indiana", "file": "840_IM-2364-0001-0002.dcm.png", "finding": "atelectasis", "boxes": [[64, 30, 76, 45]], "other_labels": [], "p_present": 0.653}
+{"dataset": "indiana", "file": "2162_IM-0779-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 54, 40, 65]], "other_labels": [], "p_present": 0.453}
+{"dataset": "indiana", "file": "394_IM-2010-1001.dcm.png", "finding": "atelectasis", "boxes": [[10, 50, 42, 76]], "other_labels": [], "p_present": 0.731}
+{"dataset": "indiana", "file": "699_IM-2263-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 45, 34, 56]], "other_labels": [], "p_present": 0.377}
+{"dataset": "indiana", "file": "1713_IM-0471-4004.dcm.png", "finding": "atelectasis", "boxes": [[78, 72, 90, 76]], "other_labels": [], "p_present": 0.091}
+{"dataset": "indiana", "file": "2668_IM-1147-3001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1117_IM-0079-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 32, 30, 36]], "other_labels": [], "p_present": 0.208}
+{"dataset": "indiana", "file": "3836_IM-1939-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "804_IM-2338-2001.dcm.png", "finding": "atelectasis", "boxes": [[64, 50, 73, 63]], "other_labels": [], "p_present": 0.356}
+{"dataset": "indiana", "file": "1460_IM-0298-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1857_IM-0556-4004.dcm.png", "finding": "atelectasis", "boxes": [[74, 64, 79, 66]], "other_labels": [], "p_present": 0.671}
+{"dataset": "indiana", "file": "2181_IM-0793-1001-0001.dcm.png", "finding": "atelectasis", "boxes": [[14, 48, 40, 63]], "other_labels": [], "p_present": 0.645}
+{"dataset": "indiana", "file": "1522_IM-0338-0001-0002.dcm.png", "finding": "atelectasis", "boxes": [[12, 64, 20, 72]], "other_labels": [], "p_present": 0.2}
+{"dataset": "indiana", "file": "3619_IM-1791-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2512_IM-1034-1001.dcm.png", "finding": "atelectasis", "boxes": [[60, 46, 85, 63]], "other_labels": [], "p_present": 0.622}
+{"dataset": "indiana", "file": "741_IM-2297-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1678_IM-0447-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[14, 42, 40, 56]], "other_labels": [], "p_present": 0.616}
+{"dataset": "indiana", "file": "3911_IM-1987-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1182_IM-0124-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3214_IM-1519-1001.dcm.png", "finding": "atelectasis", "boxes": [[14, 64, 24, 72]], "other_labels": [], "p_present": 0.358}
+{"dataset": "indiana", "file": "1831_IM-0538-2001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3185_IM-1503-1001.dcm.png", "finding": "atelectasis", "boxes": [[78, 64, 91, 68]], "other_labels": [], "p_present": 0.62}
+{"dataset": "indiana", "file": "3159_IM-1487-1001-0001.dcm.png", "finding": "atelectasis", "boxes": [[20, 64, 40, 76]], "other_labels": [], "p_present": 0.67}
+{"dataset": "indiana", "file": "2043_IM-0686-2001.dcm.png", "finding": "atelectasis", "boxes": [[20, 54, 34, 63]], "other_labels": [], "p_present": 0.429}
+{"dataset": "indiana", "file": "3211_IM-1517-1001-0002.dcm.png", "finding": "atelectasis", "boxes": [[34, 47, 46, 61]], "other_labels": [], "p_present": 0.834}
+{"dataset": "indiana", "file": "3953_IM-2021-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2130_IM-0755-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 54, 40, 72]], "other_labels": [], "p_present": 0.619}
+{"dataset": "indiana", "file": "3560_IM-1745-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 60, 34, 71]], "other_labels": [], "p_present": 0.271}
+{"dataset": "indiana", "file": "1807_IM-0524-1001.dcm.png", "finding": "atelectasis", "boxes": [[74, 64, 85, 72]], "other_labels": [], "p_present": 0.738}
+{"dataset": "indiana", "file": "719_IM-2280-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3866_IM-1959-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[20, 54, 40, 68]], "other_labels": [], "p_present": 0.369}
+{"dataset": "indiana", "file": "3861_IM-1955-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1636_IM-0415-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2023_IM-0669-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1923_IM-0598-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 58, 40, 74]], "other_labels": [], "p_present": 0.414}
+{"dataset": "indiana", "file": "1375_IM-0241-3001.dcm.png", "finding": "atelectasis", "boxes": [[33, 28, 46, 56]], "other_labels": [], "p_present": 0.269}
+{"dataset": "indiana", "file": "2008_IM-0658-1001.dcm.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "818_IM-2349-1001.dcm.png", "finding": "atelectasis", "boxes": [[64, 64, 90, 76]], "other_labels": [], "p_present": 0.641}
+{"dataset": "indiana", "file": "1282_IM-0188-1001.dcm.png", "finding": "atelectasis", "boxes": [[20, 50, 30, 60]], "other_labels": [], "p_present": 0.158}
+{"dataset": "indiana", "file": "3453_IM-1676-0001-0001.dcm.png", "finding": "atelectasis", "boxes": [[10, 66, 36, 76]], "other_labels": [], "p_present": 0.672}
+{"dataset": "indiana", "file": "3557_IM-1742-0001-0002.dcm.png", "finding": "atelectasis", "boxes": [[20, 64, 40, 76]], "other_labels": [], "p_present": 0.386}
+{"dataset": "indiana", "file": "1012_IM-0013-1001.dcm.png", "finding": "consolidation", "boxes": [[64, 50, 76, 64]], "other_labels": [], "p_present": 0.661}
+{"dataset": "indiana", "file": "1016_IM-0013-1001.dcm.png", "finding": "consolidation", "boxes": [[14, 50, 38, 66]], "other_labels": [], "p_present": 0.248}
+{"dataset": "indiana", "file": "1064_IM-0045-1001.dcm.png", "finding": "consolidation", "boxes": [[14, 44, 45, 72]], "other_labels": [], "p_present": 0.82}
+{"dataset": "indiana", "file": "1072_IM-0052-1001-0002.dcm.png", "finding": "consolidation", "boxes": [[64, 58, 86, 73]], "other_labels": [], "p_present": 0.239}
+{"dataset": "indiana", "file": "1102_IM-0069-12012.dcm.png", "finding": "consolidation", "boxes": [[14, 50, 34, 68]], "other_labels": [], "p_present": 0.718}
+{"dataset": "indiana", "file": "1117_IM-0079-1001.dcm.png", "finding": "consolidation", "boxes": [[72, 50, 82, 60]], "other_labels": [], "p_present": 0.276}
+{"dataset": "indiana", "file": "118_IM-0123-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 54, 34, 64]], "other_labels": [], "p_present": 0.196}
+{"dataset": "indiana", "file": "1226_IM-0150-1001.dcm.png", "finding": "consolidation", "boxes": [[32, 50, 42, 63]], "other_labels": [], "p_present": 0.039}
+{"dataset": "indiana", "file": "1244_IM-0166-2001.dcm.png", "finding": "consolidation", "boxes": [[28, 50, 44, 63]], "other_labels": [], "p_present": 0.613}
+{"dataset": "indiana", "file": "1282_IM-0188-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 50, 30, 60]], "other_labels": [], "p_present": 0.116}
+{"dataset": "indiana", "file": "1422_IM-0269-1001.dcm.png", "finding": "consolidation", "boxes": [[14, 28, 32, 46], [76, 32, 90, 42]], "other_labels": [], "p_present": 0.794}
+{"dataset": "indiana", "file": "1445_IM-0287-4004.dcm.png", "finding": "consolidation", "boxes": [[14, 48, 44, 63]], "other_labels": [], "p_present": 0.741}
+{"dataset": "indiana", "file": "144_IM-0283-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1641_IM-0420-1001.dcm.png", "finding": "consolidation", "boxes": [[64, 50, 71, 60]], "other_labels": [], "p_present": 0.082}
+{"dataset": "indiana", "file": "1649_IM-0426-1001.dcm.png", "finding": "consolidation", "boxes": [[18, 50, 40, 68]], "other_labels": [], "p_present": 0.52}
+{"dataset": "indiana", "file": "1691_IM-0453-4001.dcm.png", "finding": "consolidation", "boxes": [[70, 44, 85, 54]], "other_labels": [], "p_present": 0.58}
+{"dataset": "indiana", "file": "1704_IM-0464-1001.dcm.png", "finding": "consolidation", "boxes": [[64, 38, 86, 52]], "other_labels": [], "p_present": 0.481}
+{"dataset": "indiana", "file": "1769_IM-0503-1001.dcm.png", "finding": "consolidation", "boxes": [[64, 41, 86, 64]], "other_labels": [], "p_present": 0.919}
+{"dataset": "indiana", "file": "178_IM-0509-2001.dcm.png", "finding": "consolidation", "boxes": [[64, 30, 72, 41]], "other_labels": [], "p_present": 0.264}
+{"dataset": "indiana", "file": "1819_IM-0530-1001-0001.dcm.png", "finding": "consolidation", "boxes": [[64, 38, 86, 50]], "other_labels": [], "p_present": 0.61}
+{"dataset": "indiana", "file": "183_IM-0537-1001.dcm.png", "finding": "consolidation", "boxes": [[28, 50, 40, 63]], "other_labels": [], "p_present": 0.207}
+{"dataset": "indiana", "file": "1855_IM-0555-1001.dcm.png", "finding": "consolidation", "boxes": [[76, 58, 90, 76]], "other_labels": [], "p_present": 0.109}
+{"dataset": "indiana", "file": "1874_IM-0565-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 58, 34, 68]], "other_labels": [], "p_present": 0.05}
+{"dataset": "indiana", "file": "188_IM-0569-1001.dcm.png", "finding": "consolidation", "boxes": [[60, 50, 85, 72]], "other_labels": [], "p_present": 0.788}
+{"dataset": "indiana", "file": "1909_IM-0590-1001.dcm.png", "finding": "consolidation", "boxes": [[28, 50, 42, 65]], "other_labels": [], "p_present": 0.541}
+{"dataset": "indiana", "file": "1919_IM-0598-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 58, 40, 76]], "other_labels": [], "p_present": 0.369}
+{"dataset": "indiana", "file": "1919_IM-0598-3001.dcm.png", "finding": "consolidation", "boxes": [[20, 50, 34, 63]], "other_labels": [], "p_present": 0.676}
+{"dataset": "indiana", "file": "194_IM-0609-2001.dcm.png", "finding": "consolidation", "boxes": [[76, 60, 90, 70]], "other_labels": [], "p_present": 0.244}
+{"dataset": "indiana", "file": "2036_IM-0680-4001.dcm.png", "finding": "consolidation", "boxes": [[20, 38, 34, 46]], "other_labels": [], "p_present": 0.379}
+{"dataset": "indiana", "file": "2062_IM-0699-0001-0001.dcm.png", "finding": "consolidation", "boxes": [[70, 60, 82, 70]], "other_labels": [], "p_present": 0.269}
+{"dataset": "indiana", "file": "2111_IM-0741-2001.dcm.png", "finding": "consolidation", "boxes": [[14, 58, 28, 73]], "other_labels": [], "p_present": 0.157}
+{"dataset": "indiana", "file": "2207_IM-0815-1001.dcm.png", "finding": "consolidation", "boxes": [[16, 60, 22, 66]], "other_labels": [], "p_present": 0.035}
+{"dataset": "indiana", "file": "2246_IM-0843-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2289_IM-0873-1001.dcm.png", "finding": "consolidation", "boxes": [[64, 50, 76, 72]], "other_labels": [], "p_present": 0.187}
+{"dataset": "indiana", "file": "2338_IM-0905-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 50, 30, 62]], "other_labels": [], "p_present": 0.563}
+{"dataset": "indiana", "file": "2370_IM-0931-1001.dcm.png", "finding": "consolidation", "boxes": [[9, 38, 41, 56]], "other_labels": [], "p_present": 0.913}
+{"dataset": "indiana", "file": "2396_IM-0945-1001.dcm.png", "finding": "consolidation", "boxes": [[76, 47, 85, 54]], "other_labels": [], "p_present": 0.11}
+{"dataset": "indiana", "file": "2417_IM-0961-1001.dcm.png", "finding": "consolidation", "boxes": [[76, 61, 85, 71]], "other_labels": [], "p_present": 0.204}
+{"dataset": "indiana", "file": "2422_IM-0965-1001.dcm.png", "finding": "consolidation", "boxes": [[64, 54, 85, 73]], "other_labels": [], "p_present": 0.716}
+{"dataset": "indiana", "file": "2474_IM-1003-1001.dcm.png", "finding": "consolidation", "boxes": [[14, 58, 34, 73]], "other_labels": [], "p_present": 0.5}
+{"dataset": "indiana", "file": "25_IM-1024-2001.dcm.png", "finding": "consolidation", "boxes": [[64, 44, 85, 64]], "other_labels": [], "p_present": 0.59}
+{"dataset": "indiana", "file": "2608_IM-1098-2001.dcm.png", "finding": "consolidation", "boxes": [[20, 48, 38, 60]], "other_labels": [], "p_present": 0.762}
+{"dataset": "indiana", "file": "267_IM-1147-1001.dcm.png", "finding": "consolidation", "boxes": [[22, 30, 32, 38]], "other_labels": [], "p_present": 0.306}
+{"dataset": "indiana", "file": "2887_IM-1289-4001.dcm.png", "finding": "consolidation", "boxes": [[34, 54, 44, 66]], "other_labels": [], "p_present": 0.275}
+{"dataset": "indiana", "file": "28_IM-1231-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 50, 34, 60]], "other_labels": [], "p_present": 0.454}
+{"dataset": "indiana", "file": "2957_IM-1354-1003.dcm.png", "finding": "consolidation", "boxes": [[14, 48, 40, 63]], "other_labels": [], "p_present": 0.756}
+{"dataset": "indiana", "file": "29_IM-1302-1001.dcm.png", "finding": "consolidation", "boxes": [[60, 50, 73, 60]], "other_labels": [], "p_present": 0.058}
+{"dataset": "indiana", "file": "3064_IM-1428-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 60, 30, 68]], "other_labels": [], "p_present": 0.303}
+{"dataset": "indiana", "file": "3096_IM-1448-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 38, 34, 54]], "other_labels": [], "p_present": 0.826}
+{"dataset": "indiana", "file": "3108_IM-1457-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 54, 40, 71]], "other_labels": [], "p_present": 0.112}
+{"dataset": "indiana", "file": "3108_IM-1457-12001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3116_IM-1464-1001.dcm.png", "finding": "consolidation", "boxes": [[76, 58, 88, 69]], "other_labels": [], "p_present": 0.379}
+{"dataset": "indiana", "file": "3130_IM-1472-1001.dcm.png", "finding": "consolidation", "boxes": [[26, 38, 34, 44]], "other_labels": [], "p_present": 0.294}
+{"dataset": "indiana", "file": "3244_IM-1536-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3248_IM-1538-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 30, 38, 46]], "other_labels": [], "p_present": 0.618}
+{"dataset": "indiana", "file": "3387_IM-1633-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3411_IM-1649-0001-0001.dcm.png", "finding": "consolidation", "boxes": [[70, 54, 82, 66]], "other_labels": [], "p_present": 0.536}
+{"dataset": "indiana", "file": "3611_IM-1784-0001-0001.dcm.png", "finding": "consolidation", "boxes": [[28, 54, 36, 63]], "other_labels": [], "p_present": 0.173}
+{"dataset": "indiana", "file": "372_IM-1858-4004.dcm.png", "finding": "consolidation", "boxes": [[64, 64, 73, 72]], "other_labels": [], "p_present": 0.105}
+{"dataset": "indiana", "file": "3866_IM-1959-0001-0001.dcm.png", "finding": "consolidation", "boxes": [[20, 50, 40, 68]], "other_labels": [], "p_present": 0.839}
+{"dataset": "indiana", "file": "3891_IM-1973-1001.dcm.png", "finding": "consolidation", "boxes": [[54, 50, 75, 64]], "other_labels": [], "p_present": 0.619}
+{"dataset": "indiana", "file": "564_IM-2165-1001.dcm.png", "finding": "consolidation", "boxes": [[14, 24, 36, 44]], "other_labels": [], "p_present": 0.98}
+{"dataset": "indiana", "file": "590_IM-2185-2001.dcm.png", "finding": "consolidation", "boxes": [[28, 42, 40, 56]], "other_labels": [], "p_present": 0.117}
+{"dataset": "indiana", "file": "688_IM-2256-1001.dcm.png", "finding": "consolidation", "boxes": [[70, 60, 80, 68]], "other_labels": [], "p_present": 0.063}
+{"dataset": "indiana", "file": "808_IM-2341-2001.dcm.png", "finding": "consolidation", "boxes": [[64, 54, 86, 70]], "other_labels": [], "p_present": 0.647}
+{"dataset": "indiana", "file": "818_IM-2349-1001.dcm.png", "finding": "consolidation", "boxes": [[17, 32, 41, 54]], "other_labels": [], "p_present": 0.947}
+{"dataset": "indiana", "file": "945_IM-2440-1001.dcm.png", "finding": "consolidation", "boxes": [[56, 16, 81, 42]], "other_labels": [], "p_present": 0.948}
+{"dataset": "indiana", "file": "3560_IM-1745-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 54, 34, 64]], "other_labels": [], "p_present": 0.085}
+{"dataset": "indiana", "file": "1961_IM-0628-3001.dcm.png", "finding": "consolidation", "boxes": [[64, 30, 73, 40]], "other_labels": [], "p_present": 0.131}
+{"dataset": "indiana", "file": "3225_IM-1525-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2506_IM-1029-1001.dcm.png", "finding": "consolidation", "boxes": [[28, 28, 40, 40]], "other_labels": [], "p_present": 0.041}
+{"dataset": "indiana", "file": "3566_IM-1751-12012.dcm.png", "finding": "consolidation", "boxes": [[64, 64, 86, 76]], "other_labels": [], "p_present": 0.075}
+{"dataset": "indiana", "file": "1339_IM-0218-1001.dcm.png", "finding": "consolidation", "boxes": [[64, 30, 73, 40]], "other_labels": [], "p_present": 0.071}
+{"dataset": "indiana", "file": "1748_IM-0490-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1289_IM-0189-1001.dcm.png", "finding": "consolidation", "boxes": [[70, 54, 80, 63]], "other_labels": [], "p_present": 0.159}
+{"dataset": "indiana", "file": "3369_IM-1621-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 30, 43, 68]], "other_labels": [], "p_present": 0.067}
+{"dataset": "indiana", "file": "649_IM-2227-1001.dcm.png", "finding": "consolidation", "boxes": [[64, 38, 84, 64]], "other_labels": [], "p_present": 0.418}
+{"dataset": "indiana", "file": "215_IM-0769-1001.dcm.png", "finding": "consolidation", "boxes": [[64, 50, 76, 68]], "other_labels": [], "p_present": 0.11}
+{"dataset": "indiana", "file": "2845_IM-1254-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1522_IM-0338-0001-0002.dcm.png", "finding": "consolidation", "boxes": [[20, 60, 30, 68]], "other_labels": [], "p_present": 0.135}
+{"dataset": "indiana", "file": "216_IM-0777-2001.dcm.png", "finding": "consolidation", "boxes": [[64, 54, 73, 64]], "other_labels": [], "p_present": 0.074}
+{"dataset": "indiana", "file": "401_IM-2051-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 30, 34, 40]], "other_labels": [], "p_present": 0.236}
+{"dataset": "indiana", "file": "2181_IM-0793-1001-0001.dcm.png", "finding": "consolidation", "boxes": [[14, 42, 41, 63]], "other_labels": [], "p_present": 0.624}
+{"dataset": "indiana", "file": "1360_IM-0234-0001-0001.dcm.png", "finding": "consolidation", "boxes": [[64, 64, 86, 76]], "other_labels": [], "p_present": 0.513}
+{"dataset": "indiana", "file": "1636_IM-0415-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "175_IM-0492-1001.dcm.png", "finding": "consolidation", "boxes": [[76, 54, 85, 63]], "other_labels": [], "p_present": 0.288}
+{"dataset": "indiana", "file": "3863_IM-1957-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 60, 30, 70]], "other_labels": [], "p_present": 0.202}
+{"dataset": "indiana", "file": "491_IM-2111-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 64, 34, 72]], "other_labels": [], "p_present": 0.154}
+{"dataset": "indiana", "file": "677_IM-2249-1001.dcm.png", "finding": "consolidation", "boxes": [[14, 40, 41, 68]], "other_labels": [], "p_present": 0.869}
+{"dataset": "indiana", "file": "2688_IM-1159-4004.dcm.png", "finding": "consolidation", "boxes": [[20, 38, 30, 45]], "other_labels": [], "p_present": 0.251}
+{"dataset": "indiana", "file": "2151_IM-0771-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "136_IM-0233-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1805_IM-0523-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2489_IM-1016-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3256_IM-1543-1001.dcm.png", "finding": "consolidation", "boxes": [[76, 54, 89, 64]], "other_labels": [], "p_present": 0.325}
+{"dataset": "indiana", "file": "1274_IM-0183-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2817_IM-1241-3001.dcm.png", "finding": "consolidation", "boxes": [[24, 8, 42, 24]], "other_labels": [], "p_present": 0.182}
+{"dataset": "indiana", "file": "1075_IM-0054-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 58, 30, 68]], "other_labels": [], "p_present": 0.299}
+{"dataset": "indiana", "file": "2482_IM-1011-0001-0002.dcm.png", "finding": "consolidation", "boxes": [[28, 50, 36, 56]], "other_labels": [], "p_present": 0.044}
+{"dataset": "indiana", "file": "2215_IM-0820-1001.dcm.png", "finding": "consolidation", "boxes": [[28, 41, 40, 56]], "other_labels": [], "p_present": 0.252}
+{"dataset": "indiana", "file": "2398_IM-0947-12012.dcm.png", "finding": "consolidation", "boxes": [[54, 30, 70, 46]], "other_labels": [], "p_present": 0.389}
+{"dataset": "indiana", "file": "1807_IM-0524-1001.dcm.png", "finding": "consolidation", "boxes": [[20, 58, 30, 68]], "other_labels": [], "p_present": 0.106}
+{"dataset": "indiana", "file": "1833_IM-0539-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3853_IM-1950-1001.dcm.png", "finding": "consolidation", "boxes": [[33, 43, 40, 48]], "other_labels": [], "p_present": 0.147}
+{"dataset": "indiana", "file": "3614_IM-1787-4001.dcm.png", "finding": "consolidation", "boxes": [[28, 42, 42, 56]], "other_labels": [], "p_present": 0.326}
+{"dataset": "indiana", "file": "1233_IM-0157-1001.dcm.png", "finding": "consolidation", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "830_IM-2358-1001.dcm.png", "finding": "consolidation", "boxes": [[24, 50, 30, 54]], "other_labels": [], "p_present": 0.061}
+{"dataset": "indiana", "file": "1021_IM-0017-1001-0001.dcm.png", "finding": "pneumothorax", "boxes": [[14, 10, 44, 63]], "other_labels": [], "p_present": 0.994}
+{"dataset": "indiana", "file": "1326_IM-0210-0001-0002.dcm.png", "finding": "pneumothorax", "boxes": [[18, 16, 44, 34]], "other_labels": [], "p_present": 0.98}
+{"dataset": "indiana", "file": "1339_IM-0218-1001.dcm.png", "finding": "pneumothorax", "boxes": [[10, 5, 44, 23]], "other_labels": [], "p_present": 0.119}
+{"dataset": "indiana", "file": "1339_IM-0218-2001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1691_IM-0453-4001.dcm.png", "finding": "pneumothorax", "boxes": [[54, 10, 70, 17]], "other_labels": [], "p_present": 0.125}
+{"dataset": "indiana", "file": "1874_IM-0565-1001.dcm.png", "finding": "pneumothorax", "boxes": [[20, 18, 44, 34]], "other_labels": [], "p_present": 0.846}
+{"dataset": "indiana", "file": "2318_IM-0891-1001.dcm.png", "finding": "pneumothorax", "boxes": [[54, 4, 88, 84]], "other_labels": [], "p_present": 0.999}
+{"dataset": "indiana", "file": "2482_IM-1011-0001-0002.dcm.png", "finding": "pneumothorax", "boxes": [[17, 16, 44, 38]], "other_labels": [], "p_present": 0.986}
+{"dataset": "indiana", "file": "253_IM-1045-1001.dcm.png", "finding": "pneumothorax", "boxes": [[54, 8, 84, 42]], "other_labels": [], "p_present": 0.999}
+{"dataset": "indiana", "file": "3369_IM-1621-1001.dcm.png", "finding": "pneumothorax", "boxes": [[14, 8, 46, 87]], "other_labels": [], "p_present": 0.997}
+{"dataset": "indiana", "file": "3378_IM-1627-1001.dcm.png", "finding": "pneumothorax", "boxes": [[9, 5, 44, 63]], "other_labels": [], "p_present": 0.995}
+{"dataset": "indiana", "file": "3694_IM-1845-1001.dcm.png", "finding": "pneumothorax", "boxes": [[55, 12, 76, 24]], "other_labels": [], "p_present": 0.535}
+{"dataset": "indiana", "file": "3891_IM-1973-1001.dcm.png", "finding": "pneumothorax", "boxes": [[28, 10, 46, 18]], "other_labels": [], "p_present": 0.335}
+{"dataset": "indiana", "file": "840_IM-2364-0001-0002.dcm.png", "finding": "pneumothorax", "boxes": [[54, 15, 72, 24]], "other_labels": [], "p_present": 0.71}
+{"dataset": "indiana", "file": "1043_IM-0035-0001-0002.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1125_IM-0082-2001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1064_IM-0045-1001.dcm.png", "finding": "pneumothorax", "boxes": [[18, 20, 44, 33]], "other_labels": [], "p_present": 0.076}
+{"dataset": "indiana", "file": "1909_IM-0590-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1282_IM-0188-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "808_IM-2341-2001.dcm.png", "finding": "pneumothorax", "boxes": [[54, 20, 70, 28]], "other_labels": [], "p_present": 0.067}
+{"dataset": "indiana", "file": "1713_IM-0471-4004.dcm.png", "finding": "pneumothorax", "boxes": [[20, 6, 44, 18]], "other_labels": [], "p_present": 0.177}
+{"dataset": "indiana", "file": "1867_IM-0560-4004.dcm.png", "finding": "pneumothorax", "boxes": [[28, 20, 46, 28]], "other_labels": [], "p_present": 0.025}
+{"dataset": "indiana", "file": "1990_IM-0648-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3692_IM-1843-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2691_IM-1163-4004.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3672_IM-1828-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1430_IM-0277-2001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "379_IM-1903-4004.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1974_IM-0633-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "334_IM-1600-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3586_IM-1764-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2043_IM-0686-2001.dcm.png", "finding": "pneumothorax", "boxes": [[28, 12, 46, 20]], "other_labels": [], "p_present": 0.047}
+{"dataset": "indiana", "file": "3379_IM-1627-2001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3305_IM-1581-4001.dcm.png", "finding": "pneumothorax", "boxes": [[20, 14, 44, 28]], "other_labels": [], "p_present": 0.152}
+{"dataset": "indiana", "file": "2642_IM-1128-1001.dcm.png", "finding": "pneumothorax", "boxes": [[56, 10, 77, 24]], "other_labels": [], "p_present": 0.134}
+{"dataset": "indiana", "file": "320_IM-1511-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2657_IM-1139-0001-0002.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3866_IM-1959-0001-0001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2021_IM-0668-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2395_IM-0944-1001.dcm.png", "finding": "pneumothorax", "boxes": [[14, 52, 18, 56]], "other_labels": [], "p_present": 0.068}
+{"dataset": "indiana", "file": "1766_IM-0500-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3870_IM-1963-4001.dcm.png", "finding": "pneumothorax", "boxes": [[20, 6, 46, 22]], "other_labels": [], "p_present": 0.062}
+{"dataset": "indiana", "file": "2046_IM-0688-1001.dcm.png", "finding": "pneumothorax", "boxes": [[12, 5, 43, 30]], "other_labels": [], "p_present": 0.098}
+{"dataset": "indiana", "file": "2388_IM-0944-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "610_IM-2197-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "483_IM-2107-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3552_IM-1741-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "2177_IM-0789-4001.dcm.png", "finding": "pneumothorax", "boxes": [[28, 20, 46, 28]], "other_labels": [], "p_present": 0.052}
+{"dataset": "indiana", "file": "28_IM-1231-1001.dcm.png", "finding": "pneumothorax", "boxes": [[54, 8, 72, 15]], "other_labels": [], "p_present": 0.044}
+{"dataset": "indiana", "file": "699_IM-2263-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "1485_IM-0313-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3430_IM-1659-4004.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "3883_IM-1971-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "indiana", "file": "215_IM-0769-1001.dcm.png", "finding": "pneumothorax", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "nih", "file": "00000072_000.png", "finding": "atelectasis", "boxes": [[74, 64, 85, 76]], "other_labels": [], "p_present": 0.387}
+{"dataset": "nih", "file": "00000147_001.png", "finding": "atelectasis", "boxes": [[74, 60, 80, 64]], "other_labels": [], "p_present": 0.677}
+{"dataset": "nih", "file": "00000149_006.png", "finding": "atelectasis", "boxes": [[60, 47, 76, 56]], "other_labels": [], "p_present": 0.654}
+{"dataset": "nih", "file": "00000181_061.png", "finding": "atelectasis", "boxes": [[10, 52, 42, 68]], "other_labels": [], "p_present": 0.796}
+{"dataset": "nih", "file": "00000211_010.png", "finding": "atelectasis", "boxes": [[14, 58, 40, 72]], "other_labels": [], "p_present": 0.444}
+{"dataset": "nih", "file": "00000344_003.png", "finding": "pleural effusion", "boxes": [[10, 48, 38, 64], [81, 62, 88, 69]], "other_labels": [], "p_present": 0.922}
+{"dataset": "nih", "file": "00000457_004.png", "finding": "atelectasis", "boxes": [[76, 47, 90, 72]], "other_labels": [], "p_present": 0.508}
+{"dataset": "nih", "file": "00000468_017.png", "finding": "atelectasis", "boxes": [[14, 48, 33, 54]], "other_labels": [], "p_present": 0.838}
+{"dataset": "nih", "file": "00000468_033.png", "finding": "atelectasis", "boxes": [[14, 54, 34, 60]], "other_labels": [], "p_present": 0.821}
+{"dataset": "nih", "file": "00000583_008.png", "finding": "atelectasis", "boxes": [[28, 41, 46, 52]], "other_labels": [], "p_present": 0.795}
+{"dataset": "nih", "file": "00000643_002.png", "finding": "atelectasis", "boxes": [[10, 48, 40, 62]], "other_labels": [], "p_present": 0.782}
+{"dataset": "nih", "file": "00000732_005.png", "finding": "pneumothorax", "boxes": [[55, 10, 73, 18]], "other_labels": [], "p_present": 0.772}
+{"dataset": "nih", "file": "00000744_006.png", "finding": "atelectasis", "boxes": [[19, 48, 34, 60]], "other_labels": [], "p_present": 0.633}
+{"dataset": "nih", "file": "00000808_002.png", "finding": "atelectasis", "boxes": [[54, 36, 76, 52]], "other_labels": [], "p_present": 0.728}
+{"dataset": "nih", "file": "00000830_000.png", "finding": "atelectasis", "boxes": [[70, 50, 85, 60]], "other_labels": [], "p_present": 0.925}
+{"dataset": "nih", "file": "00000865_006.png", "finding": "atelectasis", "boxes": [[74, 60, 91, 71]], "other_labels": [], "p_present": 0.339}
+{"dataset": "nih", "file": "00001153_004.png", "finding": "atelectasis", "boxes": [[20, 42, 38, 56]], "other_labels": [], "p_present": 0.791}
+{"dataset": "nih", "file": "00001170_046.png", "finding": "atelectasis", "boxes": [[64, 50, 85, 56]], "other_labels": [], "p_present": 0.808}
+{"dataset": "nih", "file": "00001248_038.png", "finding": "pneumothorax", "boxes": [[55, 10, 73, 24]], "other_labels": [], "p_present": 0.898}
+{"dataset": "nih", "file": "00001320_003.png", "finding": "atelectasis", "boxes": [[20, 54, 30, 56]], "other_labels": [], "p_present": 0.577}
+{"dataset": "nih", "file": "00001437_012.png", "finding": "pleural effusion", "boxes": [[5, 14, 44, 72]], "other_labels": [], "p_present": 0.907}
+{"dataset": "nih", "file": "00001558_016.png", "finding": "pleural effusion", "boxes": [[5, 52, 46, 85]], "other_labels": [], "p_present": 0.962}
+{"dataset": "nih", "file": "00001673_016.png", "finding": "atelectasis", "boxes": [[14, 54, 38, 68]], "other_labels": [], "p_present": 0.487}
+{"dataset": "nih", "file": "00001836_082.png", "finding": "atelectasis", "boxes": [[14, 54, 34, 64]], "other_labels": [], "p_present": 0.733}
+{"dataset": "nih", "file": "00001946_029.png", "finding": "pneumothorax", "boxes": [[20, 34, 40, 54]], "other_labels": [], "p_present": 0.981}
+{"dataset": "nih", "file": "00002106_000.png", "finding": "pneumothorax", "boxes": [[54, 8, 70, 15]], "other_labels": [], "p_present": 0.27}
+{"dataset": "nih", "file": "00002176_005.png", "finding": "pneumothorax", "boxes": [[28, 14, 46, 20]], "other_labels": [], "p_present": 0.834}
+{"dataset": "nih", "file": "00002176_007.png", "finding": "pneumothorax", "boxes": [[28, 15, 46, 24]], "other_labels": [], "p_present": 0.751}
+{"dataset": "nih", "file": "00002350_001.png", "finding": "atelectasis", "boxes": [[70, 50, 85, 59]], "other_labels": [], "p_present": 0.917}
+{"dataset": "nih", "file": "00002395_007.png", "finding": "pleural effusion", "boxes": [[5, 52, 38, 72], [64, 52, 90, 72]], "other_labels": [], "p_present": 0.943}
+{"dataset": "nih", "file": "00002533_002.png", "finding": "pleural effusion", "boxes": [[10, 41, 20, 52], [82, 47, 90, 56]], "other_labels": [], "p_present": 0.782}
+{"dataset": "nih", "file": "00002583_014.png", "finding": "pleural effusion", "boxes": [[64, 54, 90, 68]], "other_labels": [], "p_present": 0.896}
+{"dataset": "nih", "file": "00002856_009.png", "finding": "atelectasis", "boxes": [[14, 58, 44, 76]], "other_labels": [], "p_present": 0.774}
+{"dataset": "nih", "file": "00003072_028.png", "finding": "pleural effusion", "boxes": [[5, 54, 38, 72]], "other_labels": [], "p_present": 0.622}
+{"dataset": "nih", "file": "00003148_004.png", "finding": "atelectasis", "boxes": [[54, 50, 65, 60]], "other_labels": [], "p_present": 0.574}
+{"dataset": "nih", "file": "00003400_003.png", "finding": "pneumothorax", "boxes": [[54, 6, 84, 33]], "other_labels": [], "p_present": 0.992}
+{"dataset": "nih", "file": "00003440_000.png", "finding": "atelectasis", "boxes": [[24, 24, 34, 34]], "other_labels": [], "p_present": 0.44}
+{"dataset": "nih", "file": "00003787_003.png", "finding": "atelectasis", "boxes": [[20, 48, 40, 61], [73, 60, 85, 68]], "other_labels": [], "p_present": 0.947}
+{"dataset": "nih", "file": "00003803_010.png", "finding": "pleural effusion", "boxes": [[8, 60, 26, 72], [75, 60, 90, 72]], "other_labels": [], "p_present": 0.967}
+{"dataset": "nih", "file": "00003945_004.png", "finding": "atelectasis", "boxes": [[10, 54, 30, 60], [71, 48, 85, 56]], "other_labels": [], "p_present": 0.873}
+{"dataset": "nih", "file": "00004296_000.png", "finding": "atelectasis", "boxes": [[74, 70, 85, 76]], "other_labels": [], "p_present": 0.838}
+{"dataset": "nih", "file": "00004342_050.png", "finding": "pneumothorax", "boxes": [[10, 68, 15, 85], [15, 14, 44, 33]], "other_labels": [], "p_present": 0.853}
+{"dataset": "nih", "file": "00004968_003.png", "finding": "atelectasis", "boxes": [[20, 64, 40, 76], [73, 64, 85, 76]], "other_labels": [], "p_present": 0.704}
+{"dataset": "nih", "file": "00004968_004.png", "finding": "atelectasis", "boxes": [[74, 64, 81, 72]], "other_labels": [], "p_present": 0.815}
+{"dataset": "nih", "file": "00005066_030.png", "finding": "pleural effusion", "boxes": [[8, 70, 14, 81], [82, 68, 90, 80]], "other_labels": [], "p_present": 0.636}
+{"dataset": "nih", "file": "00005089_002.png", "finding": "atelectasis", "boxes": [[64, 56, 86, 73]], "other_labels": [], "p_present": 0.613}
+{"dataset": "nih", "file": "00005089_014.png", "finding": "atelectasis", "boxes": [[20, 50, 34, 62]], "other_labels": [], "p_present": 0.68}
+{"dataset": "nih", "file": "00005089_014.png", "finding": "pleural effusion", "boxes": [[76, 54, 89, 68]], "other_labels": [], "p_present": 0.839}
+{"dataset": "nih", "file": "00005089_040.png", "finding": "pleural effusion", "boxes": [[60, 50, 90, 72]], "other_labels": [], "p_present": 0.897}
+{"dataset": "nih", "file": "00005140_001.png", "finding": "pneumothorax", "boxes": [[10, 54, 17, 64], [20, 20, 44, 34]], "other_labels": [], "p_present": 0.962}
+{"dataset": "nih", "file": "00006621_004.png", "finding": "atelectasis", "boxes": [[20, 34, 40, 52]], "other_labels": [], "p_present": 0.704}
+{"dataset": "nih", "file": "00006851_033.png", "finding": "atelectasis", "boxes": [[14, 54, 33, 60]], "other_labels": [], "p_present": 0.776}
+{"dataset": "nih", "file": "00006851_034.png", "finding": "atelectasis", "boxes": [[10, 64, 38, 72]], "other_labels": [], "p_present": 0.449}
+{"dataset": "nih", "file": "00006948_002.png", "finding": "atelectasis", "boxes": [[20, 58, 40, 73]], "other_labels": [], "p_present": 0.65}
+{"dataset": "nih", "file": "00007034_016.png", "finding": "pleural effusion", "boxes": [[10, 58, 17, 68], [75, 60, 81, 68]], "other_labels": [], "p_present": 0.801}
+{"dataset": "nih", "file": "00007120_009.png", "finding": "atelectasis", "boxes": [[14, 54, 34, 64]], "other_labels": [], "p_present": 0.881}
+{"dataset": "nih", "file": "00007124_008.png", "finding": "atelectasis", "boxes": [[14, 46, 30, 54], [60, 44, 85, 56]], "other_labels": [], "p_present": 0.761}
+{"dataset": "nih", "file": "00007471_003.png", "finding": "pneumothorax", "boxes": [[54, 10, 76, 24]], "other_labels": [], "p_present": 0.955}
+{"dataset": "nih", "file": "00007557_026.png", "finding": "atelectasis", "boxes": [[14, 52, 38, 76]], "other_labels": [], "p_present": 0.678}
+{"dataset": "nih", "file": "00007676_002.png", "finding": "atelectasis", "boxes": [[30, 30, 46, 56]], "other_labels": [], "p_present": 0.574}
+{"dataset": "nih", "file": "00007710_000.png", "finding": "atelectasis", "boxes": [[54, 47, 85, 64]], "other_labels": [], "p_present": 0.945}
+{"dataset": "nih", "file": "00007830_013.png", "finding": "pleural effusion", "boxes": [[10, 44, 43, 73]], "other_labels": [], "p_present": 0.922}
+{"dataset": "nih", "file": "00007882_001.png", "finding": "pleural effusion", "boxes": [[5, 60, 44, 85]], "other_labels": [], "p_present": 0.933}
+{"dataset": "nih", "file": "00008005_004.png", "finding": "atelectasis", "boxes": [[64, 58, 77, 71]], "other_labels": [], "p_present": 0.838}
+{"dataset": "nih", "file": "00008547_001.png", "finding": "pleural effusion", "boxes": [[7, 77, 15, 87], [73, 72, 90, 86]], "other_labels": [], "p_present": 0.874}
+{"dataset": "nih", "file": "00008554_009.png", "finding": "atelectasis", "boxes": [[60, 43, 85, 56]], "other_labels": [], "p_present": 0.76}
+{"dataset": "nih", "file": "00008716_000.png", "finding": "atelectasis", "boxes": [[74, 64, 85, 72]], "other_labels": [], "p_present": 0.969}
+{"dataset": "nih", "file": "00008814_010.png", "finding": "atelectasis", "boxes": [[20, 36, 40, 48], [60, 38, 77, 50]], "other_labels": [], "p_present": 0.93}
+{"dataset": "nih", "file": "00008814_010.png", "finding": "pleural effusion", "boxes": [[18, 41, 43, 52], [73, 41, 85, 52]], "other_labels": [], "p_present": 0.949}
+{"dataset": "nih", "file": "00008841_025.png", "finding": "pleural effusion", "boxes": [[8, 48, 38, 64]], "other_labels": [], "p_present": 0.897}
+{"dataset": "nih", "file": "00008841_025.png", "finding": "pneumothorax", "boxes": [[55, 5, 76, 18]], "other_labels": [], "p_present": 0.853}
+{"dataset": "nih", "file": "00008841_044.png", "finding": "pneumothorax", "boxes": [[18, 5, 44, 22]], "other_labels": [], "p_present": 0.966}
+{"dataset": "nih", "file": "00009166_004.png", "finding": "pneumothorax", "boxes": [[17, 14, 44, 33]], "other_labels": [], "p_present": 0.877}
+{"dataset": "nih", "file": "00009218_015.png", "finding": "pleural effusion", "boxes": [[8, 64, 26, 76], [66, 54, 90, 76]], "other_labels": [], "p_present": 0.899}
+{"dataset": "nih", "file": "00009256_005.png", "finding": "atelectasis", "boxes": [[28, 41, 46, 52]], "other_labels": [], "p_present": 0.914}
+{"dataset": "nih", "file": "00009342_000.png", "finding": "pleural effusion", "boxes": [[59, 47, 90, 64]], "other_labels": [], "p_present": 0.979}
+{"dataset": "nih", "file": "00009368_006.png", "finding": "pneumothorax", "boxes": [[20, 22, 44, 46]], "other_labels": [], "p_present": 0.799}
+{"dataset": "nih", "file": "00009437_008.png", "finding": "atelectasis", "boxes": [[70, 60, 80, 65]], "other_labels": [], "p_present": 0.786}
+{"dataset": "nih", "file": "00009437_008.png", "finding": "pleural effusion", "boxes": [[7, 64, 26, 76], [73, 64, 86, 76]], "other_labels": [], "p_present": 0.984}
+{"dataset": "nih", "file": "00009619_000.png", "finding": "atelectasis", "boxes": [[26, 54, 40, 66]], "other_labels": [], "p_present": 0.437}
+{"dataset": "nih", "file": "00009669_003.png", "finding": "atelectasis", "boxes": [[14, 20, 44, 73]], "other_labels": [], "p_present": 0.841}
+{"dataset": "nih", "file": "00009683_005.png", "finding": "pleural effusion", "boxes": [[12, 47, 43, 56], [76, 47, 85, 54]], "other_labels": [], "p_present": 0.9}
+{"dataset": "nih", "file": "00009779_001.png", "finding": "atelectasis", "boxes": [[74, 48, 86, 54]], "other_labels": [], "p_present": 0.94}
+{"dataset": "nih", "file": "00009889_018.png", "finding": "pneumothorax", "boxes": [[20, 7, 44, 22]], "other_labels": [], "p_present": 0.828}
+{"dataset": "nih", "file": "00010007_168.png", "finding": "pleural effusion", "boxes": [[10, 64, 38, 77]], "other_labels": [], "p_present": 0.954}
+{"dataset": "nih", "file": "00010172_001.png", "finding": "pleural effusion", "boxes": [[5, 70, 14, 81], [86, 72, 92, 80]], "other_labels": [], "p_present": 0.791}
+{"dataset": "nih", "file": "00010277_000.png", "finding": "pleural effusion", "boxes": [[8, 80, 14, 87], [76, 64, 90, 77]], "other_labels": [], "p_present": 0.897}
+{"dataset": "nih", "file": "00010478_012.png", "finding": "atelectasis", "boxes": [[10, 54, 40, 72]], "other_labels": [], "p_present": 0.877}
+{"dataset": "nih", "file": "00010481_021.png", "finding": "atelectasis", "boxes": [[74, 54, 85, 59]], "other_labels": [], "p_present": 0.695}
+{"dataset": "nih", "file": "00010575_002.png", "finding": "atelectasis", "boxes": [[64, 54, 85, 65]], "other_labels": [], "p_present": 0.707}
+{"dataset": "nih", "file": "00010575_002.png", "finding": "pleural effusion", "boxes": [[59, 54, 90, 73]], "other_labels": [], "p_present": 0.968}
+{"dataset": "nih", "file": "00010625_014.png", "finding": "atelectasis", "boxes": [[20, 47, 34, 54], [73, 47, 85, 54]], "other_labels": [], "p_present": 0.864}
+{"dataset": "nih", "file": "00010767_007.png", "finding": "pneumothorax", "boxes": [[20, 4, 44, 22]], "other_labels": [], "p_present": 0.687}
+{"dataset": "nih", "file": "00010767_008.png", "finding": "pneumothorax", "boxes": [[20, 18, 44, 34]], "other_labels": [], "p_present": 0.955}
+{"dataset": "nih", "file": "00010767_016.png", "finding": "pneumothorax", "boxes": [[17, 16, 44, 72]], "other_labels": [], "p_present": 0.99}
+{"dataset": "nih", "file": "00010770_000.png", "finding": "atelectasis", "boxes": [[20, 37, 34, 41]], "other_labels": [], "p_present": 0.873}
+{"dataset": "nih", "file": "00010815_006.png", "finding": "atelectasis", "boxes": [[28, 22, 46, 46]], "other_labels": [], "p_present": 0.609}
+{"dataset": "nih", "file": "00010828_039.png", "finding": "atelectasis", "boxes": [[20, 48, 40, 61]], "other_labels": [], "p_present": 0.851}
+{"dataset": "nih", "file": "00010828_039.png", "finding": "pleural effusion", "boxes": [[60, 50, 90, 72]], "other_labels": [], "p_present": 0.914}
+{"dataset": "nih", "file": "00010936_011.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "nih", "file": "00010936_016.png", "finding": "pneumothorax", "boxes": [[20, 15, 44, 28]], "other_labels": [], "p_present": 0.969}
+{"dataset": "nih", "file": "00011237_094.png", "finding": "pleural effusion", "boxes": [[5, 34, 44, 72], [60, 34, 92, 72]], "other_labels": [], "p_present": 0.956}
+{"dataset": "nih", "file": "00011269_019.png", "finding": "pleural effusion", "boxes": [[8, 70, 14, 75], [75, 52, 90, 64]], "other_labels": [], "p_present": 0.856}
+{"dataset": "nih", "file": "00011355_011.png", "finding": "pneumothorax", "boxes": [[54, 10, 77, 26]], "other_labels": [], "p_present": 0.986}
+{"dataset": "nih", "file": "00011355_027.png", "finding": "pneumothorax", "boxes": [[54, 16, 76, 28]], "other_labels": [], "p_present": 0.875}
+{"dataset": "nih", "file": "00011827_003.png", "finding": "atelectasis", "boxes": [[60, 44, 80, 60]], "other_labels": [], "p_present": 0.863}
+{"dataset": "nih", "file": "00011827_003.png", "finding": "pleural effusion", "boxes": [[75, 51, 85, 64]], "other_labels": [], "p_present": 0.712}
+{"dataset": "nih", "file": "00011831_010.png", "finding": "pneumothorax", "boxes": [[18, 52, 24, 63], [26, 12, 46, 24]], "other_labels": [], "p_present": 0.979}
+{"dataset": "nih", "file": "00011857_001.png", "finding": "atelectasis", "boxes": [[59, 50, 85, 63]], "other_labels": [], "p_present": 0.811}
+{"dataset": "nih", "file": "00011857_001.png", "finding": "pleural effusion", "boxes": [[5, 62, 14, 72], [75, 60, 90, 72]], "other_labels": [], "p_present": 0.867}
+{"dataset": "nih", "file": "00012045_009.png", "finding": "pleural effusion", "boxes": [[59, 44, 90, 72]], "other_labels": [], "p_present": 0.959}
+{"dataset": "nih", "file": "00012094_040.png", "finding": "pneumothorax", "boxes": [[54, 10, 76, 30]], "other_labels": [], "p_present": 0.976}
+{"dataset": "nih", "file": "00012094_047.png", "finding": "pneumothorax", "boxes": [[54, 13, 76, 32]], "other_labels": [], "p_present": 0.99}
+{"dataset": "nih", "file": "00012123_001.png", "finding": "atelectasis", "boxes": [[59, 54, 90, 76]], "other_labels": [], "p_present": 0.824}
+{"dataset": "nih", "file": "00012174_000.png", "finding": "pleural effusion", "boxes": [[10, 55, 26, 68], [75, 61, 85, 69]], "other_labels": [], "p_present": 0.964}
+{"dataset": "nih", "file": "00012291_008.png", "finding": "atelectasis", "boxes": [[7, 58, 42, 68]], "other_labels": [], "p_present": 0.804}
+{"dataset": "nih", "file": "00012299_002.png", "finding": "atelectasis", "boxes": [[7, 58, 34, 68], [60, 52, 85, 64]], "other_labels": [], "p_present": 0.855}
+{"dataset": "nih", "file": "00012376_010.png", "finding": "pneumothorax", "boxes": [[24, 14, 46, 24]], "other_labels": [], "p_present": 0.939}
+{"dataset": "nih", "file": "00012505_007.png", "finding": "pleural effusion", "boxes": [[10, 54, 46, 72], [60, 54, 92, 72]], "other_labels": [], "p_present": 0.956}
+{"dataset": "nih", "file": "00012515_002.png", "finding": "atelectasis", "boxes": [[56, 50, 86, 73]], "other_labels": [], "p_present": 0.824}
+{"dataset": "nih", "file": "00012622_016.png", "finding": "pneumothorax", "boxes": [[54, 8, 76, 24]], "other_labels": [], "p_present": 0.518}
+{"dataset": "nih", "file": "00012636_000.png", "finding": "atelectasis", "boxes": [[76, 64, 85, 72]], "other_labels": [], "p_present": 0.294}
+{"dataset": "nih", "file": "00012637_000.png", "finding": "atelectasis", "boxes": [[71, 51, 81, 56]], "other_labels": [], "p_present": 0.706}
+{"dataset": "nih", "file": "00012829_004.png", "finding": "atelectasis", "boxes": [[5, 54, 36, 64]], "other_labels": [], "p_present": 0.985}
+{"dataset": "nih", "file": "00012834_008.png", "finding": "atelectasis", "boxes": [[14, 26, 40, 62]], "other_labels": [], "p_present": 0.525}
+{"dataset": "nih", "file": "00012834_008.png", "finding": "pleural effusion", "boxes": [[5, 58, 12, 68]], "other_labels": [], "p_present": 0.582}
+{"dataset": "nih", "file": "00012834_034.png", "finding": "pleural effusion", "boxes": [[5, 48, 38, 72], [64, 48, 92, 72]], "other_labels": [], "p_present": 0.901}
+{"dataset": "nih", "file": "00012834_122.png", "finding": "pleural effusion", "boxes": [[5, 67, 26, 85], [54, 10, 88, 25]], "other_labels": [], "p_present": 0.883}
+{"dataset": "nih", "file": "00012973_005.png", "finding": "pleural effusion", "boxes": [[5, 54, 46, 85], [60, 54, 92, 85]], "other_labels": [], "p_present": 0.934}
+{"dataset": "nih", "file": "00013031_005.png", "finding": "pleural effusion", "boxes": [[5, 64, 14, 76]], "other_labels": [], "p_present": 0.547}
+{"dataset": "nih", "file": "00013111_069.png", "finding": "atelectasis", "boxes": [[54, 36, 74, 56]], "other_labels": [], "p_present": 0.741}
+{"dataset": "nih", "file": "00013118_008.png", "finding": "atelectasis", "boxes": [[14, 58, 30, 68]], "other_labels": [], "p_present": 0.403}
+{"dataset": "nih", "file": "00013187_002.png", "finding": "atelectasis", "boxes": [[5, 58, 33, 70], [74, 58, 92, 71]], "other_labels": [], "p_present": 0.888}
+{"dataset": "nih", "file": "00013209_018.png", "finding": "pneumothorax", "boxes": [[20, 12, 46, 38]], "other_labels": [], "p_present": 0.991}
+{"dataset": "nih", "file": "00013285_026.png", "finding": "pleural effusion", "boxes": [[5, 48, 46, 85]], "other_labels": [], "p_present": 0.934}
+{"dataset": "nih", "file": "00013310_059.png", "finding": "pneumothorax", "boxes": [[15, 18, 44, 76]], "other_labels": [], "p_present": 0.993}
+{"dataset": "nih", "file": "00013337_000.png", "finding": "pleural effusion", "boxes": [[5, 48, 44, 81]], "other_labels": [], "p_present": 0.986}
+{"dataset": "nih", "file": "00013471_002.png", "finding": "pneumothorax", "boxes": [[54, 10, 72, 18]], "other_labels": [], "p_present": 0.798}
+{"dataset": "nih", "file": "00013508_001.png", "finding": "atelectasis", "boxes": [[20, 54, 40, 68]], "other_labels": [], "p_present": 0.715}
+{"dataset": "nih", "file": "00013659_019.png", "finding": "pneumothorax", "boxes": [[28, 8, 44, 14]], "other_labels": [], "p_present": 0.225}
+{"dataset": "nih", "file": "00013685_000.png", "finding": "atelectasis", "boxes": [[20, 41, 38, 50]], "other_labels": [], "p_present": 0.94}
+{"dataset": "nih", "file": "00013685_028.png", "finding": "atelectasis", "boxes": [[20, 48, 34, 56]], "other_labels": [], "p_present": 0.711}
+{"dataset": "nih", "file": "00013750_016.png", "finding": "pleural effusion", "boxes": [[5, 64, 14, 81], [84, 67, 94, 81]], "other_labels": [], "p_present": 0.732}
+{"dataset": "nih", "file": "00013807_009.png", "finding": "pneumothorax", "boxes": [[24, 10, 46, 20]], "other_labels": [], "p_present": 0.591}
+{"dataset": "nih", "file": "00013977_005.png", "finding": "pleural effusion", "boxes": [[5, 82, 10, 87], [89, 83, 94, 89]], "other_labels": [], "p_present": 0.211}
+{"dataset": "nih", "file": "00013992_006.png", "finding": "atelectasis", "boxes": [[54, 64, 86, 86]], "other_labels": [], "p_present": 0.528}
+{"dataset": "nih", "file": "00013993_077.png", "finding": "pleural effusion", "boxes": [[10, 38, 46, 67], [75, 64, 90, 76]], "other_labels": [], "p_present": 0.916}
+{"dataset": "nih", "file": "00013993_083.png", "finding": "pleural effusion", "boxes": [[5, 52, 46, 85], [60, 61, 92, 86]], "other_labels": [], "p_present": 0.943}
+{"dataset": "nih", "file": "00014015_003.png", "finding": "pleural effusion", "boxes": [[5, 38, 44, 72]], "other_labels": [], "p_present": 0.992}
+{"dataset": "nih", "file": "00014083_023.png", "finding": "pneumothorax", "boxes": [[54, 12, 78, 30]], "other_labels": [], "p_present": 0.948}
+{"dataset": "nih", "file": "00014095_003.png", "finding": "atelectasis", "boxes": [[24, 48, 40, 56]], "other_labels": [], "p_present": 0.897}
+{"dataset": "nih", "file": "00014149_018.png", "finding": "pleural effusion", "boxes": [[78, 54, 88, 66]], "other_labels": [], "p_present": 0.883}
+{"dataset": "nih", "file": "00014198_000.png", "finding": "atelectasis", "boxes": [[14, 41, 24, 50]], "other_labels": [], "p_present": 0.224}
+{"dataset": "nih", "file": "00014253_010.png", "finding": "atelectasis", "boxes": [[20, 47, 40, 56], [60, 47, 86, 63]], "other_labels": [], "p_present": 0.885}
+{"dataset": "nih", "file": "00014253_042.png", "finding": "atelectasis", "boxes": [[5, 64, 34, 76], [60, 54, 90, 76]], "other_labels": [], "p_present": 0.863}
+{"dataset": "nih", "file": "00014346_010.png", "finding": "pleural effusion", "boxes": [[10, 58, 18, 68], [84, 67, 90, 72]], "other_labels": [], "p_present": 0.832}
+{"dataset": "nih", "file": "00014398_031.png", "finding": "pleural effusion", "boxes": [[8, 54, 34, 72], [74, 54, 98, 72]], "other_labels": [], "p_present": 0.711}
+{"dataset": "nih", "file": "00014447_004.png", "finding": "atelectasis", "boxes": [[20, 41, 38, 52]], "other_labels": [], "p_present": 0.565}
+{"dataset": "nih", "file": "00014447_004.png", "finding": "pleural effusion", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "nih", "file": "00014607_007.png", "finding": "atelectasis", "boxes": [[20, 60, 40, 73], [70, 64, 85, 72]], "other_labels": [], "p_present": 0.863}
+{"dataset": "nih", "file": "00014626_017.png", "finding": "pneumothorax", "boxes": [[24, 14, 44, 24]], "other_labels": [], "p_present": 0.937}
+{"dataset": "nih", "file": "00014626_035.png", "finding": "pleural effusion", "boxes": [[5, 77, 12, 87], [89, 78, 94, 86]], "other_labels": [], "p_present": 0.542}
+{"dataset": "nih", "file": "00014663_013.png", "finding": "atelectasis", "boxes": [[33, 22, 46, 40]], "other_labels": [], "p_present": 0.44}
+{"dataset": "nih", "file": "00014687_001.png", "finding": "atelectasis", "boxes": [[60, 45, 85, 56]], "other_labels": [], "p_present": 0.9}
+{"dataset": "nih", "file": "00014716_007.png", "finding": "atelectasis", "boxes": [[59, 12, 85, 38]], "other_labels": [], "p_present": 0.693}
+{"dataset": "nih", "file": "00014738_000.png", "finding": "pleural effusion", "boxes": [[18, 18, 46, 60]], "other_labels": [], "p_present": 0.938}
+{"dataset": "nih", "file": "00014795_002.png", "finding": "atelectasis", "boxes": [], "other_labels": [], "p_present": null}
+{"dataset": "nih", "file": "00014822_039.png", "finding": "pneumothorax", "boxes": [[60, 20, 80, 28]], "other_labels": [], "p_present": 0.824}
+{"dataset": "nih", "file": "00014870_004.png", "finding": "atelectasis", "boxes": [[14, 50, 44, 72]], "other_labels": [], "p_present": 0.805}
+{"dataset": "nih", "file": "00014976_003.png", "finding": "pleural effusion", "boxes": [[8, 65, 14, 73], [81, 65, 92, 73]], "other_labels": [], "p_present": 0.946}
+{"dataset": "nih", "file": "00015058_024.png", "finding": "pleural effusion", "boxes": [[8, 70, 18, 81], [82, 70, 92, 81]], "other_labels": [], "p_present": 0.82}
+{"dataset": "nih", "file": "00015078_013.png", "finding": "pleural effusion", "boxes": [[5, 54, 38, 76], [81, 68, 95, 81]], "other_labels": [], "p_present": 0.985}
+{"dataset": "nih", "file": "00015090_006.png", "finding": "pleural effusion", "boxes": [[60, 47, 90, 76]], "other_labels": [], "p_present": 0.916}
+{"dataset": "nih", "file": "00015262_005.png", "finding": "atelectasis", "boxes": [[14, 50, 44, 66]], "other_labels": [], "p_present": 0.976}
+{"dataset": "nih", "file": "00015300_000.png", "finding": "atelectasis", "boxes": [[14, 30, 43, 64]], "other_labels": [], "p_present": 0.793}
+{"dataset": "nih", "file": "00015440_000.png", "finding": "atelectasis", "boxes": [[20, 20, 40, 65]], "other_labels": [], "p_present": 0.436}
+{"dataset": "nih", "file": "00015530_147.png", "finding": "pneumothorax", "boxes": [[17, 5, 44, 33]], "other_labels": [], "p_present": 0.955}
+{"dataset": "nih", "file": "00015831_008.png", "finding": "atelectasis", "boxes": [[20, 54, 34, 60], [74, 64, 80, 68]], "other_labels": [], "p_present": 0.827}
+{"dataset": "nih", "file": "00015895_017.png", "finding": "pleural effusion", "boxes": [[5, 18, 46, 85], [54, 20, 95, 86]], "other_labels": [], "p_present": 0.983}
+{"dataset": "nih", "file": "00016009_008.png", "finding": "atelectasis", "boxes": [[60, 50, 73, 71]], "other_labels": [], "p_present": 0.764}
+{"dataset": "nih", "file": "00016191_017.png", "finding": "atelectasis", "boxes": [[59, 54, 90, 71]], "other_labels": [], "p_present": 0.875}
+{"dataset": "nih", "file": "00016267_000.png", "finding": "atelectasis", "boxes": [[20, 64, 34, 72]], "other_labels": [], "p_present": 0.806}
+{"dataset": "nih", "file": "00016291_002.png", "finding": "pleural effusion", "boxes": [[76, 64, 88, 76]], "other_labels": [], "p_present": 0.97}
+{"dataset": "nih", "file": "00016291_019.png", "finding": "pleural effusion", "boxes": [[84, 72, 94, 86]], "other_labels": [], "p_present": 0.491}
+{"dataset": "nih", "file": "00016403_003.png", "finding": "atelectasis", "boxes": [[74, 66, 90, 76]], "other_labels": [], "p_present": 0.608}
+{"dataset": "nih", "file": "00016417_008.png", "finding": "pleural effusion", "boxes": [[8, 70, 34, 85], [75, 68, 96, 85]], "other_labels": [], "p_present": 0.94}
+{"dataset": "nih", "file": "00016429_015.png", "finding": "pneumothorax", "boxes": [[18, 8, 46, 33]], "other_labels": [], "p_present": 0.989}
+{"dataset": "nih", "file": "00016490_011.png", "finding": "atelectasis", "boxes": [[20, 50, 34, 56], [70, 50, 82, 56]], "other_labels": [], "p_present": 0.908}
+{"dataset": "nih", "file": "00016522_023.png", "finding": "pleural effusion", "boxes": [[5, 20, 46, 85], [54, 20, 95, 86]], "other_labels": [], "p_present": 0.954}
+{"dataset": "nih", "file": "00016568_026.png", "finding": "pneumothorax", "boxes": [[17, 12, 44, 33]], "other_labels": [], "p_present": 0.96}
+{"dataset": "nih", "file": "00016837_002.png", "finding": "atelectasis", "boxes": [[10, 58, 38, 70], [71, 54, 85, 60]], "other_labels": [], "p_present": 0.908}
+{"dataset": "nih", "file": "00016837_002.png", "finding": "pleural effusion", "boxes": [[5, 70, 10, 76]], "other_labels": [], "p_present": 0.556}
+{"dataset": "nih", "file": "00016937_014.png", "finding": "pneumothorax", "boxes": [[20, 12, 46, 33]], "other_labels": [], "p_present": 0.977}
+{"dataset": "nih", "file": "00016964_011.png", "finding": "pleural effusion", "boxes": [[75, 48, 81, 60]], "other_labels": [], "p_present": 0.927}
+{"dataset": "nih", "file": "00016972_019.png", "finding": "atelectasis", "boxes": [[54, 54, 86, 86]], "other_labels": [], "p_present": 0.847}
+{"dataset": "nih", "file": "00016972_025.png", "finding": "pleural effusion", "boxes": [[5, 54, 26, 68], [75, 54, 94, 69]], "other_labels": [], "p_present": 0.806}
+{"dataset": "nih", "file": "00016987_019.png", "finding": "atelectasis", "boxes": [[14, 58, 40, 72]], "other_labels": [], "p_present": 0.787}
+{"dataset": "nih", "file": "00016987_022.png", "finding": "atelectasis", "boxes": [[10, 48, 42, 62]], "other_labels": [], "p_present": 0.863}
+{"dataset": "nih", "file": "00017124_004.png", "finding": "pleural effusion", "boxes": [[5, 67, 33, 85], [69, 67, 93, 85]], "other_labels": [], "p_present": 0.829}
+{"dataset": "nih", "file": "00017137_016.png", "finding": "pneumothorax", "boxes": [[18, 50, 24, 54], [23, 16, 46, 30]], "other_labels": [], "p_present": 0.981}
+{"dataset": "nih", "file": "00017138_037.png", "finding": "pleural effusion", "boxes": [[8, 64, 34, 85], [69, 64, 96, 85]], "other_labels": [], "p_present": 0.95}
+{"dataset": "nih", "file": "00017151_003.png", "finding": "atelectasis", "boxes": [[34, 50, 46, 60], [64, 50, 85, 60]], "other_labels": [], "p_present": 0.816}
+{"dataset": "nih", "file": "00017188_002.png", "finding": "pleural effusion", "boxes": [[7, 48, 44, 64]], "other_labels": [], "p_present": 0.965}
+{"dataset": "nih", "file": "00017243_010.png", "finding": "pneumothorax", "boxes": [[10, 12, 44, 77]], "other_labels": [], "p_present": 0.455}
+{"dataset": "nih", "file": "00017255_001.png", "finding": "atelectasis", "boxes": [[74, 57, 85, 64]], "other_labels": [], "p_present": 0.856}
+{"dataset": "nih", "file": "00017403_006.png", "finding": "pleural effusion", "boxes": [[76, 64, 89, 76]], "other_labels": [], "p_present": 0.698}
+{"dataset": "nih", "file": "00017500_002.png", "finding": "atelectasis", "boxes": [[14, 50, 44, 63]], "other_labels": [], "p_present": 0.757}
+{"dataset": "nih", "file": "00017500_002.png", "finding": "pleural effusion", "boxes": [[10, 54, 44, 70], [75, 61, 90, 69]], "other_labels": [], "p_present": 0.956}
+{"dataset": "nih", "file": "00017582_003.png", "finding": "atelectasis", "boxes": [[10, 44, 45, 64]], "other_labels": [], "p_present": 0.976}
+{"dataset": "nih", "file": "00017582_003.png", "finding": "pleural effusion", "boxes": [[5, 54, 14, 68]], "other_labels": [], "p_present": 0.643}
+{"dataset": "nih", "file": "00017714_006.png", "finding": "pleural effusion", "boxes": [[5, 70, 10, 78], [86, 70, 90, 78]], "other_labels": [], "p_present": 0.123}
+{"dataset": "nih", "file": "00017747_008.png", "finding": "pneumothorax", "boxes": [[14, 20, 38, 54]], "other_labels": [], "p_present": 0.817}
+{"dataset": "nih", "file": "00017877_001.png", "finding": "atelectasis", "boxes": [[59, 54, 86, 64]], "other_labels": [], "p_present": 0.85}
+{"dataset": "nih", "file": "00017972_026.png", "finding": "pneumothorax", "boxes": [[55, 22, 82, 47]], "other_labels": [], "p_present": 0.987}
+{"dataset": "nih", "file": "00018055_005.png", "finding": "pneumothorax", "boxes": [[14, 14, 44, 44]], "other_labels": [], "p_present": 0.994}
+{"dataset": "nih", "file": "00018055_038.png", "finding": "pneumothorax", "boxes": [[18, 8, 44, 21]], "other_labels": [], "p_present": 0.722}
+{"dataset": "nih", "file": "00018055_045.png", "finding": "pneumothorax", "boxes": [[8, 12, 34, 63]], "other_labels": [], "p_present": 0.742}
+{"dataset": "nih", "file": "00018102_001.png", "finding": "pleural effusion", "boxes": [[5, 58, 38, 70], [80, 66, 90, 72]], "other_labels": [], "p_present": 0.926}
+{"dataset": "nih", "file": "00018253_017.png", "finding": "atelectasis", "boxes": [[54, 54, 65, 64]], "other_labels": [], "p_present": 0.237}
+{"dataset": "nih", "file": "00018253_017.png", "finding": "pleural effusion", "boxes": [[10, 68, 16, 72], [75, 68, 81, 72]], "other_labels": [], "p_present": 0.887}
+{"dataset": "nih", "file": "00018253_054.png", "finding": "pleural effusion", "boxes": [[10, 50, 46, 81]], "other_labels": [], "p_present": 0.924}
+{"dataset": "nih", "file": "00018253_059.png", "finding": "atelectasis", "boxes": [[20, 42, 40, 56]], "other_labels": [], "p_present": 0.78}
+{"dataset": "nih", "file": "00018253_059.png", "finding": "pleural effusion", "boxes": [[5, 44, 43, 77]], "other_labels": [], "p_present": 0.934}
+{"dataset": "nih", "file": "00018360_035.png", "finding": "pleural effusion", "boxes": [[78, 62, 94, 73]], "other_labels": [], "p_present": 0.692}
+{"dataset": "nih", "file": "00018366_029.png", "finding": "pleural effusion", "boxes": [[8, 60, 14, 68], [54, 52, 86, 65]], "other_labels": [], "p_present": 0.706}
+{"dataset": "nih", "file": "00018366_029.png", "finding": "pneumothorax", "boxes": [[55, 12, 76, 24]], "other_labels": [], "p_present": 0.946}
+{"dataset": "nih", "file": "00018387_030.png", "finding": "pleural effusion", "boxes": [[10, 42, 43, 64], [59, 42, 86, 65]], "other_labels": [], "p_present": 0.984}
+{"dataset": "nih", "file": "00018412_001.png", "finding": "atelectasis", "boxes": [[20, 58, 40, 68], [60, 60, 73, 70]], "other_labels": [], "p_present": 0.933}
+{"dataset": "nih", "file": "00018419_001.png", "finding": "atelectasis", "boxes": [[74, 60, 91, 68]], "other_labels": [], "p_present": 0.952}
+{"dataset": "nih", "file": "00018427_004.png", "finding": "atelectasis", "boxes": [[10, 54, 38, 70], [60, 60, 90, 73]], "other_labels": [], "p_present": 0.886}
+{"dataset": "nih", "file": "00018427_004.png", "finding": "pleural effusion", "boxes": [[7, 70, 14, 81], [82, 70, 90, 81]], "other_labels": [], "p_present": 0.774}
+{"dataset": "nih", "file": "00018427_011.png", "finding": "pleural effusion", "boxes": [[82, 64, 92, 76]], "other_labels": [], "p_present": 0.763}
+{"dataset": "nih", "file": "00018496_006.png", "finding": "atelectasis", "boxes": [[10, 76, 25, 81]], "other_labels": [], "p_present": 0.825}
+{"dataset": "nih", "file": "00018496_007.png", "finding": "pneumothorax", "boxes": [[54, 12, 76, 24]], "other_labels": [], "p_present": 0.922}
+{"dataset": "nih", "file": "00018657_003.png", "finding": "pleural effusion", "boxes": [[8, 62, 14, 68], [75, 60, 85, 69]], "other_labels": [], "p_present": 0.874}
+{"dataset": "nih", "file": "00018762_002.png", "finding": "atelectasis", "boxes": [[76, 54, 89, 65]], "other_labels": [], "p_present": 0.48}
+{"dataset": "nih", "file": "00018865_008.png", "finding": "pneumothorax", "boxes": [[20, 12, 44, 28]], "other_labels": [], "p_present": 0.959}
+{"dataset": "nih", "file": "00018980_002.png", "finding": "pleural effusion", "boxes": [[82, 58, 87, 65]], "other_labels": [], "p_present": 0.198}
+{"dataset": "nih", "file": "00019089_004.png", "finding": "atelectasis", "boxes": [[26, 20, 46, 40]], "other_labels": [], "p_present": 0.627}
+{"dataset": "nih", "file": "00019124_006.png", "finding": "pneumothorax", "boxes": [[54, 8, 81, 29]], "other_labels": [], "p_present": 0.989}
+{"dataset": "nih", "file": "00019124_045.png", "finding": "atelectasis", "boxes": [[20, 54, 34, 64]], "other_labels": [], "p_present": 0.627}
+{"dataset": "nih", "file": "00019124_104.png", "finding": "pneumothorax", "boxes": [[17, 14, 44, 38]], "other_labels": [], "p_present": 0.991}
+{"dataset": "nih", "file": "00019154_002.png", "finding": "atelectasis", "boxes": [[24, 14, 44, 38]], "other_labels": [], "p_present": 0.84}
+{"dataset": "nih", "file": "00019271_030.png", "finding": "atelectasis", "boxes": [[24, 54, 40, 64]], "other_labels": [], "p_present": 0.965}
+{"dataset": "nih", "file": "00019271_064.png", "finding": "atelectasis", "boxes": [[20, 54, 40, 61]], "other_labels": [], "p_present": 0.916}
+{"dataset": "nih", "file": "00019271_065.png", "finding": "atelectasis", "boxes": [[20, 50, 40, 60]], "other_labels": [], "p_present": 0.815}
+{"dataset": "nih", "file": "00019373_036.png", "finding": "atelectasis", "boxes": [[20, 30, 43, 68]], "other_labels": [], "p_present": 0.608}
+{"dataset": "nih", "file": "00019399_010.png", "finding": "pleural effusion", "boxes": [[59, 52, 92, 72]], "other_labels": [], "p_present": 0.84}
+{"dataset": "nih", "file": "00019495_004.png", "finding": "atelectasis", "boxes": [[79, 54, 89, 60]], "other_labels": [], "p_present": 0.733}
+{"dataset": "nih", "file": "00019706_002.png", "finding": "pneumothorax", "boxes": [[54, 10, 76, 20]], "other_labels": [], "p_present": 0.753}
+{"dataset": "nih", "file": "00019706_014.png", "finding": "atelectasis", "boxes": [[28, 36, 44, 46]], "other_labels": [], "p_present": 0.796}
+{"dataset": "nih", "file": "00019766_023.png", "finding": "pleural effusion", "boxes": [[64, 48, 90, 68]], "other_labels": [], "p_present": 0.953}
+{"dataset": "nih", "file": "00019767_016.png", "finding": "pleural effusion", "boxes": [[5, 67, 14, 76]], "other_labels": [], "p_present": 0.755}
+{"dataset": "nih", "file": "00019892_003.png", "finding": "pneumothorax", "boxes": [[55, 10, 76, 20]], "other_labels": [], "p_present": 0.453}
+{"dataset": "nih", "file": "00019917_004.png", "finding": "atelectasis", "boxes": [[74, 67, 96, 78]], "other_labels": [], "p_present": 0.943}
+{"dataset": "nih", "file": "00019924_020.png", "finding": "pleural effusion", "boxes": [[76, 67, 89, 85]], "other_labels": [], "p_present": 0.865}
+{"dataset": "nih", "file": "00020000_000.png", "finding": "pleural effusion", "boxes": [[60, 54, 90, 81]], "other_labels": [], "p_present": 0.936}
+{"dataset": "nih", "file": "00020000_000.png", "finding": "pneumothorax", "boxes": [[60, 16, 76, 24]], "other_labels": [], "p_present": 0.456}
+{"dataset": "nih", "file": "00020113_017.png", "finding": "atelectasis", "boxes": [[14, 34, 45, 56], [60, 36, 85, 56]], "other_labels": [], "p_present": 0.865}
+{"dataset": "nih", "file": "00020124_003.png", "finding": "atelectasis", "boxes": [[14, 54, 44, 72]], "other_labels": [], "p_present": 0.528}
+{"dataset": "nih", "file": "00020146_005.png", "finding": "pneumothorax", "boxes": [[20, 7, 46, 22]], "other_labels": [], "p_present": 0.945}
+{"dataset": "nih", "file": "00020213_078.png", "finding": "pleural effusion", "boxes": [[5, 54, 38, 85], [84, 68, 94, 86]], "other_labels": [], "p_present": 0.941}
+{"dataset": "nih", "file": "00020274_007.png", "finding": "pleural effusion", "boxes": [[64, 48, 85, 68]], "other_labels": [], "p_present": 0.84}
+{"dataset": "nih", "file": "00020277_001.png", "finding": "pleural effusion", "boxes": [[59, 50, 92, 72]], "other_labels": [], "p_present": 0.955}
+{"dataset": "nih", "file": "00020318_007.png", "finding": "pneumothorax", "boxes": [[76, 50, 85, 64]], "other_labels": [], "p_present": 0.835}
+{"dataset": "nih", "file": "00020318_022.png", "finding": "pneumothorax", "boxes": [[54, 13, 82, 70]], "other_labels": [], "p_present": 0.983}
+{"dataset": "nih", "file": "00020349_006.png", "finding": "atelectasis", "boxes": [[20, 48, 34, 56]], "other_labels": [], "p_present": 0.809}
+{"dataset": "nih", "file": "00020393_003.png", "finding": "atelectasis", "boxes": [[54, 50, 86, 63]], "other_labels": [], "p_present": 0.751}
+{"dataset": "nih", "file": "00020393_003.png", "finding": "pleural effusion", "boxes": [[81, 52, 92, 64]], "other_labels": [], "p_present": 0.848}
+{"dataset": "nih", "file": "00020405_041.png", "finding": "pleural effusion", "boxes": [[14, 64, 44, 80]], "other_labels": [], "p_present": 0.59}
+{"dataset": "nih", "file": "00020408_037.png", "finding": "atelectasis", "boxes": [[14, 50, 40, 72]], "other_labels": [], "p_present": 0.65}
+{"dataset": "nih", "file": "00020408_058.png", "finding": "pneumothorax", "boxes": [[17, 12, 44, 38]], "other_labels": [], "p_present": 0.991}
+{"dataset": "nih", "file": "00020429_020.png", "finding": "atelectasis", "boxes": [[10, 58, 42, 73], [60, 60, 90, 76]], "other_labels": [], "p_present": 0.904}
+{"dataset": "nih", "file": "00020482_032.png", "finding": "atelectasis", "boxes": [[54, 30, 85, 73]], "other_labels": [], "p_present": 0.957}
+{"dataset": "nih", "file": "00020482_032.png", "finding": "pleural effusion", "boxes": [[60, 42, 90, 73]], "other_labels": [], "p_present": 0.815}
+{"dataset": "nih", "file": "00020564_000.png", "finding": "pleural effusion", "boxes": [[86, 50, 90, 59]], "other_labels": [], "p_present": 0.042}
+{"dataset": "nih", "file": "00020671_010.png", "finding": "pneumothorax", "boxes": [[18, 20, 44, 54]], "other_labels": [], "p_present": 0.772}
+{"dataset": "nih", "file": "00020673_005.png", "finding": "atelectasis", "boxes": [[54, 24, 77, 47]], "other_labels": [], "p_present": 0.821}
+{"dataset": "nih", "file": "00020751_003.png", "finding": "pleural effusion", "boxes": [[5, 77, 10, 82], [80, 67, 87, 73]], "other_labels": [], "p_present": 0.741}
+{"dataset": "nih", "file": "00020810_003.png", "finding": "atelectasis", "boxes": [[7, 68, 34, 77]], "other_labels": [], "p_present": 0.946}
+{"dataset": "nih", "file": "00020857_008.png", "finding": "atelectasis", "boxes": [[14, 58, 40, 70], [60, 56, 85, 72]], "other_labels": [], "p_present": 0.981}
+{"dataset": "nih", "file": "00021007_000.png", "finding": "atelectasis", "boxes": [[26, 34, 43, 54]], "other_labels": [], "p_present": 0.644}
+{"dataset": "nih", "file": "00021024_022.png", "finding": "atelectasis", "boxes": [[70, 50, 80, 64]], "other_labels": [], "p_present": 0.642}
+{"dataset": "nih", "file": "00021132_000.png", "finding": "pleural effusion", "boxes": [[5, 34, 44, 68], [75, 52, 90, 66]], "other_labels": [], "p_present": 0.95}
+{"dataset": "nih", "file": "00021181_002.png", "finding": "pleural effusion", "boxes": [[11, 34, 46, 67], [69, 52, 85, 64]], "other_labels": [], "p_present": 0.991}
+{"dataset": "nih", "file": "00021321_002.png", "finding": "pneumothorax", "boxes": [[20, 7, 46, 24]], "other_labels": [], "p_present": 0.966}
+{"dataset": "nih", "file": "00021377_016.png", "finding": "atelectasis", "boxes": [[74, 64, 85, 72]], "other_labels": [], "p_present": 0.747}
+{"dataset": "nih", "file": "00021381_013.png", "finding": "pleural effusion", "boxes": [[59, 54, 83, 70]], "other_labels": [], "p_present": 0.913}
+{"dataset": "nih", "file": "00021481_014.png", "finding": "atelectasis", "boxes": [[14, 36, 44, 52], [60, 36, 85, 52]], "other_labels": [], "p_present": 0.82}
+{"dataset": "nih", "file": "00021495_005.png", "finding": "atelectasis", "boxes": [[60, 50, 86, 76]], "other_labels": [], "p_present": 0.786}
+{"dataset": "nih", "file": "00021700_010.png", "finding": "pneumothorax", "boxes": [[54, 10, 76, 24]], "other_labels": [], "p_present": 0.979}
+{"dataset": "nih", "file": "00021703_001.png", "finding": "atelectasis", "boxes": [[20, 50, 34, 62]], "other_labels": [], "p_present": 0.799}
+{"dataset": "nih", "file": "00021703_001.png", "finding": "pleural effusion", "boxes": [[7, 67, 14, 77], [69, 52, 90, 73]], "other_labels": [], "p_present": 0.908}
+{"dataset": "nih", "file": "00021711_014.png", "finding": "pleural effusion", "boxes": [[8, 64, 18, 73], [76, 68, 85, 76]], "other_labels": [], "p_present": 0.875}
+{"dataset": "nih", "file": "00021748_000.png", "finding": "pneumothorax", "boxes": [[55, 6, 72, 14]], "other_labels": [], "p_present": 0.809}
+{"dataset": "nih", "file": "00021782_028.png", "finding": "pneumothorax", "boxes": [[54, 10, 76, 24]], "other_labels": [], "p_present": 0.798}
+{"dataset": "nih", "file": "00021796_000.png", "finding": "atelectasis", "boxes": [[14, 44, 43, 62]], "other_labels": [], "p_present": 0.684}
+{"dataset": "nih", "file": "00021840_016.png", "finding": "pleural effusion", "boxes": [[5, 48, 38, 72]], "other_labels": [], "p_present": 0.934}
+{"dataset": "nih", "file": "00021860_002.png", "finding": "pleural effusion", "boxes": [[10, 64, 16, 72], [84, 63, 88, 72]], "other_labels": [], "p_present": 0.419}
+{"dataset": "nih", "file": "00021862_004.png", "finding": "atelectasis", "boxes": [[59, 60, 90, 73]], "other_labels": [], "p_present": 0.743}
+{"dataset": "nih", "file": "00021896_003.png", "finding": "pneumothorax", "boxes": [[20, 15, 44, 31], [56, 16, 81, 31]], "other_labels": [], "p_present": 0.978}
+{"dataset": "nih", "file": "00021967_000.png", "finding": "pleural effusion", "boxes": [[10, 14, 46, 72]], "other_labels": [], "p_present": 0.956}
+{"dataset": "nih", "file": "00021972_001.png", "finding": "pleural effusion", "boxes": [[10, 54, 44, 70]], "other_labels": [], "p_present": 0.929}
+{"dataset": "nih", "file": "00022098_006.png", "finding": "atelectasis", "boxes": [[54, 50, 86, 73]], "other_labels": [], "p_present": 0.882}
+{"dataset": "nih", "file": "00022141_023.png", "finding": "pneumothorax", "boxes": [[54, 11, 77, 24]], "other_labels": [], "p_present": 0.959}
+{"dataset": "nih", "file": "00022141_030.png", "finding": "pneumothorax", "boxes": [[54, 5, 72, 14]], "other_labels": [], "p_present": 0.861}
+{"dataset": "nih", "file": "00022155_008.png", "finding": "atelectasis", "boxes": [[64, 14, 86, 64]], "other_labels": [], "p_present": 0.549}
+{"dataset": "nih", "file": "00022369_013.png", "finding": "pleural effusion", "boxes": [[5, 14, 46, 68], [54, 14, 92, 68]], "other_labels": [], "p_present": 0.986}
+{"dataset": "nih", "file": "00022416_004.png", "finding": "pleural effusion", "boxes": [[7, 48, 14, 57], [84, 52, 90, 60]], "other_labels": [], "p_present": 0.735}
+{"dataset": "nih", "file": "00022416_049.png", "finding": "atelectasis", "boxes": [[54, 43, 86, 72]], "other_labels": [], "p_present": 0.792}
+{"dataset": "nih", "file": "00022572_005.png", "finding": "pleural effusion", "boxes": [[5, 70, 12, 81]], "other_labels": [], "p_present": 0.654}
+{"dataset": "nih", "file": "00022572_063.png", "finding": "pleural effusion", "boxes": [[5, 64, 38, 77], [80, 72, 87, 81]], "other_labels": [], "p_present": 0.923}
+{"dataset": "nih", "file": "00022572_087.png", "finding": "pleural effusion", "boxes": [[8, 52, 38, 68]], "other_labels": [], "p_present": 0.956}
+{"dataset": "nih", "file": "00022611_001.png", "finding": "pleural effusion", "boxes": [[76, 38, 89, 64]], "other_labels": [], "p_present": 0.928}
+{"dataset": "nih", "file": "00022707_003.png", "finding": "atelectasis", "boxes": [[60, 54, 73, 68]], "other_labels": [], "p_present": 0.494}
+{"dataset": "nih", "file": "00022883_002.png", "finding": "atelectasis", "boxes": [[22, 50, 40, 60], [60, 50, 76, 61]], "other_labels": [], "p_present": 0.974}
+{"dataset": "nih", "file": "00022899_000.png", "finding": "pleural effusion", "boxes": [[64, 50, 95, 76]], "other_labels": [], "p_present": 0.921}
+{"dataset": "nih", "file": "00023058_004.png", "finding": "pleural effusion", "boxes": [[5, 60, 44, 80]], "other_labels": [], "p_present": 0.926}
+{"dataset": "nih", "file": "00023078_003.png", "finding": "pneumothorax", "boxes": [[28, 14, 46, 20]], "other_labels": [], "p_present": 0.682}
+{"dataset": "nih", "file": "00023093_007.png", "finding": "pleural effusion", "boxes": [[7, 62, 14, 69], [75, 62, 85, 70]], "other_labels": [], "p_present": 0.844}
+{"dataset": "nih", "file": "00023116_005.png", "finding": "atelectasis", "boxes": [[60, 41, 85, 52]], "other_labels": [], "p_present": 0.919}
+{"dataset": "nih", "file": "00023156_001.png", "finding": "atelectasis", "boxes": [[14, 26, 38, 56]], "other_labels": [], "p_present": 0.672}
+{"dataset": "nih", "file": "00023162_025.png", "finding": "pneumothorax", "boxes": [[17, 8, 44, 33]], "other_labels": [], "p_present": 0.99}
+{"dataset": "nih", "file": "00023176_010.png", "finding": "atelectasis", "boxes": [[10, 54, 42, 65], [60, 52, 90, 65]], "other_labels": [], "p_present": 0.796}
+{"dataset": "nih", "file": "00023283_019.png", "finding": "pleural effusion", "boxes": [[7, 68, 14, 76], [81, 68, 90, 76]], "other_labels": [], "p_present": 0.915}
+{"dataset": "nih", "file": "00025221_001.png", "finding": "atelectasis", "boxes": [[56, 64, 86, 86]], "other_labels": [], "p_present": 0.759}
+{"dataset": "nih", "file": "00025228_005.png", "finding": "atelectasis", "boxes": [[59, 50, 73, 62]], "other_labels": [], "p_present": 0.739}
+{"dataset": "nih", "file": "00025228_007.png", "finding": "pleural effusion", "boxes": [[8, 65, 18, 73], [75, 68, 85, 76]], "other_labels": [], "p_present": 0.966}
+{"dataset": "nih", "file": "00025252_032.png", "finding": "pneumothorax", "boxes": [[63, 60, 88, 84]], "other_labels": [], "p_present": 0.99}
+{"dataset": "nih", "file": "00025252_040.png", "finding": "pleural effusion", "boxes": [[5, 80, 10, 87], [69, 80, 86, 90]], "other_labels": [], "p_present": 0.468}
+{"dataset": "nih", "file": "00025252_053.png", "finding": "pleural effusion", "boxes": [[5, 67, 26, 81]], "other_labels": [], "p_present": 0.798}
+{"dataset": "nih", "file": "00025252_053.png", "finding": "pneumothorax", "boxes": [[60, 58, 86, 80]], "other_labels": [], "p_present": 0.987}
+{"dataset": "nih", "file": "00025252_054.png", "finding": "pneumothorax", "boxes": [[60, 58, 88, 84]], "other_labels": [], "p_present": 0.992}
+{"dataset": "nih", "file": "00025270_000.png", "finding": "atelectasis", "boxes": [[20, 50, 34, 56]], "other_labels": [], "p_present": 0.505}
+{"dataset": "nih", "file": "00025368_014.png", "finding": "atelectasis", "boxes": [[14, 50, 38, 76]], "other_labels": [], "p_present": 0.763}
+{"dataset": "nih", "file": "00025368_018.png", "finding": "pneumothorax", "boxes": [[18, 12, 44, 33]], "other_labels": [], "p_present": 0.969}
+{"dataset": "nih", "file": "00025368_033.png", "finding": "pneumothorax", "boxes": [[56, 4, 76, 24]], "other_labels": [], "p_present": 0.34}
+{"dataset": "nih", "file": "00025521_003.png", "finding": "pleural effusion", "boxes": [[8, 68, 14, 73], [76, 68, 85, 74]], "other_labels": [], "p_present": 0.69}
+{"dataset": "nih", "file": "00025529_018.png", "finding": "pleural effusion", "boxes": [[10, 54, 18, 63], [54, 38, 85, 68]], "other_labels": [], "p_present": 0.979}
+{"dataset": "nih", "file": "00025664_002.png", "finding": "pleural effusion", "boxes": [[5, 48, 38, 72], [75, 52, 96, 73]], "other_labels": [], "p_present": 0.896}
+{"dataset": "nih", "file": "00025686_000.png", "finding": "pleural effusion", "boxes": [[76, 64, 89, 76]], "other_labels": [], "p_present": 0.954}
+{"dataset": "nih", "file": "00025769_001.png", "finding": "atelectasis", "boxes": [[59, 50, 73, 60]], "other_labels": [], "p_present": 0.788}
+{"dataset": "nih", "file": "00025787_027.png", "finding": "pleural effusion", "boxes": [[59, 14, 96, 75]], "other_labels": [], "p_present": 0.98}
+{"dataset": "nih", "file": "00025787_039.png", "finding": "pneumothorax", "boxes": [[12, 8, 44, 63]], "other_labels": [], "p_present": 0.996}
+{"dataset": "nih", "file": "00025787_050.png", "finding": "pneumothorax", "boxes": [[54, 10, 82, 29], [82, 62, 85, 76]], "other_labels": [], "p_present": 0.981}
+{"dataset": "nih", "file": "00025954_025.png", "finding": "pneumothorax", "boxes": [[24, 10, 46, 22]], "other_labels": [], "p_present": 0.975}
+{"dataset": "nih", "file": "00026136_002.png", "finding": "atelectasis", "boxes": [[20, 50, 40, 61], [60, 52, 76, 63]], "other_labels": [], "p_present": 0.91}
+{"dataset": "nih", "file": "00026221_001.png", "finding": "pneumothorax", "boxes": [[12, 18, 44, 47]], "other_labels": [], "p_present": 0.994}
+{"dataset": "nih", "file": "00026392_005.png", "finding": "pneumothorax", "boxes": [[76, 12, 85, 24]], "other_labels": [], "p_present": 0.917}
+{"dataset": "nih", "file": "00026451_068.png", "finding": "pneumothorax", "boxes": [[18, 54, 34, 64]], "other_labels": [], "p_present": 0.925}
+{"dataset": "nih", "file": "00026555_001.png", "finding": "pleural effusion", "boxes": [[5, 36, 44, 56], [59, 36, 92, 56]], "other_labels": [], "p_present": 0.953}
+{"dataset": "nih", "file": "00026586_009.png", "finding": "pneumothorax", "boxes": [[20, 18, 44, 31]], "other_labels": [], "p_present": 0.943}
+{"dataset": "nih", "file": "00026753_008.png", "finding": "pleural effusion", "boxes": [[54, 20, 87, 68]], "other_labels": [], "p_present": 0.993}
+{"dataset": "nih", "file": "00026810_001.png", "finding": "pleural effusion", "boxes": [[78, 68, 85, 76]], "other_labels": [], "p_present": 0.803}
+{"dataset": "nih", "file": "00026886_002.png", "finding": "pneumothorax", "boxes": [[20, 18, 46, 33]], "other_labels": [], "p_present": 0.977}
+{"dataset": "nih", "file": "00026886_004.png", "finding": "atelectasis", "boxes": [[14, 50, 40, 72]], "other_labels": [], "p_present": 0.688}
+{"dataset": "nih", "file": "00026920_000.png", "finding": "atelectasis", "boxes": [[10, 48, 42, 60], [50, 48, 75, 65]], "other_labels": [], "p_present": 0.921}
+{"dataset": "nih", "file": "00027028_017.png", "finding": "pleural effusion", "boxes": [[8, 54, 26, 68], [59, 54, 85, 70]], "other_labels": [], "p_present": 0.974}
+{"dataset": "nih", "file": "00027094_003.png", "finding": "atelectasis", "boxes": [[74, 60, 80, 64]], "other_labels": [], "p_present": 0.752}
+{"dataset": "nih", "file": "00027103_001.png", "finding": "pleural effusion", "boxes": [[5, 77, 11, 87], [87, 78, 94, 89]], "other_labels": [], "p_present": 0.427}
+{"dataset": "nih", "file": "00027213_044.png", "finding": "pneumothorax", "boxes": [[54, 18, 84, 76]], "other_labels": [], "p_present": 0.986}
+{"dataset": "nih", "file": "00027278_007.png", "finding": "pneumothorax", "boxes": [[18, 8, 46, 28]], "other_labels": [], "p_present": 0.989}
+{"dataset": "nih", "file": "00027357_014.png", "finding": "pleural effusion", "boxes": [[7, 54, 12, 65], [84, 54, 90, 65]], "other_labels": [], "p_present": 0.422}
+{"dataset": "nih", "file": "00027441_002.png", "finding": "pleural effusion", "boxes": [[5, 44, 38, 64]], "other_labels": [], "p_present": 0.882}
+{"dataset": "nih", "file": "00027474_005.png", "finding": "atelectasis", "boxes": [[24, 34, 40, 46], [60, 44, 73, 52]], "other_labels": [], "p_present": 0.876}
+{"dataset": "nih", "file": "00027479_013.png", "finding": "pleural effusion", "boxes": [[76, 52, 94, 68]], "other_labels": [], "p_present": 0.776}
+{"dataset": "nih", "file": "00027556_007.png", "finding": "atelectasis", "boxes": [[14, 54, 40, 65]], "other_labels": [], "p_present": 0.777}
+{"dataset": "nih", "file": "00027577_003.png", "finding": "pleural effusion", "boxes": [[59, 54, 92, 68]], "other_labels": [], "p_present": 0.842}
+{"dataset": "nih", "file": "00027631_000.png", "finding": "pleural effusion", "boxes": [[84, 72, 90, 81]], "other_labels": [], "p_present": 0.404}
+{"dataset": "nih", "file": "00027652_003.png", "finding": "pneumothorax", "boxes": [[20, 18, 44, 33]], "other_labels": [], "p_present": 0.234}
+{"dataset": "nih", "file": "00027697_001.png", "finding": "atelectasis", "boxes": [[68, 41, 76, 46]], "other_labels": [], "p_present": 0.53}
+{"dataset": "nih", "file": "00027817_001.png", "finding": "pleural effusion", "boxes": [[76, 54, 89, 66]], "other_labels": [], "p_present": 0.896}
+{"dataset": "nih", "file": "00027866_002.png", "finding": "atelectasis", "boxes": [[20, 58, 40, 73], [60, 60, 85, 76]], "other_labels": [], "p_present": 0.794}
+{"dataset": "nih", "file": "00027875_005.png", "finding": "pleural effusion", "boxes": [[64, 41, 90, 64]], "other_labels": [], "p_present": 0.934}
+{"dataset": "nih", "file": "00028012_001.png", "finding": "atelectasis", "boxes": [[60, 43, 85, 52]], "other_labels": [], "p_present": 0.865}
+{"dataset": "nih", "file": "00028173_016.png", "finding": "atelectasis", "boxes": [[54, 50, 76, 63]], "other_labels": [], "p_present": 0.603}
+{"dataset": "nih", "file": "00028383_002.png", "finding": "pleural effusion", "boxes": [[8, 68, 14, 76], [81, 72, 88, 80]], "other_labels": [], "p_present": 0.906}
+{"dataset": "nih", "file": "00028452_001.png", "finding": "atelectasis", "boxes": [[14, 48, 37, 54]], "other_labels": [], "p_present": 0.903}
+{"dataset": "nih", "file": "00028509_007.png", "finding": "pleural effusion", "boxes": [[5, 54, 44, 85], [60, 64, 92, 86]], "other_labels": [], "p_present": 0.952}
+{"dataset": "nih", "file": "00028518_021.png", "finding": "pleural effusion", "boxes": [[5, 64, 26, 76], [75, 62, 96, 76]], "other_labels": [], "p_present": 0.893}
+{"dataset": "nih", "file": "00028620_000.png", "finding": "atelectasis", "boxes": [[20, 64, 40, 72], [74, 64, 90, 72]], "other_labels": [], "p_present": 0.967}
+{"dataset": "nih", "file": "00028625_000.png", "finding": "atelectasis", "boxes": [[60, 41, 73, 50]], "other_labels": [], "p_present": 0.696}
+{"dataset": "nih", "file": "00028628_008.png", "finding": "pneumothorax", "boxes": [[63, 14, 76, 24]], "other_labels": [], "p_present": 0.628}
+{"dataset": "nih", "file": "00028628_015.png", "finding": "pleural effusion", "boxes": [[8, 14, 44, 64], [54, 14, 92, 67]], "other_labels": [], "p_present": 0.986}
+{"dataset": "nih", "file": "00028640_008.png", "finding": "pleural effusion", "boxes": [[76, 60, 85, 69]], "other_labels": [], "p_present": 0.887}
+{"dataset": "nih", "file": "00028774_047.png", "finding": "pleural effusion", "boxes": [[5, 48, 38, 72], [60, 52, 92, 72]], "other_labels": [], "p_present": 0.902}
+{"dataset": "nih", "file": "00028861_009.png", "finding": "pneumothorax", "boxes": [[54, 10, 76, 24]], "other_labels": [], "p_present": 0.892}
+{"dataset": "nih", "file": "00028876_027.png", "finding": "pneumothorax", "boxes": [[56, 13, 76, 24]], "other_labels": [], "p_present": 0.831}
+{"dataset": "nih", "file": "00028924_009.png", "finding": "pneumothorax", "boxes": [[56, 22, 72, 31]], "other_labels": [], "p_present": 0.533}
+{"dataset": "nih", "file": "00028974_016.png", "finding": "pleural effusion", "boxes": [[59, 58, 93, 76]], "other_labels": [], "p_present": 0.933}
+{"dataset": "nih", "file": "00029075_013.png", "finding": "pneumothorax", "boxes": [[54, 17, 76, 28], [76, 62, 81, 70]], "other_labels": [], "p_present": 0.978}
+{"dataset": "nih", "file": "00029088_023.png", "finding": "atelectasis", "boxes": [[20, 24, 38, 44]], "other_labels": [], "p_present": 0.883}
+{"dataset": "nih", "file": "00029200_006.png", "finding": "atelectasis", "boxes": [[5, 51, 36, 64]], "other_labels": [], "p_present": 0.975}
+{"dataset": "nih", "file": "00029259_027.png", "finding": "pneumothorax", "boxes": [[54, 12, 78, 42]], "other_labels": [], "p_present": 0.99}
+{"dataset": "nih", "file": "00029464_003.png", "finding": "atelectasis", "boxes": [[14, 44, 36, 52]], "other_labels": [], "p_present": 0.885}
+{"dataset": "nih", "file": "00029464_015.png", "finding": "atelectasis", "boxes": [[20, 54, 34, 58], [60, 34, 85, 48]], "other_labels": [], "p_present": 0.969}
+{"dataset": "nih", "file": "00029464_015.png", "finding": "pleural effusion", "boxes": [[8, 60, 14, 70], [59, 54, 90, 72]], "other_labels": [], "p_present": 0.937}
+{"dataset": "nih", "file": "00029469_011.png", "finding": "pleural effusion", "boxes": [[5, 82, 10, 89], [86, 68, 92, 78]], "other_labels": [], "p_present": 0.512}
+{"dataset": "nih", "file": "00029502_006.png", "finding": "atelectasis", "boxes": [[14, 54, 44, 68]], "other_labels": [], "p_present": 0.944}
+{"dataset": "nih", "file": "00029502_006.png", "finding": "pleural effusion", "boxes": [[5, 58, 33, 77], [69, 60, 96, 78]], "other_labels": [], "p_present": 0.956}
+{"dataset": "nih", "file": "00029532_005.png", "finding": "pleural effusion", "boxes": [[10, 42, 38, 64]], "other_labels": [], "p_present": 0.759}
+{"dataset": "nih", "file": "00029579_005.png", "finding": "pleural effusion", "boxes": [[14, 48, 22, 62]], "other_labels": [], "p_present": 0.728}
+{"dataset": "nih", "file": "00029579_014.png", "finding": "pneumothorax", "boxes": [[54, 24, 65, 28]], "other_labels": [], "p_present": 0.327}
+{"dataset": "nih", "file": "00029588_004.png", "finding": "pleural effusion", "boxes": [[5, 14, 38, 72]], "other_labels": [], "p_present": 0.928}
+{"dataset": "nih", "file": "00029596_018.png", "finding": "pleural effusion", "boxes": [[54, 44, 86, 85]], "other_labels": [], "p_present": 0.976}
+{"dataset": "nih", "file": "00029631_006.png", "finding": "atelectasis", "boxes": [[10, 48, 38, 72]], "other_labels": [], "p_present": 0.787}
+{"dataset": "nih", "file": "00029807_003.png", "finding": "pneumothorax", "boxes": [[20, 10, 46, 31]], "other_labels": [], "p_present": 0.981}
+{"dataset": "nih", "file": "00029817_009.png", "finding": "atelectasis", "boxes": [[20, 32, 41, 46]], "other_labels": [], "p_present": 0.904}
+{"dataset": "nih", "file": "00029843_001.png", "finding": "atelectasis", "boxes": [[14, 42, 38, 53]], "other_labels": [], "p_present": 0.865}
+{"dataset": "nih", "file": "00029894_000.png", "finding": "pleural effusion", "boxes": [[14, 58, 22, 68], [69, 54, 85, 70]], "other_labels": [], "p_present": 0.992}
+{"dataset": "nih", "file": "00029909_003.png", "finding": "pneumothorax", "boxes": [[24, 16, 44, 24]], "other_labels": [], "p_present": 0.915}
+{"dataset": "nih", "file": "00029940_007.png", "finding": "atelectasis", "boxes": [[54, 50, 86, 76]], "other_labels": [], "p_present": 0.882}
+{"dataset": "nih", "file": "00030039_008.png", "finding": "pleural effusion", "boxes": [[8, 58, 14, 72], [84, 60, 90, 72]], "other_labels": [], "p_present": 0.741}
+{"dataset": "nih", "file": "00030106_008.png", "finding": "atelectasis", "boxes": [[14, 50, 44, 68]], "other_labels": [], "p_present": 0.81}
+{"dataset": "nih", "file": "00030111_007.png", "finding": "pneumothorax", "boxes": [[54, 10, 77, 30]], "other_labels": [], "p_present": 0.882}
+{"dataset": "nih", "file": "00030128_002.png", "finding": "pleural effusion", "boxes": [[5, 54, 38, 85], [64, 64, 92, 86]], "other_labels": [], "p_present": 0.944}
