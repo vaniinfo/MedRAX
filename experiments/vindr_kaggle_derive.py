@@ -16,6 +16,7 @@ import json
 import os
 import shutil
 import zipfile
+from urllib.parse import quote
 import sys
 from pathlib import Path
 
@@ -84,7 +85,9 @@ def download_file(s, name, dst):
     if dst.exists() and dst.stat().st_size > 0:
         return
     dst.parent.mkdir(parents=True, exist_ok=True)
-    with s.get(f"{API}/competitions/data/download/{COMPETITION}/{name}", stream=True, allow_redirects=True) as r:
+    # Files in folders need the "/" encoded, e.g. train%2F<id>.dicom
+    url = f"{API}/competitions/data/download/{COMPETITION}/{quote(name, safe='')}"
+    with s.get(url, stream=True, allow_redirects=True) as r:
         r.raise_for_status()
         tmp = dst.with_suffix(dst.suffix + ".part")
         with tmp.open("wb") as f:
