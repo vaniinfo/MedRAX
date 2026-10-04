@@ -18,6 +18,7 @@ import shutil
 import zipfile
 from urllib.parse import quote
 import sys
+import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -87,12 +88,22 @@ def download_file(s, name, dst):
     dst.parent.mkdir(parents=True, exist_ok=True)
     # Files in folders need the "/" encoded, e.g. train%2F<id>.dicom
     url = f"{API}/competitions/data/download/{COMPETITION}/{quote(name, safe='')}"
-    with s.get(url, stream=True, allow_redirects=True) as r:
-        r.raise_for_status()
-        tmp = dst.with_suffix(dst.suffix + ".part")
-        with tmp.open("wb") as f:
-            for chunk in r.iter_content(1 << 20):
-                f.write(chunk)
+    tmp = dst.with_suffix(dst.suffix + ".part")
+    for attempt in range(10):
+        with s.get(url, stream=True, allow_redirects=True) as r:
+            if r.status_code in (429, 500, 502, 503, 504):
+                # Rate limited or server error: wait (Kaggle's Retry-After if given) and retry
+                wait = int(r.headers.get("Retry-After", 0) or 0) or min(30 * 2 ** attempt, 900)
+                print(f"  {r.status_code} on {name}, waiting {wait}s", flush=True)
+                time.sleep(wait)
+                continue
+            r.raise_for_status()
+            with tmp.open("wb") as f:
+                for chunk in r.iter_content(1 << 20):
+                    f.write(chunk)
+            break
+    else:
+        raise SystemExit(f"{name}: still failing after 10 attempts; rerun later to resume")
     # Kaggle sends some files zipped: unpack the single member under the expected name
     if zipfile.is_zipfile(tmp):
         with zipfile.ZipFile(tmp) as z:
@@ -111,6 +122,7 @@ def download():
     download_file(s, "train.csv", RAW / "train.csv")
     for n, i in enumerate(ids, 1):
         download_file(s, f"train/{i}.dicom", RAW / "train" / f"{i}.dicom")
+        time.sleep(0.5)  # stay under Kaggle's request rate
         if n % 100 == 0 or n == len(ids):
             print(f"{n}/{len(ids)} DICOMs", flush=True)
 
