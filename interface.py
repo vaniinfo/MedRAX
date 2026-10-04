@@ -1,11 +1,14 @@
 import re
 import base64
+import json
 import gradio as gr
 from pathlib import Path
 import time
 import shutil
 from typing import AsyncGenerator, List, Optional, Tuple
 from gradio import ChatMessage
+
+from medrax.utils import flow_trace
 
 
 # The critique sometimes restates the requested format before its content
@@ -75,6 +78,7 @@ class ChatInterface:
         self.viewable_file_path = None  # Viewable version of the original, sent to the LLM
         self.display_file_path = None  # For UI (may be a tool's annotated image)
         self.last_sent_file_path = None  # Image last sent to the LLM in this thread
+        self.original_file_name = None  # Name of the uploaded file, for the flow trace log
 
     def handle_upload(self, file_path: str) -> str:
         """
@@ -97,6 +101,7 @@ class ChatInterface:
         saved_path = self.upload_dir / f"upload_{timestamp}{suffix}"
         shutil.copy2(file_path, saved_path)  # Use file_path directly instead of source
         self.original_file_path = str(saved_path)
+        self.original_file_name = source.name
 
         # Handle DICOM conversion for display only
         if suffix == ".dcm":
@@ -201,6 +206,17 @@ class ChatInterface:
         if message is not None:
             messages.append({"role": "user", "content": [{"type": "text", "text": message}]})
 
+        # One flow trace log per message, named after the uploaded image
+        trace = flow_trace.FlowTrace(
+            self.original_file_name if image_path else None, image_path=self.viewable_file_path
+        ).__enter__()
+        trace.log(f"Flow trace: {trace.image_name}")
+        trace.log(f"time: {time.strftime('%Y-%m-%d %H:%M:%S')}   thread: {self.current_thread_id}")
+        trace.log(f"image passed to the tools: {image_path}")
+        trace.section("0 User message")
+        trace.log(f"  {message!r}")
+        summary = None  # The director's closing answer shown in the UI
+
         shown_images = set()  # Images already added to the chat in this reply
         validated = False  # Whether EDV critiqued a tool result in this reply
         try:
@@ -211,6 +227,15 @@ class ChatInterface:
                     if "process" in event:
                         ai_message = event["process"]["messages"][-1]
                         content = ai_message.content
+                        model_name = ai_message.response_metadata.get("model_name", "")
+                        if content:
+                            trace.section(f"Director message] model: {model_name}")
+                            trace.block("content", content)
+                            if not ai_message.tool_calls:
+                                summary = content
+                        for call in ai_message.tool_calls:
+                            trace.section(f"Director calls tool {call['name']}] model: {model_name}")
+                            trace.log(f"  args: {json.dumps(call['args'])}")
                         if content:
                             content = format_evidence(re.sub(r"temp/[^\s]*", "", content))
                             metadata = None
@@ -230,9 +255,10 @@ class ChatInterface:
                             yield chat_history, self.display_file_path, ""
 
                     elif "respond" in event:
-                        content = format_evidence(
-                            re.sub(r"temp/[^\s]*", "", event["respond"]["messages"][-1].content)
-                        )
+                        summary = event["respond"]["messages"][-1].content
+                        trace.section("EDV final responder")
+                        trace.block("content", summary)
+                        content = format_evidence(re.sub(r"temp/[^\s]*", "", summary))
                         chat_history.append(ChatMessage(role="assistant", content=content))
                         yield chat_history, self.display_file_path, ""
 
@@ -246,6 +272,8 @@ class ChatInterface:
                                 tool_result = message.artifact[0]
                             else:
                                 tool_result = eval(message.content)[0]
+                            trace.section(f"Tool result returned to the director: {tool_name}")
+                            trace.block("result", json.dumps(tool_result, indent=2, default=str))
 
                             # image_visualizer only re-displays an image; skip it if this
                             # reply already showed that image (e.g. a grounding visualization)
@@ -307,12 +335,42 @@ class ChatInterface:
                             yield chat_history, self.display_file_path, ""
 
         except Exception as e:
+            trace.section(f"Error] {e!r}")
             chat_history.append(
                 ChatMessage(
                     role="assistant", content=f"❌ Error: {str(e)}", metadata={"title": "Error"}
                 )
             )
             yield chat_history, self.display_file_path, ""
+
+        try:
+            # Final report (checklist, generated and ground truth reports, visual proof),
+            # logged and shown after the director's summary
+            reports = []
+            try:
+                medgemma = self.tools_dict.get("MedGemmaTool")
+                extractor = medgemma and (medgemma.extractor or medgemma.model)
+                reports = flow_trace.final_report(trace, extractor, summary)
+            except Exception as e:
+                trace.log(f"\nfinal report failed: {e!r}")
+            for report in reports:
+                chat_history.append(
+                    ChatMessage(
+                        role="assistant",
+                        content=flow_trace.to_markdown(report["text"]),
+                        metadata={"title": "📋 Report: checklist, generated vs ground truth, visual proof"},
+                    )
+                )
+                if report["pdf"]:
+                    # The same report as a PDF file to download
+                    chat_history.append(
+                        ChatMessage(role="assistant", content={"path": str(report["pdf"])})
+                    )
+                    print(f"PDF report written to {report['pdf']}")
+                yield chat_history, self.display_file_path, ""
+        finally:
+            trace.__exit__(None, None, None)
+            print(f"Flow trace written to {trace.path}")
 
 
 def create_demo(agent, tools_dict, send_image=True, director_label=None):

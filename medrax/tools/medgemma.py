@@ -1,26 +1,42 @@
 import base64
+import io
 import json
-import mimetypes
 import os
 import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Type
 
+from PIL import Image
 from pydantic import BaseModel, Field
 from langchain_core.callbacks import (
     AsyncCallbackManagerForToolRun,
     CallbackManagerForToolRun,
 )
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage
 from langchain_core.tools import BaseTool
 from langchain_openai import ChatOpenAI
+
+from medrax.utils import flow_trace
 
 
 class MedGemmaInput(BaseModel):
     """Input schema for the MedGemma opinion tool."""
 
     image_path: str = Field(..., description="Path to the chest X-ray image (JPG or PNG)")
-    question: str = Field(..., description="Question about the chest X-ray to give an opinion on")
+    question: str = Field(
+        ...,
+        description="The user's question. It is recorded but not sent to MedGemma, which always "
+        "writes the same report; answer the question from the report and the visual proof.",
+    )
+
+
+# The report query of the MIMIC report-generation notebook that produced
+# demo/medgemma_vs_gold.csv (kaggle.com/code/parammisra/mimicreportgen): a single user turn
+# with the image and the prompt text in REPORT_PROMPT_FILE, no system prompt, the image
+# shrunk to fit 1024x1024, greedy decoding, at most 450 new tokens
+REPORT_PROMPT_FILE = Path(__file__).resolve().parents[1] / "docs" / "medgemma_report_prompt.txt"
+REPORT_IMAGE_SIZE = (1024, 1024)
+REPORT_MAX_TOKENS = 450
 
 
 FINDINGS_PROMPT = (
@@ -88,9 +104,12 @@ _LOCATION_WORDS = {
 
 
 class MedGemmaTool(BaseTool):
-    """Tool that asks MedGemma (served by Ollama) for an opinion on a chest X-ray, with
+    """Tool that asks MedGemma (served by Ollama) for a draft report on a chest X-ray, with
     visual proof from a locator model.
 
+    MedGemma is queried exactly as in the notebook that produced demo/medgemma_vs_gold.csv
+    (prompt in medrax/docs/medgemma_report_prompt.txt), whatever the user asked, so its
+    reports are comparable with that file.
     MedGemma runs in Ollama rather than in-process: its transformers requirement (>= 4.50)
     conflicts with the version pinned for CheXagent in this environment.
 
@@ -101,18 +120,18 @@ class MedGemmaTool(BaseTool):
 
     name: str = "medgemma_opinion"
     description: str = (
-        "Asks MedGemma, a medical vision-language model, for an expert opinion on a chest "
-        "X-ray. Input is the image path and a natural language question. Output is "
-        "MedGemma's written opinion and, for each finding MedGemma states is present, "
-        "visual proof from CheXagent: bounding boxes (box_normalized as percent of image "
-        "width/height, x1,y1,x2,y2) drawn on the X-ray, or 'not localized'."
+        "Asks MedGemma, a medical vision-language model, for a draft chest X-ray report "
+        "(FINDINGS and IMPRESSION), always with the same report request. Input is the image "
+        "path and the user's question; the question is not sent to MedGemma, so answer it from "
+        "the report. Output is MedGemma's report and, for each finding MedGemma states is "
+        "present, visual proof from CheXagent: bounding boxes (box_normalized as percent of "
+        "image width/height, x1,y1,x2,y2) drawn on the X-ray, or 'not localized'."
     )
     args_schema: Type[BaseModel] = MedGemmaInput
     model: Any = None
     locator: Any = None
     extractor: Any = None
-    system_prompt: str = "You are an expert radiologist."
-    max_tokens: int = 512
+    max_tokens: int = REPORT_MAX_TOKENS
     max_findings: int = 5
 
     def __init__(
@@ -125,7 +144,8 @@ class MedGemmaTool(BaseTool):
     ):
         """
         Args:
-            model_name: Ollama model tag. Defaults to MEDGEMMA_MODEL, then "medgemma:4b".
+            model_name: Ollama model tag. Defaults to MEDGEMMA_MODEL, then "medgemma1.5:4b"
+                (MedGemma 1.5, the version of the report notebook behind medgemma_vs_gold.csv).
             base_url: OpenAI-compatible endpoint. Defaults to OLLAMA_BASE_URL, then the
                 local Ollama server.
             locator: Optional XRayVQATool (CheXagent) used to box MedGemma's findings.
@@ -135,7 +155,7 @@ class MedGemmaTool(BaseTool):
         """
         super().__init__(**kwargs)
         self.model = ChatOpenAI(
-            model=model_name or os.getenv("MEDGEMMA_MODEL", "medgemma:4b"),
+            model=model_name or os.getenv("MEDGEMMA_MODEL", "medgemma1.5:4b"),
             base_url=base_url or os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1"),
             api_key="ollama",  # Ollama ignores the key, but the client requires one
             temperature=0,
@@ -148,6 +168,12 @@ class MedGemmaTool(BaseTool):
         or to MedGemma if no extractor was given)."""
         extractor = self.extractor or self.model
         response = extractor.invoke([HumanMessage(content=FINDINGS_PROMPT + opinion)], max_tokens=200)
+        trace = flow_trace.current()
+        if trace:
+            trace.section(f"2 Extractor (director's model)] model: {extractor.model_name}")
+            trace.block("input (FINDINGS_PROMPT + MedGemma's opinion)",
+                        FINDINGS_PROMPT + "<MedGemma's opinion, as in step 1>")
+            trace.block("output (raw)", response.content)
         # MedGemma 1.5 writes its reasoning before the answer
         text = response.content.rsplit("Final Answer:", 1)[-1]
         text = re.sub(r"```(?:json)?", "", text).strip()
@@ -179,25 +205,31 @@ class MedGemmaTool(BaseTool):
         question: str,
         run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> Tuple[Dict[str, Any], Dict]:
-        """Ask MedGemma the question about the image."""
+        """Ask MedGemma for its report on the image (the question is only recorded)."""
         try:
             if not Path(image_path).is_file():
                 raise FileNotFoundError(f"Image file not found: {image_path}")
 
-            mime = mimetypes.guess_type(image_path)[0] or "image/jpeg"
-            with open(image_path, "rb") as img_file:
-                img_base64 = base64.b64encode(img_file.read()).decode("utf-8")
+            # As in the report notebook: RGB, shrunk to fit REPORT_IMAGE_SIZE
+            image = Image.open(image_path).convert("RGB")
+            image.thumbnail(REPORT_IMAGE_SIZE)
+            buffer = io.BytesIO()
+            image.save(buffer, format="PNG")
+            img_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
 
+            # Read on every call, so edits to the prompt file apply without a restart
+            report_prompt = REPORT_PROMPT_FILE.read_text(encoding="utf-8").strip()
+
+            # One user turn, image then the report prompt, no system prompt; temperature 0 is greedy
             response = self.model.invoke(
                 [
-                    SystemMessage(content=self.system_prompt),
                     HumanMessage(
                         content=[
                             {
                                 "type": "image_url",
-                                "image_url": {"url": f"data:{mime};base64,{img_base64}"},
+                                "image_url": {"url": f"data:image/png;base64,{img_base64}"},
                             },
-                            {"type": "text", "text": question},
+                            {"type": "text", "text": report_prompt},
                         ]
                     ),
                 ],
@@ -205,10 +237,20 @@ class MedGemmaTool(BaseTool):
             )
 
             output = {"response": response.content}
+            trace = flow_trace.current()
+            if trace:
+                trace.section(f"1 MedGemma report] model: {self.model.model_name}")
+                trace.log(f"  director's question (not sent to MedGemma): {question!r}")
+                trace.log(f"  input:  [image {image_path}, RGB, thumbnail {image.size}] + report prompt "
+                          f"(no system prompt, temperature 0, max_tokens {self.max_tokens}):")
+                trace.block(f"report prompt ({REPORT_PROMPT_FILE.name})", report_prompt)
+                trace.block("output (raw)", response.content)
 
             # Visual proof: box each finding MedGemma asserts; skip what cannot be boxed
             if self.locator is not None:
                 findings = self._extract_findings(response.content)
+                if trace:
+                    trace.section(f"2b Findings passed to CheXagent] {findings}")
                 if findings:
                     proof, viz_path = self.locator.locate_findings(image_path, findings)
                     output["visual_proof"] = [
@@ -237,6 +279,17 @@ class MedGemmaTool(BaseTool):
                     if viz_path:
                         output["visualization_path"] = viz_path
 
+            if trace:
+                proof = output.get("visual_proof", [])
+                trace.section("4 visual_proof returned by the tool")
+                trace.block("visual_proof", json.dumps(proof, indent=2) if proof else "(no findings)")
+                trace.log(f"  grounded (boxed): {[p['finding'] for p in proof if 'boxes' in p]}")
+                trace.log(f"  ungrounded (not localized): "
+                          f"{[p['finding'] for p in proof if 'boxes' not in p]}")
+                trace.medgemma_runs.append(
+                    {"question": question, "output": output, "model": self.model.model_name}
+                )
+
             metadata = {
                 "image_path": image_path,
                 "question": question,
@@ -246,6 +299,9 @@ class MedGemmaTool(BaseTool):
             return output, metadata
 
         except Exception as e:
+            trace = flow_trace.current()
+            if trace:
+                trace.section(f"MedGemma tool failed] {e!r}")
             return {"error": str(e)}, {
                 "image_path": image_path,
                 "question": question,

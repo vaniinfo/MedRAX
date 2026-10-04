@@ -58,6 +58,7 @@ dependencies = [
     "jupyter>=1.0.0",
     "albumentations>=1.0.0",
     "pyarrow>=10.0.0",
+    "fpdf2>=2.8.0",
 ]
 
 [project.optional-dependencies]

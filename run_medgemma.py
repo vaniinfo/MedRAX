@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
         python run_medgemma.py                              # Qwen as director/summarizer
         python run_medgemma.py --director gpt-4o
-    MedGemma and Qwen run on the local Ollama; MEDGEMMA_MODEL overrides "medgemma:4b".
+    MedGemma and Qwen run on the local Ollama; MEDGEMMA_MODEL overrides "medgemma1.5:4b".
     """
     parser = argparse.ArgumentParser(description="MedRAX MedGemma + CheXagent visual validation UI")
     parser.add_argument(
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     model, openai_kwargs = get_director(args.director, args.ollama_model)
-    print(f"Starting MedGemma + CheXagent server with director {model}...")
+    print(f"****Starting MedGemma + CheXagent server with director {model}..****")
 
     agent, tools_dict = initialize_agent(
         "medrax/docs/system_prompts.txt",

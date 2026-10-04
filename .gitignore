@@ -172,3 +172,8 @@ logs/
 temp/
 
 .gradio/
+
+# MIMIC-CXR images and gold reports: PhysioNet data use agreement, do not commit
+demo/*-*-*-*-*.jpg
+demo/*-*-*-*-*.png
+demo/medgemma_vs_gold.csv

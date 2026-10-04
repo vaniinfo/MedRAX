@@ -14,6 +14,8 @@ from langchain_core.callbacks import (
 )
 from langchain_core.tools import BaseTool
 
+from medrax.utils import flow_trace
+
 
 class XRayVQAToolInput(BaseModel):
     """Input schema for the CheXagent Tool."""
@@ -172,7 +174,50 @@ class XRayVQATool(BaseTool):
             if re.match(r"^\s*(yes|no)\s*(?:[.,!]|$)", response, re.IGNORECASE):
                 yes_no = self._yes_no_confidence(first_hidden, int(new_tokens[0]))
 
+            trace = flow_trace.current()
+            if trace:
+                self._trace_call(trace, input_ids[0], max_new_tokens, response, first_hidden, yes_no)
+
             return response, yes_no
+
+    def _trace_call(self, trace, input_ids, max_new_tokens, response, hidden, yes_no) -> None:
+        """Log the exact query, the raw output and, for yes/no answers, how p_present comes
+        from the hidden state and lm_head = model.get_output_embeddings()."""
+        tok = self.tokenizer
+        trace.block(f"actual query sent to CheXagent (decoded input_ids, {len(input_ids)} tokens; "
+                    f"generate(do_sample=False, max_new_tokens={max_new_tokens}))",
+                    tok.decode(input_ids))
+        trace.block("output (raw, with any grounding tags)", response)
+        if yes_no is None:
+            return
+
+        lm_head = self.model.get_output_embeddings()
+        trace.log(f"  lm_head = model.get_output_embeddings(): {lm_head.__class__.__name__}, "
+                  f"weight {tuple(lm_head.weight.shape)} ({lm_head.weight.dtype}); "
+                  f"real vocab {len(tok)} tokens")
+        trace.log(f"  hidden state (last layer, position predicting the 1st answer token): "
+                  f"{tuple(hidden.shape)}")
+        logits = hidden.float() @ lm_head.weight.float().T  # every vocabulary row, float32
+        if lm_head.bias is not None:
+            logits = logits + lm_head.bias.float()
+        logits = logits[: len(tok)]  # rows past the real vocabulary are padding
+        probs = torch.softmax(logits, dim=-1)
+        top = torch.topk(probs, 5)
+        trace.log(f"  top-5 vocabulary tokens (softmax over all {len(tok)} tokens):")
+        trace.log(f"    {'rank':<5}{'id':>7}  {'token':<12}{'logit':>9}{'prob':>10}")
+        for rank, (p, i) in enumerate(zip(top.values, top.indices), 1):
+            trace.log(f"    {rank:<5}{int(i):>7}  {tok.decode([int(i)])!r:<12}"
+                      f"{float(logits[i]):>9.3f}{float(p):>10.4f}")
+
+        yes_ids = self._first_token_ids(["Yes", " Yes", "yes", " yes", "YES"])
+        no_ids = self._first_token_ids(["No", " No", "no", " no", "NO"])
+        yes_no_probs = torch.softmax(logits[yes_ids + no_ids], dim=-1)
+        trace.log("  p_present uses only these rows (softmax over the Yes/No variants):")
+        for j, i in enumerate(yes_ids + no_ids):
+            trace.log(f"    {'Yes' if j < len(yes_ids) else 'No':<4}{i:>7}  {tok.decode([i])!r:<12}"
+                      f"{float(logits[i]):>9.3f}{float(yes_no_probs[j]):>10.4f}")
+        trace.log(f"  p_present = sum(Yes) / (sum(Yes) + sum(No)) = {yes_no['p_yes']}   "
+                  f"(p_no = {yes_no['p_no']})")
 
     def _yes_no_confidence(
         self, hidden: torch.Tensor, first_token_id: int
@@ -329,6 +374,9 @@ class XRayVQATool(BaseTool):
         for entry in boxes:
             phrase = entry["phrase"]
             if phrase and phrase not in p_by_phrase:
+                trace = flow_trace.current()
+                if trace:
+                    trace.section(f"CheXagent presence check]  prompt: 'Is there {phrase}?'")
                 _, yes_no = self._generate_response([image_path], f"Is there {phrase}?", 8)
                 p_by_phrase[phrase] = yes_no["p_yes"] if yes_no else None
             entry["p_present"] = p_by_phrase.get(phrase)
@@ -350,12 +398,14 @@ class XRayVQATool(BaseTool):
             Tuple of per-finding results ({"finding", "localized", "boxes"}) and the path to
             an image with all boxes drawn, or None if nothing was localized
         """
+        trace = flow_trace.current()
         results, all_boxes = [], []
         for finding in findings:
-            response, _ = self._generate_response(
-                [image_path], f"Please locate the following phrase: {finding}", 128
-            )
-            _, boxes = self._parse_grounding(response)
+            locate_prompt = f"Please locate the following phrase: {finding}"
+            if trace:
+                trace.section(f"3a CheXagent locate]  prompt: {locate_prompt!r}")
+            response, _ = self._generate_response([image_path], locate_prompt, 128)
+            clean_text, boxes = self._parse_grounding(response)
 
             # The model sometimes boxes a different finding than the one asked about
             # (e.g. "Pneumothorax" for "pneumonia"); such a box is no evidence for it
@@ -365,9 +415,21 @@ class XRayVQATool(BaseTool):
                 label = (box["phrase"] or finding).strip().lower()
                 (matching if key in label or label in key else substituted).append(box)
 
+            if trace:
+                trace.block("ungrounded output (tags removed)", clean_text)
+                trace.block("parsed boxes (x1,y1,x2,y2 in % of image)",
+                            "\n".join(f"{b['phrase']!r}: {b['box_normalized']}" for b in boxes)
+                            or "(none)")
+                trace.log(f"  kept as evidence for {finding!r}: "
+                          f"{[b['box_normalized'] for b in matching]}")
+                trace.log(f"  rejected (labelled as a different finding): "
+                          f"{[(b['phrase'], b['box_normalized']) for b in substituted]}")
+
             if matching:
                 # Score the finding that was asked about, not the model's label: the label
                 # can be a different finding, and even its capitalization shifts the score
+                if trace:
+                    trace.section(f"3b CheXagent p_present]  prompt: 'Is there {finding}?'")
                 _, yes_no = self._generate_response([image_path], f"Is there {finding}?", 8)
                 for box in matching:
                     box["phrase"] = finding
@@ -406,6 +468,9 @@ class XRayVQATool(BaseTool):
                 if not Path(path).is_file():
                     raise FileNotFoundError(f"Image file not found: {path}")
 
+            trace = flow_trace.current()
+            if trace:
+                trace.section(f"CheXagent ({self.name})]  prompt: {prompt!r}")
             response, yes_no = self._generate_response(image_paths, prompt, max_new_tokens)
             response, boxes = self._parse_grounding(response)
 
@@ -420,6 +485,8 @@ class XRayVQATool(BaseTool):
             finding = self._yes_no_finding(prompt)
             if yes_no and yes_no["answer"] == "Yes" and finding and not boxes:
                 locate_prompt = f"Please locate the following phrase: {finding}"
+                if trace:
+                    trace.section(f"CheXagent auto-location]  prompt: {locate_prompt!r}")
                 located, _ = self._generate_response(image_paths[:1], locate_prompt, max_new_tokens)
                 location_text, boxes = self._parse_grounding(located)
                 output["auto_location"] = {"prompt": locate_prompt, "response": location_text}
