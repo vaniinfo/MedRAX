@@ -127,6 +127,65 @@ def download():
             print(f"{n}/{len(ids)} DICOMs", flush=True)
 
 
+ARCHIVE = RAW / "archive.zip"
+
+
+def download_all():
+    """Faster alternative to `download`: the whole competition as one zip (~152 GB), one
+    request instead of one per file, so no per-request rate limit. Resumable: reruns continue
+    from the bytes already on disk, with a fresh signed link each time."""
+    s = session()
+    RAW.mkdir(parents=True, exist_ok=True)
+    total = None
+    for attempt in range(1000):
+        r = s.get(f"{API}/competitions/data/download-all/{COMPETITION}", allow_redirects=False)
+        r.raise_for_status()
+        link = r.headers["Location"]
+        have = ARCHIVE.stat().st_size if ARCHIVE.exists() else 0
+        try:
+            import requests
+
+            with requests.get(link, headers={"Range": f"bytes={have}-"}, stream=True, timeout=60) as g:
+                if g.status_code == 416:  # nothing left to fetch
+                    break
+                g.raise_for_status()
+                if g.status_code == 200:  # the server ignored the range: start over, never append
+                    have, mode = 0, "wb"
+                    total = int(g.headers["Content-Length"])
+                else:
+                    mode = "ab"
+                    total = int(g.headers["Content-Range"].split("/")[-1])
+                with ARCHIVE.open(mode) as f:
+                    for n, chunk in enumerate(g.iter_content(8 << 20)):
+                        f.write(chunk)
+                        if n % 640 == 0:  # about every 5 GB
+                            print(f"{f.tell() / 1e9:.1f} / {total / 1e9:.1f} GB", flush=True)
+        except Exception as e:  # dropped connection or expired link: continue from where it stopped
+            print(f"  interrupted ({type(e).__name__}); resuming", flush=True)
+            time.sleep(min(10 * (attempt + 1), 300))
+            continue
+        if total and ARCHIVE.stat().st_size >= total:
+            break
+    print(f"archive complete: {ARCHIVE.stat().st_size / 1e9:.1f} GB")
+
+
+def extract():
+    """Copies the sampled DICOMs out of the archive (train.csv is not opened here)."""
+    ids = json.loads(SAMPLE.read_text(encoding="utf-8"))["image_ids"]
+    (RAW / "train").mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(ARCHIVE) as z:
+        names = set(z.namelist())
+        missing = [i for i in ids if f"train/{i}.dicom" not in names]
+        assert not missing, f"{len(missing)} sampled images not in the archive, e.g. {missing[:3]}"
+        for n, i in enumerate(ids, 1):
+            dst = RAW / "train" / f"{i}.dicom"
+            if not (dst.exists() and dst.stat().st_size > 0):
+                with z.open(f"train/{i}.dicom") as src, dst.open("wb") as out:
+                    shutil.copyfileobj(src, out)
+            if n % 250 == 0 or n == len(ids):
+                print(f"{n}/{len(ids)} extracted", flush=True)
+
+
 def sides_of(row):
     """Sides a box marks (percent of width): both if it crosses the midline region."""
     if row["x1"] < 40 and row["x2"] > 60:
@@ -200,4 +259,5 @@ def derive():
 
 
 if __name__ == "__main__":
-    {"sample": sample, "download": download, "derive": derive}[sys.argv[1]]()
+    {"sample": sample, "download": download, "download-all": download_all, "extract": extract,
+     "derive": derive}[sys.argv[1]]()
