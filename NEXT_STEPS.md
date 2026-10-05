@@ -12,7 +12,7 @@ Branch `medgemma-edv`. Nothing on this branch has been pushed.
 | D1 / D2 | prevalence shift explains 87–99% of the Indiana → NIH calibration gap; SUPPORTING transfers, REFUTING is fragile in the score tails | commits `47c6b64` (protocol), `9871ee8` (results) |
 | D3 | dual-evidence REFUTING rule removes most tail failures | commits `aee83a3` (protocol), `3643e42` (results) |
 | **Evidence Engine v1.0 frozen** | NIH-derived Platt LR + NIH-development empirical bands; Indiana comparator; runtime reproduces D2/D3 on 60,480 assessments | tag **`evidence-engine-v1.0`** (`c30c5d7`), spec `medrax/evidence/EVIDENCE_ENGINE_V1.md` |
-| Final external validation | **pre-registered, not yet run** (data not downloaded) | commit `5280b43` |
+| Final external validation | **done 2026-10-05** on the Kaggle-derived data (Amendment 2) | protocol `5280b43`, results `4357857` (Part A), `ede4255` (Part B), note `experiments/results/vindr_amendment_2_report_note.md` |
 | Amendment 1 (Part B): claim-blinded vs claim-conditioned grounding | **pre-registered 2026-10-04, before the data**; hypotheses from development experiments (`f9cea44`) | `experiments/vindr_amendment_1_grounding.md`, tag `vindr-amendment-1` |
 | Amendment 2: data source = Kaggle VinBigData release (3 readers, majority labels; edema not evaluable) | **pre-registered 2026-10-04, before any download** | `experiments/vindr_amendment_2_data_source.md`, tag `vindr-amendment-2` |
 
