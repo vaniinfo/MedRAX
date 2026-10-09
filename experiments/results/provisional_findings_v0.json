@@ -1,0 +1,693 @@
+{
+ "version": "provisional-v0",
+ "design": "experiments/provisional_findings_design.md",
+ "rule": "5 / 0.2, CI-conservative, dual-evidence REFUTING",
+ "findings": {
+  "pneumonia": {
+   "nih_label": "Pneumonia",
+   "platt": {
+    "coef": 0.4562372408075032,
+    "intercept": -3.406877673039737
+   },
+   "dev_prevalence": 0.008,
+   "dev_positives": 28,
+   "p_support": 0.8388910504234147,
+   "p_refute": 0.00017685561880001287,
+   "bands": [
+    {
+     "lo": 0,
+     "hi": 0.02,
+     "k_pos": 8,
+     "k_neg": 2206,
+     "uci": 0.7860827198410576
+    },
+    {
+     "lo": 0.02,
+     "hi": 0.05,
+     "k_pos": 2,
+     "k_neg": 474,
+     "uci": 1.8762871187221497
+    },
+    {
+     "lo": 0.05,
+     "hi": 0.1,
+     "k_pos": 1,
+     "k_neg": 228,
+     "uci": 3.182421568276526
+    },
+    {
+     "lo": 0.1,
+     "hi": 0.2,
+     "k_pos": 3,
+     "k_neg": 203,
+     "uci": 5.54612986326608
+    },
+    {
+     "lo": 0.2,
+     "hi": 0.4,
+     "k_pos": 3,
+     "k_neg": 181,
+     "uci": 6.276292288626735
+    },
+    {
+     "lo": 0.4,
+     "hi": 0.6,
+     "k_pos": 6,
+     "k_neg": 89,
+     "uci": 19.846123650914716
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.8,
+     "k_pos": 3,
+     "k_neg": 49,
+     "uci": 26.9888526909954
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "k_pos": 0,
+     "k_neg": 24,
+     "uci": 27.83976233903371
+    },
+    {
+     "lo": 0.9,
+     "hi": 1.0001,
+     "k_pos": 2,
+     "k_neg": 18,
+     "uci": 76.42485458913167
+    }
+   ],
+   "support_range": [
+    0.0,
+    0.935
+   ],
+   "use_supporting": false,
+   "use_refuting": false,
+   "test": {
+    "supporting_lr": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "supporting_coverage": 0.004,
+    "refuting_lr": [
+     NaN,
+     NaN,
+     NaN
+    ],
+    "refuting_coverage": 0.0,
+    "positives_in_refuting": 0,
+    "auc": 0.7344436992324316
+   }
+  },
+  "infiltration": {
+   "nih_label": "Infiltration",
+   "platt": {
+    "coef": 0.21816489033109554,
+    "intercept": -1.5624688170234469
+   },
+   "dev_prevalence": 0.12285714285714286,
+   "dev_positives": 430,
+   "p_support": 0.9997945289669063,
+   "p_refute": null,
+   "bands": [
+    {
+     "lo": 0,
+     "hi": 0.02,
+     "k_pos": 57,
+     "k_neg": 429,
+     "uci": 1.3184366998788137
+    },
+    {
+     "lo": 0.02,
+     "hi": 0.05,
+     "k_pos": 74,
+     "k_neg": 639,
+     "uci": 1.0889880205228692
+    },
+    {
+     "lo": 0.05,
+     "hi": 0.1,
+     "k_pos": 68,
+     "k_neg": 614,
+     "uci": 1.0545489878327716
+    },
+    {
+     "lo": 0.1,
+     "hi": 0.2,
+     "k_pos": 51,
+     "k_neg": 515,
+     "uci": 0.9889340424059698
+    },
+    {
+     "lo": 0.2,
+     "hi": 0.4,
+     "k_pos": 40,
+     "k_neg": 409,
+     "uci": 1.0257034569548336
+    },
+    {
+     "lo": 0.4,
+     "hi": 0.6,
+     "k_pos": 37,
+     "k_neg": 223,
+     "uci": 1.8311421642741608
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.8,
+     "k_pos": 43,
+     "k_neg": 161,
+     "uci": 2.952223208007796
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "k_pos": 29,
+     "k_neg": 55,
+     "uci": 7.055869091858602
+    },
+    {
+     "lo": 0.9,
+     "hi": 1.0001,
+     "k_pos": 31,
+     "k_neg": 25,
+     "uci": 19.097633820515796
+    }
+   ],
+   "support_range": [
+    0.003,
+    0.963
+   ],
+   "use_supporting": false,
+   "use_refuting": false,
+   "test": {
+    "supporting_lr": [
+     NaN,
+     NaN,
+     NaN
+    ],
+    "supporting_coverage": 0.0,
+    "refuting_lr": [
+     NaN,
+     NaN,
+     NaN
+    ],
+    "refuting_coverage": 0.0,
+    "positives_in_refuting": 0,
+    "auc": 0.5995581132463261
+   }
+  },
+  "emphysema": {
+   "nih_label": "Emphysema",
+   "platt": {
+    "coef": 1.0309702809177987,
+    "intercept": -3.90563933923247
+   },
+   "dev_prevalence": 0.012571428571428572,
+   "dev_positives": 44,
+   "p_support": 0.7841471891774856,
+   "p_refute": 0.07175754226375136,
+   "bands": [
+    {
+     "lo": 0,
+     "hi": 0.02,
+     "k_pos": 0,
+     "k_neg": 303,
+     "uci": 1.0250895873611774
+    },
+    {
+     "lo": 0.02,
+     "hi": 0.05,
+     "k_pos": 0,
+     "k_neg": 435,
+     "uci": 0.699397854998998
+    },
+    {
+     "lo": 0.05,
+     "hi": 0.1,
+     "k_pos": 2,
+     "k_neg": 550,
+     "uci": 1.0519154533491886
+    },
+    {
+     "lo": 0.1,
+     "hi": 0.2,
+     "k_pos": 4,
+     "k_neg": 789,
+     "uci": 1.0106907669756757
+    },
+    {
+     "lo": 0.2,
+     "hi": 0.4,
+     "k_pos": 5,
+     "k_neg": 891,
+     "uci": 1.00938349062927
+    },
+    {
+     "lo": 0.4,
+     "hi": 0.6,
+     "k_pos": 4,
+     "k_neg": 314,
+     "uci": 2.6594176169209462
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.8,
+     "k_pos": 5,
+     "k_neg": 119,
+     "uci": 8.584863275118265
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "k_pos": 4,
+     "k_neg": 24,
+     "uci": 48.64599627136454
+    },
+    {
+     "lo": 0.9,
+     "hi": 1.0001,
+     "k_pos": 20,
+     "k_neg": 31,
+     "uci": 100.20903559083946
+    }
+   ],
+   "support_range": [
+    0.004,
+    0.984
+   ],
+   "use_supporting": true,
+   "use_refuting": false,
+   "test": {
+    "supporting_lr": [
+     33.51879699248121,
+     13.909826388888888,
+     72.8753277972028
+    ],
+    "supporting_coverage": 0.016666666666666666,
+    "refuting_lr": [
+     NaN,
+     NaN,
+     NaN
+    ],
+    "refuting_coverage": 0.0,
+    "positives_in_refuting": 0,
+    "auc": 0.9209046337242838
+   }
+  },
+  "nodule": {
+   "nih_label": "Nodule",
+   "platt": {
+    "coef": 0.7950371263565624,
+    "intercept": -2.814554193265555
+   },
+   "dev_prevalence": 0.04428571428571428,
+   "dev_positives": 155,
+   "p_support": 0.8676111264579347,
+   "p_refute": 0.05952436597650152,
+   "bands": [
+    {
+     "lo": 0,
+     "hi": 0.02,
+     "k_pos": 2,
+     "k_neg": 324,
+     "uci": 0.5265365780915944
+    },
+    {
+     "lo": 0.02,
+     "hi": 0.05,
+     "k_pos": 0,
+     "k_neg": 456,
+     "uci": 0.18834654076721397
+    },
+    {
+     "lo": 0.05,
+     "hi": 0.1,
+     "k_pos": 5,
+     "k_neg": 483,
+     "uci": 0.5553896347785539
+    },
+    {
+     "lo": 0.1,
+     "hi": 0.2,
+     "k_pos": 5,
+     "k_neg": 693,
+     "uci": 0.38063004340940626
+    },
+    {
+     "lo": 0.2,
+     "hi": 0.4,
+     "k_pos": 19,
+     "k_neg": 699,
+     "uci": 0.9461909133649377
+    },
+    {
+     "lo": 0.4,
+     "hi": 0.6,
+     "k_pos": 24,
+     "k_neg": 347,
+     "uci": 2.367118711751435
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.8,
+     "k_pos": 21,
+     "k_neg": 191,
+     "uci": 4.034509844009342
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "k_pos": 26,
+     "k_neg": 70,
+     "uci": 14.437721742901937
+    },
+    {
+     "lo": 0.9,
+     "hi": 1.0001,
+     "k_pos": 53,
+     "k_neg": 82,
+     "uci": 21.609519558169463
+    }
+   ],
+   "support_range": [
+    0.003,
+    0.987
+   ],
+   "use_supporting": true,
+   "use_refuting": true,
+   "test": {
+    "supporting_lr": [
+     6.425180598555212,
+     3.9219607325804318,
+     9.980678072686269
+    ],
+    "supporting_coverage": 0.05266666666666667,
+    "refuting_lr": [
+     0.09248366013071896,
+     0.0,
+     0.3102541630148992
+    ],
+    "refuting_coverage": 0.12066666666666667,
+    "positives_in_refuting": 1,
+    "auc": 0.8015506131781335
+   }
+  },
+  "mass": {
+   "nih_label": "Mass",
+   "platt": {
+    "coef": 0.8384433285999078,
+    "intercept": -3.1550279250732194
+   },
+   "dev_prevalence": 0.03514285714285714,
+   "dev_positives": 123,
+   "p_support": 0.8710191478537642,
+   "p_refute": 0.07516010948212662,
+   "bands": [
+    {
+     "lo": 0,
+     "hi": 0.02,
+     "k_pos": 0,
+     "k_neg": 339,
+     "uci": 0.3266491437655123
+    },
+    {
+     "lo": 0.02,
+     "hi": 0.05,
+     "k_pos": 1,
+     "k_neg": 572,
+     "uci": 0.2834464023043378
+    },
+    {
+     "lo": 0.05,
+     "hi": 0.1,
+     "k_pos": 4,
+     "k_neg": 546,
+     "uci": 0.5432730238336128
+    },
+    {
+     "lo": 0.1,
+     "hi": 0.2,
+     "k_pos": 6,
+     "k_neg": 665,
+     "uci": 0.5617476894801805
+    },
+    {
+     "lo": 0.2,
+     "hi": 0.4,
+     "k_pos": 8,
+     "k_neg": 624,
+     "uci": 0.7224825969671647
+    },
+    {
+     "lo": 0.4,
+     "hi": 0.6,
+     "k_pos": 10,
+     "k_neg": 324,
+     "uci": 1.6752813373641218
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.8,
+     "k_pos": 25,
+     "k_neg": 173,
+     "uci": 6.477522449787264
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "k_pos": 12,
+     "k_neg": 53,
+     "uci": 13.943167158318435
+    },
+    {
+     "lo": 0.9,
+     "hi": 1.0001,
+     "k_pos": 57,
+     "k_neg": 81,
+     "uci": 29.097594411417475
+    }
+   ],
+   "support_range": [
+    0.004,
+    0.994
+   ],
+   "use_supporting": true,
+   "use_refuting": false,
+   "test": {
+    "supporting_lr": [
+     19.194412552621507,
+     13.23316024315411,
+     28.637881548344875
+    ],
+    "supporting_coverage": 0.04933333333333333,
+    "refuting_lr": [
+     NaN,
+     NaN,
+     NaN
+    ],
+    "refuting_coverage": 0.0,
+    "positives_in_refuting": 0,
+    "auc": 0.9346272822905709
+   }
+  },
+  "fibrosis": {
+   "nih_label": "Fibrosis",
+   "platt": {
+    "coef": 0.738325040370282,
+    "intercept": -3.4772616168676413
+   },
+   "dev_prevalence": 0.016,
+   "dev_positives": 56,
+   "p_support": 0.8220063142137534,
+   "p_refute": 0.023202938145644076,
+   "bands": [
+    {
+     "lo": 0,
+     "hi": 0.02,
+     "k_pos": 0,
+     "k_neg": 659,
+     "uci": 0.35748187967318606
+    },
+    {
+     "lo": 0.02,
+     "hi": 0.05,
+     "k_pos": 1,
+     "k_neg": 551,
+     "uci": 0.6459153386341396
+    },
+    {
+     "lo": 0.05,
+     "hi": 0.1,
+     "k_pos": 4,
+     "k_neg": 535,
+     "uci": 1.2057831522463767
+    },
+    {
+     "lo": 0.1,
+     "hi": 0.2,
+     "k_pos": 4,
+     "k_neg": 642,
+     "uci": 0.9963963292905362
+    },
+    {
+     "lo": 0.2,
+     "hi": 0.4,
+     "k_pos": 10,
+     "k_neg": 588,
+     "uci": 1.92018408326764
+    },
+    {
+     "lo": 0.4,
+     "hi": 0.6,
+     "k_pos": 8,
+     "k_neg": 234,
+     "uci": 4.387536817874205
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.8,
+     "k_pos": 8,
+     "k_neg": 135,
+     "uci": 7.954174752543124
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "k_pos": 8,
+     "k_neg": 53,
+     "uci": 22.70639482294786
+    },
+    {
+     "lo": 0.9,
+     "hi": 1.0001,
+     "k_pos": 13,
+     "k_neg": 47,
+     "uci": 36.258831550334655
+    }
+   ],
+   "support_range": [
+    0.002,
+    0.984
+   ],
+   "use_supporting": true,
+   "use_refuting": false,
+   "test": {
+    "supporting_lr": [
+     5.951612903225807,
+     0.0,
+     13.70396825396825
+    ],
+    "supporting_coverage": 0.02266666666666667,
+    "refuting_lr": [
+     NaN,
+     NaN,
+     NaN
+    ],
+    "refuting_coverage": 0.0,
+    "positives_in_refuting": 0,
+    "auc": 0.823071928635953
+   }
+  },
+  "pleural thickening": {
+   "nih_label": "Pleural_Thickening",
+   "platt": {
+    "coef": 0.8912780767522259,
+    "intercept": -3.248703878406802
+   },
+   "dev_prevalence": 0.022857142857142857,
+   "dev_positives": 80,
+   "p_support": 0.8220063142137534,
+   "p_refute": 0.046976145678283544,
+   "bands": [
+    {
+     "lo": 0,
+     "hi": 0.02,
+     "k_pos": 1,
+     "k_neg": 506,
+     "uci": 0.4969287360503045
+    },
+    {
+     "lo": 0.02,
+     "hi": 0.05,
+     "k_pos": 1,
+     "k_neg": 352,
+     "uci": 0.7283213730349062
+    },
+    {
+     "lo": 0.05,
+     "hi": 0.1,
+     "k_pos": 2,
+     "k_neg": 399,
+     "uci": 0.8238761211882462
+    },
+    {
+     "lo": 0.1,
+     "hi": 0.2,
+     "k_pos": 6,
+     "k_neg": 572,
+     "uci": 1.0080179530520732
+    },
+    {
+     "lo": 0.2,
+     "hi": 0.4,
+     "k_pos": 6,
+     "k_neg": 764,
+     "uci": 0.7451438315713415
+    },
+    {
+     "lo": 0.4,
+     "hi": 0.6,
+     "k_pos": 19,
+     "k_neg": 482,
+     "uci": 2.6713605536959903
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.8,
+     "k_pos": 25,
+     "k_neg": 259,
+     "uci": 6.348638349692103
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.9,
+     "k_pos": 13,
+     "k_neg": 66,
+     "uci": 17.50725418819191
+    },
+    {
+     "lo": 0.9,
+     "hi": 1.0001,
+     "k_pos": 7,
+     "k_neg": 20,
+     "uci": 48.105715108754694
+    }
+   ],
+   "support_range": [
+    0.001,
+    0.923
+   ],
+   "use_supporting": true,
+   "use_refuting": false,
+   "test": {
+    "supporting_lr": [
+     16.333333333333332,
+     6.950757575757576,
+     30.54270833333333
+    ],
+    "supporting_coverage": 0.024,
+    "refuting_lr": [
+     NaN,
+     NaN,
+     NaN
+    ],
+    "refuting_coverage": 0.0,
+    "positives_in_refuting": 0,
+    "auc": 0.9158163265306123
+   }
+  }
+ }
+}
