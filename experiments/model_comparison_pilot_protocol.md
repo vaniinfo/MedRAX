@@ -96,4 +96,31 @@ change; MedGemma 1.5 and MAIRA-2 reports from Experiment 1. Reported separately 
   counts only.
 
 ## Amendments
-(none yet)
+
+**A1 (2026-10-11, before any experiment run): MedGemma 1.5 score in Experiment 2.** Ollama returns
+token log-probabilities (checked on page 8, "Is there pleural effusion?"). Score = P(yes) /
+(P(yes) + P(no)) over the top 20 first-token alternatives, where yes/no are tokens matching
+`^\s*yes` / `^\s*no` (case-insensitive); 1.0 or 0.0 if only one of them is among the 20; no
+score if neither is. MedGemma often starts "Based on…", so the answer text is recorded too.
+"Found" for MedGemma = the answer starts with "Yes" (it has no calibrated cut-off); the score is
+used for AUC only. Same request settings as Experiment 1 (current image only for this question,
+1024 px, temperature 0).
+
+**A2 (2026-10-11, before any experiment run): MedGemma 1.5 in Experiment 3.** Prompt format from
+the MedGemma 1.5 technical report (Table 12 and section 3.2.4): system instruction "You are a
+helpful radiology assistant."; user: "Where is the {condition}? Output a JSON list of objects,
+each with a "label" and a 2D bounding box "box_2d" as [y0, x0, y1, x1], normalized to the range
+[0, 1] with (0, 0) the top-left and (1, 1) the bottom-right corner." The bare "Where is the
+{object}?" returned prose on page 1; with the instruction it returned parseable JSON (and [] for
+pleural effusion, which page 1 does not have). The page-1 boxes looked anatomically implausible
+(heart box in the upper half of the image; right lung box the whole image). MedGemma 1.5 stays
+in Experiment 3 as planned; an empty list counts as not located.
+
+**A3 (2026-10-11, before any experiment run): run order.** Experiments 2 and 3 are run for all 13
+conditions on all 19 pages; Experiment 3's cases (one-sided conditions in the frozen ground
+truth) are selected afterwards, so running does not wait for the radiologist review. Models run
+one at a time to fit the GPU: MedGemma 1.5 (Ollama), then CheXagent, then MAIRA-2 (bf16). Raw
+outputs go to `logs/pilot_runs_<time>/`. Model reports are read for the 13 conditions only
+after all runs, and those labels go to the radiologist review before scoring. Note: MedGemma
+1.5 via Ollama on the GPU was not exactly repeatable between runs in exploratory work; each
+output is produced once and kept.
