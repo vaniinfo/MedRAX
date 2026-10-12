@@ -124,3 +124,15 @@ outputs go to `logs/pilot_runs_<time>/`. Model reports are read for the 13 condi
 after all runs, and those labels go to the radiologist review before scoring. Note: MedGemma
 1.5 via Ollama on the GPU was not exactly repeatable between runs in exploratory work; each
 output is produced once and kept.
+
+**A4 (2026-10-11, before any scoring): preliminary analysis on unreviewed labels, and intervals.**
+At the user's request, for internal sharing before the radiologist review, the pilot is scored
+once on the automatic labels (ground truth and model reports, unreviewed), written to
+`experiments/results/pilot_model_comparison_PRELIMINARY.md` and labelled "preliminary, unreviewed
+labels" throughout. The final results remain those on the reviewed labels. Statistics for both:
+95% intervals, Wilson for single proportions, and a page-level bootstrap (2,000 resamples, seed
+20261011; pages resampled because conditions on one image are not independent) for paired
+differences between models and for AUC. This replaces "no significance tests" with interval
+estimates: no p-values; a difference whose interval includes 0 is reported as no clear
+difference. Per-condition results are counts only. MedGemma 1.5 answers cut off in thinking mode
+(Experiments 2-3) are reported as their own category.
