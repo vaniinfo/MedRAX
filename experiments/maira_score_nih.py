@@ -35,23 +35,13 @@ def sample():
     return [(im["file"], split[im["file"]]) for im in images]
 
 
-def score():
-    import time
-
+def make_scorer():
+    """Loads MAIRA-2 (bf16) and returns score(image) -> {finding: {logp_pos, logp_neg, score}}."""
     import torch
-    from PIL import Image
     from transformers import AutoModelForCausalLM, AutoProcessor
 
     from vindr_grounding_amendment import MAIRA_REVISION
 
-    rows = sample()
-    done = set()
-    if READINGS.exists():
-        done = {json.loads(l)["file"] for l in READINGS.read_text(encoding="utf-8").splitlines()}
-    todo = [(f, s) for f, s in rows if f not in done]
-    print(f"{len(done)} images done, {len(todo)} to go", flush=True)
-    if not todo:
-        return
     kw = dict(cache_dir="C:/Users/hari/model-weights", trust_remote_code=True, revision=MAIRA_REVISION)
     model = AutoModelForCausalLM.from_pretrained("microsoft/maira-2", device_map="cuda", torch_dtype=torch.bfloat16,
                                                  **kw).eval()
@@ -76,14 +66,31 @@ def score():
                 result[s] = first[c[0]].item() + sum(lp[t, c[t + 1]].item() for t in range(len(c) - 1))
         return result
 
+    def score_image(image):
+        lp = logprobs(image)
+        return {finding: {"logp_pos": lp[pos], "logp_neg": lp[neg], "score": 1 / (1 + math.exp(-(lp[pos] - lp[neg])))}
+                for finding, (pos, neg) in SENTENCES.items()}
+    return score_image
+
+
+def score():
+    import time
+
+    from PIL import Image
+
+    rows = sample()
+    done = set()
+    if READINGS.exists():
+        done = {json.loads(l)["file"] for l in READINGS.read_text(encoding="utf-8").splitlines()}
+    todo = [(f, s) for f, s in rows if f not in done]
+    print(f"{len(done)} images done, {len(todo)} to go", flush=True)
+    if not todo:
+        return
+    score_image = make_scorer()
     start = time.time()
     with READINGS.open("a", encoding="utf-8") as out:
         for n, (f, split) in enumerate(todo, 1):
-            lp = logprobs(Image.open(NIH / f).convert("RGB"))
-            rec = {"file": f, "split": split, "findings": {}}
-            for finding, (pos, neg) in SENTENCES.items():
-                d = lp[pos] - lp[neg]
-                rec["findings"][finding] = {"logp_pos": lp[pos], "logp_neg": lp[neg], "score": 1 / (1 + math.exp(-d))}
+            rec = {"file": f, "split": split, "findings": score_image(Image.open(NIH / f).convert("RGB"))}
             out.write(json.dumps(rec) + "\n")
             out.flush()
             if n % 200 == 0 or n == len(todo):
