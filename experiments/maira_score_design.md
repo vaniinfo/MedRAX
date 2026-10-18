@@ -71,3 +71,22 @@ three held-out labelled sets.**
 - Caveat recorded now: CheXagent's training data probably include public NIH and VinDr images;
   MAIRA-2's published training sets (MIMIC-CXR, PadChest, USMIE) do not. Indiana is the least
   affected set.
+
+**A2 (2026-10-18, before any reading below): the seven further conditions.**
+- Conditions: pneumonia, infiltration, emphysema, nodule, mass, fibrosis, pleural thickening.
+- MAIRA-2 sentence pairs, the same mechanical template as the six ("a" for countable nouns only):
+  "There is pneumonia." / "There is no pneumonia."; "There is infiltration." / "There is no
+  infiltration."; "There is emphysema." / "There is no emphysema."; "There is a nodule." / "There
+  is no nodule."; "There is a mass." / "There is no mass."; "There is fibrosis." / "There is no
+  fibrosis."; "There is pleural thickening." / "There is no pleural thickening." Score, prompt and
+  settings as above.
+- Data: NIH test split (1,500; NIH labels Pneumonia, Infiltration, Emphysema, Nodule, Mass,
+  Fibrosis, Pleural_Thickening; CheXagent readings already in `provisional_readings.jsonl`), and
+  VinDr (3,000) for the classes it labels: Infiltration -> infiltration; Nodule/Mass -> both
+  nodule and mass (one combined label, so each is scored against it); Pulmonary fibrosis ->
+  fibrosis; Pleural thickening -> pleural thickening. VinDr label = at least 2 of 3 radiologists
+  (as in Amendment 2 of the VinDr protocol). CheXagent is read on VinDr for these five with the
+  validated query ("Is there {condition}?", 8 tokens). No Indiana labels exist for these.
+- Analysis, hypothesis and reporting exactly as in A1 (per dataset and condition; fewer than 10
+  positives marked as too few). The six-finding results of A1 are not recomputed; the final
+  report lists A1 and A2 together.
