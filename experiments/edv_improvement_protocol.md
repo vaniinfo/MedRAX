@@ -66,4 +66,9 @@ it has no rule-based version.)
 - All results reported whatever they are; any change goes in a dated amendment before it is run.
 
 ## Amendments
-(none)
+
+**A1 (2026-10-18, after 728 of 1,500 reports were generated, before any report was read).** The
+first generated report states "right subcutaneous emphysema" (air in the soft tissues), which the
+lookup could count as emphysema, a different, lung condition. One rule is added to the lookup for
+this experiment only: "Subcutaneous emphysema (air in the soft tissues) is not emphysema." The
+lookup used in all earlier analyses is unchanged (the rule is passed only here). No other change.

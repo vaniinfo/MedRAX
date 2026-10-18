@@ -48,6 +48,7 @@ STATUS_STYLE = {
     "Requires confirmation": (185, 60, 20),
     "Indeterminate": (95, 95, 130),
     "Not assessed": (120, 120, 120),
+    "Consider": (40, 90, 160),  # CheXagent's own finding, not in the generated report
 }
 PRIORITY = "Requires confirmation"
 
@@ -228,7 +229,7 @@ def review_items(engine, report, output, defaults=None):
     return items
 
 PDFIMAGES = shutil.which("pdfimages") or "C:/tools/poppler/poppler-24.07.0/Library/bin/pdfimages.exe"
-HEADERS = {"FINDINGS:", "IMPRESSION:", "FINDINGS", "FINDING", "IMPRESSION", "COMPARISON:"}
+HEADERS = {"FINDINGS:", "IMPRESSION:", "FINDINGS", "FINDING", "IMPRESSION"}
 
 
 def sections(lines):
@@ -239,9 +240,10 @@ def sections(lines):
         line = line.strip()
         if not line:
             continue
-        # "Comparison of current chest X-ray to prior chest X-ray:" is shown as a COMPARISON: heading
-        if re.fullmatch(r"Comparison of (?:the )?current chest X-ray to (?:the )?prior chest X-ray:?", line, re.I):
-            line = "COMPARISON:"
+        # A bare heading word inside a sentence ("... The / FINDINGS / are unchanged ...") is text
+        if line in HEADERS and not line.endswith(":") and body and not body[-1].endswith((".", ":")):
+            body.append(line)
+            continue
         if line in HEADERS:
             if body or header:
                 out.append((header, " ".join(body)))
@@ -275,7 +277,7 @@ GT_PROMPT = """Below is a chest X-ray radiology report (the ground truth) and a 
 For each finding, decide whether the ground-truth report states that this condition is PRESENT on the current study.
 - Synonyms and descriptions count: "atelectatic changes" = atelectasis; "heart is mildly enlarged" = cardiomegaly; "layering fluid" = pleural effusion; "airspace process" = opacity.
 - Negated ("no pneumothorax"), resolved or not mentioned conditions are NOT present.
-- Vascular congestion or engorgement is not pulmonary edema; scarring is not atelectasis.
+- Vascular congestion or engorgement is not pulmonary edema; scarring is not atelectasis.{extra}
 - Judge the condition only, not its side.
 
 Answer for each finding:
@@ -292,14 +294,17 @@ FINDINGS:
 {findings}"""
 
 
-def ground_truth_locations(extractor, truth_text, findings, with_evidence=False):
+def ground_truth_locations(extractor, truth_text, findings, with_evidence=False, extra_rules=""):
     """{finding: where the ground-truth report places it, or NOT_IN_GT} (local LLM; the
     findings are given without the generated report's side, so the side comes from the
     ground truth). A "present" answer whose quoted evidence is not in the report is taken as
     NOT_IN_GT, so an answer the model made up does not reach the table."""
     if not findings:
         return {}
-    prompt = GT_PROMPT.format(truth=truth_text.strip(), findings="\n".join(f"- {f}" for f in findings))
+    # extra_rules: additional "- ..." lines for one analysis; empty by default, so the prompt is unchanged
+    prompt = GT_PROMPT.format(truth=truth_text.strip(), findings="\n".join(f"- {f}" for f in findings),
+                              extra="".join(f"\n- {r}" for r in ([extra_rules] if isinstance(extra_rules, str) and extra_rules
+                                                                  else extra_rules or [])))
     norm = lambda s: re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()  # noqa: E731
     for _ in range(3):
         text = extractor.invoke(prompt).content
@@ -325,13 +330,31 @@ def ground_truth_locations(extractor, truth_text, findings, with_evidence=False)
     raise RuntimeError(f"no usable ground-truth answer for {findings}: {text!r}")
 
 
-def draw_sections(pdf, x, y, w, max_h, secs):
-    """Sections in a column, font shrunk to fit max_h (empty headers are not printed)."""
+def mark(text, phrases):
+    """text with each phrase (case-insensitive, any whitespace) wrapped as bold underline markdown."""
+    for phrase in phrases:
+        for piece in re.split(r"(?<=[.;])\s+", phrase.strip()):
+            words = piece.strip(" .;").split()
+            if len(words) < 2:
+                continue
+            pattern = r"\s+".join(re.escape(wd) for wd in words)
+            text = re.sub(pattern, lambda m: f"--**{m.group(0)}**--", text, count=1, flags=re.I)
+    return text
+
+
+def draw_sections(pdf, x, y, w, max_h, secs, highlights=None):
+    """Sections in a column, font shrunk to fit max_h (empty headers are not printed). Phrases in
+    `highlights` are drawn in bold underline."""
+    md = bool(highlights)
+    if md:
+        secs = [(header, mark(text, highlights)) for header, text in secs]
+
     def height(size):
         lh, h = size * 0.42, 0
         for header, text in secs:
             pdf.font(size)
-            h += (lh if header else 0) + lh * len(pdf.multi_cell(w, lh, text, dry_run=True, output="LINES")) + 1
+            h += (lh if header else 0) + lh * len(pdf.multi_cell(w, lh, text, dry_run=True, output="LINES",
+                                                                  markdown=md)) + 1
         return h
     size = next((s for s in (8.5, 8, 7.5, 7, 6.5, 6, 5.5) if height(s) <= max_h), 5.5)
     lh = size * 0.42
@@ -343,7 +366,7 @@ def draw_sections(pdf, x, y, w, max_h, secs):
             y += lh
         pdf.set_xy(x, y)
         pdf.font(size)
-        pdf.multi_cell(w, lh, text, align="L")
+        pdf.multi_cell(w, lh, text, align="L", markdown=md)
         y = pdf.get_y() + 1
     return y
 
@@ -391,7 +414,8 @@ def draw_page(pdf, *args, **kwargs):
     _draw_page(pdf, *args, box_h=box_h, **kwargs)
 
 
-def _draw_page(pdf, page, prior, current, annotated, items, structured=None, box_h=62):
+def _draw_page(pdf, page, prior, current, annotated, items, structured=None, box_h=62, show_reports=True,
+               gt_highlights=None):
     """Draws the page; True if everything fits above the legend."""
     pdf.add_page()
     W = pdf.w - pdf.l_margin - pdf.r_margin
@@ -409,15 +433,33 @@ def _draw_page(pdf, page, prior, current, annotated, items, structured=None, box
         pdf.image_box(path, x0 + i * (box_w + 4), top, box_w, box_h, caption)
 
     y = top + box_h + 6
-    y = pdf.title_bar(x0, y, W, "Generated Report")
-    y = draw_sections(pdf, x0, y, W, 46, page["generated"]) + 1.5
-    y += 1.5
+    if show_reports:
+        y = pdf.title_bar(x0, y, W, "Generated Report")
+        y = draw_sections(pdf, x0, y, W, 46, page["generated"]) + 1.5
+        y += 1.5
     if structured:
-        y = draw_structured(pdf, x0, y + 1, W, 62, structured) + 2.5
+        # a thin rule sets the template apart from what is above it
+        pdf.set_draw_color(205, 208, 214)
+        pdf.line(x0, y + 0.5, x0 + W, y + 0.5)
+        y = draw_structured(pdf, x0, y + 2, W, 70 if show_reports else pdf.h - 16 - y, structured) + 2.5
+    if not show_reports:
+        # template-only version: no ground truth, comparison table or legend; page number only
+        pdf.set_xy(x0, pdf.h - 12)
+        pdf.font(6.8, color=GREY)
+        pdf.cell(W, 3.2, f"Page {pdf.page_no()} of {{nb}}", align="R")
+        return y <= pdf.h - 14
+    legend_top = pdf.h - 38
+    top = y
     y = pdf.title_bar(x0, y, W, "Ground Truth Report")
-    legend_top = pdf.h - 34
+    if gt_highlights:
+        pdf.set_xy(x0 + pdf.get_string_width("Ground Truth Report") + 6, top + 0.6)
+        pdf.set_font("Arial", "I", 6.5)
+        pdf.set_text_color(*GREY)
+        pdf.cell(150, 4, "Bold underlined: the ground-truth text that each [Image check] change in the "
+                         "interpretation is checked against")
     table_h = 7 + draw_table(pdf, x0, 0, W, items, dry_run=True) + 3  # title bar + table + gap
-    y = draw_sections(pdf, x0, y, W, max(legend_top - 3 - table_h - y, 20), page["truth"]) + 3
+    y = draw_sections(pdf, x0, y, W, max(legend_top - 3 - table_h - y, 20), page["truth"],
+                      highlights=gt_highlights) + 3
     y = pdf.title_bar(x0, y, W, "Finding Comparison")
     y += draw_table(pdf, x0, y, W, items)
     draw_legend(pdf, x0, legend_top, W)
@@ -476,6 +518,8 @@ LEGEND = [
                       "either way."),
     ("Requires confirmation", "the score leans against the finding, the finding is located on the opposite "
                               "side, or it could not be located."),
+    ("Consider", "the automated image check found this condition on its own (score at its cut-off), but the generated "
+                 "report does not mention it; a prompt for radiologist review, not part of the report."),
 ]
 
 
@@ -637,10 +681,13 @@ def add_structured(rec, page, sorter):
 
 
 def draw_structured(pdf, x, y, w, max_h, structured):
-    """The template below the generated report: CLINICAL INDICATION and TECHNIQUE (COMPARISON and
-    IMPRESSION are already in the report above), INTERPRETATION with its four sub-headings, and
-    ATTENDING RADIOLOGIST marked as an unreviewed draft; font shrunk to fit max_h."""
-    lines = [(0, f"**{h}:** {t}") for h, t in structured["fields"] if h not in ("COMPARISON", "IMPRESSION")] + \
+    """The radiologist's template below the generated report, in its order: EXAMINATION,
+    COMPARISON (the report's comparison sentence), IMPRESSION (word for word), CLINICAL
+    INDICATION, TECHNIQUE, INTERPRETATION with its four sub-headings, and ATTENDING RADIOLOGIST
+    marked as an unreviewed draft; font shrunk to fit max_h."""
+    fields = dict(structured["fields"])
+    lines = [(0, "**EXAMINATION:** Chest radiograph.")] + \
+            [(0, f"**{h}:** {fields[h]}") for h in ("COMPARISON", "IMPRESSION", "CLINICAL INDICATION", "TECHNIQUE")] + \
             [(0, "**INTERPRETATION:**")] + \
             [(4, f"**{h}:** {NO_STATEMENT if t in ('Not commented on.', 'No statement in the AI-generated draft.') else t}")  # older saved runs
              for h, t in structured["interpretation"]] + \
@@ -734,6 +781,32 @@ def add_ground_truth(extractor, page, rec, redo=False):
     print(f"  ground truth: {gt}", flush=True)
 
 
+def add_suggestions(extractor, page, rec, screen, truth=None):
+    """CheXagent's own findings from an independent screen (chexagent_independent_screen.py: "Is there
+    X?" for 13 conditions, found = at its cut-off) that the generated report does not state, as
+    "Consider" items with their ground-truth location: from `truth` ({(title, condition): location},
+    the saved lookup the other analyses use) if given, else looked up and cached in rec["ground_truth"]."""
+    from chexagent_independent_screen import canonical
+
+    stated = {canonical(f) for f in rec.get("findings", [])} | {canonical(i["finding"]) for i in rec["review"]}
+    found = [s for s in screen.get(rec["title"], []) if s["chexagent_found"] and s["condition"] not in stated]
+    gt = dict(rec.get("ground_truth") or {})
+    if truth is not None:
+        gt.update({s["condition"]: truth[(rec["title"], s["condition"])] for s in found})
+    else:
+        missing = sorted({s["condition"] for s in found} - set(gt))
+        if missing:
+            gt.update(ground_truth_locations(extractor, page["truth_text"], missing))
+        rec["ground_truth"] = gt
+    rec["suggestions"] = [{
+        "finding": s["condition"], "status": "Consider", "p_present": s["p_present"],
+        "name": f"{s['condition'].capitalize()} (not in report; CheXagent: "
+                f"{'; '.join(dict.fromkeys(s.get('chexagent_location', '').split('; ')))})",
+        "ground_truth": gt[s["condition"]]} for s in found]
+    print(f"  suggestions: {[(i['finding'], round(i['p_present'], 2), i['ground_truth']) for i in rec['suggestions']]}",
+          flush=True)
+
+
 def render_from_json(args):
     """Layout-only rebuild of a previous run: findings, review statuses and boxes from its .json."""
     from types import SimpleNamespace
@@ -745,13 +818,32 @@ def render_from_json(args):
     drawer = SimpleNamespace(temp_dir=work)
     engine = EvidenceEngine()
     defaults = default_cutoffs(engine) if args.default_cutoffs else None
+    revised = json.loads(Path(args.revisions_json).read_text(encoding="utf-8")) if args.revisions_json else None
+    evidence = None
+    if args.highlight_gt:  # pilot ground-truth review sheet: quoted ground-truth sentence per page/condition
+        import csv
+        with open(args.highlight_gt, encoding="utf-8-sig") as f:
+            # keyed by the page's "Row N" label (the sheet's page numbers are positions in its PDF)
+            evidence = {(r["row_folder_subject"], r["condition"]): r["auto_evidence"] for r in csv.DictReader(f)}
+    screen = truth = None
+    if args.screen_json:
+        screen = {p["title"]: p["screen"] for p in json.loads(Path(args.screen_json).read_text(encoding="utf-8"))}
+    if args.truth_json:  # saved ground-truth lookup for all conditions (screen_three_way.py output)
+        truth = {(r["page"], r["condition"]): r["ground_truth"]
+                 for r in json.loads(Path(args.truth_json).read_text(encoding="utf-8"))}
     extractor = make_extractor(args.ollama_model)
     if defaults:
         print(f"default cut-offs: strong yes >= {defaults[0]}, strong no <= {defaults[1]}")
     pdf = OnePage()
+    skip = {int(r) for r in args.skip_rows.split(",")} if args.skip_rows else set()
+    kept = []
     for k, (p, rec) in enumerate(zip(reader.pages, record)):
         page = parse_page(p.extract_text())
         assert page["title"] == rec["title"], f"page {k + 1}: {page['title']} vs {rec['title']}"
+        if int(re.search(r"\d+", page["row"]).group(0)) in skip:
+            print(f"{page['title']} ({page['row']}): left out (--skip-rows)")
+            continue
+        kept.append(rec)
         prior, current = (str(work / f"img-{2 * k + i:03d}.png") for i in (0, 1))
         boxes = [{"phrase": v["finding"], "box_normalized": b["box_normalized"], "p_present": b["p_present"]}
                  for v in rec["visual_proof"] if not is_device(v["finding"]) for b in v.get("boxes", [])]
@@ -769,13 +861,25 @@ def render_from_json(args):
             add_interpretation(rec, args.medgemma_model, extractor)
         if args.structured:
             add_structured(rec, page, extractor)
-        draw_page(pdf, page, prior, current, annotated, rec["review"], rec.get("structured"))
+        if screen is not None:
+            add_suggestions(extractor, page, rec, screen, truth)
+        items = rec["review"] + (rec.get("suggestions", []) if screen is not None else [])
+        structured = rec.get("structured")
+        highlights = None
+        if revised is not None and structured:  # revise_interpretation.py output: tagged headings
+            structured = {**structured, "interpretation": revised[rec["title"]]["revised_interpretation"]}
+            if evidence is not None:  # ground-truth sentences behind each changed condition
+                changed = {c for _, c, _ in revised[rec["title"]]["revisions"]}
+                highlights = [evidence[(page["row"], c)] for c in sorted(changed) if evidence.get((page["row"], c))]
+        draw_page(pdf, page, prior, current, annotated, items, structured, show_reports=not args.hide_reports,
+                  gt_highlights=highlights)
     out = Path(args.out) if args.out else ROOT / "logs" / f"comparisons_review_{time.strftime('%Y%m%d-%H%M%S')}.pdf"
     if out.exists():
         raise SystemExit(f"{out} already exists; not overwriting")
     pdf.output(str(out))
+    # all pages are kept in the .json (it must line up with the source PDF for later rebuilds)
     out.with_suffix(".json").write_text(json.dumps(record, indent=1), encoding="utf-8")
-    print(f"{len(record)} pages re-rendered from {args.from_json} -> {out}")
+    print(f"{len(kept)} pages re-rendered from {args.from_json} -> {out}")
 
 
 def main():
@@ -792,6 +896,23 @@ def main():
                     help="with --from-json: add a structured Interpretation section written by MedGemma "
                          "from the prior and current images (the generated report is not changed)")
     ap.add_argument("--medgemma-model", default="medgemma1.5:4b")
+    ap.add_argument("--screen-json", default=None,
+                    help="with --from-json: an independent CheXagent screen (chexagent_independent_screen.py); "
+                         "conditions it finds that the report does not state are added as 'Consider' rows")
+    ap.add_argument("--revisions-json", default=None,
+                    help="with --structured: draw the INTERPRETATION revised by revise_interpretation.py "
+                         "(image-check tags inline) instead of the original")
+    ap.add_argument("--highlight-gt", default=None,
+                    help="with --revisions-json: ground-truth review sheet (pilot_ground_truth_sheet.py CSV); the "
+                         "ground-truth sentence behind each changed condition is drawn in bold underline")
+    ap.add_argument("--truth-json", default=None,
+                    help="with --screen-json: saved ground-truth lookup for all conditions (…_three_way.json), so "
+                         "'Consider' rows use the same ground truth as the other analyses")
+    ap.add_argument("--skip-rows", default=None,
+                    help="with --from-json: comma-separated 'Row N' numbers to leave out, e.g. 10,12")
+    ap.add_argument("--hide-reports", action="store_true",
+                    help="with --from-json: template-only pages (images, the radiologist's template, page "
+                         "number); no generated/ground-truth reports, Finding Comparison table or legend")
     ap.add_argument("--structured", action="store_true",
                     help="with --from-json: add the radiologist's report template, filled from the generated "
                          "report's findings and impression as they are")
