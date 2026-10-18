@@ -35,8 +35,10 @@ def sample():
     return [(im["file"], split[im["file"]]) for im in images]
 
 
-def make_scorer():
-    """Loads MAIRA-2 (bf16) and returns score(image) -> {finding: {logp_pos, logp_neg, score}}."""
+def make_scorer(sentences=None):
+    """Loads MAIRA-2 (bf16) and returns score(image) -> {finding: {logp_pos, logp_neg, score}} for
+    `sentences` (default: the six findings' fixed pairs)."""
+    sentences = sentences or SENTENCES
     import torch
     from transformers import AutoModelForCausalLM, AutoProcessor
 
@@ -47,7 +49,7 @@ def make_scorer():
                                                  **kw).eval()
     proc = AutoProcessor.from_pretrained("microsoft/maira-2", **kw)
     tok = proc.tokenizer
-    encoded = {s: tok(s, add_special_tokens=False)["input_ids"] for pair in SENTENCES.values() for s in pair}
+    encoded = {s: tok(s, add_special_tokens=False)["input_ids"] for pair in sentences.values() for s in pair}
 
     def logprobs(image):
         inp = {k: v.cuda() for k, v in proc.format_and_preprocess_reporting_input(
@@ -69,7 +71,7 @@ def make_scorer():
     def score_image(image):
         lp = logprobs(image)
         return {finding: {"logp_pos": lp[pos], "logp_neg": lp[neg], "score": 1 / (1 + math.exp(-(lp[pos] - lp[neg])))}
-                for finding, (pos, neg) in SENTENCES.items()}
+                for finding, (pos, neg) in sentences.items()}
     return score_image
 
 
