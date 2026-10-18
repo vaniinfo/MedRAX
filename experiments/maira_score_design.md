@@ -50,4 +50,24 @@ separate design) only if MAIRA-2's development AUC is at least 0.75. Otherwise M
 not used for that finding.
 
 ## Amendments
-(none)
+
+**A1 (2026-10-17, before any reading or analysis below): standalone comparison with CheXagent on
+three held-out labelled sets.**
+- Question: does CheXagent's presence score separate present from absent better than MAIRA-2's,
+  each on its own (no generated report involved)?
+- Data (CheXagent p_present already recorded for all; MAIRA-2 scored with exactly the score,
+  sentences, prompt and settings above):
+  - NIH test split of the random sample (1,500 images; MAIRA-2 already scored, not analysed);
+  - Indiana (544 images, `ppresent_indiana.jsonl` labels and files);
+  - VinDr Kaggle-derived (3,000 images, `vindr_test_manifest.json`; pulmonary edema not
+    labelled, so five findings).
+- Per dataset and finding: AUC of each model, 95% CI from 2,000 image-level bootstrap resamples
+  (seed 20261017), paired difference CheXagent minus MAIRA-2 with its 95% CI.
+- Hypothesis per dataset and finding: CheXagent's AUC is higher; supported if the difference's
+  95% CI lies above 0, not supported if it includes 0, reversed if it lies below 0. All 17
+  comparisons are reported; no correction for multiplicity, so single results are read with
+  that in mind; the overall pattern across datasets is the main result.
+- Findings with fewer than 10 positives in a dataset are reported but marked as too few.
+- Caveat recorded now: CheXagent's training data probably include public NIH and VinDr images;
+  MAIRA-2's published training sets (MIMIC-CXR, PadChest, USMIE) do not. Indiana is the least
+  affected set.
