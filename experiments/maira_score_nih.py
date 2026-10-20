@@ -51,9 +51,9 @@ def make_scorer(sentences=None):
     tok = proc.tokenizer
     encoded = {s: tok(s, add_special_tokens=False)["input_ids"] for pair in sentences.values() for s in pair}
 
-    def logprobs(image):
+    def logprobs(image, prior=None):
         inp = {k: v.cuda() for k, v in proc.format_and_preprocess_reporting_input(
-            current_frontal=image, current_lateral=None, prior_frontal=None, indication=None, technique=None,
+            current_frontal=image, current_lateral=None, prior_frontal=prior, indication=None, technique=None,
             comparison=None, prior_report=None, get_grounding=False, return_tensors="pt").items()}
         with torch.no_grad():
             out = model(**inp, use_cache=True)
@@ -68,8 +68,8 @@ def make_scorer(sentences=None):
                 result[s] = first[c[0]].item() + sum(lp[t, c[t + 1]].item() for t in range(len(c) - 1))
         return result
 
-    def score_image(image):
-        lp = logprobs(image)
+    def score_image(image, prior=None):
+        lp = logprobs(image, prior)
         return {finding: {"logp_pos": lp[pos], "logp_neg": lp[neg], "score": 1 / (1 + math.exp(-(lp[pos] - lp[neg])))}
                 for finding, (pos, neg) in sentences.items()}
     return score_image

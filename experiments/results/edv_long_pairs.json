@@ -1,0 +1,2497 @@
+[
+ {
+  "current": "00000013_033.png",
+  "prior": "00000013_025.png",
+  "same_view": true
+ },
+ {
+  "current": "00000020_000.png",
+  "prior": "00000020_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00000116_013.png",
+  "prior": "00000116_012.png",
+  "same_view": true
+ },
+ {
+  "current": "00000168_001.png",
+  "prior": "00000168_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00000268_001.png",
+  "prior": "00000268_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00000288_000.png",
+  "prior": "00000288_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00000379_001.png",
+  "prior": "00000379_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00000430_001.png",
+  "prior": "00000430_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00000461_001.png",
+  "prior": "00000461_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00000465_001.png",
+  "prior": "00000465_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00000580_008.png",
+  "prior": "00000580_007.png",
+  "same_view": true
+ },
+ {
+  "current": "00000592_001.png",
+  "prior": "00000592_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00000597_002.png",
+  "prior": "00000597_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00000613_004.png",
+  "prior": "00000613_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00000653_001.png",
+  "prior": "00000653_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00000740_001.png",
+  "prior": "00000740_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00000825_003.png",
+  "prior": "00000825_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00000877_027.png",
+  "prior": "00000877_026.png",
+  "same_view": true
+ },
+ {
+  "current": "00000885_001.png",
+  "prior": "00000885_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00000938_006.png",
+  "prior": "00000938_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00000967_002.png",
+  "prior": "00000967_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00001003_001.png",
+  "prior": "00001003_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00001013_003.png",
+  "prior": "00001013_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00001136_001.png",
+  "prior": "00001136_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00001203_004.png",
+  "prior": "00001203_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00001206_005.png",
+  "prior": "00001206_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00001394_001.png",
+  "prior": "00001394_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00001449_001.png",
+  "prior": "00001449_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00001528_001.png",
+  "prior": "00001528_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00001568_006.png",
+  "prior": "00001568_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00001615_005.png",
+  "prior": "00001615_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00001653_003.png",
+  "prior": "00001653_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00001708_002.png",
+  "prior": "00001708_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00001845_004.png",
+  "prior": "00001845_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00002140_003.png",
+  "prior": "00002140_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00002212_000.png",
+  "prior": "00002212_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00002270_003.png",
+  "prior": "00002270_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00002289_001.png",
+  "prior": "00002289_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00002329_001.png",
+  "prior": "00002329_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00002335_003.png",
+  "prior": "00002335_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00002439_006.png",
+  "prior": "00002439_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00002561_001.png",
+  "prior": "00002561_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00002585_002.png",
+  "prior": "00002585_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00002677_001.png",
+  "prior": "00002677_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00002736_002.png",
+  "prior": "00002736_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00002742_001.png",
+  "prior": "00002742_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00002758_003.png",
+  "prior": "00002758_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00002775_001.png",
+  "prior": "00002775_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00002811_002.png",
+  "prior": "00002811_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00002824_001.png",
+  "prior": "00002824_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00003126_000.png",
+  "prior": "00003126_022.png",
+  "same_view": true
+ },
+ {
+  "current": "00003179_001.png",
+  "prior": "00003179_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00003219_002.png",
+  "prior": "00003219_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00003233_006.png",
+  "prior": "00003233_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00003298_001.png",
+  "prior": "00003298_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00003362_003.png",
+  "prior": "00003362_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00003381_001.png",
+  "prior": "00003381_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00003383_002.png",
+  "prior": "00003383_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00003400_001.png",
+  "prior": "00003400_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00003430_003.png",
+  "prior": "00003430_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00003442_001.png",
+  "prior": "00003442_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00003554_001.png",
+  "prior": "00003554_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00003574_009.png",
+  "prior": "00003574_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00003596_003.png",
+  "prior": "00003596_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00003759_002.png",
+  "prior": "00003759_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00003785_004.png",
+  "prior": "00003785_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00003787_002.png",
+  "prior": "00003787_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00003807_000.png",
+  "prior": "00003807_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00003832_001.png",
+  "prior": "00003832_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00003867_017.png",
+  "prior": "00003867_016.png",
+  "same_view": true
+ },
+ {
+  "current": "00003924_001.png",
+  "prior": "00003924_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00003996_020.png",
+  "prior": "00003996_019.png",
+  "same_view": true
+ },
+ {
+  "current": "00004031_001.png",
+  "prior": "00004031_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00004048_005.png",
+  "prior": "00004048_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00004221_003.png",
+  "prior": "00004221_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00004235_005.png",
+  "prior": "00004235_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00004404_005.png",
+  "prior": "00004404_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00004517_002.png",
+  "prior": "00004517_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00004582_008.png",
+  "prior": "00004582_007.png",
+  "same_view": true
+ },
+ {
+  "current": "00004600_001.png",
+  "prior": "00004600_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00004714_001.png",
+  "prior": "00004714_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00004731_001.png",
+  "prior": "00004731_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00004803_002.png",
+  "prior": "00004803_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00004920_002.png",
+  "prior": "00004920_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00004996_001.png",
+  "prior": "00004996_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00005098_001.png",
+  "prior": "00005098_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00005172_005.png",
+  "prior": "00005172_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00005250_001.png",
+  "prior": "00005250_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00005345_003.png",
+  "prior": "00005345_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00005384_001.png",
+  "prior": "00005384_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00005456_000.png",
+  "prior": "00005456_011.png",
+  "same_view": true
+ },
+ {
+  "current": "00005631_004.png",
+  "prior": "00005631_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00005724_000.png",
+  "prior": "00005724_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00005754_001.png",
+  "prior": "00005754_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00005798_010.png",
+  "prior": "00005798_009.png",
+  "same_view": true
+ },
+ {
+  "current": "00005852_003.png",
+  "prior": "00005852_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00005854_001.png",
+  "prior": "00005854_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00005869_001.png",
+  "prior": "00005869_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00005874_002.png",
+  "prior": "00005874_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00005898_001.png",
+  "prior": "00005898_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00005910_002.png",
+  "prior": "00005910_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00005913_001.png",
+  "prior": "00005913_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00006024_004.png",
+  "prior": "00006024_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00006043_005.png",
+  "prior": "00006043_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00006228_002.png",
+  "prior": "00006228_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00006281_003.png",
+  "prior": "00006281_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00006325_001.png",
+  "prior": "00006325_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00006338_005.png",
+  "prior": "00006338_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00006416_008.png",
+  "prior": "00006416_007.png",
+  "same_view": true
+ },
+ {
+  "current": "00006480_002.png",
+  "prior": "00006480_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00006505_002.png",
+  "prior": "00006505_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00006631_002.png",
+  "prior": "00006631_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00006674_006.png",
+  "prior": "00006674_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00006765_001.png",
+  "prior": "00006765_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00006792_004.png",
+  "prior": "00006792_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00006959_004.png",
+  "prior": "00006959_003.png",
+  "same_view": false
+ },
+ {
+  "current": "00006973_004.png",
+  "prior": "00006973_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00007048_001.png",
+  "prior": "00007048_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00007065_004.png",
+  "prior": "00007065_003.png",
+  "same_view": false
+ },
+ {
+  "current": "00007072_001.png",
+  "prior": "00007072_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00007157_001.png",
+  "prior": "00007157_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00007172_001.png",
+  "prior": "00007172_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00007188_001.png",
+  "prior": "00007188_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00007218_006.png",
+  "prior": "00007218_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00007223_005.png",
+  "prior": "00007223_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00007256_013.png",
+  "prior": "00007256_010.png",
+  "same_view": true
+ },
+ {
+  "current": "00007283_004.png",
+  "prior": "00007283_003.png",
+  "same_view": false
+ },
+ {
+  "current": "00007292_001.png",
+  "prior": "00007292_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00007301_001.png",
+  "prior": "00007301_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00007353_001.png",
+  "prior": "00007353_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00007422_003.png",
+  "prior": "00007422_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00007430_001.png",
+  "prior": "00007430_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00007455_001.png",
+  "prior": "00007455_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00007596_004.png",
+  "prior": "00007596_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00007678_001.png",
+  "prior": "00007678_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00007697_002.png",
+  "prior": "00007697_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00007757_007.png",
+  "prior": "00007757_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00007772_001.png",
+  "prior": "00007772_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00007779_008.png",
+  "prior": "00007779_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00007784_001.png",
+  "prior": "00007784_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00007845_002.png",
+  "prior": "00007845_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00007870_001.png",
+  "prior": "00007870_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00007879_004.png",
+  "prior": "00007879_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00008019_003.png",
+  "prior": "00008019_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00008035_004.png",
+  "prior": "00008035_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00008151_001.png",
+  "prior": "00008151_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00008233_003.png",
+  "prior": "00008233_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00008270_011.png",
+  "prior": "00008270_010.png",
+  "same_view": true
+ },
+ {
+  "current": "00008295_018.png",
+  "prior": "00008295_017.png",
+  "same_view": true
+ },
+ {
+  "current": "00008348_001.png",
+  "prior": "00008348_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00008381_006.png",
+  "prior": "00008381_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00008397_006.png",
+  "prior": "00008397_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00008468_002.png",
+  "prior": "00008468_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00008470_001.png",
+  "prior": "00008470_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00008508_002.png",
+  "prior": "00008508_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00008554_003.png",
+  "prior": "00008554_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00008613_008.png",
+  "prior": "00008613_007.png",
+  "same_view": true
+ },
+ {
+  "current": "00008687_003.png",
+  "prior": "00008687_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00008697_001.png",
+  "prior": "00008697_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00008705_001.png",
+  "prior": "00008705_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00008708_009.png",
+  "prior": "00008708_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00008730_002.png",
+  "prior": "00008730_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00008745_023.png",
+  "prior": "00008745_022.png",
+  "same_view": true
+ },
+ {
+  "current": "00008930_004.png",
+  "prior": "00008930_003.png",
+  "same_view": false
+ },
+ {
+  "current": "00009011_001.png",
+  "prior": "00009011_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00009048_003.png",
+  "prior": "00009048_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00009107_002.png",
+  "prior": "00009107_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00009189_007.png",
+  "prior": "00009189_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00009297_019.png",
+  "prior": "00009297_017.png",
+  "same_view": true
+ },
+ {
+  "current": "00009419_001.png",
+  "prior": "00009419_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00009431_005.png",
+  "prior": "00009431_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00009452_001.png",
+  "prior": "00009452_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00009459_008.png",
+  "prior": "00009459_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00009488_002.png",
+  "prior": "00009488_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00009530_003.png",
+  "prior": "00009530_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00009691_015.png",
+  "prior": "00009691_014.png",
+  "same_view": true
+ },
+ {
+  "current": "00009740_001.png",
+  "prior": "00009740_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00009875_001.png",
+  "prior": "00009875_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00009931_004.png",
+  "prior": "00009931_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00009996_007.png",
+  "prior": "00009996_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00010136_003.png",
+  "prior": "00010136_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00010188_009.png",
+  "prior": "00010188_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00010348_001.png",
+  "prior": "00010348_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00010407_001.png",
+  "prior": "00010407_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00010500_003.png",
+  "prior": "00010500_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00010506_001.png",
+  "prior": "00010506_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00010525_000.png",
+  "prior": "00010525_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00010575_004.png",
+  "prior": "00010575_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00010627_001.png",
+  "prior": "00010627_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00010635_001.png",
+  "prior": "00010635_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00010659_001.png",
+  "prior": "00010659_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00010683_002.png",
+  "prior": "00010683_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00010828_035.png",
+  "prior": "00010828_034.png",
+  "same_view": true
+ },
+ {
+  "current": "00010973_004.png",
+  "prior": "00010973_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00010984_007.png",
+  "prior": "00010984_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00010991_003.png",
+  "prior": "00010991_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00011067_001.png",
+  "prior": "00011067_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00011121_004.png",
+  "prior": "00011121_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00011153_001.png",
+  "prior": "00011153_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00011296_001.png",
+  "prior": "00011296_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00011423_005.png",
+  "prior": "00011423_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00011514_025.png",
+  "prior": "00011514_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00011575_005.png",
+  "prior": "00011575_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00011767_002.png",
+  "prior": "00011767_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00011774_001.png",
+  "prior": "00011774_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00011837_006.png",
+  "prior": "00011837_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00011857_014.png",
+  "prior": "00011857_012.png",
+  "same_view": true
+ },
+ {
+  "current": "00011868_004.png",
+  "prior": "00011868_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00011945_003.png",
+  "prior": "00011945_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00011984_003.png",
+  "prior": "00011984_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00012115_004.png",
+  "prior": "00012115_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00012119_001.png",
+  "prior": "00012119_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00012130_003.png",
+  "prior": "00012130_002.png",
+  "same_view": false
+ },
+ {
+  "current": "00012294_006.png",
+  "prior": "00012294_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00012297_000.png",
+  "prior": "00012297_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00012310_002.png",
+  "prior": "00012310_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00012387_003.png",
+  "prior": "00012387_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00012431_005.png",
+  "prior": "00012431_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00012457_001.png",
+  "prior": "00012457_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00012528_002.png",
+  "prior": "00012528_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00012605_000.png",
+  "prior": "00012605_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00012623_001.png",
+  "prior": "00012623_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00012681_002.png",
+  "prior": "00012681_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00012834_049.png",
+  "prior": "00012834_048.png",
+  "same_view": true
+ },
+ {
+  "current": "00012836_002.png",
+  "prior": "00012836_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00012975_005.png",
+  "prior": "00012975_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00012987_008.png",
+  "prior": "00012987_007.png",
+  "same_view": true
+ },
+ {
+  "current": "00013015_003.png",
+  "prior": "00013015_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00013077_014.png",
+  "prior": "00013077_011.png",
+  "same_view": true
+ },
+ {
+  "current": "00013260_004.png",
+  "prior": "00013260_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00013316_001.png",
+  "prior": "00013316_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00013348_001.png",
+  "prior": "00013348_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00013364_002.png",
+  "prior": "00013364_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00013426_001.png",
+  "prior": "00013426_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00013476_007.png",
+  "prior": "00013476_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00013520_010.png",
+  "prior": "00013520_011.png",
+  "same_view": true
+ },
+ {
+  "current": "00013695_007.png",
+  "prior": "00013695_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00013709_001.png",
+  "prior": "00013709_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00013778_003.png",
+  "prior": "00013778_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00013831_001.png",
+  "prior": "00013831_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00013904_001.png",
+  "prior": "00013904_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00014005_002.png",
+  "prior": "00014005_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00014006_007.png",
+  "prior": "00014006_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00014080_004.png",
+  "prior": "00014080_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00014082_001.png",
+  "prior": "00014082_014.png",
+  "same_view": true
+ },
+ {
+  "current": "00014144_001.png",
+  "prior": "00014144_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00014186_001.png",
+  "prior": "00014186_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00014257_001.png",
+  "prior": "00014257_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00014356_013.png",
+  "prior": "00014356_012.png",
+  "same_view": true
+ },
+ {
+  "current": "00014453_001.png",
+  "prior": "00014453_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00014475_001.png",
+  "prior": "00014475_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00014483_000.png",
+  "prior": "00014483_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00014526_001.png",
+  "prior": "00014526_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00014546_013.png",
+  "prior": "00014546_012.png",
+  "same_view": true
+ },
+ {
+  "current": "00014551_010.png",
+  "prior": "00014551_009.png",
+  "same_view": true
+ },
+ {
+  "current": "00014584_004.png",
+  "prior": "00014584_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00014590_001.png",
+  "prior": "00014590_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00014596_008.png",
+  "prior": "00014596_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00014601_001.png",
+  "prior": "00014601_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00014677_010.png",
+  "prior": "00014677_009.png",
+  "same_view": true
+ },
+ {
+  "current": "00014716_012.png",
+  "prior": "00014716_011.png",
+  "same_view": true
+ },
+ {
+  "current": "00014725_006.png",
+  "prior": "00014725_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00014795_004.png",
+  "prior": "00014795_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00014797_001.png",
+  "prior": "00014797_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00014952_003.png",
+  "prior": "00014952_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00015000_010.png",
+  "prior": "00015000_009.png",
+  "same_view": true
+ },
+ {
+  "current": "00015041_012.png",
+  "prior": "00015041_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00015073_002.png",
+  "prior": "00015073_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00015139_001.png",
+  "prior": "00015139_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00015159_002.png",
+  "prior": "00015159_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00015187_002.png",
+  "prior": "00015187_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00015244_002.png",
+  "prior": "00015244_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00015377_001.png",
+  "prior": "00015377_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00015393_002.png",
+  "prior": "00015393_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00015407_001.png",
+  "prior": "00015407_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00015589_003.png",
+  "prior": "00015589_002.png",
+  "same_view": false
+ },
+ {
+  "current": "00015630_003.png",
+  "prior": "00015630_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00015641_011.png",
+  "prior": "00015641_010.png",
+  "same_view": true
+ },
+ {
+  "current": "00015737_001.png",
+  "prior": "00015737_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00015752_002.png",
+  "prior": "00015752_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00015826_026.png",
+  "prior": "00015826_018.png",
+  "same_view": true
+ },
+ {
+  "current": "00015967_001.png",
+  "prior": "00015967_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00015980_001.png",
+  "prior": "00015980_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00016137_004.png",
+  "prior": "00016137_003.png",
+  "same_view": false
+ },
+ {
+  "current": "00016167_001.png",
+  "prior": "00016167_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00016207_005.png",
+  "prior": "00016207_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00016300_001.png",
+  "prior": "00016300_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00016313_001.png",
+  "prior": "00016313_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00016544_003.png",
+  "prior": "00016544_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00016568_017.png",
+  "prior": "00016568_016.png",
+  "same_view": true
+ },
+ {
+  "current": "00016577_002.png",
+  "prior": "00016577_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00016691_001.png",
+  "prior": "00016691_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00016748_001.png",
+  "prior": "00016748_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00016794_001.png",
+  "prior": "00016794_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00016802_008.png",
+  "prior": "00016802_007.png",
+  "same_view": true
+ },
+ {
+  "current": "00016914_002.png",
+  "prior": "00016914_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00016919_007.png",
+  "prior": "00016919_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00016943_007.png",
+  "prior": "00016943_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00017110_008.png",
+  "prior": "00017110_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00017262_003.png",
+  "prior": "00017262_002.png",
+  "same_view": false
+ },
+ {
+  "current": "00017301_003.png",
+  "prior": "00017301_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00017363_002.png",
+  "prior": "00017363_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00017450_002.png",
+  "prior": "00017450_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00017455_001.png",
+  "prior": "00017455_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00017531_003.png",
+  "prior": "00017531_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00017541_028.png",
+  "prior": "00017541_025.png",
+  "same_view": true
+ },
+ {
+  "current": "00017556_009.png",
+  "prior": "00017556_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00017589_001.png",
+  "prior": "00017589_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00017698_002.png",
+  "prior": "00017698_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00017735_003.png",
+  "prior": "00017735_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00017863_001.png",
+  "prior": "00017863_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00017871_001.png",
+  "prior": "00017871_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00017927_002.png",
+  "prior": "00017927_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00017944_007.png",
+  "prior": "00017944_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00018015_013.png",
+  "prior": "00018015_012.png",
+  "same_view": true
+ },
+ {
+  "current": "00018024_001.png",
+  "prior": "00018024_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00018033_001.png",
+  "prior": "00018033_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00018068_001.png",
+  "prior": "00018068_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00018102_006.png",
+  "prior": "00018102_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00018174_001.png",
+  "prior": "00018174_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00018187_044.png",
+  "prior": "00018187_043.png",
+  "same_view": true
+ },
+ {
+  "current": "00018404_017.png",
+  "prior": "00018404_016.png",
+  "same_view": true
+ },
+ {
+  "current": "00018418_002.png",
+  "prior": "00018418_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00018496_014.png",
+  "prior": "00018496_013.png",
+  "same_view": true
+ },
+ {
+  "current": "00018524_001.png",
+  "prior": "00018524_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00018587_003.png",
+  "prior": "00018587_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00018596_001.png",
+  "prior": "00018596_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00018762_001.png",
+  "prior": "00018762_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00018936_003.png",
+  "prior": "00018936_002.png",
+  "same_view": false
+ },
+ {
+  "current": "00018958_005.png",
+  "prior": "00018958_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00018996_002.png",
+  "prior": "00018996_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00019021_009.png",
+  "prior": "00019021_007.png",
+  "same_view": true
+ },
+ {
+  "current": "00019030_001.png",
+  "prior": "00019030_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00019088_001.png",
+  "prior": "00019088_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00019100_002.png",
+  "prior": "00019100_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00019193_000.png",
+  "prior": "00019193_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00019281_001.png",
+  "prior": "00019281_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00019285_005.png",
+  "prior": "00019285_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00019348_006.png",
+  "prior": "00019348_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00019386_001.png",
+  "prior": "00019386_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00019401_001.png",
+  "prior": "00019401_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00019472_005.png",
+  "prior": "00019472_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00019492_001.png",
+  "prior": "00019492_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00019499_004.png",
+  "prior": "00019499_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00019530_006.png",
+  "prior": "00019530_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00019593_003.png",
+  "prior": "00019593_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00019594_001.png",
+  "prior": "00019594_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00019644_000.png",
+  "prior": "00019644_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00019646_001.png",
+  "prior": "00019646_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00019680_010.png",
+  "prior": "00019680_009.png",
+  "same_view": true
+ },
+ {
+  "current": "00019695_000.png",
+  "prior": "00019695_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00019726_001.png",
+  "prior": "00019726_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00019766_038.png",
+  "prior": "00019766_037.png",
+  "same_view": true
+ },
+ {
+  "current": "00019786_001.png",
+  "prior": "00019786_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00019805_005.png",
+  "prior": "00019805_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00019870_003.png",
+  "prior": "00019870_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00019953_000.png",
+  "prior": "00019953_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00019973_001.png",
+  "prior": "00019973_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00020039_001.png",
+  "prior": "00020039_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00020065_013.png",
+  "prior": "00020065_012.png",
+  "same_view": true
+ },
+ {
+  "current": "00020077_000.png",
+  "prior": "00020077_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00020102_001.png",
+  "prior": "00020102_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00020106_007.png",
+  "prior": "00020106_006.png",
+  "same_view": true
+ },
+ {
+  "current": "00020122_002.png",
+  "prior": "00020122_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00020163_001.png",
+  "prior": "00020163_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00020275_001.png",
+  "prior": "00020275_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00020297_001.png",
+  "prior": "00020297_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00020326_073.png",
+  "prior": "00020326_071.png",
+  "same_view": true
+ },
+ {
+  "current": "00020429_027.png",
+  "prior": "00020429_025.png",
+  "same_view": true
+ },
+ {
+  "current": "00020434_006.png",
+  "prior": "00020434_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00020486_000.png",
+  "prior": "00020486_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00020509_000.png",
+  "prior": "00020509_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00020542_001.png",
+  "prior": "00020542_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00020572_001.png",
+  "prior": "00020572_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00020601_001.png",
+  "prior": "00020601_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00020608_000.png",
+  "prior": "00020608_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00020669_001.png",
+  "prior": "00020669_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00020724_001.png",
+  "prior": "00020724_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00020732_001.png",
+  "prior": "00020732_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00020751_001.png",
+  "prior": "00020751_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00020786_004.png",
+  "prior": "00020786_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00020819_009.png",
+  "prior": "00020819_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00020830_002.png",
+  "prior": "00020830_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00020892_001.png",
+  "prior": "00020892_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00021003_001.png",
+  "prior": "00021003_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00021021_004.png",
+  "prior": "00021021_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00021065_003.png",
+  "prior": "00021065_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00021066_001.png",
+  "prior": "00021066_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00021251_005.png",
+  "prior": "00021251_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00021335_001.png",
+  "prior": "00021335_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00021363_000.png",
+  "prior": "00021363_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00021435_001.png",
+  "prior": "00021435_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00021486_003.png",
+  "prior": "00021486_002.png",
+  "same_view": false
+ },
+ {
+  "current": "00021584_005.png",
+  "prior": "00021584_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00021601_001.png",
+  "prior": "00021601_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00021700_003.png",
+  "prior": "00021700_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00021779_001.png",
+  "prior": "00021779_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00021786_000.png",
+  "prior": "00021786_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00021812_001.png",
+  "prior": "00021812_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00021838_002.png",
+  "prior": "00021838_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00021858_002.png",
+  "prior": "00021858_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00021862_001.png",
+  "prior": "00021862_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00021888_000.png",
+  "prior": "00021888_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00021963_000.png",
+  "prior": "00021963_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00022036_000.png",
+  "prior": "00022036_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00022072_009.png",
+  "prior": "00022072_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00022080_001.png",
+  "prior": "00022080_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00022119_001.png",
+  "prior": "00022119_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00022166_000.png",
+  "prior": "00022166_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00022231_001.png",
+  "prior": "00022231_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00022268_001.png",
+  "prior": "00022268_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00022310_003.png",
+  "prior": "00022310_002.png",
+  "same_view": false
+ },
+ {
+  "current": "00022345_000.png",
+  "prior": "00022345_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00022360_001.png",
+  "prior": "00022360_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00022422_001.png",
+  "prior": "00022422_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00022520_000.png",
+  "prior": "00022520_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00022526_009.png",
+  "prior": "00022526_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00022709_000.png",
+  "prior": "00022709_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00022727_001.png",
+  "prior": "00022727_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00022759_002.png",
+  "prior": "00022759_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00022864_000.png",
+  "prior": "00022864_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00022998_001.png",
+  "prior": "00022998_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00023025_003.png",
+  "prior": "00023025_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00023052_001.png",
+  "prior": "00023052_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00023075_049.png",
+  "prior": "00023075_047.png",
+  "same_view": true
+ },
+ {
+  "current": "00023111_007.png",
+  "prior": "00023111_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00023275_001.png",
+  "prior": "00023275_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00023631_001.png",
+  "prior": "00023631_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00023696_005.png",
+  "prior": "00023696_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00024128_001.png",
+  "prior": "00024128_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00025071_001.png",
+  "prior": "00025071_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00025145_002.png",
+  "prior": "00025145_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00025192_003.png",
+  "prior": "00025192_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00025247_001.png",
+  "prior": "00025247_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00025263_006.png",
+  "prior": "00025263_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00025300_003.png",
+  "prior": "00025300_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00025418_002.png",
+  "prior": "00025418_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00025483_001.png",
+  "prior": "00025483_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00025521_002.png",
+  "prior": "00025521_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00025621_003.png",
+  "prior": "00025621_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00025631_001.png",
+  "prior": "00025631_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00025813_004.png",
+  "prior": "00025813_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00025838_002.png",
+  "prior": "00025838_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00025904_003.png",
+  "prior": "00025904_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00026125_004.png",
+  "prior": "00026125_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00026139_002.png",
+  "prior": "00026139_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00026210_001.png",
+  "prior": "00026210_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00026273_002.png",
+  "prior": "00026273_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00026371_001.png",
+  "prior": "00026371_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00026439_001.png",
+  "prior": "00026439_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00026513_006.png",
+  "prior": "00026513_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00026561_002.png",
+  "prior": "00026561_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00026587_001.png",
+  "prior": "00026587_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00026692_002.png",
+  "prior": "00026692_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00026694_005.png",
+  "prior": "00026694_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00026722_001.png",
+  "prior": "00026722_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00026746_004.png",
+  "prior": "00026746_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00026809_002.png",
+  "prior": "00026809_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00027013_001.png",
+  "prior": "00027013_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00027113_002.png",
+  "prior": "00027113_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00027119_001.png",
+  "prior": "00027119_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00027278_008.png",
+  "prior": "00027278_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00027296_003.png",
+  "prior": "00027296_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00027299_009.png",
+  "prior": "00027299_008.png",
+  "same_view": true
+ },
+ {
+  "current": "00027302_000.png",
+  "prior": "00027302_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00027304_001.png",
+  "prior": "00027304_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00027311_005.png",
+  "prior": "00027311_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00027339_001.png",
+  "prior": "00027339_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00027357_012.png",
+  "prior": "00027357_011.png",
+  "same_view": true
+ },
+ {
+  "current": "00027410_004.png",
+  "prior": "00027410_003.png",
+  "same_view": false
+ },
+ {
+  "current": "00027467_001.png",
+  "prior": "00027467_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00027566_002.png",
+  "prior": "00027566_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00027893_001.png",
+  "prior": "00027893_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00027937_005.png",
+  "prior": "00027937_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00027996_002.png",
+  "prior": "00027996_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00028292_004.png",
+  "prior": "00028292_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00028324_001.png",
+  "prior": "00028324_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00028549_002.png",
+  "prior": "00028549_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00028579_004.png",
+  "prior": "00028579_003.png",
+  "same_view": true
+ },
+ {
+  "current": "00028725_001.png",
+  "prior": "00028725_004.png",
+  "same_view": false
+ },
+ {
+  "current": "00028764_005.png",
+  "prior": "00028764_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00028897_005.png",
+  "prior": "00028897_004.png",
+  "same_view": true
+ },
+ {
+  "current": "00028905_001.png",
+  "prior": "00028905_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00028948_002.png",
+  "prior": "00028948_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00028958_002.png",
+  "prior": "00028958_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00028993_001.png",
+  "prior": "00028993_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00029097_002.png",
+  "prior": "00029097_001.png",
+  "same_view": false
+ },
+ {
+  "current": "00029155_001.png",
+  "prior": "00029155_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00029464_006.png",
+  "prior": "00029464_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00029469_007.png",
+  "prior": "00029469_009.png",
+  "same_view": true
+ },
+ {
+  "current": "00029511_001.png",
+  "prior": "00029511_000.png",
+  "same_view": false
+ },
+ {
+  "current": "00029631_003.png",
+  "prior": "00029631_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00029676_005.png",
+  "prior": "00029676_002.png",
+  "same_view": true
+ },
+ {
+  "current": "00029852_002.png",
+  "prior": "00029852_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00029878_002.png",
+  "prior": "00029878_001.png",
+  "same_view": true
+ },
+ {
+  "current": "00029945_001.png",
+  "prior": "00029945_000.png",
+  "same_view": true
+ },
+ {
+  "current": "00029998_013.png",
+  "prior": "00029998_012.png",
+  "same_view": true
+ },
+ {
+  "current": "00030026_003.png",
+  "prior": "00030026_005.png",
+  "same_view": true
+ },
+ {
+  "current": "00030134_003.png",
+  "prior": "00030134_002.png",
+  "same_view": false
+ }
+]
