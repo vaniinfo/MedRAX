@@ -3,11 +3,15 @@
     python experiments/own_words_detection.py maira       # MAIRA-2 own reports (resumable)
     python experiments/own_words_detection.py chexagent   # CheXagent six-area reports (resumable)
     python experiments/own_words_detection.py read        # both read for 13 conditions (resumable)
-    python experiments/own_words_detection.py analyze     # -> results/own_words_detection.md
+    python experiments/own_words_detection.py analyze     # -> results/own_words_detection_stage1.md
+
+Amendment A2: stage 1 = a fixed random 500 of the 1,500 test images (stage_files()); A1 adds a mean-AUC
+analysis on the 3-level report scores.
 """
 
 import json
 import math
+import random
 import sys
 import time
 from pathlib import Path
@@ -23,10 +27,16 @@ RESULTS = HERE / "results"
 REPORTS = {"MAIRA-2": RESULTS / "own_words_maira_reports.jsonl",
            "CheXagent": RESULTS / "own_words_chexagent_reports.jsonl"}
 LABELS = RESULTS / "own_words_labels.jsonl"
-REPORT = RESULTS / "own_words_detection.md"
+REPORT = RESULTS / "own_words_detection_stage1.md"
 AREAS = ["View", "Airway", "Breathing", "Cardiac", "Diaphragm",
          "Everything else (e.g., mediastinal contours, bones, soft tissues, tubes, valves, and pacemakers)"]
 SEED, N_BOOT = 20261023, 2000
+STAGE1_SEED, STAGE1_N = 20261025, 500
+
+
+def stage_files():
+    """Amendment A2: stage 1 = a fixed random 500 of the NIH test images."""
+    return sorted(random.Random(STAGE1_SEED).sample(sorted(E.split_files("test")), STAGE1_N))
 
 
 def done(path, key="file"):
@@ -42,13 +52,14 @@ def progress(n, total, start, label):
         print(f"{label} {n}/{total}  {rate:.2f}/s  eta {(total - n) / rate / 60:.0f} min", flush=True)
 
 
-def maira():
+def maira(files=None, path=None):
     import torch
     from PIL import Image
     from transformers import AutoModelForCausalLM, AutoProcessor
 
     from vindr_grounding_amendment import MAIRA_REVISION
-    todo = [f for f in E.split_files("test") if f not in done(REPORTS["MAIRA-2"])]
+    path = path or REPORTS["MAIRA-2"]
+    todo = [f for f in files or stage_files() if f not in done(path)]
     print(f"MAIRA-2: {len(todo)} to go", flush=True)
     if not todo:
         return
@@ -57,7 +68,7 @@ def maira():
                                                  **kw).eval()
     proc = AutoProcessor.from_pretrained("microsoft/maira-2", **kw)
     start = time.time()
-    with REPORTS["MAIRA-2"].open("a", encoding="utf-8") as out:
+    with path.open("a", encoding="utf-8") as out:
         for n, f in enumerate(todo, 1):
             inputs = proc.format_and_preprocess_reporting_input(
                 current_frontal=Image.open(NIH / f).convert("RGB"), current_lateral=None, prior_frontal=None,
@@ -72,15 +83,16 @@ def maira():
             progress(n, len(todo), start, "MAIRA-2")
 
 
-def chexagent():
+def chexagent(files=None, path=None):
     from medrax.tools.xray_vqa import XRayVQATool
-    todo = [f for f in E.split_files("test") if f not in done(REPORTS["CheXagent"])]
+    path = path or REPORTS["CheXagent"]
+    todo = [f for f in files or stage_files() if f not in done(path)]
     print(f"CheXagent: {len(todo)} to go", flush=True)
     if not todo:
         return
     tool = XRayVQATool(cache_dir="C:/Users/hari/model-weights", device="cuda", temp_dir="temp")
     start = time.time()
-    with REPORTS["CheXagent"].open("a", encoding="utf-8") as out:
+    with path.open("a", encoding="utf-8") as out:
         for n, f in enumerate(todo, 1):
             parts = [tool._generate_response([str(NIH / f)], f'Please provide a detailed description of "{a}" in the '
                                                                f'chest X-ray', 200)[0].strip() for a in AREAS]
@@ -89,15 +101,17 @@ def chexagent():
             progress(n, len(todo), start, "CheXagent")
 
 
-def read():
+def read(reports=None, labels=None):
     from comparison_edv_pdf import NOT_IN_GT, ground_truth_locations, make_extractor
     extractor = make_extractor("qwen3.8-edv:latest")
-    have = done(LABELS, ("model", "file"))
-    todo = [(m, json.loads(l)) for m, path in REPORTS.items() for l in path.read_text(encoding="utf-8").splitlines()]
-    todo = [(m, r) for m, r in todo if (m, r["file"]) not in have]
+    labels = labels or LABELS
+    have = done(labels, ("model", "file"))
+    todo = [(m, json.loads(l)) for m, path in (reports or REPORTS).items() for l in path.read_text(encoding="utf-8").splitlines()]
+    allowed = None if reports else set(stage_files())  # default run: stage-1 images only
+    todo = [(m, r) for m, r in todo if (m, r["file"]) not in have and (allowed is None or r["file"] in allowed)]
     print(f"read: {len(todo)} to go", flush=True)
     start = time.time()
-    with LABELS.open("a", encoding="utf-8") as out:
+    with labels.open("a", encoding="utf-8") as out:
         for n, (m, r) in enumerate(todo, 1):
             ans = ground_truth_locations(extractor, r["report"], E.CONDITIONS, with_evidence=True,
                                          extra_rules=E.EXTRA_RULES)
@@ -127,7 +141,7 @@ def mcnemar(b, c):
 
 def analyze(possible_counts=False):
     truth, _, chex, _, _ = E.load()
-    files = E.split_files("test")
+    files = stage_files()
     labels = {(r["model"], r["file"]): r["labels"]
               for r in map(json.loads, LABELS.read_text(encoding="utf-8").splitlines())}
     missing = [(m, f) for m in REPORTS for f in files if (m, f) not in labels]
@@ -194,14 +208,50 @@ def analyze(possible_counts=False):
     return lines
 
 
+def auc_section():
+    """Amendment A1: mean AUC on the 3-level report scores (present 1, possible 0.5, not stated 0)."""
+    from maira_score_nih import auc
+    truth, _, chex, _, _ = E.load()
+    files = stage_files()
+    labels = {(r["model"], r["file"]): r["labels"]
+              for r in map(json.loads, LABELS.read_text(encoding="utf-8").splitlines())}
+    y = {c: np.array([truth[(f, c)] for f in files]) for c in E.CONDITIONS}
+    main = [c for c in E.CONDITIONS if y[c].sum() >= 10]
+    score = {"C-report": {c: np.array([labels[("CheXagent", f)][c]["score"] for f in files]) for c in E.CONDITIONS},
+             "MAIRA-2": {c: np.array([labels[("MAIRA-2", f)][c]["score"] for f in files]) for c in E.CONDITIONS},
+             "C-answer p_present (reference)": {c: np.array([chex[(f, c)] for f in files]) for c in E.CONDITIONS}}
+    A = lambda s, c, b: auc(score[s][c][b][y[c][b] == 1], score[s][c][b][y[c][b] == 0])  # noqa: E731
+    rng = np.random.default_rng(SEED)
+    boots = [rng.integers(0, len(files), len(files)) for _ in range(N_BOOT)]
+    every = np.arange(len(files))
+    lines = ["## A1: mean AUC on the 3-level report scores (1 / 0.5 / 0)", "",
+             "| system | mean AUC [95% CI] |", "|---|---|"]
+    for s in score:
+        bs = [np.nanmean([A(s, c, b) for c in main]) for b in boots]
+        lo, hi = np.percentile(bs, [2.5, 97.5])
+        lines.append(f"| {s} | {np.mean([A(s, c, every) for c in main]):.3f} [{lo:.3f}-{hi:.3f}] |")
+    d = np.mean([A("C-report", c, every) - A("MAIRA-2", c, every) for c in main])
+    bs = [np.nanmean([A("C-report", c, b) - A("MAIRA-2", c, b) for c in main]) for b in boots]
+    lo, hi = np.percentile(bs, [2.5, 97.5])
+    res = "CheXagent better" if lo > 0 else "MAIRA-2 better" if hi < 0 else "no difference shown"
+    lines += ["", f"C-report minus MAIRA-2: {d:+.3f} [{lo:+.3f} to {hi:+.3f}], {res}.", "",
+              "| condition | positives / n | C-report AUC | MAIRA-2 AUC | C-answer p_present AUC |", "|---|---|---|---|---|"]
+    for c in E.CONDITIONS:
+        tag = "" if c in main else " (fewer than 10 positives)"
+        lines.append(f"| {c}{tag} | {int(y[c].sum())} / {len(files)} | " +
+                     " | ".join(f"{A(s, c, every):.3f}" for s in score) + " |")
+    return lines
+
+
 def report():
-    head = ["# CheXagent vs MAIRA-2 in their own words: caught vs missed (NIH test split)", "",
-            "Protocol: `own_words_detection_protocol.md` (committed before any report). 1,500 NIH test images; "
+    head = ["# CheXagent vs MAIRA-2 in their own words: caught vs missed (NIH test split, stage 1)", "",
+            "Protocol: `own_words_detection_protocol.md` (committed before any report), amendments A1-A2. Stage 1: "
+            "a fixed random 500 of the 1,500 NIH test images; "
             "C-report = CheXagent's six-area report, C-answer = CheXagent's 'Is there X?' with Yes outweighing No "
             "(p_present >= 0.5), MAIRA-2 = its own findings report. Reports read by the quote-checked Qwen lookup. "
             f"Means over the conditions with at least 10 positives; {N_BOOT} image-level bootstrap resamples "
             f"(seed {SEED}); two-sided.", ""]
-    lines = head + analyze() + [""] + analyze(possible_counts=True)
+    lines = head + analyze() + [""] + analyze(possible_counts=True) + [""] + auc_section()
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
 

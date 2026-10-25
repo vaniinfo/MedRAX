@@ -69,4 +69,24 @@ All results are reported whatever they are; changes only as dated amendments bef
 Implementation: `own_words_detection.py` (stages `maira`, `chexagent`, `read`, `analyze`).
 
 ## Amendments
-(none)
+
+**A1 (2026-10-25, before any report was read; 351 MAIRA-2 reports generated, 0 CheXagent reports).**
+Added a secondary analysis on the same 3-level report scores used for MedGemma (present 1, possible
+0.5, not stated 0):
+- mean AUC of CheXagent's own report and of MAIRA-2's own report, over the conditions with at least
+  10 positives;
+- the difference (C-report minus MAIRA-2), with a paired image-level bootstrap 95% CI, two-sided:
+  "CheXagent better" if the CI lies above 0, "MAIRA-2 better" if below, otherwise "no difference
+  shown";
+- CheXagent's p_present AUC is shown for reference only (a continuous score, not like-for-like).
+
+Both report scores share the same 3-level ceiling, so the comparison is like-for-like.
+
+**A2 (2026-10-25, same time as A1).** The run proceeds in stages. **Stage 1** is a fixed random 500 of
+the 1,500 test images (`random.Random(20261025).sample` of the sorted test list). All analyses above
+apply to stage 1 alone and are reported as stage 1. In stage 1 the means cover the 7 conditions with at
+least 10 positives among the 500, counted from the NIH labels only: cardiomegaly 19, pleural effusion
+18, consolidation 10, atelectasis 21, infiltration 65, nodule 31, mass 19. The other 6 conditions are
+reported but not averaged. The remaining 1,000 images may follow only by a further dated amendment.
+The 351 MAIRA-2 reports already generated (110 of them in stage 1) are kept, since the settings are
+unchanged.
