@@ -101,11 +101,12 @@ class OnePage(FPDF):
 
     def image_box(self, path, x, y, w, h, caption):
         image = Image.open(path).convert("RGB")
-        image.thumbnail((900, 900))
+        size = getattr(self, "image_max", 900)
+        image.thumbnail((size, size))
         scale = min(w / image.width, h / image.height)
         iw, ih = image.width * scale, image.height * scale
         buffer = io.BytesIO()
-        image.save(buffer, format="JPEG", quality=85)
+        image.save(buffer, format="JPEG", quality=92 if size > 900 else 85)
         self.image(buffer, x=x + (w - iw) / 2, y=y, w=iw, h=ih)
         self.set_xy(x, y + h + 0.5)
         self.font(7, color=GREY)

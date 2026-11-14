@@ -233,6 +233,90 @@ export OPENAI_MODEL="qwen3-vl-235b-a22b-instruct"
 ```
 <br>
 
+## Research Extension: Review Guide
+
+This fork adds a research pipeline for **claim-blinded evidence verification** of chest X-ray reports: a trained
+MedGemma writes (longitudinal) reports, and CheXagent independently checks each stated finding without being told the
+claim. The components below are listed in the order data flows through the pipeline, so each one's inputs have
+already been reviewed when you reach it. If time is short, review **1, 4 and 7** first: that is where the paper's main
+claim lives.
+
+### 1. Protocols and pre-registration
+- **Purpose:** Before running a test, we write down exactly what we will measure and what counts as success, and save it with a date. That way nobody can change the rules after seeing the results, like a teacher writing the answer key before the exam instead of after.
+- Files: `experiments/*_protocol.md`, `experiments/evidence_engine_design.md`, git tags `vindr-amendment-1` and
+  `vindr-amendment-2`, `experiments/results/frozen_dev_params.json` (+ `.sha256`).
+- Check: every reported result traces to a protocol committed before the test data was read; frozen thresholds
+  match what the code actually loads; post-hoc analyses are labelled as such.
+
+### 2. Report generator (trained MedGemma)
+- **Purpose:** This is the AI that looks at a chest X-ray and writes a report, like a student writing an answer. Our team trained it, so we must make sure we always use our version and never quietly swap or re-run it until the answers look better.
+- Files: `experiments/edv_trained.py`, `experiments/edv_trained_protocol.md`.
+- Check: only the team's trained MedGemma is used (never the base model); prompts and decoding are fixed; reports
+  are generated once and cached, never regenerated after results were seen.
+
+### 3. Claim extraction (report text to findings)
+- **Purpose:** Reports are written in sentences. This step turns each report into a simple checklist (for example: fluid in the lungs, yes, left side). If this "translator" makes mistakes, every score after it is wrong too, so we check it against answers marked by hand.
+- The reader model turns free text into (condition, side, change) labels, for both model and reference reports.
+- Files: `experiments/reader_validation_protocol.md`, `experiments/results/pilot_*_auto_labels.csv`.
+- Check: reader accuracy against hand labels; handling of "possible" and hedged wording; laterality parsing. Errors
+  here propagate into every downstream number, including the reference column of the radiologist workbook.
+
+### 4. Evidence Engine (CheXagent verification, the core of the paper)
+- **Purpose:** A second AI (CheXagent) checks each finding the first AI wrote. The key trick: we ask it "is there fluid?" without telling it what the first AI said, so it cannot just copy. Like a second doctor giving an opinion without reading the first doctor's notes.
+- Files: `experiments/build_evidence_engine_v1.py`, `experiments/verify_evidence_engine_v1.py`,
+  `experiments/evidence_engine_d1_d2.py`, `experiments/evidence_engine_d3.py`, `medrax/tools/xray_vqa.py`.
+- Check:
+  - claim-blinding: the prompt is the condition name only, never the report's side or wording;
+  - calibration: support and evidence-against cut-offs; values between them are Indeterminate (shown on the forms
+    as "Not agree" together with Evidence against);
+  - the image-ignored fix in `xray_vqa.py`;
+  - possible training-data overlap (VinDr AUCs of 0.98-0.999 suggest CheXagent saw VinDr during training).
+
+### 5. Grounding and laterality
+- **Purpose:** This checks whether the AI points to the right place on the image, especially the right versus left side. We found that if you tell an AI "left side", it will point left even when that is wrong, so we never give it the side in the question.
+- Files: `experiments/condition_aware_grounding.py`, `experiments/grounding_recall_protocol.md`, VinDr Part B results.
+- Check: locate prompts contain no side words; the side-withheld vs side-named comparison (H1/H2); MAIRA-2's
+  default to the patient's right. Wording: "claim-blinded" grounding, never "independent" or "unbiased".
+
+### 6. Longitudinal / interval change (EDV)
+- **Purpose:** Patients often have an older X-ray and a new one. This part asks: did things get better, worse or stay the same? It compares the two pictures for each finding, like comparing two photos of a cut a week apart.
+- Files: `experiments/edv_longitudinal.py`, `experiments/edv_change.py` and their protocols.
+- Check: how prior/current pairs are selected (NIH pairs); how change claims are scored; the change check built from
+  separate prior and current presence verdicts.
+
+### 7. Radiologist evaluation
+- **Purpose:** Real X-ray doctors (radiologists) graded the AI's answers from 1 (wrong) to 5 (right). This is the human check of whether the whole system actually helps, and we must make sure their scores are counted fairly and the same way every time.
+- Files: `experiments/radiologist_evaluation_protocol.md`; form builders (`experiments/focused_conditions_report.py`,
+  `experiments/regional_focal_reports_v2.py`); score extraction and workbook (`experiments/doctor_scores_to_excel.py`,
+  `experiments/doctor_scores_analysis_tabs.py`, `experiments/disorder_agreement_tab.py`).
+- Check:
+  - the rule turning a 1-5 score into a present/absent call (model-vs-doctor columns count 3-5 as agreement;
+    reference-vs-doctor and doctor-vs-doctor columns exclude 3 as uncertain);
+  - precedence when the same radiologist scored a finding on two forms;
+  - excluded conditions (emphysema, pleural thickening: not reliably assessable on chest X-ray);
+  - what the radiologists actually saw on the forms;
+  - whether a radiologist's score is independent of the model output shown to them.
+
+### 8. Statistics and reproducibility
+- **Purpose:** Numbers can look good by luck, especially with few cases. Statistics tell us how sure we can be, and reproducibility means someone else can rerun our code and get the same numbers.
+- Files: `experiments/results/REPRODUCE.md` and the results `.md` files.
+- Check: bootstrap CIs, McNemar tests and Holm correction; unit of analysis (per finding, not pooled rows); reported
+  numbers are computed from the cached model outputs (`*.jsonl`); model revisions and hashes are pinned.
+
+### 9. Data governance
+- **Purpose:** Some X-rays come from real hospital patients and can only be used under strict rules. This keeps private data out of shared places and makes sure downloaded AI code cannot run anything unsafe on our computers.
+- MIMIC-CXR outputs stay in the git-ignored `logs/` folder (PhysioNet data use agreement); only NIH and VinDr numbers
+  go in `experiments/results/`.
+- Downloaded model code is reviewed and loaded by path; no `trust_remote_code` for new models.
+
+### Lower priority
+- **Purpose:** These parts exist in the project but do not affect the paper's results, so they can wait.
+- The upstream MedRAX agent and Gradio UI (`main.py`, `interface.py`, `medrax/agent/`): the paper's results do not
+  go through them.
+- Exploratory visualizations: the BioViL-T heat map is an exploratory overlay only; prior-vs-current subtraction
+  failed validation and is not used.
+<br>
+
 ## Star History
 <div align="center">
   

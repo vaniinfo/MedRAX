@@ -50,7 +50,7 @@ def box_sides(location):
     return {part.strip().split(",")[0] for part in location.split(";")} & {"right", "left"}
 
 
-def main(review_path, screen_path, table_path):
+def main(review_path, screen_path, table_path, score_name="chexagent_revision_score.md"):
     from medrax.evidence import EvidenceEngine
 
     engine = EvidenceEngine()
@@ -125,7 +125,7 @@ def main(review_path, screen_path, table_path):
     path.write_text(json.dumps(out, indent=1), encoding="utf-8")
     lines = ["# Generated interpretation revised with CheXagent: original vs revised, against the ground truth", "",
              "Rule: `chexagent_revision_rule.md` (fixed before applying; no ground truth used). Ground truth: preliminary "
-             "automatic labels (as in the Excel comparison). 19 comparisons, 13 conditions.", "",
+             "automatic labels (as in the Excel comparison). " f"{len(review)} comparisons, 13 conditions.", "",
              "| verdict | original (MedGemma) | revised (MedGemma + CheXagent rule) |", "|---|---|---|"]
     lines += [f"| {k} | {counts['original'][k]} | {counts['revised'][k]} |" for k in ORDER]
     bad = lambda d: d["Missed"] + d["Wrong side"]  # noqa: E731
@@ -134,10 +134,10 @@ def main(review_path, screen_path, table_path):
               "| page | condition | original | verdict | revised | verdict | ground truth |", "|---|---|---|---|---|---|---|"]
     lines += [f"| {p} | {c} | {o} | {vo or '-'} | {n} | {vn or '-'} | {g} |" for p, c, o, vo, n, vn, g in
               sorted(log, key=lambda x: int(x[0]))]
-    (ROOT / "experiments" / "results" / "chexagent_revision_score.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (ROOT / "experiments" / "results" / score_name).write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
     print(f"\n-> {path}")
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:4])
+    main(*sys.argv[1:5])

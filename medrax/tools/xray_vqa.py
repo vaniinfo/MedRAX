@@ -327,7 +327,7 @@ class XRayVQATool(BaseTool):
             p_present = entry.get("p_present")
             color = "orange" if p_present is not None and p_present < 0.5 else "red"
             label = entry["phrase"] or ""
-            if p_present is not None:
+            if p_present is not None and not entry.get("hide_score"):
                 label += f" p={p_present:.2f}" + (" (likely absent)" if p_present < 0.5 else "")
 
             draw.rectangle(box_pixels, outline=color, width=line_width)

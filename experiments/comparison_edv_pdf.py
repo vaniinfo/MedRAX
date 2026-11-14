@@ -31,6 +31,9 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(Path(__file__).parent))
 from fpdf.fonts import FontFace  # noqa: E402
 from langchain_openai import ChatOpenAI  # noqa: E402
+import io  # noqa: E402
+
+from PIL import Image  # noqa: E402
 from pypdf import PdfReader  # noqa: E402
 
 from medrax.evidence import EvidenceEngine  # noqa: E402
@@ -49,7 +52,20 @@ STATUS_STYLE = {
     "Indeterminate": (95, 95, 130),
     "Not assessed": (120, 120, 120),
     "Consider": (40, 90, 160),  # CheXagent's own finding, not in the generated report
+    "Agree": (0, 110, 50),        # two-level display: Supported
+    "Not agree": (185, 60, 20),   # two-level display: Indeterminate or Requires confirmation
 }
+TWO_LEVEL_LEGEND = [
+    ("Agree", "the automated image check supports the finding: its score is at or above the support cut-off (a "
+              "likelihood ratio of at least 5) and it locates the finding on the reported side."),
+    ("Not agree", "the automated image check does not support the finding: the evidence is too weak (below the "
+                  "support cut-off), leans against it, places it on the opposite side, or could not locate it."),
+]
+
+
+def two_level(status):
+    """Supported -> Agree; every other review status -> Not agree."""
+    return "Agree" if status.startswith("Supported") else "Not agree"
 PRIORITY = "Requires confirmation"
 
 # Where to look, for "Recommend direct review of ..." (by validated finding)
@@ -117,6 +133,35 @@ def default_cutoffs(engine):
     validated one."""
     cuts = [_cutoffs(engine, f) for f in SIX]
     return max(c[0] for c in cuts if c[0] is not None), min(c[1] for c in cuts if c[1] is not None)
+
+
+def evidence_tooltip(engine, item):
+    """Mouse-over text for the CheXagent evidence cell: confidence score and the cut-offs it is compared with."""
+    from provisional_findings import EXPORT as PROV
+    q = validated_name(item["finding"])
+    p = item.get("p_present")
+    if q in SIX:
+        support, refute = _cutoffs(engine, q)
+        source = "Evidence Engine v1.0 (calibrated on NIH data)"
+    else:
+        prov = json.loads(PROV.read_text(encoding="utf-8"))["findings"].get(q)
+        if prov:
+            support = prov["p_support"] if prov["use_supporting"] else None
+            refute = prov["p_refute"] if prov["use_refuting"] else None
+            source = "provisional cut-offs (NIH data)"
+        else:
+            support, refute, source = item.get("support_from"), None, "no calibrated cut-off for this finding"
+    lines = [f"CheXagent confidence (p_present): {p:.3f}" if p is not None else "CheXagent: finding could not be located",
+             f"Support cut-off: p >= {support:g} (likelihood ratio at least 5)" if support is not None
+             else "Support cut-off: none",
+             f"Refute cut-off: p <= {refute:g} (likelihood ratio at most 0.2)" if refute is not None
+             else "Refute cut-off: none"]
+    if item.get("image_location"):
+        lines.append(f"CheXagent location: {item['image_location']}")
+    if item.get("report_side"):
+        lines.append(f"Side in the report: {item['report_side']}")
+    lines.append(f"Source: {source}")
+    return "\n".join(lines)
 
 
 def provisional_cutoff(q):
@@ -342,7 +387,7 @@ def mark(text, phrases):
     return text
 
 
-def draw_sections(pdf, x, y, w, max_h, secs, highlights=None):
+def draw_sections(pdf, x, y, w, max_h, secs, highlights=None, sizes=(8.5, 8, 7.5, 7, 6.5, 6, 5.5)):
     """Sections in a column, font shrunk to fit max_h (empty headers are not printed). Phrases in
     `highlights` are drawn in bold underline."""
     md = bool(highlights)
@@ -356,7 +401,7 @@ def draw_sections(pdf, x, y, w, max_h, secs, highlights=None):
             h += (lh if header else 0) + lh * len(pdf.multi_cell(w, lh, text, dry_run=True, output="LINES",
                                                                   markdown=md)) + 1
         return h
-    size = next((s for s in (8.5, 8, 7.5, 7, 6.5, 6, 5.5) if height(s) <= max_h), 5.5)
+    size = next((s for s in sizes if height(s) <= max_h), sizes[-1])
     lh = size * 0.42
     for header, text in secs:
         if header:
@@ -405,43 +450,156 @@ def draw_review(pdf, x, y, w, items):
     return y
 
 
-def draw_page(pdf, *args, **kwargs):
+def draw_page(pdf, *args, gt_under_images=False, **kwargs):
     """One page; the image row is made shorter if the text would otherwise run into the legend
-    (each height is tried on a scratch document first)."""
-    for box_h in (62, 56, 50, 44, 38):
-        if _draw_page(OnePage(), *args, box_h=box_h, **kwargs):
+    (each height is tried on a scratch document first). gt_under_images: larger images with the
+    ground truth in a small font directly beneath them."""
+    heights = (150, 140, 130, 120, 110, 100, 92, 84, 76, 68, 60, 52, 46, 40) if gt_under_images \
+        else (62, 56, 50, 44, 38)
+    for box_h in heights:
+        scratch = OnePage()
+        scratch.radiologist_form = getattr(pdf, "radiologist_form", False)
+        scratch.hide_scores = getattr(pdf, "hide_scores", False)
+        scratch.two_level = getattr(pdf, "two_level", False)
+        scratch.image_gap = getattr(pdf, "image_gap", 4)
+        scratch.set_margins(pdf.l_margin, pdf.t_margin, pdf.r_margin)
+        scratch.gt_comment = getattr(pdf, "gt_comment", False)
+        scratch.collapsible = getattr(pdf, "collapsible", False)
+        scratch.change_column = getattr(pdf, "change_column", False)
+        scratch.form_columns = getattr(pdf, "form_columns", None)
+        if _draw_page(scratch, *args, box_h=box_h, gt_under_images=gt_under_images, **kwargs):
             break
-    _draw_page(pdf, *args, box_h=box_h, **kwargs)
+    _draw_page(pdf, *args, box_h=box_h, gt_under_images=gt_under_images, **kwargs)
+    if hasattr(pdf, "zoom_targets"):
+        for z in pdf.zoom_targets:
+            if z["page"] == pdf.page_no() and not z.get("drawn"):
+                draw_zoom_overlay(pdf, z)
+                z["drawn"] = True
+
+
+def draw_zoom_overlay(pdf, z):
+    """The X-ray enlarged over the whole page, in its own optional-content layer (hidden until the thumbnail is
+    clicked; clicking anywhere on it hides it again; see add_zoom_overlays)."""
+    pdf._out(f"/OC /{z['oc']} BDC")
+    pdf.set_fill_color(255, 255, 255)
+    pdf.rect(0, 0, pdf.w, pdf.h, style="F")
+    W, H = pdf.w - 8, pdf.h - 14
+    pdf.set_xy(4, 3)
+    pdf.font(10, True)
+    pdf.cell(W, 6, f"{z['title']}  -  {z['caption']}", align="L")
+    pdf.set_xy(4, 3)
+    pdf.font(9, True, (40, 70, 130))
+    pdf.cell(W, 6, "Click anywhere to close", align="R")
+    image = Image.open(z["path"]).convert("RGB")
+    size = getattr(pdf, "image_max", 1800)
+    image.thumbnail((size, size))
+    scale = min(W / image.width, H / image.height)
+    iw, ih = image.width * scale, image.height * scale
+    buf = io.BytesIO()
+    image.save(buf, format="JPEG", quality=92 if size > 900 else 85)  # same bytes as the thumbnail: stored once
+    pdf.image(buf, x=4 + (W - iw) / 2, y=10, w=iw, h=ih)
+    pdf._out("EMC")
+
+
+def _image_row_height(images, box_w, box_h):
+    """Height the images actually need (each scaled to the box width), capped at box_h."""
+    need = 0
+    for _, path in images:
+        with Image.open(path) as im:
+            need = max(need, min(box_h, box_w * im.height / im.width))
+    return need or box_h
 
 
 def _draw_page(pdf, page, prior, current, annotated, items, structured=None, box_h=62, show_reports=True,
-               gt_highlights=None):
+               gt_highlights=None, truth_title="Ground Truth Report", legend=None, gt_under_images=False):
     """Draws the page; True if everything fits above the legend."""
     pdf.add_page()
     W = pdf.w - pdf.l_margin - pdf.r_margin
     x0 = pdf.l_margin
-    pdf.set_xy(x0, 9)
-    pdf.font(15, True)
-    pdf.cell(W, 7, page["title"], align="C", new_x="LMARGIN", new_y="NEXT")
-    pdf.font(8, color=GREY)
-    pdf.cell(W, 4, page["row"], align="C")
-
-    top = 22
+    if gt_under_images:  # compact header: title only, no "Row N" line, images start higher
+        pdf.set_xy(x0, 6)
+        pdf.font(13, True)
+        pdf.cell(W, 6, page["title"], align="C")
+        top = 13.5
+    else:
+        pdf.set_xy(x0, 9)
+        pdf.font(15, True)
+        pdf.cell(W, 7, page["title"], align="C", new_x="LMARGIN", new_y="NEXT")
+        pdf.font(8, color=GREY)
+        pdf.cell(W, 4, page["row"], align="C")
+        top = 22
     images = [("Prior", prior), ("Current", current)] + ([("Visual Proof", annotated)] if annotated else [])
-    box_w = (W - 4 * (len(images) - 1)) / len(images)
+    gap = getattr(pdf, "image_gap", 4)
+    box_w = (W - gap * (len(images) - 1)) / len(images)
+    if gt_under_images:
+        box_h = _image_row_height(images, box_w, box_h)  # no empty space under shorter images
     for i, (caption, path) in enumerate(images):
-        pdf.image_box(path, x0 + i * (box_w + 4), top, box_w, box_h, caption)
+        zoom = hasattr(pdf, "zoom_targets")  # click the image to open it full page (only on the real PDF)
+        pdf.image_box(path, x0 + i * (box_w + gap), top, box_w, box_h,
+                      caption + ("  (click to enlarge)" if zoom else ""))
+        if zoom:
+            pdf.zoom_targets.append(dict(page=pdf.page_no(), rect=(x0 + i * (box_w + gap), top, box_w, box_h),
+                                         title=page["title"], caption=caption, path=path,
+                                         oc=f"OCz{len(pdf.zoom_targets)}"))
 
-    y = top + box_h + 6
-    if show_reports:
+    y = top + box_h + (4.5 if gt_under_images else 6)
+    if gt_under_images and show_reports:
+        # ground truth in a small font directly under the images
+        y = pdf.title_bar(x0, y - 1, W, truth_title, size=8) - 1
+        if gt_highlights:
+            pdf.set_xy(x0 + pdf.get_string_width(truth_title) + 4, y - 6.4)
+            pdf.set_font("Arial", "I", 6)
+            pdf.set_text_color(*GREY)
+            pdf.cell(150, 4, "Bold underlined: the ground-truth text each [Image check] change is checked against")
+        y = draw_sections(pdf, x0, y, W, 30, page["truth"], highlights=gt_highlights,
+                          sizes=(6.8, 6.5, 6.2, 6, 5.7, 5.4, 5.1)) + 2.5
+    if show_reports and gt_under_images:  # generated report in the same small font as the ground truth
+        y = pdf.title_bar(x0, y - 1, W, "Generated Report", size=8) - 1
+        y = draw_sections(pdf, x0, y, W, 30, page["generated"], sizes=(6.8, 6.5, 6.2, 6, 5.7, 5.4, 5.1)) + 2.5
+    elif show_reports:
         y = pdf.title_bar(x0, y, W, "Generated Report")
         y = draw_sections(pdf, x0, y, W, 46, page["generated"]) + 1.5
         y += 1.5
+    if show_reports:
+        if gt_under_images:  # finding comparison directly after the generated report
+            y = pdf.title_bar(x0, y, W, "Finding Comparison")
+            y += draw_table(pdf, x0, y, W, items) + 3
     if structured:
         # a thin rule sets the template apart from what is above it
         pdf.set_draw_color(205, 208, 214)
         pdf.line(x0, y + 0.5, x0 + W, y + 0.5)
-        y = draw_structured(pdf, x0, y + 2, W, 70 if show_reports else pdf.h - 16 - y, structured) + 2.5
+        collapsible = getattr(pdf, "collapsible", False)
+        if collapsible:
+            # button drawn here; the click action (show/hide) is added afterwards by add_structured_toggle()
+            bw, bh = 62, 5.2
+            pdf.set_fill_color(234, 240, 250)
+            pdf.set_draw_color(120, 140, 175)
+            pdf.rect(x0, y + 2, bw, bh, style="DF", round_corners=True, corner_radius=1)
+            pdf.set_xy(x0, y + 2)
+            pdf.font(7.5, True, (40, 70, 130))
+            pdf.cell(bw, bh, "Show / hide structured report", align="C")
+            if hasattr(pdf, "toggle_buttons"):
+                pdf.toggle_buttons.append((pdf.page_no(), x0, y + 2, bw, bh))
+            y += bh + 2
+            pdf._out("/OC /OCstruct BDC")  # start of the hideable section
+        if collapsible and show_reports:
+            # hidden by default and drawn as a panel over the top of the page (on a white background), so it
+            # reserves no space and the X-rays can use it all; the button shows and hides the panel
+            sizes, max_h = (8.5, 8, 7.5, 7, 6.5, 6), pdf.h - 38 - top - 6
+            probe = OnePage()
+            probe.add_page()
+            text_h = draw_structured(probe, x0 + 3, top + 3, W - 6, max_h, structured, sizes=sizes) - (top + 3)
+            pdf.set_fill_color(255, 255, 255)
+            pdf.set_draw_color(120, 140, 175)
+            pdf.rect(x0, top, W, text_h + 6, style="DF")
+            pdf.set_xy(x0 + 3, top + 0.8)
+            pdf.font(7, True, (40, 70, 130))
+            pdf.cell(W - 6, 2.4, "Structured report (click the button below the table to hide)", align="R")
+            draw_structured(pdf, x0 + 3, top + 3, W - 6, max_h, structured, sizes=sizes)
+        else:
+            y = draw_structured(pdf, x0, y + 2, W, 70 if show_reports else pdf.h - 16 - y, structured) + 2.5
+        if collapsible:
+            pdf._out("EMC")
     if not show_reports:
         # template-only version: no ground truth, comparison table or legend; page number only
         pdf.set_xy(x0, pdf.h - 12)
@@ -449,10 +607,13 @@ def _draw_page(pdf, page, prior, current, annotated, items, structured=None, box
         pdf.cell(W, 3.2, f"Page {pdf.page_no()} of {{nb}}", align="R")
         return y <= pdf.h - 14
     legend_top = pdf.h - 38
+    if gt_under_images:  # ground truth and finding comparison already drawn above
+        draw_legend(pdf, x0, legend_top, W, legend)
+        return y <= legend_top - 1
     top = y
-    y = pdf.title_bar(x0, y, W, "Ground Truth Report")
+    y = pdf.title_bar(x0, y, W, truth_title)
     if gt_highlights:
-        pdf.set_xy(x0 + pdf.get_string_width("Ground Truth Report") + 6, top + 0.6)
+        pdf.set_xy(x0 + pdf.get_string_width(truth_title) + 6, top + 0.6)
         pdf.set_font("Arial", "I", 6.5)
         pdf.set_text_color(*GREY)
         pdf.cell(150, 4, "Bold underlined: the ground-truth text that each [Image check] change in the "
@@ -462,53 +623,384 @@ def _draw_page(pdf, page, prior, current, annotated, items, structured=None, box
                       highlights=gt_highlights) + 3
     y = pdf.title_bar(x0, y, W, "Finding Comparison")
     y += draw_table(pdf, x0, y, W, items)
-    draw_legend(pdf, x0, legend_top, W)
+    draw_legend(pdf, x0, legend_top, W, legend)
     return y <= legend_top - 1
 
 
 TABLE_COLS = [("MedGemma finding", 0.32), ("CheXagent evidence", 0.28), ("Ground truth location", 0.40)]
+# scoring-form columns by key: (header, a 1-5 dropdown inside the cell, cell drawn with **bold** markdown)
+FORM_SPEC = {"medgemma": ("MedGemma finding", True, False), "chexagent": ("CheXagent evidence", True, False),
+             "groundtruth": ("Ground truth (location and comment)", True, True),
+             "change": ("MedGemma change (vs prior)", True, True), "boundingbox": ("Bounding box", False, False),
+             "grounding": ("CheXagent grounding (box)", False, False), "comment": ("Comments", False, False)}
+# the column layout (key, share of the width); pdf.form_columns overrides it, pdf.change_column adds "change"
+FORM_LAYOUT = [("medgemma", 0.21), ("chexagent", 0.19), ("groundtruth", 0.29), ("boundingbox", 0.10),
+               ("comment", 0.21)]
+FORM_LAYOUT_CHANGE = [("medgemma", 0.18), ("chexagent", 0.16), ("groundtruth", 0.24), ("change", 0.15),
+                      ("boundingbox", 0.10), ("comment", 0.17)]
+SCORED = ["medgemma", "chexagent", "groundtruth"]
+DROPDOWNS = SCORED + ["change", "boundingbox", "grounding"]
+DD_W, DD_H = 10.5, 5.2  # dropdown size (mm)
+
+
+def change_cell(item):
+    """The change MedGemma reports for this finding (bold) and its words; empty when MedGemma did not report it."""
+    if item.get("status") in ("Consider", "Missed") or not item.get("change"):
+        return ""
+    claim, evidence = item["change"]
+    if claim in ("no change stated", "not mentioned"):
+        return "**No change stated**"
+    return f"**{claim.capitalize()}**" + (f"\n\"{evidence}\"" if evidence else "")
 
 
 def draw_table(pdf, x, y, w, items, dry_run=False):
-    """MedGemma finding | CheXagent evidence (review status) | ground-truth location.
-    Returns the table height."""
+    """MedGemma finding | CheXagent evidence (review status) | ground-truth location; on the scoring form, the
+    columns of pdf.form_columns (FORM_SPEC keys) with their dropdowns and comment boxes. Returns the table height."""
     size, lh, pad = 8, 3.6, 1.3
     # Status with CheXagent's score (p_present) in brackets, e.g. "Supported (0.80)"
-    rows = [(i["name"], i["status"] + (f" ({i['p_present']:.2f})" if i.get("p_present") is not None
+    form = getattr(pdf, "radiologist_form", False)
+    hide = getattr(pdf, "hide_scores", False)  # status only, e.g. "Supported" instead of "Supported (0.85)"
+    shown = (lambda st: two_level(st)) if getattr(pdf, "two_level", False) else (lambda st: st)
+    rows = [(i["name"], shown(i["status"]) + ("" if hide and i.get("p_present") is not None
+                                       else f" ({i['p_present']:.2f})" if i.get("p_present") is not None
                                        else " (not located)"),
              i.get("ground_truth", "")) for i in items] or \
            [("No abnormal findings stated", "", "")]
-    widths = [w * f for _, f in TABLE_COLS]
+    if form:
+        layout = getattr(pdf, "form_columns", None) or \
+            (FORM_LAYOUT_CHANGE if getattr(pdf, "change_column", False) else FORM_LAYOUT)
+        keys = [k for k, _ in layout]
+        cols = [(FORM_SPEC[k][0], f) for k, f in layout]
+        # CheXagent-only findings (status "Consider"): MedGemma did not state them, CheXagent found them
+        rows = [("Not detected", i["finding"].capitalize(), r[2]) if i.get("status") == "Consider" else
+                # labelled in the ground truth but reported by neither model
+                ("Not detected", "Not detected", f"**Yes: {i['finding']}** (missed by both)")
+                if i.get("status") == "Missed" else r
+                for i, r in zip(items, rows)] if items else rows
+        # scoring form: "NOT IN GROUND TRUTH" shown simply as "No"
+        rows = [(r[0], r[1], "No" if r[2] == NOT_IN_GT else r[2]) for r in rows]
+        gt_comment = getattr(pdf, "gt_comment", False)
+        quotes = [i.get("gt_quote", "") for i in items] or [""]
+        locations = [r[2] for r in rows]
+        missed = [i.get("status") == "Missed" for i in items] or [False]
+
+        def gt_cell(loc, q, is_missed):
+            """Location (bold) on the first line, the ground-truth sentence below; a sentence that says the
+            finding is not mentioned is dropped when the location says it is present (two reader passes)."""
+            q = "" if not gt_comment or not q or q.startswith("Not mentioned") else q
+            if is_missed:
+                return loc + (f"\n{q}" if q else "")
+            if loc in ("", "No") or not q:
+                return loc
+            return f"**{loc}**\n{q}"
+        cells_by_key = [dict(medgemma=r[0], chexagent=r[1], groundtruth=gt_cell(r[2], q, m),
+                             change=change_cell(i) if items else "", boundingbox="", grounding="", comment="")
+                        for r, q, m, i in zip(rows, quotes, missed, items or [{}])]
+        if "groundtruth" not in keys:  # missed-by-both rows: the condition is named in the MedGemma cell
+            for c, m, i in zip(cells_by_key, missed, items or [{}]):
+                if m:
+                    c["medgemma"] = f"Not detected ({i['finding']})"
+        rows = [tuple(c[k] for k in keys) for c in cells_by_key]
+    else:
+        keys = ["medgemma", "chexagent", "groundtruth"]
+        cols = TABLE_COLS
+    widths = [w * f for _, f in cols]
+    min_h = DD_H + 2 * pad if form else 0  # room for the dropdowns
+
+    def text_w(k, cw, header):
+        """Text width of a cell; scored cells leave room on the right for the dropdown."""
+        return cw - 2 * pad - (DD_W + 1 if form and not header and FORM_SPEC[keys[k]][1] else 0)
+
+    def markdown(k, header):
+        return form and not header and FORM_SPEC[keys[k]][2]
 
     def height(cells, bold=False):
         pdf.font(size, bold)
-        return pad * 2 + lh * max(len(pdf.multi_cell(cw - 2 * pad, lh, c or " ", dry_run=True, output="LINES"))
-                                  for c, cw in zip(cells, widths))
+        return max(min_h if not bold else 0,
+                   pad * 2 + lh * max(len(pdf.multi_cell(text_w(k, cw, bold), lh, c or " ", dry_run=True,
+                                                         output="LINES", markdown=markdown(k, bold)))
+                                      for k, (c, cw) in enumerate(zip(cells, widths))))
 
-    total = height([c for c, _ in TABLE_COLS], True) + sum(height(r) for r in rows)
+    total = height([c for c, _ in cols], True) + sum(height(r) for r in rows)
     if dry_run:
         return total
     pdf.set_draw_color(200, 204, 212)
-    for n, cells in enumerate([[c for c, _ in TABLE_COLS]] + rows):
+    left = {k: x + sum(widths[:j]) for j, k in enumerate(keys)}
+    width = dict(zip(keys, widths))
+    for n, cells in enumerate([[c for c, _ in cols]] + rows):
         h = height(cells, n == 0)
         cx = x
+        if form and n > 0 and hasattr(pdf, "form_fields"):
+            by_key = cells_by_key[n - 1]
+            scores = []
+            for k in keys:
+                if FORM_SPEC[k][1] and by_key[k]:  # a dropdown inside the cell, only where it has content
+                    scores.append((k, (left[k] + width[k] - pad - DD_W, y + pad - 0.4, DD_W, DD_H)))
+            item = items[n - 1] if items else {}
+            if items and "boundingbox" in keys:  # bounding-box score for each diagnosis, centred in its column
+                scores.append(("boundingbox", (left["boundingbox"] + (width["boundingbox"] - DD_W) / 2,
+                                               y + pad - 0.4, DD_W, DD_H)))
+            if "grounding" in keys and item.get("image_location"):  # CheXagent's box drawn for this finding
+                scores.append(("grounding", (left["grounding"] + (width["grounding"] - DD_W) / 2,
+                                             y + pad - 0.4, DD_W, DD_H)))
+            label = (f"{item['finding']} (CheXagent only)" if item.get("status") == "Consider" else
+                     f"{item['finding']} (missed by both)" if item.get("status") == "Missed" else by_key["medgemma"])
+            tip_rect = (left["chexagent"], y, width["chexagent"] - DD_W - pad, h) \
+                if item.get("tooltip") and "chexagent" in keys else None
+            pdf.form_fields.append(dict(page=pdf.page_no(), row=n, finding=label, evidence=by_key["chexagent"],
+                                        tooltip=item.get("tooltip"), tooltip_rect=tip_rect,
+                                        ground_truth=locations[n - 1], scores=scores,
+                                        gt_comment=(items[n - 1].get("gt_quote", "") if items else ""), comment="",
+                                        medgemma_change=by_key["change"] if "change" in keys else "",
+                                        comment_rect=(left["comment"], y, width["comment"], h)
+                                        if "comment" in keys else None))
         for k, (text, cw) in enumerate(zip(cells, widths)):
+            key = keys[k]
             if n == 0:
                 pdf.set_fill_color(236, 239, 244)
             pdf.rect(cx, y, cw, h, style="DF" if n == 0 else "D")
             if n == 0:
                 pdf.font(size, True)
-            elif k == 1 and text.split(" (")[0] in STATUS_STYLE:
+            elif form and key in ("medgemma", "chexagent") and text.startswith("Not detected"):
+                pdf.font(size, True, STATUS_STYLE["Not agree"])
+            elif key == "chexagent" and text.split(" (")[0] in STATUS_STYLE:
                 pdf.font(size, True, STATUS_STYLE[text.split(" (")[0]])
-            elif k == 2 and text == NOT_IN_GT:
+            elif key == "groundtruth" and text in (NOT_IN_GT, "No"):
                 pdf.font(size, True, GREY)
             else:
                 pdf.font(size)
             pdf.set_xy(cx + pad, y + pad)
-            pdf.multi_cell(cw - 2 * pad, lh, text, align="L")
+            if not (form and n > 0 and key == "comment"):  # the doctor's comment is an editable field
+                pdf.multi_cell(text_w(k, cw, n == 0), lh, text, align="L", markdown=markdown(k, n == 0))
             cx += cw
         y += h
     return total
+
+
+def add_zoom_pages(pdf):
+    """Kept for the builders' call order; the enlarged X-rays are now overlays on each page (draw_zoom_overlay)."""
+    return
+
+
+def _old_add_zoom_pages(pdf):
+    for target, back, title, caption, path in pdf.zoom_targets:
+        with Image.open(path) as im:
+            landscape = im.width > im.height
+        pdf.add_page(orientation="L" if landscape else "P")
+        pdf.set_link(target, page=pdf.page_no())
+        W, H = pdf.w - 10, pdf.h - 17
+        pdf.set_xy(5, 4)
+        pdf.font(10, True)
+        pdf.cell(W, 6, f"{title}  -  {caption}", align="L")
+        pdf.font(8.5, color=(40, 70, 130))
+        pdf.set_xy(5, 4)
+        pdf.cell(W, 6, "< Back to the comparison (or click the image)", align="R", link=back)
+        image = Image.open(path).convert("RGB")
+        image.thumbnail((getattr(pdf, "image_max", 1800),) * 2)
+        scale = min(W / image.width, H / image.height)
+        iw, ih = image.width * scale, image.height * scale
+        buf = io.BytesIO()
+        image.save(buf, format="JPEG", quality=92)
+        x, y = 5 + (W - iw) / 2, 12
+        pdf.image(buf, x=x, y=y, w=iw, h=ih)
+        pdf.link(x, y, iw, ih, back)
+
+
+def add_zoom_overlays(path, targets):
+    """Turns each drawn overlay into an optional content group, hidden when the file opens. The thumbnail becomes
+    a link that shows it; a page-sized link, active only while it is shown, hides it again. While an overlay is
+    shown, the page's other annotations (dropdowns, comment boxes, buttons) are hidden too. Adobe Acrobat / Reader."""
+    from pypdf import PdfWriter
+    from pypdf.generic import ArrayObject, DictionaryObject, FloatObject, NameObject, NumberObject, TextStringObject
+    writer = PdfWriter(clone_from=str(path))
+    mm = 72 / 25.4
+    root = writer._root_object
+    ocp = root.get("/OCProperties")
+    if ocp is None:
+        ocp = DictionaryObject({NameObject("/OCGs"): ArrayObject(), NameObject("/D"): DictionaryObject({
+            NameObject("/BaseState"): NameObject("/ON"), NameObject("/OFF"): ArrayObject(),
+            NameObject("/Order"): ArrayObject()})})
+        root[NameObject("/OCProperties")] = ocp
+    ocp = ocp.get_object()
+    d = ocp["/D"].get_object()
+    by_page = {}
+    for z in targets:
+        by_page.setdefault(z["page"], []).append(z)
+    for page_no, zs in by_page.items():
+        page = writer.pages[page_no - 1]
+        ph = float(page.mediabox.height)
+        pw = float(page.mediabox.width)
+        res = page["/Resources"].get_object()
+        props = res.get("/Properties")
+        props = props.get_object() if props is not None else DictionaryObject()
+        res[NameObject("/Properties")] = props
+        ocgs = []
+        for z in zs:
+            ocg = writer._add_object(DictionaryObject({NameObject("/Type"): NameObject("/OCG"),
+                                                       NameObject("/Name"): TextStringObject(f"{z['title']} {z['caption']}")}))
+            props[NameObject(f"/{z['oc']}")] = ocg
+            ocp["/OCGs"].append(ocg)
+            d["/OFF"].append(ocg)
+            d["/Order"].append(ocg)
+            ocgs.append((z, ocg))
+        # visible only while none of this page's overlays is shown
+        none_shown = writer._add_object(DictionaryObject({
+            NameObject("/Type"): NameObject("/OCMD"), NameObject("/P"): NameObject("/AllOff"),
+            NameObject("/OCGs"): ArrayObject([g for _, g in ocgs])}))
+        if "/Annots" not in page:
+            page[NameObject("/Annots")] = ArrayObject()
+        for a in page["/Annots"]:
+            a.get_object()[NameObject("/OC")] = none_shown
+        for z, ocg in ocgs:
+            x, y, w, h = z["rect"]
+            show = writer._add_object(DictionaryObject({
+                NameObject("/Type"): NameObject("/Annot"), NameObject("/Subtype"): NameObject("/Link"),
+                NameObject("/Rect"): ArrayObject([FloatObject(v) for v in (x * mm, ph - (y + h) * mm, (x + w) * mm,
+                                                                            ph - y * mm)]),
+                NameObject("/Border"): ArrayObject([NumberObject(0)] * 3), NameObject("/OC"): none_shown,
+                NameObject("/A"): DictionaryObject({NameObject("/S"): NameObject("/SetOCGState"),
+                                                    NameObject("/State"): ArrayObject([NameObject("/ON"), ocg])})}))
+            close = writer._add_object(DictionaryObject({
+                NameObject("/Type"): NameObject("/Annot"), NameObject("/Subtype"): NameObject("/Link"),
+                NameObject("/Rect"): ArrayObject([FloatObject(0), FloatObject(0), FloatObject(pw), FloatObject(ph)]),
+                NameObject("/Border"): ArrayObject([NumberObject(0)] * 3), NameObject("/OC"): ocg,
+                NameObject("/A"): DictionaryObject({NameObject("/S"): NameObject("/SetOCGState"),
+                                                    NameObject("/State"): ArrayObject([NameObject("/OFF"), ocg])})}))
+            page["/Annots"].append(show)
+            page["/Annots"].append(close)
+    with open(path, "wb") as fh:
+        writer.write(fh)
+    return len(targets)
+
+
+def add_structured_toggle(path, buttons):
+    """Makes the structured-report section an optional content group (hidden when the file opens) and turns
+    each drawn button into a link that toggles it. Honoured by Adobe Acrobat / Reader; some browser viewers
+    show the section permanently or ignore the button."""
+    from pypdf import PdfWriter
+    from pypdf.generic import ArrayObject, DictionaryObject, FloatObject, NameObject, NumberObject, TextStringObject
+    writer = PdfWriter(clone_from=str(path))
+    ocg = writer._add_object(DictionaryObject({NameObject("/Type"): NameObject("/OCG"),
+                                               NameObject("/Name"): TextStringObject("Structured report")}))
+    writer._root_object[NameObject("/OCProperties")] = DictionaryObject({
+        NameObject("/OCGs"): ArrayObject([ocg]),
+        NameObject("/D"): DictionaryObject({NameObject("/BaseState"): NameObject("/ON"),
+                                            NameObject("/OFF"): ArrayObject([ocg]),
+                                            NameObject("/Order"): ArrayObject([ocg])})})
+    for page in writer.pages:
+        res = page["/Resources"].get_object()
+        props = res.get("/Properties")
+        props = props.get_object() if props is not None else DictionaryObject()
+        props[NameObject("/OCstruct")] = ocg
+        res[NameObject("/Properties")] = props
+    mm = 72 / 25.4
+    for page_no, x, y, w, h in buttons:
+        page = writer.pages[page_no - 1]
+        ph = float(page.mediabox.height)
+        link = writer._add_object(DictionaryObject({
+            NameObject("/Type"): NameObject("/Annot"), NameObject("/Subtype"): NameObject("/Link"),
+            NameObject("/Rect"): ArrayObject([FloatObject(v) for v in (x * mm, ph - (y + h) * mm,
+                                                                        (x + w) * mm, ph - y * mm)]),
+            NameObject("/Border"): ArrayObject([NumberObject(0)] * 3),
+            NameObject("/A"): DictionaryObject({NameObject("/S"): NameObject("/SetOCGState"),
+                                                NameObject("/State"): ArrayObject([NameObject("/Toggle"), ocg])})}))
+        if "/Annots" not in page:
+            page[NameObject("/Annots")] = ArrayObject()
+        page["/Annots"].append(link)
+    with open(path, "wb") as fh:
+        writer.write(fh)
+    return len(buttons)
+
+
+def add_form_fields(path, fields, titles):
+    """Turns the recorded radiologist cells into fillable fields: a 1-5 dropdown and a comment box."""
+    from pypdf import PdfWriter
+    from pypdf.generic import (ArrayObject, BooleanObject, DictionaryObject, FloatObject, NameObject,
+                               NumberObject, StreamObject, TextStringObject)
+    writer = PdfWriter(clone_from=str(path))
+    mm = 72 / 25.4
+    font = DictionaryObject({NameObject("/Type"): NameObject("/Font"), NameObject("/Subtype"): NameObject("/Type1"),
+                             NameObject("/BaseFont"): NameObject("/Helvetica"),
+                             NameObject("/Encoding"): NameObject("/WinAnsiEncoding")})
+    font_ref = writer._add_object(font)
+    all_fields = ArrayObject()
+    sidecar = []
+    for f in fields:
+        page = writer.pages[f["page"] - 1]
+        page_h = float(page.mediabox.height)
+        base = f"p{f['page']:02d}_r{f['row']}"
+        for kind, rect in f["scores"] + [("comment", f["comment_rect"])]:
+            if rect is None:
+                continue
+            x, y, w, h = rect
+            inset = 0 if kind in DROPDOWNS else 1.5
+            r = [x * mm + inset, page_h - (y + h) * mm + inset, (x + w) * mm - inset, page_h - y * mm - inset]
+            field = DictionaryObject({
+                NameObject("/Type"): NameObject("/Annot"), NameObject("/Subtype"): NameObject("/Widget"),
+                NameObject("/T"): TextStringObject(f"{base}_{kind}"),
+                NameObject("/TU"): TextStringObject(f"{titles[f['page'] - 1]}: {f['finding']} ({kind})"),
+                NameObject("/Rect"): ArrayObject([FloatObject(v) for v in r]),
+                NameObject("/F"): NumberObject(4), NameObject("/P"): page.indirect_reference,
+                NameObject("/V"): TextStringObject(f.get("comment", "") if kind == "comment" else ""),
+                NameObject("/DA"): TextStringObject("/Helv 8 Tf 0 g" if kind in DROPDOWNS else "/Helv 7 Tf 0 g"),
+                NameObject("/MK"): DictionaryObject({NameObject("/BG"): ArrayObject([FloatObject(v) for v in
+                                                                                      (0.95, 0.97, 1.0)])}),
+            })
+            if kind in DROPDOWNS:
+                field[NameObject("/MK")] = DictionaryObject({
+                    NameObject("/BG"): ArrayObject([FloatObject(v) for v in (0.93, 0.96, 1.0)]),
+                    NameObject("/BC"): ArrayObject([FloatObject(v) for v in (0.47, 0.55, 0.69)])})
+                field[NameObject("/BS")] = DictionaryObject({NameObject("/W"): NumberObject(1),
+                                                             NameObject("/S"): NameObject("/S")})
+                field[NameObject("/FT")] = NameObject("/Ch")
+                field[NameObject("/Ff")] = NumberObject(1 << 17)  # combo box (dropdown)
+                field[NameObject("/Opt")] = ArrayObject([TextStringObject(v) for v in ("", "1", "2", "3", "4", "5")])
+            else:
+                field[NameObject("/FT")] = NameObject("/Tx")
+                field[NameObject("/Ff")] = NumberObject(1 << 12)  # multiline text
+            ref = writer._add_object(field)
+            if "/Annots" not in page:
+                page[NameObject("/Annots")] = ArrayObject()
+            page["/Annots"].append(ref)
+            all_fields.append(ref)
+        if f.get("tooltip_rect"):
+            x, y, w, h = f["tooltip_rect"]
+            tip = writer._add_object(DictionaryObject({
+                NameObject("/Type"): NameObject("/Annot"), NameObject("/Subtype"): NameObject("/Widget"),
+                NameObject("/FT"): NameObject("/Btn"), NameObject("/Ff"): NumberObject(1 << 16),
+                NameObject("/T"): TextStringObject(f"{base}_evidence_info"),
+                NameObject("/TU"): TextStringObject(f["tooltip"]),
+                NameObject("/Rect"): ArrayObject([FloatObject(v) for v in (x * mm, page_h - (y + h) * mm,
+                                                                            (x + w) * mm, page_h - y * mm)]),
+                NameObject("/F"): NumberObject(4), NameObject("/P"): page.indirect_reference,
+                NameObject("/MK"): DictionaryObject(), NameObject("/H"): NameObject("/N")}))
+            blank = StreamObject()  # transparent appearance, so viewers treat it as a real (hoverable) field
+            blank[NameObject("/Type")] = NameObject("/XObject")
+            blank[NameObject("/Subtype")] = NameObject("/Form")
+            blank[NameObject("/BBox")] = ArrayObject([FloatObject(0), FloatObject(0), FloatObject(w * mm),
+                                                      FloatObject(h * mm)])
+            tip.get_object()[NameObject("/AP")] = DictionaryObject({NameObject("/N"): writer._add_object(blank)})
+            page["/Annots"].append(tip)
+            all_fields.append(tip)
+        sidecar.append({"field_prefix": base, "page_title": titles[f["page"] - 1], "finding": f["finding"],
+                        "chexagent_evidence": f["evidence"], "ground_truth": f["ground_truth"],
+                        "gt_comment": f.get("gt_comment", ""), "medgemma_change": f.get("medgemma_change", ""),
+                        "scored": [k for k, _ in f["scores"]]})
+    # page links (X-ray -> enlarged page and back): fit the whole page in the window, so a zoom the doctor
+    # applied on an enlarged X-ray is not carried back to the scoring pages
+    for pg in writer.pages:
+        for annot in pg.get("/Annots", []):
+            o = annot.get_object()
+            if o.get("/Subtype") == "/Link" and "/Dest" in o:
+                o[NameObject("/Dest")] = ArrayObject([o["/Dest"][0], NameObject("/Fit")])
+    writer._root_object[NameObject("/AcroForm")] = DictionaryObject({
+        NameObject("/Fields"): all_fields, NameObject("/NeedAppearances"): BooleanObject(True),
+        NameObject("/DA"): TextStringObject("/Helv 9 Tf 0 g"),
+        NameObject("/DR"): DictionaryObject({NameObject("/Font"): DictionaryObject({NameObject("/Helv"): font_ref})})})
+    with open(path, "wb") as fh:
+        writer.write(fh)
+    Path(path).with_suffix(".fields.json").write_text(json.dumps(sidecar, indent=1), encoding="utf-8")
+    return len(sidecar)
 
 
 LEGEND = [
@@ -523,11 +1015,11 @@ LEGEND = [
 ]
 
 
-def draw_legend(pdf, x, y, w):
+def draw_legend(pdf, x, y, w, legend=None):
     pdf.set_draw_color(205, 208, 214)
     pdf.line(x, y, x + w, y)
     y += 1.5
-    for status, text in LEGEND:
+    for status, text in legend or LEGEND:
         pdf.set_xy(x, y)
         pdf.font(6.8, True, STATUS_STYLE.get(status, BLACK))
         label = status + ": "
@@ -680,7 +1172,7 @@ def add_structured(rec, page, sorter):
     print(f"  structured: {[(h, labels[n]) for n, h in enumerate(sentences, 1)]}", flush=True)
 
 
-def draw_structured(pdf, x, y, w, max_h, structured):
+def draw_structured(pdf, x, y, w, max_h, structured, sizes=(8.5, 8, 7.5, 7, 6.5)):
     """The radiologist's template below the generated report, in its order: EXAMINATION,
     COMPARISON (the report's comparison sentence), IMPRESSION (word for word), CLINICAL
     INDICATION, TECHNIQUE, INTERPRETATION with its four sub-headings, and ATTENDING RADIOLOGIST
@@ -697,7 +1189,7 @@ def draw_structured(pdf, x, y, w, max_h, structured):
         pdf.font(size)
         return sum(size * 0.42 * len(pdf.multi_cell(w - indent, size * 0.42, l, markdown=True, dry_run=True,
                                                       output="LINES")) + 0.9 for indent, l in lines)
-    size = next((s for s in (8.5, 8, 7.5, 7, 6.5) if height(s) <= max_h), 6.5)
+    size = next((s for s in sizes if height(s) <= max_h), sizes[-1])
     for indent, line in lines:
         pdf.set_xy(x + indent, y)
         pdf.font(size)
@@ -781,6 +1273,23 @@ def add_ground_truth(extractor, page, rec, redo=False):
     print(f"  ground truth: {gt}", flush=True)
 
 
+def add_ground_truth_quotes(extractor, page, rec):
+    """Verbatim ground-truth sentence about each reviewed finding (quote-checked reader), into
+    rec["ground_truth_quotes"] and each review item's "gt_quote" (reused from the .json if already there)."""
+    quotes = rec.get("ground_truth_quotes") or {}
+    entries = rec["review"] + rec.get("suggestions", [])
+    missing = sorted({i["finding"] for i in entries} - set(quotes))
+    if missing:
+        ans = ground_truth_locations(extractor, page["truth_text"], missing, with_evidence=True)
+        for f, (where, evidence, _) in ans.items():
+            quotes[f] = evidence.strip() if where != NOT_IN_GT and evidence.strip() else \
+                "Not mentioned in the ground truth report."
+    rec["ground_truth_quotes"] = quotes
+    for i in entries:
+        i["gt_quote"] = quotes[i["finding"]]
+    print(f"  ground-truth quotes: {quotes}", flush=True)
+
+
 def add_suggestions(extractor, page, rec, screen, truth=None):
     """CheXagent's own findings from an independent screen (chexagent_independent_screen.py: "Is there
     X?" for 13 conditions, found = at its cut-off) that the generated report does not state, as
@@ -835,6 +1344,21 @@ def render_from_json(args):
     if defaults:
         print(f"default cut-offs: strong yes >= {defaults[0]}, strong no <= {defaults[1]}")
     pdf = OnePage()
+    if args.radiologist_form:
+        pdf.radiologist_form, pdf.form_fields = True, []
+    pdf.hide_scores = args.hide_scores
+    if args.zoom_pages:
+        pdf.zoom_targets = []
+    if args.full_res_images:
+        pdf.image_max, pdf.image_gap = 1800, 1.5
+        pdf.set_margins(6, 6, 6)
+    pdf.gt_comment = args.gt_comment
+    if args.collapse_structured:
+        pdf.collapsible, pdf.toggle_buttons = True, []
+    pdf.two_level = args.two_level
+    if args.form_columns:  # e.g. "medgemma:0.27,chexagent:0.21,change:0.28,comment:0.24"
+        pdf.form_columns = [(k, float(f)) for k, f in (c.split(":") for c in args.form_columns.split(","))]
+    titles = []
     skip = {int(r) for r in args.skip_rows.split(",")} if args.skip_rows else set()
     kept = []
     for k, (p, rec) in enumerate(zip(reader.pages, record)):
@@ -845,16 +1369,25 @@ def render_from_json(args):
             continue
         kept.append(rec)
         prior, current = (str(work / f"img-{2 * k + i:03d}.png") for i in (0, 1))
-        boxes = [{"phrase": v["finding"], "box_normalized": b["box_normalized"], "p_present": b["p_present"]}
+        if args.full_res_images and rec.get("image"):
+            # originals on disk (the images embedded in the source PDF are small thumbnails)
+            folder = Path(rec["image"]).parent
+            if (folder / "prior.jpg").exists() and (folder / "current.jpg").exists():
+                prior, current = str(folder / "prior.jpg"), str(folder / "current.jpg")
+        boxes = [{"phrase": v["finding"], "box_normalized": b["box_normalized"], "p_present": b["p_present"],
+                  "hide_score": args.hide_scores}
                  for v in rec["visual_proof"] if not is_device(v["finding"]) for b in v.get("boxes", [])]
         # Boxes on the image CheXagent read (full resolution if the run used --images-dir)
-        annotated = shrink(XRayVQATool._visualize_boxes(drawer, rec.get("image") or current, boxes), work) \
-            if boxes else None
+        annotated = shrink(XRayVQATool._visualize_boxes(drawer, rec.get("image") or current, boxes), work,
+                           size=1800 if args.full_res_images else 1200) \
+            if boxes and not args.no_visual_proof else None
         if args.default_cutoffs:
             rec["review"] = review_items(engine, page["generated_text"], {"visual_proof": rec["visual_proof"]},
                                          defaults)
             print(f"{rec['title']}: {[(i['name'], i['status']) for i in rec['review']]}")
         add_ground_truth(extractor, page, rec, redo=args.redo_ground_truth)
+        if args.gt_comment:
+            add_ground_truth_quotes(extractor, page, rec)
         if args.maira:
             add_maira(rec)
         if args.interpretation:
@@ -863,7 +1396,20 @@ def render_from_json(args):
             add_structured(rec, page, extractor)
         if screen is not None:
             add_suggestions(extractor, page, rec, screen, truth)
+            if args.gt_comment:
+                add_ground_truth_quotes(extractor, page, rec)
         items = rec["review"] + (rec.get("suggestions", []) if screen is not None else [])
+        for i in items:
+            i["tooltip"] = evidence_tooltip(engine, i)
+        if args.change_column:  # the change MedGemma reports for each finding it stated (kept in the .json)
+            from edv_change import read_claims
+            claims = rec.setdefault("change_claims", {})
+            todo = sorted({i["finding"] for i in items if i.get("status") not in ("Consider", "Missed")} - set(claims))
+            if todo:
+                claims.update({f: list(v) for f, v in read_claims(extractor, page["generated_text"], todo).items()})
+            for i in items:
+                i["change"] = claims.get(i["finding"])
+            print(f"  change claims: {[(f, c[0]) for f, c in claims.items()]}", flush=True)
         structured = rec.get("structured")
         highlights = None
         if revised is not None and structured:  # revise_interpretation.py output: tagged headings
@@ -872,11 +1418,22 @@ def render_from_json(args):
                 changed = {c for _, c, _ in revised[rec["title"]]["revisions"]}
                 highlights = [evidence[(page["row"], c)] for c in sorted(changed) if evidence.get((page["row"], c))]
         draw_page(pdf, page, prior, current, annotated, items, structured, show_reports=not args.hide_reports,
-                  gt_highlights=highlights)
+                  gt_highlights=highlights, gt_under_images=args.gt_under_images,
+                  legend=TWO_LEVEL_LEGEND if args.two_level else None)
+        titles.append(f"{page['title']} ({page['row']})")
     out = Path(args.out) if args.out else ROOT / "logs" / f"comparisons_review_{time.strftime('%Y%m%d-%H%M%S')}.pdf"
     if out.exists():
         raise SystemExit(f"{out} already exists; not overwriting")
+    if args.zoom_pages:
+        add_zoom_pages(pdf)
     pdf.output(str(out))
+    if args.collapse_structured:
+        print(f"{add_structured_toggle(out, pdf.toggle_buttons)} pages with a show/hide structured-report button")
+    if args.radiologist_form:
+        n = add_form_fields(out, pdf.form_fields, titles)
+        if args.zoom_pages:
+            add_zoom_overlays(out, pdf.zoom_targets)
+        print(f"{n} table rows made fillable (a 1-5 dropdown in each scored cell) -> {out.with_suffix('.fields.json')}")
     # all pages are kept in the .json (it must line up with the source PDF for later rebuilds)
     out.with_suffix(".json").write_text(json.dumps(record, indent=1), encoding="utf-8")
     print(f"{len(kept)} pages re-rendered from {args.from_json} -> {out}")
@@ -920,6 +1477,29 @@ def main():
                     help="with --from-json: add a MAIRA-2 location column (phrase grounding, side-free phrase)")
     ap.add_argument("--redo-ground-truth", action="store_true",
                     help="with --from-json: look up the ground-truth locations again instead of reusing them")
+    ap.add_argument("--zoom-pages", action="store_true",
+                    help="clicking an X-ray opens it full page (pages added at the end, with a link back)")
+    ap.add_argument("--full-res-images", action="store_true",
+                    help="use the original prior/current images from disk at high resolution, with a tighter image row")
+    ap.add_argument("--gt-comment", action="store_true",
+                    help="fill the 'Radiologist comment' column with the ground-truth report's sentence about each "
+                         "finding (read-only); only the 1-5 score stays fillable")
+    ap.add_argument("--collapse-structured", action="store_true",
+                    help="hide the structured report (EXAMINATION ... ATTENDING RADIOLOGIST) behind a show/hide button")
+    ap.add_argument("--two-level", action="store_true",
+                    help="show CheXagent evidence as Agree (Supported) / Not agree (all other statuses)")
+    ap.add_argument("--hide-scores", action="store_true",
+                    help="show only the CheXagent status in the table, without its score in brackets")
+    ap.add_argument("--radiologist-form", action="store_true",
+                    help="add fillable 'Radiologist score (1-5)' and 'Radiologist comment' columns to the table")
+    ap.add_argument("--gt-under-images", action="store_true",
+                    help="larger X-rays, with the ground-truth report in a small font directly beneath them")
+    ap.add_argument("--change-column", action="store_true",
+                    help="scoring form: a 'MedGemma change (vs prior)' column with a 1-5 dropdown (edv_change reader)")
+    ap.add_argument("--form-columns", default=None,
+                    help="scoring form columns as key:share, e.g. medgemma:0.27,chexagent:0.21,change:0.28,comment:0.24")
+    ap.add_argument("--no-visual-proof", action="store_true",
+                    help="only the prior and current X-rays (no CheXagent box image)")
     ap.add_argument("--from-json", default=None,
                     help="re-render from a previous run's .json (same findings, scores and statuses; "
                          "boxes redrawn from the saved coordinates; no model calls)")
